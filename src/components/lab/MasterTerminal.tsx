@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { X, Copy, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { decadePrompts, eraConfig, eraOrder } from '@/lib/decadePrompts';
+import { decadePrompts, eraConfig, eraOrder, EraId } from '@/lib/decadePrompts';
 
 interface MasterTerminalProps {
   isOpen: boolean;
@@ -9,7 +9,7 @@ interface MasterTerminalProps {
 }
 
 export function MasterTerminal({ isOpen, onClose }: MasterTerminalProps) {
-  const [activeTab, setActiveTab] = useState(eraOrder[0]);
+  const [activeTab, setActiveTab] = useState<EraId>(eraOrder[0]);
   const [copied, setCopied] = useState(false);
 
   const copyPrompt = () => {

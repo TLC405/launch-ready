@@ -176,7 +176,7 @@ export function BoomboxConsole() {
               {currentEra.name}
             </h3>
             <p className="text-sm text-muted-foreground">
-              {currentEra.shortTagline}
+              {currentEra.tagline}
             </p>
           </motion.div>
 

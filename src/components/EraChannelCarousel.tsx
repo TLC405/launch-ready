@@ -102,12 +102,12 @@ export function EraChannelCarousel() {
                   {/* Info strip */}
                   <div className="p-4 bg-card/50">
                     <p className="text-sm text-muted-foreground line-clamp-2">
-                      {era.shortTagline}
+                      {era.tagline}
                     </p>
                     
                     <div className="mt-3 flex items-center justify-between">
                       <span className={`text-xs font-bold tracking-wider px-2 py-1 rounded bg-gradient-to-r ${era.gradient} text-white`}>
-                        {era.id.toUpperCase()}
+                        {eraId.toUpperCase()}
                       </span>
                       <span className="text-xs text-muted-foreground">CHANNEL {index + 1}</span>
                     </div>

@@ -299,7 +299,7 @@ export default function TimeTravelLab() {
                             {eraConfig[activeEra].name.toUpperCase()} PROMPT
                           </p>
                           <p className="text-xs text-muted-foreground whitespace-pre-wrap font-mono">
-                            {eraConfig[activeEra].prompt}
+                            {getFullPrompt(activeEra)}
                           </p>
                         </div>
                       </div>
@@ -395,7 +395,7 @@ export default function TimeTravelLab() {
                 />
                 <div className="p-4">
                   <p className="text-lg font-bold">{activeEra && eraConfig[activeEra].name}</p>
-                  <p className="text-sm text-muted-foreground">{activeEra && eraConfig[activeEra].shortTagline}</p>
+                  <p className="text-sm text-muted-foreground">{activeEra && eraConfig[activeEra].tagline}</p>
                 </div>
               </motion.div>
             )}

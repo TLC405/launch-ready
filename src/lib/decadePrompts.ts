@@ -520,4 +520,37 @@ export const eraOrder = [
   "2000s",
   "dayone",
   "homeless"
-];
+] as const;
+
+// Type exports for components
+export type EraId = typeof eraOrder[number];
+
+export interface EraConfig {
+  name: string;
+  year: string;
+  celebrity: string;
+  color: string;
+  gradient: string;
+  tagline: string;
+  featuring: string;
+  shotStyle: string;
+  shortTagline?: string;
+  id?: string;
+  prompt?: string;
+}
+
+// Alias for GLOBAL_STYLE
+export const GLOBAL_STYLE = masterStyleBlock;
+
+// Helper to get full prompt for an era
+export const getFullPrompt = (eraId: EraId): string => {
+  return decadePrompts[eraId] || '';
+};
+
+// Add shortTagline, id, and prompt to eraConfig for component compatibility
+Object.keys(eraConfig).forEach(key => {
+  const era = eraConfig[key];
+  (era as EraConfig).shortTagline = era.tagline;
+  (era as EraConfig).id = key;
+  (era as EraConfig).prompt = decadePrompts[key]?.split('\n\n').slice(1).join('\n\n') || '';
+});
