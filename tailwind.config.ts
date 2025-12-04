@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
-        body: ['Inter', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+        body: ['Nunito', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -23,12 +23,6 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
-        },
-        sepia: "hsl(var(--sepia))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -57,6 +51,25 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        retro: {
+          orange: "hsl(var(--retro-orange))",
+          mustard: "hsl(var(--retro-mustard))",
+          avocado: "hsl(var(--retro-avocado))",
+          brown: "hsl(var(--retro-brown))",
+          cream: "hsl(var(--retro-cream))",
+        },
+        neon: {
+          pink: "hsl(var(--neon-pink))",
+          blue: "hsl(var(--electric-blue))",
+          purple: "hsl(var(--chrome-purple))",
+          red: "hsl(var(--laser-red))",
+        },
+        "90s": {
+          teal: "hsl(var(--teal-90s))",
+          coral: "hsl(var(--coral-pop))",
+          grape: "hsl(var(--grape))",
+          lime: "hsl(var(--lime))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -83,14 +96,24 @@ export default {
           to: { height: "0" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(43 74% 49% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(43 74% 49% / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--primary) / 0.5)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        shimmer: "shimmer 2s linear infinite",
+        float: "float 3s ease-in-out infinite",
       },
     },
   },

@@ -14,16 +14,295 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      click_events: {
+        Row: {
+          created_at: string
+          element_id: string | null
+          element_type: string | null
+          id: string
+          session_id: string | null
+          user_id: string | null
+          x_pos: number | null
+          y_pos: number | null
+        }
+        Insert: {
+          created_at?: string
+          element_id?: string | null
+          element_type?: string | null
+          id?: string
+          session_id?: string | null
+          user_id?: string | null
+          x_pos?: number | null
+          y_pos?: number | null
+        }
+        Update: {
+          created_at?: string
+          element_id?: string | null
+          element_type?: string | null
+          id?: string
+          session_id?: string | null
+          user_id?: string | null
+          x_pos?: number | null
+          y_pos?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "click_events_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "user_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      era_selections: {
+        Row: {
+          era: string
+          id: string
+          selected_at: string
+          user_id: string | null
+        }
+        Insert: {
+          era: string
+          id?: string
+          selected_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          era?: string
+          id?: string
+          selected_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      generated_portraits: {
+        Row: {
+          created_at: string
+          era: string
+          id: string
+          image_url: string | null
+          prompt_hash: string | null
+          source_image_url: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          era: string
+          id?: string
+          image_url?: string | null
+          prompt_hash?: string | null
+          source_image_url?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          era?: string
+          id?: string
+          image_url?: string | null
+          prompt_hash?: string | null
+          source_image_url?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      generation_logs: {
+        Row: {
+          created_at: string
+          era: string
+          error_message: string | null
+          generation_time_ms: number | null
+          id: string
+          prompt_used: string | null
+          success: boolean | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          era: string
+          error_message?: string | null
+          generation_time_ms?: number | null
+          id?: string
+          prompt_used?: string | null
+          success?: boolean | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          era?: string
+          error_message?: string | null
+          generation_time_ms?: number | null
+          id?: string
+          prompt_used?: string | null
+          success?: boolean | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      page_views: {
+        Row: {
+          created_at: string
+          id: string
+          page_path: string
+          scroll_depth: number | null
+          session_id: string | null
+          time_spent_ms: number | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          page_path: string
+          scroll_depth?: number | null
+          session_id?: string | null
+          time_spent_ms?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          page_path?: string
+          scroll_depth?: number | null
+          session_id?: string | null
+          time_spent_ms?: number | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "page_views_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "user_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_behavior: {
+        Row: {
+          avg_session_duration_ms: number | null
+          engagement_score: number | null
+          favorite_era: string | null
+          id: string
+          total_generations: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avg_session_duration_ms?: number | null
+          engagement_score?: number | null
+          favorite_era?: string | null
+          id?: string
+          total_generations?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avg_session_duration_ms?: number | null
+          engagement_score?: number | null
+          favorite_era?: string | null
+          id?: string
+          total_generations?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_sessions: {
+        Row: {
+          browser: string | null
+          device_info: string | null
+          ended_at: string | null
+          id: string
+          ip_address: string | null
+          started_at: string
+          user_id: string | null
+        }
+        Insert: {
+          browser?: string | null
+          device_info?: string | null
+          ended_at?: string | null
+          id?: string
+          ip_address?: string | null
+          started_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          browser?: string | null
+          device_info?: string | null
+          ended_at?: string | null
+          id?: string
+          ip_address?: string | null
+          started_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +429,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
