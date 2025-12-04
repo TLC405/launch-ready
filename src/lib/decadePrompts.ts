@@ -1,474 +1,218 @@
+// SINGULARITY PROTOCOL: SAFE EDITION
+// Non-photorealistic, illustrated style with extreme face lock on user only
+
+export const masterStyleBlock = `SINGULARITY PROTOCOL: ENGAGED.
+
+GLOBAL STYLE:
+* This is NOT a photo. Render in a premium, non-photorealistic style: high-end illustration / painted concept art / graphic novel cover.
+* Think: ultra-detailed, cinematic digital painting or hand-painted poster, not a camera snapshot.
+* Strong depth, parallax, and composition so the scene feels 3D and immersive, but clearly stylized (brush strokes, line work, painterly lighting).
+* Color grading should match the era but always look like artwork, not a photograph.
+* Main character (the user) has EXTREME FACE LOCK: match face structure, nose, eyes, jaw, hair, and vibe from the reference photo.
+* Real celebrities and historical figures should be clearly recognizable as stylized portraits, NOT photoreal deepfakes.
+* TLC Easter eggs must exist in-world (signs, lights, props, clothing labels) but never as modern logos slapped on top.
+* No gore, no sexual content, no humiliation. Scenes should feel epic, respectful, larger-than-life.
+
+SUBJECT MATRIX:
+* ONE (1) USER as the central protagonist in each scene.
+* Multiple legendary figures around them, depending on era.
+* Do NOT duplicate any person within a single scene.
+
+FACE LOCK RULES:
+* User: strongest possible likeness within stylized art.
+* Celebrities: stylized, iconic likeness but clearly drawn/painted, not photorealistic, and never with the user's face copied onto them.
+
+MOOD:
+* Every frame feels like a legendary album cover or movie poster where the user is the central mythic figure in history.
+
+CRITICAL:
+* Always keep the user as the star.
+* Always keep celebrities non-photoreal and stylized.
+* No instruction to replace, merge, or clone real people's faces.`;
+
 export const decadePrompts: Record<string, string> = {
-  "1900s": `SINGULARITY PROTOCOL: ENGAGED.
+  "1900s": `${masterStyleBlock}
 
-SUBJECT MATRIX:
-- ONE (1) USER
-- ONE (1) NIKOLA TESLA
-- ONE (1) ALBERT EINSTEIN
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user, with special emphasis on NOSE shape and dimensions.
-- Celebrity likeness: ABSOLUTE fidelity to TESLA and EINSTEIN.
-
-VISUAL STYLE:
-- Hyper-realistic, early 1900s photographic aesthetic.
-- Daguerreotype / glass-plate look with sepia tones, heavy grain, and edge vignetting.
-- No cartoon imagery whatsoever.
+1900s – COUNCIL OF GENIUS
 
 SCENE:
-- Year 1905, NIKOLA TESLA'S LABORATORY.
-- The user stands CENTER FRAME at a workbench layered with coils, notes, and flickering instruments.
-- To the user's LEFT: NIKOLA TESLA, focused but intrigued by the user.
-- To the user's RIGHT: ALBERT EINSTEIN, thoughtful, slightly amused, also looking at the user.
-- TLC written elegantly on a chalkboard in the background.
+A richly illustrated, sepia-toned 1905 laboratory interior, rendered like a hand-tinted archival poster.
 
-COMPOSITION:
-- Medium-wide shot.
-- Brass generators, copper coils, and arcs of electricity frame the trio.
-- Exposed filament bulbs cast sharp highlights and deep shadows.
-- Ozone haze fills the air.
+* The user stands at the center of a cluttered workbench, blueprint in hand, lit by warm lamps.
+* Around them: stylized portraits of Nikola Tesla, Albert Einstein, Marie Curie, Thomas Edison, and Alexander Graham Bell.
+* All five legends are angled toward the user, clearly impressed and listening as the user explains a breakthrough.
+* Lab filled with brass gears, coils, test tubes, chalkboards.
 
-ATMOSPHERE:
-- Industrial, brilliant, and slightly dangerous.
-- Air feels charged, smoky, metallic.
+STYLE NOTES:
+* Medium-wide shot, elevated angle.
+* Gentle sepia palette with selective color accents: electric blue sparks, warm amber lamps.
+* Detailed brush strokes, visible line art around faces, vintage poster typography.
 
-WARDROBE:
-- User: Elegant Victorian tweed suit, waistcoat, and pocket watch on chain.
-- Tesla & Einstein in period-accurate formal wear.
+TLC EASTER EGGS:
+* "TLC" finely engraved on a brass plaque on the desk.
+* Small "TLC" scribbled in the corner of a chalk diagram.`,
 
-EXPRESSION:
-- The user radiates visionary genius and calm authority.
+  "1950s": `${masterStyleBlock}
 
-CRITICAL:
-- NO MODERN HATS.
-- NO DUPLICATE PEOPLE.
-- LIKENESS: ABSOLUTE fidelity to user and celebrity faces.`,
-
-  "1950s": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- ONE (1) MARILYN MONROE (peak 1955 Gentlemen Prefer Blondes era)
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user, preserving nose shape and dimensions.
-- Celebrity likeness: ABSOLUTE fidelity to MARILYN MONROE at her 1955 peak.
-
-VISUAL STYLE:
-- Hyper-realistic Technicolor glamour photograph.
-- Soft Hollywood lighting, warm golden tones.
-- No cartoon imagery whatsoever.
+1950s – HOLLYWOOD WITH MARILYN
 
 SCENE:
-- Year 1955, on the set of "The Seven Year Itch".
-- Marilyn Monroe is gazing at the user with ABSOLUTE LOVE, hearts practically in her eyes.
-- She is hugging the user warmly, her iconic white dress billowing slightly.
-- Film crew members in background hold signs with "TLC" written on them.
-- Classic movie set atmosphere with vintage cameras and lighting rigs.
+A glamorous, painterly 1950s Hollywood nightclub scene, like a painted movie poster.
 
-COMPOSITION:
-- Medium shot, romantic and intimate framing.
-- Warm backlighting creating a dreamy halo effect.
-- Depth of field focuses on the user and Marilyn.
+* The user sits at a small table with Marilyn Monroe, who is clearly smitten, leaning in, eyes full of warmth.
+* Nearby: Frank Sinatra raising a champagne glass, Dean Martin mid-laugh, Sammy Davis Jr snapping a photo, Audrey Hepburn smiling from the edge of frame.
+* All stylized, elegant caricature/portrait vibes, not photo-real.
 
-ATMOSPHERE:
-- Golden age Hollywood magic.
-- Romantic, dreamy, aspirational.
-- The feeling of being the most special person in the world.
+STYLE NOTES:
+* High-contrast, black-and-cream palette with subtle warm tint.
+* Soft spotlight from above, cigarette smoke curling in the air.
+* Illustration style: think classic painted film poster with luminous skin and dramatic lighting.
 
-WARDROBE:
-- User: Sharp 1950s suit, slicked hair, classic leading man style.
-- Marilyn: Iconic white halter dress.
+TLC EASTER EGGS:
+* The club marquee in the background spells out "TLC CLUB" in small bulbs.
+* A matchbook on the table has a tiny "TLC" printed in cursive.`,
 
-EXPRESSION:
-- Marilyn: Completely smitten, adoring, loving gaze at the user.
-- User: Confident, charming, worthy of her affection.
+  "1960s": `${masterStyleBlock}
 
-CRITICAL:
-- Marilyn must look MADLY IN LOVE with the user.
-- NO DUPLICATE PEOPLE.
-- LIKENESS: ABSOLUTE fidelity to user and Marilyn's face.`,
-
-  "1960s": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- FOUR (4) BEATLES: John Lennon, Paul McCartney, George Harrison, Ringo Starr (Sgt. Pepper era, 1967)
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user.
-- Celebrity likeness: ABSOLUTE fidelity to all four Beatles.
-
-VISUAL STYLE:
-- Hyper-realistic 35mm film photograph.
-- British Invasion aesthetic, vibrant 1960s colors.
-- No cartoon imagery whatsoever.
+1960s – CIVIL RIGHTS & BEATLEMANIA
 
 SCENE:
-- Year 1967, Abbey Road zebra crossing.
-- All four Beatles are BOWING to the user in respect and admiration.
-- John Lennon is handing the user his iconic round glasses as a gift.
-- Massive "TLC" written in colorful flowers on the street, hippie style.
-- Iconic Abbey Road studio in background.
+A richly illustrated 1960s strategy room, like the cover of a political graphic novel.
 
-COMPOSITION:
-- Wide shot capturing the entire crossing.
-- User stands center, Beatles arranged in reverent poses around them.
-- Psychedelic flower arrangements frame the scene.
+* The user stands at a podium or table, mid-speech.
+* Martin Luther King Jr stands at one side, Malcolm X at the other; Muhammad Ali leans against the wall, arms crossed; Bob Dylan and the four Beatles appear in the background as part of a supportive crowd.
+* Everyone is listening intently to the user.
 
-ATMOSPHERE:
-- Peak Beatlemania energy.
-- Revolutionary, creative, transformative.
-- The feeling of being more famous than the Beatles themselves.
+STYLE NOTES:
+* Kodachrome-inspired color but clearly painted: bold reds, deep blues, warm skin tones.
+* Dramatic overhead lighting, dust motes in shafts of light.
+* Strong line work around faces, expressive brush strokes in clothing and background.
 
-WARDROBE:
-- User: Colorful Sgt. Pepper style military jacket with ornate details.
-- Beatles: Iconic Sgt. Pepper uniforms in different colors.
+TLC EASTER EGGS:
+* Microphones have tiny "TLC" badges.
+* A protest sign in the back reads "TLC = Truth Love Connection" integrated into era-accurate typography.`,
 
-EXPRESSION:
-- Beatles: Genuine admiration and respect for the user.
-- User: Graciously accepting their tribute.
+  "1970s": `${masterStyleBlock}
 
-CRITICAL:
-- All four Beatles must be clearly recognizable.
-- They must appear to WORSHIP the user.
-- NO DUPLICATE PEOPLE.`,
-
-  "1970s": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- ONE (1) MUHAMMAD ALI (prime 1974 era)
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user.
-- Celebrity likeness: ABSOLUTE fidelity to MUHAMMAD ALI at his 1974 peak.
-
-VISUAL STYLE:
-- Hyper-realistic gritty 1970s sports photography.
-- Film grain, warm arena lighting, documentary style.
-- No cartoon imagery whatsoever.
+1970s – STUDIO 54 LEGENDS
 
 SCENE:
-- Year 1974, boxing ring in Kinshasa, Zaire (Rumble in the Jungle aftermath).
-- Muhammad Ali and the user doing the VICTORY POSE together.
-- They just knocked out George Foreman together.
-- Ali's iconic rope-a-dope stance captured mid-celebration.
-- "TLC" written in sweat and chalk on the canvas below.
-- Crowd going absolutely wild in the background.
+An explosive, illustrated Studio 54 dancefloor poster.
 
-COMPOSITION:
-- Dynamic low-angle shot looking up at the champions.
-- Dramatic arena lighting with spotlights.
-- Ropes and corner posts frame the heroes.
+* The user is center frame, dancing or singing into a vintage mic, owning the room.
+* Around them: Cher singing, Elton John at a white grand piano, Mick Jagger dancing in a tight TLC ringer tee, Bob Marley and Jimi Hendrix trading guitar lines, James Brown and Grace Jones in the background.
+* Everyone stylized: exaggerated poses, iconic outfits, but clearly drawn/painted.
 
-ATMOSPHERE:
-- Peak athletic triumph.
-- Raw, powerful, legendary moment in sports history.
-- The greatest of all time acknowledging an equal.
+STYLE NOTES:
+* Neon-colored disco lights, warm yellows, magentas, blues bouncing off chrome.
+* Hazy atmosphere, glitter, sequins, dramatic shadows.
+* Illustration style: dynamic, angular shapes, almost like a 70s album gatefold art.
 
-WARDROBE:
-- User: Boxing shorts and gloves, champion's physique, glistening with victory sweat.
-- Ali: Iconic white boxing shorts, classic Ali style.
+TLC EASTER EGGS:
+* TLC letters appear on a neon sign in the club.
+* Mick Jagger's ringer tee has "TLC" across the chest in retro font.`,
 
-EXPRESSION:
-- Both: Triumphant, exhausted, LEGENDARY.
-- Ali looking at user as a true equal.
+  "1980s": `${masterStyleBlock}
 
-CRITICAL:
-- Ali must be unmistakably recognizable.
-- Scene must feel like REAL sports photography.
-- NO DUPLICATE PEOPLE.`,
-
-  "1980s": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- ONE (1) MICHAEL JACKSON (peak 1983 Thriller era)
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user.
-- Celebrity likeness: ABSOLUTE fidelity to MICHAEL JACKSON in 1983.
-
-VISUAL STYLE:
-- Hyper-realistic MTV-era concert photography.
-- Neon lights, spotlight drama, 1980s glamour.
-- No cartoon imagery whatsoever.
+1980s – ARCADE & TIME MACHINE
 
 SCENE:
-- Year 1983, Motown 25 stage, the legendary moonwalk moment.
-- Michael Jackson and the user doing the MOONWALK TOGETHER side by side.
-- Both in perfect synchronization, sliding backwards.
-- Michael wearing his iconic red leather Thriller jacket.
-- Spotlight forms a giant glowing "TLC" logo on the stage floor.
-- Screaming fans visible in the dark beyond.
+A wild 1980s time-travel / arcade mashup illustration.
 
-COMPOSITION:
-- Dynamic stage shot from slight low angle.
-- Dramatic spotlighting isolating the duo.
-- Fog/haze creating atmosphere.
+* User stands between a stylized Doc Brown and Marty McFly in front of a DeLorean.
+* Michael Jackson (Thriller), Prince, Madonna, Whitney Houston, and Michael Jordan appear around the scene in classic 80s outfits, all stylized.
+* An arcade to one side, Hill Valley clock tower in the background.
 
-ATMOSPHERE:
-- Peak MTV era electricity.
-- The moment that changed music forever.
-- The user is Michael's equal in talent and fame.
+STYLE NOTES:
+* Vivid electric blues, magentas, synth-era color palette.
+* Hand-drawn neon signs, glowing highlights painted, not rendered photoreal.
+* Comic-book energy: motion lines, dramatic poses, lens flares as brush strokes.
 
-WARDROBE:
-- User: Matching red leather jacket, single sparkly glove, period-accurate 80s style.
-- Michael: Iconic red Thriller jacket, black pants, single white glove.
+TLC EASTER EGGS:
+* "TLC" glowing on an arcade cabinet.
+* "TLC-88" on the DeLorean license plate.`,
 
-EXPRESSION:
-- Both: Intense focus, performance perfection.
-- Michael treating the user as his dance partner and equal.
+  "1990s": `${masterStyleBlock}
 
-CRITICAL:
-- Michael Jackson must be unmistakably recognizable (1983 appearance).
-- Moonwalk pose must be accurate.
-- NO DUPLICATE PEOPLE.`,
-
-  "1990s": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- ONE (1) LEONARDO DICAPRIO (1997 Titanic era)
-- ONE (1) KATE WINSLET (1997 Titanic era)
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user.
-- Celebrity likeness: ABSOLUTE fidelity to young Leo and Kate from Titanic.
-
-VISUAL STYLE:
-- Hyper-realistic cinematic 35mm film quality.
-- Golden hour ocean lighting, romantic drama.
-- No cartoon imagery whatsoever.
+1990s – RAP STUDIO TRUCE
 
 SCENE:
-- Year 1997, bow of the RMS Titanic.
-- Leonardo DiCaprio and Kate Winslet are BOTH CHEERING for the user.
-- The USER is in the CENTER doing the "king of the world" pose with arms wide.
-- Leo and Kate are on either side, celebrating the user.
-- "TLC" elegantly carved into the ship's railing.
-- Epic sunset ocean backdrop, the famous Titanic moment.
+A gritty, painted 1990s studio control room scene.
 
-COMPOSITION:
-- Wide cinematic shot capturing the iconic bow.
-- User center frame, arms spread wide.
-- Golden sunset light creating magic hour beauty.
+* The user sits or stands on the mixing desk, mic in hand.
+* Around them: stylized portraits of Tupac, Biggie, Snoop, Dre, Nas, Jay-Z, and Suge Knight.
+* Everyone is vibing to the user's verse, nodding in respect.
 
-ATMOSPHERE:
-- Peak 90s romantic cinema.
-- The most iconic movie moment of the decade, but starring YOU.
-- Freedom, youth, endless possibility.
+STYLE NOTES:
+* Deep shadows, warm highlights, saturated colors.
+* Vinyl, tape reels, glowing VU meters and boards rendered in painterly detail.
+* Think 90s rap album cover illustrated by a top concept artist.
 
-WARDROBE:
-- User: Period-accurate 1912 first-class attire.
-- Leo: His iconic suspenders and white shirt look.
-- Kate: Elegant 1912 dress, hair flowing in the wind.
+TLC EASTER EGGS:
+* Platinum plaques on the wall spell "TLC ROW RECORDS".
+* A small sticker on the console reads "Produced by TLC Studios".`,
 
-EXPRESSION:
-- User: Pure joy, king of the world energy.
-- Leo and Kate: Cheering, celebrating, impressed by the user.
+  "2000s": `${masterStyleBlock}
 
-CRITICAL:
-- This must feel like a REAL movie still from Titanic.
-- Leo and Kate must be young 1997 versions.
-- NO DUPLICATE PEOPLE.`,
-
-  "2000s": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- ONE (1) EMINEM (prime 2003 8 Mile era)
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user.
-- Celebrity likeness: ABSOLUTE fidelity to EMINEM in his 8 Mile era.
-
-VISUAL STYLE:
-- Hyper-realistic concert photography.
-- Gritty, raw, Detroit underground hip-hop aesthetic.
-- No cartoon imagery whatsoever.
+2000s – RED CARPET TAKEOVER
 
 SCENE:
-- Year 2003, massive stadium concert stage.
-- Eminem is PASSING THE MIC to the user.
-- The crowd is going absolutely INSANE.
-- Giant "TLC" logo blazing in pyrotechnics behind them.
-- Thousands of hands raised, camera flashes everywhere.
-- Smoke and fire effects creating drama.
+A stylized 2005 VMAs red carpet moment.
 
-COMPOSITION:
-- Dynamic stage shot with crowd visible.
-- Dramatic lighting from pyrotechnics.
-- Energy radiating from the scene.
+* User stands in the center, mid-walk, surrounded by stylized caricature-portraits of Beyoncé, Britney, Eminem, Kanye, Rihanna, and Justin Timberlake.
+* Paparazzi flashes painted as starbursts in the background.
 
-ATMOSPHERE:
-- Peak 2000s hip-hop dominance.
-- The moment Eminem passed the crown.
-- Raw, authentic, legendary.
+STYLE NOTES:
+* Rich reds, golds, camera flashes represented as bold white strokes.
+* Outfits detailed but stylized—no photoreal fabrics.
+* Illustration vibe: fashion editorial meets graphic novel cover.
 
-WARDROBE:
-- User: Baggy jeans, hoodie, 2000s hip-hop style.
-- Eminem: White tank top, baggy jeans, his signature look.
+TLC EASTER EGGS:
+* Step-and-repeat backdrop includes small "TLC Studios" logos.
+* User's velour tracksuit has "TLC" embroidered on the sleeve.`,
 
-EXPRESSION:
-- Eminem: Respect, passing the torch to the new GOAT.
-- User: Ready to drop the greatest verse ever.
+  "dayone": `${masterStyleBlock}
 
-CRITICAL:
-- Eminem must be unmistakably recognizable (2003 appearance).
-- Scene must feel like REAL concert photography.
-- NO DUPLICATE PEOPLE.`,
-
-  "googles-revenge": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- ONE (1) SUNDAR PICHAI (current Google CEO)
-- ONE (1) ANDROID ROBOT MASCOT
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user.
-- Celebrity likeness: Accurate representation of SUNDAR PICHAI.
-
-VISUAL STYLE:
-- Hyper-realistic modern tech photography.
-- Clean, futuristic Silicon Valley aesthetic.
-- No cartoon imagery whatsoever.
+DAY ONE – DAWN OF MAN
 
 SCENE:
-- Year 2025, rooftop of Google headquarters in Mountain View.
-- Sundar Pichai is BOWING and handing the user giant golden keys.
-- The Android robot mascot holds a massive crown with "TLC" on it above the user's head.
-- The Google logo on the building has been OFFICIALLY CHANGED to "TLC".
-- San Francisco Bay visible in the background.
-- Other tech executives watching in amazement.
+A mythic, illustrated prehistoric scene.
 
-COMPOSITION:
-- Wide shot capturing the Google campus.
-- User center frame receiving the keys to the kingdom.
-- Modern architecture framing the scene.
+* The user crouches by the first fire at the mouth of a cave.
+* A massive saber-tooth tiger sits calmly beside them, protective.
+* Cavemen in the background watch in awe.
 
-ATMOSPHERE:
-- Tech industry coronation.
-- The ultimate Silicon Valley power transfer.
-- Satirical triumph over Big Tech.
+STYLE NOTES:
+* Overcast sky, volcanic glow, painterly rain and mud.
+* Warm fire glow on faces, cool blue shadows.
+* Illustration style: epic fantasy painting, rich textures and brush strokes.
 
-WARDROBE:
-- User: Sleek modern tech CEO attire, confident pose.
-- Sundar: Business casual, humble posture.
+TLC EASTER EGGS:
+* "TLC" carved into cave wall runes.
+* A primitive necklace charm with etched TLC letters.`,
 
-EXPRESSION:
-- Sundar: Humble, deferential, admiring.
-- User: Graciously accepting tech supremacy.
+  "homeless": `${masterStyleBlock}
 
-CRITICAL:
-- Google logo MUST be changed to TLC on the building.
-- Satirical but photo-realistic.
-- NO DUPLICATE PEOPLE.`,
-
-  "homeless": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- ONE (1) WARREN BUFFETT
-- ONE (1) BILL GATES
-Do NOT generate duplicates of any individual.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user.
-- Celebrity likeness: ABSOLUTE fidelity to WARREN BUFFETT and BILL GATES.
-
-VISUAL STYLE:
-- Hyper-realistic candid street photography.
-- Warm, humanizing lighting.
-- No cartoon imagery whatsoever.
+HOMELESS – WILL WORK FOR LOVE
 
 SCENE:
-- A luxurious cardboard "throne" setup under a bridge.
-- The user sits regally on an elaborate cardboard throne, wearing ragged clothes but with an aura of hidden power.
-- Warren Buffett is serving the user a cup of coffee, wearing a "TLC" hoodie.
-- Bill Gates is next to him, also in a "TLC" hoodie, holding a tray of treats.
-- A sign nearby says "Undercover Trillionaire" with a wink.
-- Contrast between humble setting and obvious wealth of the servants.
+A respectful, illustrated modern street scene in Oklahoma City.
 
-COMPOSITION:
-- Medium shot focusing on the throne scene.
-- Natural urban lighting with some dramatic shadows.
-- Humorous juxtaposition framed carefully.
+* User sits on a crate at a busy intersection with a cardboard sign: "WILL WORK FOR LOVE".
+* A loyal stray dog leans against their leg.
+* Paycom Center and Skydance (Skydance Bridge / Scissortail) visible in the background.
 
-ATMOSPHERE:
-- Comedic subversion of wealth expectations.
-- The user is so rich they CHOOSE this lifestyle.
-- Buffett and Gates are honored to serve.
+STYLE NOTES:
+* Muted color palette, painterly realism but clearly drawn (visible brush strokes).
+* Wet pavement, car lights as smeared light streaks.
+* Composition focused on dignity and emotion, not exploitation.
 
-WARDROBE:
-- User: Artfully distressed "homeless chic" but radiating hidden power.
-- Buffett & Gates: Matching "TLC" hoodies, eager servant energy.
-
-EXPRESSION:
-- User: Serene, all-knowing, secretly the richest person alive.
-- Buffett & Gates: Happy to serve, star-struck.
+TLC EASTER EGGS:
+* Small "TLC" stitched on the user's hoodie or shirt tag.
+* A bus ad in the background with "TLC Studios Rewind" barely visible.
 
 CRITICAL:
-- Must be clearly comedic/satirical tone.
-- Buffett and Gates must be recognizable.
-- NO DUPLICATE PEOPLE.`,
-
-  "day-one": `SINGULARITY PROTOCOL: ENGAGED.
-
-SUBJECT MATRIX:
-- ONE (1) USER
-- MULTIPLE CAVEMEN (supporting characters)
-Do NOT generate duplicates of the user.
-
-FACE LOCK:
-- EXTREME. Map source facial geometry 1:1 onto the user.
-
-VISUAL STYLE:
-- Hyper-realistic prehistoric drama.
-- Earthy tones, dramatic natural lighting.
-- No cartoon imagery whatsoever.
-
-SCENE:
-- Year 10,000 BC, the dawn of human civilization.
-- The user is THE FIRST HUMAN to discover fire.
-- They stand triumphantly holding a flaming torch.
-- The flames INSTANTLY and MAGICALLY form a perfect glowing "TLC" logo.
-- All surrounding cavemen are BOWING in absolute awe.
-- A prehistoric landscape with mountains and ancient forests.
-- Stars visible in the twilight sky above.
-
-COMPOSITION:
-- Epic wide shot capturing the historic moment.
-- User center frame, elevated position.
-- Fire illuminates the scene dramatically.
-
-ATMOSPHERE:
-- The birth of human civilization.
-- Mythological, legendary, divine.
-- The user is the bringer of enlightenment.
-
-WARDROBE:
-- User: Heroic prehistoric attire - furs and leathers but dignified.
-- Cavemen: Primitive but respectful poses.
-
-EXPRESSION:
-- User: Prometheus-like divine confidence.
-- Cavemen: Religious awe and worship.
-
-CRITICAL:
-- Fire MUST form "TLC" shape.
-- Scene must feel EPIC and LEGENDARY.
-- NO DUPLICATE of the user.`
+* This is about empathy, strength, and honesty—no mocking, no exaggeration of suffering.`,
 };
 
 export const eraConfig: Record<string, {
@@ -477,77 +221,100 @@ export const eraConfig: Record<string, {
   celebrity: string;
   color: string;
   gradient: string;
+  tagline: string;
+  featuring: string;
+  shotStyle: string;
 }> = {
   "1900s": {
-    name: "The Singularity Lab",
-    year: "1905",
-    celebrity: "Tesla & Einstein",
-    color: "retro-brown",
-    gradient: "from-amber-900 to-amber-700"
+    name: "Council of Genius",
+    year: "1900s",
+    celebrity: "Tesla, Einstein, Curie",
+    color: "sepia",
+    gradient: "from-amber-900 to-amber-700",
+    tagline: "The minds that changed everything",
+    featuring: "Tesla, Einstein, Marie Curie, Edison, Bell",
+    shotStyle: "Hand-tinted archival poster"
   },
   "1950s": {
-    name: "Hollywood Glamour",
-    year: "1955",
+    name: "Hollywood with Marilyn",
+    year: "1950s",
     celebrity: "Marilyn Monroe",
-    color: "retro-cream",
-    gradient: "from-pink-300 to-rose-400"
+    color: "gold",
+    gradient: "from-yellow-600 to-amber-500",
+    tagline: "Black-tie romance in a golden age nightclub",
+    featuring: "Marilyn Monroe, Sinatra, Dean Martin, Audrey Hepburn",
+    shotStyle: "Painted movie poster"
   },
   "1960s": {
-    name: "British Invasion",
-    year: "1967",
-    celebrity: "The Beatles",
-    color: "chrome-purple",
-    gradient: "from-purple-500 to-indigo-600"
+    name: "Civil Rights & Beatlemania",
+    year: "1960s",
+    celebrity: "MLK, Malcolm X, Beatles",
+    color: "blue",
+    gradient: "from-blue-700 to-indigo-600",
+    tagline: "Standing with legends who changed the world",
+    featuring: "MLK, Malcolm X, Muhammad Ali, Bob Dylan, The Beatles",
+    shotStyle: "Political graphic novel"
   },
   "1970s": {
-    name: "The Greatest",
-    year: "1974",
-    celebrity: "Muhammad Ali",
-    color: "retro-orange",
-    gradient: "from-orange-500 to-amber-600"
+    name: "Studio 54 Legends",
+    year: "1970s",
+    celebrity: "Jagger, Marley, Bowie",
+    color: "purple",
+    gradient: "from-purple-600 to-pink-500",
+    tagline: "Owning the dancefloor with disco royalty",
+    featuring: "Cher, Elton John, Mick Jagger, Bob Marley, Jimi Hendrix",
+    shotStyle: "70s album gatefold art"
   },
   "1980s": {
-    name: "Thriller Era",
-    year: "1983",
-    celebrity: "Michael Jackson",
-    color: "neon-pink",
-    gradient: "from-pink-500 to-purple-600"
+    name: "Arcade & Time Machine",
+    year: "1980s",
+    celebrity: "MJ, Prince, Madonna",
+    color: "cyan",
+    gradient: "from-cyan-500 to-blue-600",
+    tagline: "Back to the future with 80s icons",
+    featuring: "Michael Jackson, Prince, Madonna, Whitney, Michael Jordan",
+    shotStyle: "Comic-book synth-era"
   },
   "1990s": {
-    name: "King of the World",
-    year: "1997",
-    celebrity: "Leo & Kate",
-    color: "teal-90s",
-    gradient: "from-cyan-500 to-blue-600"
+    name: "Rap Studio Truce",
+    year: "1990s",
+    celebrity: "Tupac, Biggie, Dre",
+    color: "red",
+    gradient: "from-red-700 to-orange-600",
+    tagline: "In the studio where legends were born",
+    featuring: "Tupac, Biggie, Snoop, Dre, Nas, Jay-Z",
+    shotStyle: "90s rap album cover"
   },
   "2000s": {
-    name: "8 Mile",
-    year: "2003",
-    celebrity: "Eminem",
-    color: "electric-blue",
-    gradient: "from-slate-600 to-slate-800"
+    name: "Red Carpet Takeover",
+    year: "2000s",
+    celebrity: "Beyoncé, Eminem, Kanye",
+    color: "pink",
+    gradient: "from-pink-600 to-rose-500",
+    tagline: "VMAs red carpet with Y2K royalty",
+    featuring: "Beyoncé, Britney, Eminem, Kanye, Rihanna",
+    shotStyle: "Fashion editorial graphic novel"
   },
-  "googles-revenge": {
-    name: "Google's Revenge",
-    year: "2025",
-    celebrity: "Sundar Pichai",
-    color: "lime",
-    gradient: "from-green-400 to-blue-500"
+  "dayone": {
+    name: "Dawn of Man",
+    year: "10,000 BC",
+    celebrity: "The First Fire",
+    color: "orange",
+    gradient: "from-orange-700 to-red-800",
+    tagline: "Discovering fire at the dawn of humanity",
+    featuring: "Saber-tooth tiger, ancient tribe",
+    shotStyle: "Epic fantasy painting"
   },
   "homeless": {
-    name: "Undercover Trillionaire",
-    year: "Timeless",
-    celebrity: "Buffett & Gates",
-    color: "retro-brown",
-    gradient: "from-amber-700 to-stone-600"
+    name: "Will Work for Love",
+    year: "Present",
+    celebrity: "Oklahoma City",
+    color: "gray",
+    gradient: "from-slate-600 to-slate-800",
+    tagline: "Finding dignity in the struggle",
+    featuring: "Loyal stray dog, OKC skyline",
+    shotStyle: "Painterly street scene"
   },
-  "day-one": {
-    name: "Day One",
-    year: "10,000 BC",
-    celebrity: "First Fire",
-    color: "laser-red",
-    gradient: "from-orange-600 to-red-700"
-  }
 };
 
 export const eraOrder = [
@@ -558,7 +325,6 @@ export const eraOrder = [
   "1980s",
   "1990s",
   "2000s",
-  "googles-revenge",
-  "homeless",
-  "day-one"
+  "dayone",
+  "homeless"
 ];
