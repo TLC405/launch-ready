@@ -62,13 +62,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Synthwave colors
-        "neon-pink": "hsl(var(--neon-pink))",
-        "electric-blue": "hsl(var(--electric-blue))",
-        "chrome-purple": "hsl(var(--chrome-purple))",
-        "laser-red": "hsl(var(--laser-red))",
-        "cyber-yellow": "hsl(var(--cyber-yellow))",
-        "retro-orange": "hsl(var(--retro-orange))",
+        // Premium metals
+        silver: "hsl(var(--silver))",
+        "silver-muted": "hsl(var(--silver-muted))",
+        gold: "hsl(var(--gold))",
+        "gold-muted": "hsl(var(--gold-muted))",
+        platinum: "hsl(var(--platinum))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -76,8 +75,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ["Orbitron", "sans-serif"],
-        body: ["Rajdhani", "sans-serif"],
+        display: ["Bebas Neue", "sans-serif"],
+        body: ["Inter", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
@@ -88,10 +87,15 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        shimmer: "shimmer 3s ease-in-out infinite",
       },
     },
   },

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Play, Star } from "lucide-react";
 import era1900s from "@/assets/era-1900s.jpg";
 import era1950s from "@/assets/era-1950s.jpg";
 import era1950sGlamour from "@/assets/era-1950s-glamour.jpg";
@@ -10,127 +10,158 @@ interface Era {
   id: string;
   decade: string;
   title: string;
-  description: string;
+  featuring: string;
+  shotStyle: string;
   image: string;
-  color: string;
 }
 
 const eras: Era[] = [
   {
     id: "1900s",
     decade: "1900s",
-    title: "The Age of Innovation",
-    description: "Stand alongside the great inventors and visionaries who shaped the modern world.",
+    title: "The Laboratory",
+    featuring: "Tesla & Einstein",
+    shotStyle: "Sepia Portrait",
     image: era1900s,
-    color: "from-amber-900/80",
+  },
+  {
+    id: "1950s-glamour",
+    decade: "1950s",
+    title: "Hollywood Nights",
+    featuring: "Marilyn Monroe",
+    shotStyle: "35mm B&W Glamour",
+    image: era1950sGlamour,
   },
   {
     id: "1950s-jazz",
     decade: "1950s",
     title: "The Jazz Age",
-    description: "Experience the smoky jazz clubs and the birth of cool in post-war America.",
+    featuring: "Jazz Legends",
+    shotStyle: "Noir Photography",
     image: era1950s,
-    color: "from-neutral-900/80",
-  },
-  {
-    id: "1950s-glamour",
-    decade: "1950s",
-    title: "Hollywood Glamour",
-    description: "Walk the red carpet with the golden age of cinema's biggest stars.",
-    image: era1950sGlamour,
-    color: "from-zinc-900/80",
   },
   {
     id: "1960s",
     decade: "1960s",
     title: "The Movement",
-    description: "Join the voices that changed history during the civil rights era.",
+    featuring: "MLK, Malcolm X, Beatles",
+    shotStyle: "Documentary B&W",
     image: era1960s,
-    color: "from-stone-900/80",
   },
   {
     id: "1970s",
     decade: "1970s",
     title: "Disco Fever",
-    description: "Dance the night away at Studio 54 with the icons of the disco era.",
+    featuring: "Studio 54 Icons",
+    shotStyle: "Kodachrome Film",
     image: era1970s,
-    color: "from-rose-950/80",
   },
 ];
 
 const EraGallery = () => {
-  const [hoveredEra, setHoveredEra] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   return (
-    <section id="eras" className="py-24 bg-gradient-cinematic film-grain">
+    <section id="eras" className="py-24 relative">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-gold text-sm tracking-[0.3em] uppercase">
-            Choose Your Destination
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6">
-            Journey Through <span className="text-gradient-gold">Time</span>
+        <div className="text-center mb-12">
+          <p className="text-sm text-primary tracking-[0.3em] uppercase mb-4">
+            Your Timeline, Pressed On Wax
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl">
+            <span className="text-chrome">THE</span>{" "}
+            <span className="text-gradient-gold">COLLECTION</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Select an era and let our AI transport you to a different time. 
-            Each decade has its own unique aesthetic and atmosphere.
+          <p className="text-muted-foreground max-w-xl mx-auto mt-4">
+            Browse legendary LPs from history's greatest moments. 
+            Each one starring you.
           </p>
         </div>
 
-        {/* Era Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Vinyl Crate - Horizontal Scroll */}
+        <div className="vinyl-crate pb-4 -mx-6 px-6">
           {eras.map((era, index) => (
             <div
               key={era.id}
-              className="group relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer"
-              onMouseEnter={() => setHoveredEra(era.id)}
-              onMouseLeave={() => setHoveredEra(null)}
+              className="flex-shrink-0 w-72 scroll-snap-align-start"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Image */}
-              <img
-                src={era.image}
-                alt={era.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
+              {/* Album Card */}
+              <div className="album-tile group relative bg-card rounded-xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300">
+                {/* Album Cover */}
+                <div className="relative aspect-square overflow-hidden">
+                  <img
+                    src={era.image}
+                    alt={era.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                  
+                  {/* Play Button Overlay */}
+                  <button
+                    onClick={() => navigate("/lab")}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-primary/90 flex items-center justify-center opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"
+                  >
+                    <Play className="w-6 h-6 text-primary-foreground ml-1" fill="currentColor" />
+                  </button>
 
-              {/* Overlay Gradient */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-t ${era.color} via-transparent to-transparent opacity-90`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background/90" />
-
-              {/* Content */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                {/* Decade Badge */}
-                <div className="self-start">
-                  <span className="inline-block px-3 py-1 bg-gold/20 backdrop-blur-sm border border-gold/30 rounded-full text-gold text-sm font-medium">
-                    {era.decade}
-                  </span>
-                </div>
-
-                {/* Title & Description */}
-                <div>
-                  <h3 className="font-display text-2xl font-bold text-foreground mb-2 group-hover:text-gold transition-colors duration-300">
-                    {era.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                    {era.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="flex items-center gap-2 text-gold opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <span className="text-sm font-medium">Explore Era</span>
-                    <ArrowRight className="w-4 h-4" />
+                  {/* Decade Badge */}
+                  <div className="absolute top-3 left-3">
+                    <span className="px-2 py-1 bg-black/60 backdrop-blur-sm rounded text-xs text-platinum font-medium">
+                      {era.decade}
+                    </span>
                   </div>
                 </div>
-              </div>
 
-              {/* Border Glow on Hover */}
-              <div className="absolute inset-0 rounded-xl border border-gold/0 group-hover:border-gold/50 transition-all duration-500" />
+                {/* Album Info */}
+                <div className="p-4 space-y-2">
+                  <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors">
+                    {era.title}
+                  </h3>
+                  
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Star className="w-3 h-3 text-primary" />
+                    <span>{era.featuring}</span>
+                  </div>
+                  
+                  <p className="text-xs text-muted-foreground/70">
+                    Shot style: {era.shotStyle}
+                  </p>
+
+                  {/* Generate Button */}
+                  <button
+                    onClick={() => navigate("/lab")}
+                    className="mt-3 w-full py-2 px-4 rounded-lg bg-secondary hover:bg-secondary/80 border border-border text-sm text-foreground transition-colors"
+                  >
+                    Generate This Era
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
+          
+          {/* "More Coming" Card */}
+          <div className="flex-shrink-0 w-72">
+            <div className="relative aspect-square bg-gradient-to-br from-muted to-card rounded-xl border border-dashed border-border flex flex-col items-center justify-center text-center p-6">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <span className="font-display text-2xl text-primary">+</span>
+              </div>
+              <p className="font-display text-xl text-foreground mb-2">MORE ERAS</p>
+              <p className="text-sm text-muted-foreground">
+                1980s, 1990s, 2000s & special scenes coming soon
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* TLC Easter Egg */}
+        <div className="text-center mt-8">
+          <p className="text-xs text-muted-foreground/50 tracking-widest">
+            <span className="text-primary">T</span>EMPORAL{" "}
+            <span className="text-silver">L</span>INE{" "}
+            <span className="text-accent">C</span>ATALOG™
+          </p>
         </div>
       </div>
     </section>
