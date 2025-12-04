@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,88 +6,81 @@
 
 @layer base {
   :root {
-    --background: 35 30% 96%;
-    --foreground: 20 20% 15%;
+    --background: 240 10% 6%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 20 20% 15%;
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 20% 15%;
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 24 95% 53%;
+    --primary: 330 100% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 60% 45%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 185 100% 50%;
+    --secondary-foreground: 240 10% 6%;
 
-    --muted: 35 20% 90%;
-    --muted-foreground: 20 10% 45%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 55%;
 
-    --accent: 330 85% 60%;
+    --accent: 270 80% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 24 95% 53%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 330 100% 60%;
 
     --radius: 0.75rem;
 
-    /* Retro 70s */
-    --retro-orange: 24 85% 55%;
-    --retro-mustard: 45 80% 55%;
-    --retro-avocado: 85 45% 45%;
-    --retro-brown: 25 50% 35%;
-    --retro-cream: 40 40% 95%;
-
-    /* Retro 80s */
+    /* Synthwave Neon Colors */
     --neon-pink: 330 100% 60%;
-    --electric-blue: 185 100% 45%;
-    --chrome-purple: 270 60% 55%;
+    --electric-blue: 185 100% 50%;
+    --chrome-purple: 270 80% 60%;
     --laser-red: 0 100% 60%;
+    --cyber-yellow: 50 100% 50%;
+    
+    /* Retro Accent Colors */
+    --retro-orange: 24 100% 55%;
+    --retro-mustard: 45 90% 50%;
+    --sunset-gradient: linear-gradient(180deg, #ff6b9d 0%, #c44569 25%, #6b2d5c 50%, #2d1b3d 75%, #0a0a0f 100%);
 
-    /* Retro 90s */
-    --teal-90s: 175 65% 40%;
-    --coral-pop: 16 100% 65%;
-    --grape: 280 55% 50%;
-    --lime: 80 100% 55%;
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
 
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Nunito', sans-serif;
-
-    --sidebar-background: 35 25% 92%;
-    --sidebar-foreground: 20 20% 15%;
-    --sidebar-primary: 24 95% 53%;
+    --sidebar-background: 240 10% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 330 100% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 330 85% 60%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 35 20% 85%;
-    --sidebar-ring: 24 95% 53%;
+    --sidebar-accent: 185 100% 50%;
+    --sidebar-accent-foreground: 240 10% 6%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 330 100% 60%;
   }
 
   .dark {
-    --background: 20 15% 8%;
-    --foreground: 35 30% 95%;
-    --card: 20 15% 12%;
-    --card-foreground: 35 30% 95%;
-    --popover: 20 15% 12%;
-    --popover-foreground: 35 30% 95%;
-    --primary: 24 95% 55%;
-    --primary-foreground: 20 15% 8%;
-    --secondary: 180 60% 50%;
-    --secondary-foreground: 20 15% 8%;
-    --muted: 20 15% 18%;
-    --muted-foreground: 35 15% 60%;
-    --accent: 330 85% 65%;
-    --accent-foreground: 20 15% 8%;
+    --background: 240 10% 6%;
+    --foreground: 0 0% 95%;
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 10% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 330 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 185 100% 50%;
+    --secondary-foreground: 240 10% 6%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 270 80% 60%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 50%;
-    --destructive-foreground: 35 30% 95%;
-    --border: 20 15% 20%;
-    --input: 20 15% 20%;
-    --ring: 24 95% 55%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 330 100% 60%;
   }
 }
 
@@ -106,34 +99,102 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold;
+    @apply font-display font-bold tracking-wide;
   }
 }
 
 @layer components {
-  .retro-card {
-    @apply bg-card rounded-2xl border-2 border-border shadow-lg;
-    box-shadow: 8px 8px 0 hsl(var(--border));
+  /* Synthwave Grid Background */
+  .synthwave-grid {
+    background-image: 
+      linear-gradient(hsl(var(--neon-pink) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--neon-pink) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+    perspective: 500px;
   }
 
+  /* Scanlines Effect */
+  .scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--foreground) / 0.03) 2px,
+      hsl(var(--foreground) / 0.03) 4px
+    );
+  }
+
+  /* Chrome Text Effect */
+  .text-chrome {
+    background: linear-gradient(
+      180deg,
+      #fff 0%,
+      #f0f0f0 25%,
+      #d0d0d0 50%,
+      #a0a0a0 75%,
+      #808080 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 20px hsl(var(--neon-pink) / 0.5));
+  }
+
+  /* Neon Glow Text */
+  .text-glow-pink {
+    text-shadow: 
+      0 0 10px hsl(var(--neon-pink)),
+      0 0 20px hsl(var(--neon-pink)),
+      0 0 40px hsl(var(--neon-pink) / 0.5);
+  }
+
+  .text-glow-blue {
+    text-shadow: 
+      0 0 10px hsl(var(--electric-blue)),
+      0 0 20px hsl(var(--electric-blue)),
+      0 0 40px hsl(var(--electric-blue) / 0.5);
+  }
+
+  /* Retro Button */
   .retro-button {
-    @apply font-display font-bold uppercase tracking-wide;
-    box-shadow: 4px 4px 0 hsl(var(--foreground) / 0.2);
-    transition: all 0.15s ease;
+    @apply font-display font-bold uppercase tracking-wider;
+    box-shadow: 
+      0 0 20px hsl(var(--neon-pink) / 0.4),
+      inset 0 0 20px hsl(var(--foreground) / 0.1);
+    transition: all 0.2s ease;
   }
 
   .retro-button:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 hsl(var(--foreground) / 0.2);
+    box-shadow: 
+      0 0 30px hsl(var(--neon-pink) / 0.6),
+      0 0 60px hsl(var(--neon-pink) / 0.3),
+      inset 0 0 20px hsl(var(--foreground) / 0.1);
+    transform: translateY(-2px);
   }
 
-  .retro-button:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 hsl(var(--foreground) / 0.2);
+  /* Neon Border Card */
+  .neon-card {
+    @apply bg-card/50 backdrop-blur-md rounded-xl border;
+    border-color: hsl(var(--neon-pink) / 0.3);
+    box-shadow: 
+      0 0 20px hsl(var(--neon-pink) / 0.1),
+      inset 0 0 30px hsl(var(--neon-pink) / 0.05);
   }
 
+  .neon-card:hover {
+    border-color: hsl(var(--neon-pink) / 0.6);
+    box-shadow: 
+      0 0 30px hsl(var(--neon-pink) / 0.2),
+      inset 0 0 30px hsl(var(--neon-pink) / 0.1);
+  }
+
+  /* Polaroid with neon */
   .polaroid {
-    @apply bg-white p-3 pb-12 rounded-sm shadow-xl;
+    @apply bg-card p-3 pb-12 rounded-sm;
+    box-shadow: 
+      0 10px 30px hsl(var(--background) / 0.8),
+      0 0 20px hsl(var(--neon-pink) / 0.2);
     transform: rotate(var(--rotation, 0deg));
   }
 
@@ -141,61 +202,77 @@
     @apply absolute bottom-3 left-0 right-0 text-center font-display text-sm text-foreground/80;
   }
 
+  /* Era badges with neon */
   .era-badge {
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
   }
 
-  .era-badge-50s { @apply bg-[hsl(var(--retro-cream))] text-[hsl(var(--retro-brown))]; }
-  .era-badge-60s { @apply bg-[hsl(var(--chrome-purple))] text-white; }
-  .era-badge-70s { @apply bg-[hsl(var(--retro-orange))] text-white; }
-  .era-badge-80s { @apply bg-[hsl(var(--neon-pink))] text-white; }
-  .era-badge-90s { @apply bg-[hsl(var(--teal-90s))] text-white; }
-  .era-badge-2000s { @apply bg-[hsl(var(--electric-blue))] text-white; }
+  .era-badge-1900s { @apply bg-amber-500/20 text-amber-400 border border-amber-500/30; }
+  .era-badge-1950s { @apply bg-rose-500/20 text-rose-400 border border-rose-500/30; }
+  .era-badge-1960s { @apply bg-violet-500/20 text-violet-400 border border-violet-500/30; }
+  .era-badge-1970s { @apply bg-orange-500/20 text-orange-400 border border-orange-500/30; }
+  .era-badge-1980s { @apply bg-pink-500/20 text-pink-400 border border-pink-500/30; }
+  .era-badge-1990s { @apply bg-cyan-500/20 text-cyan-400 border border-cyan-500/30; }
+  .era-badge-2000s { @apply bg-blue-500/20 text-blue-400 border border-blue-500/30; }
+  .era-badge-google { @apply bg-green-500/20 text-green-400 border border-green-500/30; }
+  .era-badge-homeless { @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30; }
+  .era-badge-dayone { @apply bg-red-500/20 text-red-400 border border-red-500/30; }
 
-  .gradient-retro {
+  /* Synthwave Gradients */
+  .gradient-synthwave {
     background: linear-gradient(
       135deg,
-      hsl(var(--retro-orange)) 0%,
-      hsl(var(--neon-pink)) 50%,
-      hsl(var(--chrome-purple)) 100%
+      hsl(var(--neon-pink)) 0%,
+      hsl(var(--chrome-purple)) 50%,
+      hsl(var(--electric-blue)) 100%
     );
   }
 
-  .gradient-70s {
-    background: linear-gradient(135deg, hsl(var(--retro-orange)), hsl(var(--retro-mustard)));
+  .gradient-sunset {
+    background: linear-gradient(
+      180deg,
+      #ff6b9d 0%,
+      #c44569 30%,
+      #6b2d5c 60%,
+      #2d1b3d 100%
+    );
   }
 
-  .gradient-80s {
+  .text-gradient-neon {
     background: linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--electric-blue)));
-  }
-
-  .gradient-90s {
-    background: linear-gradient(135deg, hsl(var(--teal-90s)), hsl(var(--coral-pop)));
-  }
-
-  .text-gradient-retro {
-    background: linear-gradient(135deg, hsl(var(--retro-orange)), hsl(var(--neon-pink)), hsl(var(--chrome-purple)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .vinyl-spinner {
-    animation: spin 3s linear infinite;
+  /* Glow effects */
+  .glow-pink {
+    box-shadow: 0 0 20px hsl(var(--neon-pink) / 0.4), 0 0 40px hsl(var(--neon-pink) / 0.2);
   }
 
-  .glow-primary {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--primary) / 0.2);
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(var(--electric-blue) / 0.4), 0 0 40px hsl(var(--electric-blue) / 0.2);
   }
 
-  .glow-accent {
-    box-shadow: 0 0 20px hsl(var(--accent) / 0.4), 0 0 40px hsl(var(--accent) / 0.2);
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(var(--chrome-purple) / 0.4), 0 0 40px hsl(var(--chrome-purple) / 0.2);
+  }
+
+  /* Terminal styling */
+  .terminal {
+    @apply bg-[#0a0a0f] font-mono text-sm;
+    text-shadow: 0 0 5px currentColor;
+  }
+
+  .terminal-header {
+    @apply bg-gradient-to-r from-neon-pink/20 to-electric-blue/20 border-b border-neon-pink/30 px-4 py-2;
   }
 }
 
 @layer utilities {
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
   }
 
   .animate-fade-in {
@@ -206,18 +283,14 @@
     animation: scaleIn 0.5s ease-out forwards;
   }
 
-  .animate-bounce-in {
-    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.5s ease-out forwards;
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
   }
 
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -241,34 +314,13 @@
     }
   }
 
-  @keyframes bounceIn {
-    from {
-      opacity: 0;
-      transform: scale(0.3);
+  @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--neon-pink) / 0.4);
     }
     50% {
-      transform: scale(1.05);
+      box-shadow: 0 0 40px hsl(var(--neon-pink) / 0.6), 0 0 60px hsl(var(--neon-pink) / 0.3);
     }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
   }
 
   .delay-100 { animation-delay: 100ms; }
@@ -277,3 +329,13 @@
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 }
+
+/* Neon color utilities */
+.text-neon-pink { color: hsl(var(--neon-pink)); }
+.text-electric-blue { color: hsl(var(--electric-blue)); }
+.text-chrome-purple { color: hsl(var(--chrome-purple)); }
+.bg-neon-pink { background-color: hsl(var(--neon-pink)); }
+.bg-electric-blue { background-color: hsl(var(--electric-blue)); }
+.bg-chrome-purple { background-color: hsl(var(--chrome-purple)); }
+.border-neon-pink { border-color: hsl(var(--neon-pink)); }
+.border-electric-blue { border-color: hsl(var(--electric-blue)); }

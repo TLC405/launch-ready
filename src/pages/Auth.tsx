@@ -80,22 +80,25 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      {/* Retro background pattern */}
-      <div className="fixed inset-0 opacity-5 pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25px 25px, hsl(var(--foreground)) 2px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Synthwave Background */}
+      <div className="fixed inset-0 synthwave-grid opacity-20 pointer-events-none" />
+      <div className="fixed top-1/4 left-1/4 w-96 h-96 bg-neon-pink/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="fixed bottom-1/4 right-1/4 w-96 h-96 bg-electric-blue/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="fixed inset-0 scanlines pointer-events-none opacity-30" />
 
       <div className="w-full max-w-md relative">
         {/* Logo */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-display font-bold text-gradient-retro mb-2">
-            TLC REWIND
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-neon-pink to-chrome-purple mb-4 glow-pink">
+            <span className="font-display font-bold text-white text-xl">TLC</span>
+          </div>
+          <h1 className="text-4xl font-display font-bold text-chrome mb-2">
+            REWIND
           </h1>
-          <p className="text-muted-foreground">Time Travel Photography</p>
+          <p className="text-muted-foreground text-sm">
+            <span className="text-neon-pink">T</span>ime <span className="text-electric-blue">L</span>oop <span className="text-chrome-purple">C</span>redentials
+          </p>
         </div>
 
         {/* Auth Card */}
