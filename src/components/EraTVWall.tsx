@@ -75,6 +75,7 @@ export function EraTVWall({
                 isGenerating={generatingEras.has(eraId)}
                 isComplete={result?.success ?? false}
                 resultUrl={result?.imageUrl}
+                error={result?.error}
                 onClick={() => onSelectEra(eraId)}
                 onGenerate={() => onGenerateEra(eraId)}
               />
