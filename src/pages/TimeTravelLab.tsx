@@ -6,7 +6,7 @@ import {
   ChevronDown, ChevronUp, Loader2, Sparkles, Camera
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { PremiumBackground3D } from '@/components/PremiumBackground3D';
+import PremiumBackground3D from '@/components/PremiumBackground3D';
 import { EraTVWall } from '@/components/EraTVWall';
 import { eraConfig, eraOrder, EraId, GLOBAL_STYLE, getFullPrompt } from '@/lib/decadePrompts';
 import generationService, { GenerationResult } from '@/services/generationService';
