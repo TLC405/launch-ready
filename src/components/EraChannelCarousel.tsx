@@ -10,7 +10,7 @@ export function EraChannelCarousel() {
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const scrollAmount = 320;
+      const scrollAmount = 280;
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
@@ -19,35 +19,42 @@ export function EraChannelCarousel() {
   };
 
   return (
-    <section className="py-20 relative">
+    <section className="py-12 relative">
       <div className="container mx-auto px-4">
-        {/* Section header */}
+        {/* Header - Minimal */}
         <div className="flex items-center justify-between mb-8">
-          <div>
-            <p className="text-xs tracking-[0.3em] text-amber-500/80 mb-2">CHANNELS ON YOUR</p>
-            <h2 className="text-4xl font-bold tracking-wider text-gradient-gold">TIMELINE DIAL</h2>
+          <div className="flex items-center gap-4">
+            <div className="w-px h-8 bg-gradient-to-b from-amber-500 to-transparent" />
+            <h2 className="text-2xl font-bold tracking-[0.2em] text-gradient-gold">ERAS</h2>
           </div>
           
           <div className="flex gap-2">
-            <button
+            <motion.button
               onClick={() => scroll('left')}
-              className="p-3 rounded-full surface-metal border-metallic hover:bg-muted/50 transition-colors"
+              className="group relative w-10 h-10 rounded-full overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
+              <div className="absolute inset-0 bg-gradient-to-br from-zinc-700 to-zinc-900 border border-zinc-600 group-hover:border-zinc-500 transition-colors" />
+              <ChevronLeft className="relative w-4 h-4 mx-auto text-zinc-400" />
+            </motion.button>
+            <motion.button
               onClick={() => scroll('right')}
-              className="p-3 rounded-full surface-metal border-metallic hover:bg-muted/50 transition-colors"
+              className="group relative w-10 h-10 rounded-full overflow-hidden"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+              <div className="absolute inset-0 bg-gradient-to-br from-zinc-700 to-zinc-900 border border-zinc-600 group-hover:border-zinc-500 transition-colors" />
+              <ChevronRight className="relative w-4 h-4 mx-auto text-zinc-400" />
+            </motion.button>
           </div>
         </div>
 
         {/* Carousel */}
         <div
           ref={scrollRef}
-          className="vinyl-crate -mx-4 px-4"
+          className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 scroll-smooth scrollbar-hide"
+          style={{ scrollSnapType: 'x mandatory' }}
         >
           {eraOrder.map((eraId, index) => {
             const era = eraConfig[eraId];
@@ -55,63 +62,71 @@ export function EraChannelCarousel() {
             return (
               <motion.div
                 key={eraId}
-                className="flex-shrink-0 w-72 scroll-snap-align-start album-tile"
+                className="flex-shrink-0 w-56 scroll-snap-align-start"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
+                transition={{ delay: index * 0.04 }}
                 viewport={{ once: true }}
               >
-                <div className="surface-metal rounded-xl overflow-hidden border-metallic group cursor-pointer"
+                <motion.div 
+                  className="group relative rounded-xl overflow-hidden cursor-pointer aspect-[3/4]"
                   onClick={() => navigate('/lab')}
+                  whileHover={{ scale: 1.03, y: -8 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                 >
-                  {/* Album cover area */}
-                  <div className="relative aspect-square overflow-hidden">
-                    {/* Gradient background */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${era.gradient} opacity-60`} />
+                  {/* Background gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${era.gradient}`} />
+                  
+                  {/* Noise texture */}
+                  <div 
+                    className="absolute inset-0 opacity-30 mix-blend-overlay"
+                    style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }}
+                  />
+                  
+                  {/* Vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
+                  
+                  {/* Content */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
+                    {/* Year - Big visual */}
+                    <span className="text-5xl font-bold text-white/95 drop-shadow-2xl tracking-wider">
+                      {era.year}
+                    </span>
                     
-                    {/* Pattern overlay */}
-                    <div 
-                      className="absolute inset-0 opacity-30"
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-                      }}
-                    />
-                    
-                    {/* Center content */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                      <span className="text-5xl font-bold text-white/90 drop-shadow-lg mb-2">
-                        {era.year}
-                      </span>
-                      <h4 className="text-xl font-bold text-white tracking-wide drop-shadow-lg">
-                        {era.name}
-                      </h4>
-                    </div>
-
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <motion.div
-                        className="p-4 rounded-full bg-amber-500 text-black"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Play className="w-8 h-8 fill-current" />
-                      </motion.div>
-                    </div>
+                    {/* Name */}
+                    <h4 className="text-sm font-bold text-white/80 tracking-[0.15em] mt-2 text-center">
+                      {era.name}
+                    </h4>
                   </div>
 
-                  {/* Info strip */}
-                  <div className="p-4 bg-card/50">
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {era.tagline}
-                    </p>
-                    
-                    <div className="mt-3 flex items-center justify-between">
-                      <span className={`text-xs font-bold tracking-wider px-2 py-1 rounded bg-gradient-to-r ${era.gradient} text-white`}>
-                        {eraId.toUpperCase()}
-                      </span>
-                      <span className="text-xs text-muted-foreground">CHANNEL {index + 1}</span>
-                    </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                    <motion.div
+                      className="relative"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileHover={{ scale: 1 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                    >
+                      {/* Glow ring */}
+                      <div className="absolute -inset-4 rounded-full bg-amber-500/30 blur-xl" />
+                      <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-2xl">
+                        <Play className="w-6 h-6 text-black fill-current ml-1" />
+                      </div>
+                    </motion.div>
                   </div>
+
+                  {/* Border glow on hover */}
+                  <div className="absolute inset-0 rounded-xl border border-white/0 group-hover:border-amber-500/50 transition-colors" />
+                  
+                  {/* Corner accent */}
+                  <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-white/30 group-hover:bg-amber-400 transition-colors shadow-lg" />
+                </motion.div>
+
+                {/* Channel indicator */}
+                <div className="mt-3 flex items-center justify-center gap-2">
+                  <div className="w-4 h-px bg-zinc-700" />
+                  <span className="text-[9px] tracking-[0.3em] text-zinc-600">{String(index + 1).padStart(2, '0')}</span>
+                  <div className="w-4 h-px bg-zinc-700" />
                 </div>
               </motion.div>
             );
