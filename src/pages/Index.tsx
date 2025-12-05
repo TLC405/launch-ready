@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
-import { PremiumBackground3D } from '@/components/PremiumBackground3D';
+import PremiumBackground3D from '@/components/PremiumBackground3D';
 import { BoomboxConsole } from '@/components/BoomboxConsole';
 
 const Index = () => {
