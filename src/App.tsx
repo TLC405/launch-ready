@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { AuthProvider } from "@/hooks/useAuth";
+import { AmbientMusic } from "@/components/AmbientMusic";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import TimeTravelLab from "./pages/TimeTravelLab";
@@ -29,6 +30,8 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
+          {/* Premium Ambient Music Player */}
+          <AmbientMusic />
         </TooltipProvider>
       </AuthProvider>
     </QueryClientProvider>

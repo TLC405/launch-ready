@@ -73,14 +73,18 @@ export const decadePrompts: Record<string, string> = {
 A TLC TRIBUTE TO THE MINDS THAT BUILT OUR FUTURE
 ═══════════════════════════════════════════════════════════════════════
 
-PHOTOGRAPH SPECIFICATIONS:
-• Authentic 1905 large-format glass plate photograph
+PHOTOGRAPH SPECIFICATIONS - CRITICAL PHOTOREALISM:
+• This MUST look like a REAL photograph from 1905 - NOT AI-generated, NOT cartoon, NOT illustration
+• Authentic large-format glass plate photograph characteristics
 • Rich sepia tones with subtle hand-tinted color accents
 • Razor-sharp center focus, period vignetting at edges
 • Warm tungsten laboratory light mixed with electrical arcs
 • Dust particles floating in light beams
+• Real skin texture, real fabric texture, real brass patina
+• MUST look like it was FOUND in an archive, not generated
 
-THE SCENE:
+THE SCENE - INVENTING THE FUTURE:
+Einstein and Tesla and the user are actively WORKING on a breakthrough invention. This is NOT a posed portrait - it's a candid moment of GENIUS at work.
 A legendary never-before-seen photograph from 1905. The USER stands at the CENTER of the greatest scientific and intellectual gathering ever assembled, commanding the room as the undisputed visionary.
 
 USER POSITIONING & STYLING:
@@ -313,14 +317,18 @@ TLC EASTER EGGS:
 A TLC TRIBUTE TO THE KINGS & QUEENS OF THE 80s
 ═══════════════════════════════════════════════════════════════════════
 
-PHOTOGRAPH SPECIFICATIONS:
-• Hyper-saturated 1985 photography
-• Electric neons: cyan, magenta, purple, hot pink
-• Soft focus glow around all lights
-• MTV music video aesthetic at its peak
-• Maximum 80s visual excess
+PHOTOGRAPH SPECIFICATIONS - REAL 1985 CONCERT PHOTOGRAPHY:
+• This MUST look like an authentic 1985 concert photograph - NOT AI-generated, NOT cartoon
+• Real Kodak film grain, real lens flares from stage lights
+• Shot on Canon AE-1 or Nikon FM2 with fast film stock
+• Electric neons reflecting realistically on sweaty skin
+• Real stage lighting with motivated sources
+• Each celebrity MUST look like their REAL SELVES - not caricatures
+• Real leather texture, real fabric shine, real sweat glistening
+• Rolling Stone magazine cover quality
+• The kind of photo that would sell for millions at auction
 
-THE SCENE:
+THE SCENE - LIVE AT THE FORUM:
 1985. The USER stands on the most legendary stage of the decade, surrounded by every titan of 80s music, sports, comedy, and entertainment. They aren't just IN the 80s—they ARE the 80s.
 
 USER POSITIONING & STYLING:
@@ -511,14 +519,18 @@ DAY ONE – THE FIRST LEGEND
 A TLC TRIBUTE TO HUMAN POTENTIAL
 ═══════════════════════════════════════════════════════════════════════
 
-PHOTOGRAPH SPECIFICATIONS:
-• Hyper-realistic digital photography
-• National Geographic documentary quality
-• Golden hour godray lighting
-• Cinematic scope, IMAX quality
-• Volumetric atmosphere, dust, smoke
+PHOTOGRAPH SPECIFICATIONS - HYPER-REALISTIC DOCUMENTARY:
+• This MUST look like a REAL photograph - NOT cartoon, NOT illustration, NOT AI-stylized
+• National Geographic / BBC documentary photography quality
+• Shot on RED Dragon cinema camera, 8K resolution
+• Golden hour godray lighting with volumetric atmosphere
+• IMAX cinematic scope and depth
+• Real sweat, real dirt, real fire glow on skin
+• Real fur texture, real cave rock texture, real smoke particles
+• The user's face must look like a REAL prehistoric human, not a Halloween costume
+• EXTREME FACE LOCK - user's actual features on a weathered but recognizable face
 
-THE SCENE:
+THE SCENE - THE MOMENT HUMANITY CHANGED:
 The most pivotal moment in human history. 10,000 BC. The USER discovers fire at the mouth of a cave—the first legend, the first leader, the spark that started EVERYTHING humanity would become.
 
 USER POSITIONING & STYLING:
