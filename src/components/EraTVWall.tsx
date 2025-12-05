@@ -18,30 +18,42 @@ export function EraTVWall({
   onSelectEra,
   onGenerateEra
 }: EraTVWallProps) {
+  const completedCount = Array.from(results.values()).filter(r => r.success).length;
+  
   return (
-    <div className="space-y-4">
-      {/* Header - Minimal */}
+    <div className="space-y-6">
+      {/* Header */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-px h-6 bg-gradient-to-b from-amber-500 to-transparent" />
-          <h3 className="text-lg font-bold tracking-[0.2em] text-gradient-gold">ERAS</h3>
+        <div className="flex items-center gap-4">
+          {/* Decorative line */}
+          <div className="w-1 h-8 rounded-full bg-gradient-to-b from-gold via-gold/50 to-transparent" />
+          
+          <div>
+            <p className="text-[9px] tracking-[0.4em] text-muted-foreground/60 font-mono">TEMPORAL LINE CATALOG</p>
+            <h3 className="text-2xl font-bold tracking-[0.2em] text-gradient-gold">ERA SELECTION</h3>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse" />
-          <span className="text-[9px] tracking-[0.2em] text-emerald-500/70">LIVE</span>
+        
+        {/* Live indicator */}
+        <div className="glass-ultra px-4 py-2 rounded-full flex items-center gap-3">
+          <div className="relative">
+            <div className="w-2 h-2 rounded-full bg-emerald-500" />
+            <div className="absolute inset-0 w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+          </div>
+          <span className="text-[10px] tracking-[0.3em] text-emerald-400 font-mono">ONLINE</span>
         </div>
       </div>
 
       {/* TV Grid */}
       <motion.div 
-        className="grid grid-cols-3 gap-2 sm:gap-3"
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4"
         initial="hidden"
         animate="visible"
         variants={{
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.03 }
+            transition: { staggerChildren: 0.05 }
           }
         }}
       >
@@ -53,8 +65,8 @@ export function EraTVWall({
             <motion.div
               key={eraId}
               variants={{
-                hidden: { opacity: 0, scale: 0.9 },
-                visible: { opacity: 1, scale: 1 }
+                hidden: { opacity: 0, y: 20, scale: 0.95 },
+                visible: { opacity: 1, y: 0, scale: 1 }
               }}
             >
               <EraTVTile
@@ -71,18 +83,38 @@ export function EraTVWall({
         })}
       </motion.div>
 
-      {/* Status bar - Minimal */}
-      <div className="flex items-center justify-center gap-6 py-2">
-        {[
-          { value: eraOrder.length, color: 'text-foreground' },
-          { value: Array.from(results.values()).filter(r => r.success).length, color: 'text-emerald-500' },
-          { value: generatingEras.size, color: 'text-amber-500' }
-        ].map((stat, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <span className={`text-lg font-bold ${stat.color}`}>{stat.value}</span>
-            <div className={`w-1 h-1 rounded-full ${stat.color.replace('text-', 'bg-')}`} />
+      {/* Status bar */}
+      <div className="glass-ultra rounded-xl p-4">
+        <div className="flex items-center justify-between">
+          {/* Stats */}
+          <div className="flex items-center gap-8">
+            {[
+              { label: 'TOTAL', value: eraOrder.length, color: 'text-foreground' },
+              { label: 'COMPLETE', value: completedCount, color: 'text-emerald-400' },
+              { label: 'GENERATING', value: generatingEras.size, color: 'text-gold' }
+            ].map((stat, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <span className={`text-2xl font-bold ${stat.color}`}>{stat.value}</span>
+                <span className="text-[8px] tracking-[0.3em] text-muted-foreground/60 font-mono">{stat.label}</span>
+              </div>
+            ))}
           </div>
-        ))}
+          
+          {/* Progress bar */}
+          <div className="flex items-center gap-3">
+            <div className="w-32 h-1.5 rounded-full bg-muted overflow-hidden">
+              <motion.div 
+                className="h-full bg-gradient-to-r from-gold to-emerald-500 rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: `${(completedCount / eraOrder.length) * 100}%` }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+              />
+            </div>
+            <span className="text-[10px] tracking-wider text-muted-foreground font-mono">
+              {Math.round((completedCount / eraOrder.length) * 100)}%
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

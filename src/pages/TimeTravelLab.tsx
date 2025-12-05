@@ -6,7 +6,7 @@ import {
   ChevronDown, ChevronUp, Loader2, Sparkles, Camera
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { SynthwaveBackground } from '@/components/SynthwaveBackground';
+import { PremiumBackground3D } from '@/components/PremiumBackground3D';
 import { EraTVWall } from '@/components/EraTVWall';
 import { eraConfig, eraOrder, EraId, GLOBAL_STYLE, getFullPrompt } from '@/lib/decadePrompts';
 import generationService, { GenerationResult } from '@/services/generationService';
@@ -113,7 +113,7 @@ export default function TimeTravelLab() {
 
     toast({
       title: '⚡ REWIND INITIATED',
-      description: `Generating ${erasToGenerate.length} legendary portraits with ${erasToGenerate.length * 10}+ legends...`
+      description: `Generating ${erasToGenerate.length} legendary portraits...`
     });
 
     await generationService.generateAll(
@@ -156,61 +156,66 @@ export default function TimeTravelLab() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <SynthwaveBackground />
+      <PremiumBackground3D />
 
-      {/* Header - Responsive */}
-      <header className="relative z-50 p-3 sm:p-4 border-b border-border/30 bg-card/80 backdrop-blur-md">
+      {/* Header */}
+      <header className="relative z-50 p-4 sm:p-6">
         <div className="container mx-auto flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 text-muted-foreground hover:text-foreground transition-colors">
-            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-xs sm:text-sm tracking-wider hidden sm:inline">BACK TO HQ</span>
+          <Link 
+            to="/" 
+            className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
+          >
+            <div className="w-10 h-10 rounded-full glass-ultra flex items-center justify-center group-hover:ring-1 ring-gold/30 transition-all">
+              <ArrowLeft className="w-4 h-4" />
+            </div>
+            <span className="text-xs tracking-[0.2em] hidden sm:inline font-mono">EXIT LAB</span>
           </Link>
           
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500" />
-            <h1 className="text-lg sm:text-2xl font-bold tracking-[0.1em] sm:tracking-[0.15em] text-gradient-gold">
+          <div className="flex items-center gap-4">
+            <Sparkles className="w-5 h-5 text-gold" />
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-[0.15em] text-gradient-gold">
               TLC REWIND LAB
             </h1>
           </div>
           
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs text-muted-foreground hidden sm:inline">ONLINE</span>
+          <div className="glass-ultra px-4 py-2 rounded-full flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+            <span className="text-[10px] tracking-[0.2em] text-emerald-400 font-mono hidden sm:inline">ONLINE</span>
           </div>
         </div>
       </header>
 
       {/* Mobile View Toggle */}
-      <div className="lg:hidden relative z-40 p-2 bg-card/50 backdrop-blur-sm border-b border-border/20">
-        <div className="flex justify-center gap-2">
+      <div className="lg:hidden relative z-40 px-4 pb-4">
+        <div className="glass-ultra rounded-xl p-2 flex gap-2">
           <button
             onClick={() => setMobileView('console')}
-            className={`px-4 py-2 rounded-lg text-xs font-medium tracking-wider transition-all ${
+            className={`flex-1 px-4 py-3 rounded-lg text-xs font-medium tracking-wider transition-all flex items-center justify-center gap-2 ${
               mobileView === 'console' 
-                ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-black' 
-                : 'bg-muted/30 text-muted-foreground'
+                ? 'bg-gradient-to-r from-gold to-gold-muted text-background' 
+                : 'text-muted-foreground hover:text-foreground'
             }`}
           >
-            <Camera className="w-4 h-4 inline mr-2" />
-            UPLOAD & GENERATE
+            <Camera className="w-4 h-4" />
+            CONTROLS
           </button>
           <button
             onClick={() => setMobileView('wall')}
-            className={`px-4 py-2 rounded-lg text-xs font-medium tracking-wider transition-all ${
+            className={`flex-1 px-4 py-3 rounded-lg text-xs font-medium tracking-wider transition-all flex items-center justify-center gap-2 ${
               mobileView === 'wall' 
-                ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-black' 
-                : 'bg-muted/30 text-muted-foreground'
+                ? 'bg-gradient-to-r from-gold to-gold-muted text-background' 
+                : 'text-muted-foreground hover:text-foreground'
             }`}
           >
-            <Sparkles className="w-4 h-4 inline mr-2" />
-            ERA TV WALL
+            <Sparkles className="w-4 h-4" />
+            ERA WALL
           </button>
         </div>
       </div>
 
-      {/* Main Content - Responsive Grid */}
-      <main className="relative z-10 container mx-auto px-3 sm:px-4 py-4 sm:py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+      {/* Main Content */}
+      <main className="relative z-10 container mx-auto px-4 pb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           
           {/* Left - ERA TV WALL */}
           <div className={`lg:col-span-7 ${mobileView === 'wall' ? 'block' : 'hidden lg:block'}`}>
@@ -223,27 +228,27 @@ export default function TimeTravelLab() {
             />
           </div>
 
-          {/* Right - BOOMBOX CONSOLE */}
-          <div className={`lg:col-span-5 space-y-3 sm:space-y-4 ${mobileView === 'console' ? 'block' : 'hidden lg:block'}`}>
+          {/* Right - CONTROL CONSOLE */}
+          <div className={`lg:col-span-5 space-y-4 ${mobileView === 'console' ? 'block' : 'hidden lg:block'}`}>
             
             {/* Upload Panel */}
             <motion.div 
-              className="surface-metal rounded-xl p-4 sm:p-5 border-metallic"
+              className="glass-panel rounded-2xl p-5 sm:p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <h3 className="text-base sm:text-lg font-bold tracking-wider flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                  MASTER TAPE
-                </h3>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse" />
+                  <h3 className="text-lg font-bold tracking-[0.15em]">MASTER TAPE</h3>
+                </div>
                 {sourceImage && (
                   <button
                     onClick={() => {
                       setSourceImage(null);
                       setResults(new Map());
                     }}
-                    className="text-xs text-muted-foreground hover:text-destructive transition-colors p-1"
+                    className="w-8 h-8 rounded-full glass-ultra flex items-center justify-center text-muted-foreground hover:text-destructive transition-colors"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -260,17 +265,27 @@ export default function TimeTravelLab() {
               />
 
               {sourceImage ? (
-                <div className="flex items-center gap-4">
-                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-amber-500/50 flex-shrink-0">
-                    <img src={sourceImage} alt="Your photo" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="flex items-center gap-5">
+                  <div className="relative flex-shrink-0">
+                    {/* Glow */}
+                    <div className="absolute -inset-2 rounded-full bg-gold/20 blur-xl" />
+                    {/* Image */}
+                    <div className="relative w-24 h-24 rounded-full overflow-hidden ring-2 ring-gold shadow-2xl">
+                      <img src={sourceImage} alt="Your photo" className="w-full h-full object-cover" />
+                    </div>
+                    {/* Check badge */}
+                    <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg">
+                      <Check className="w-4 h-4 text-white" />
+                    </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-amber-500">FACE LOCKED ✓</p>
-                    <p className="text-xs text-muted-foreground mt-1">Ready to rewind through history with your exact features preserved.</p>
+                    <p className="text-sm font-bold text-gold tracking-wider">FACE LOCKED</p>
+                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                      Your features will be preserved exactly across all eras.
+                    </p>
                     <button
                       onClick={() => fileInputRef.current?.click()}
-                      className="mt-2 text-xs text-muted-foreground hover:text-foreground underline"
+                      className="mt-3 text-xs text-muted-foreground hover:text-gold underline underline-offset-4 transition-colors"
                     >
                       Change photo
                     </button>
@@ -279,82 +294,90 @@ export default function TimeTravelLab() {
               ) : (
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="w-full aspect-[16/9] sm:aspect-video surface-inset rounded-lg border-2 border-dashed border-border/50 hover:border-amber-500/50 transition-all flex flex-col items-center justify-center gap-2 sm:gap-3 group"
+                  className="w-full aspect-video glass-card rounded-xl border-2 border-dashed border-muted hover:border-gold/50 transition-all flex flex-col items-center justify-center gap-4 group"
                 >
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
-                    <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-amber-500" />
+                  <div className="relative">
+                    <div className="absolute -inset-4 rounded-full bg-gold/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative w-16 h-16 rounded-full glass-ultra flex items-center justify-center group-hover:ring-1 ring-gold/30 transition-all">
+                      <Upload className="w-7 h-7 text-gold" />
+                    </div>
                   </div>
                   <div className="text-center">
-                    <p className="text-sm sm:text-base font-medium">DROP YOUR PHOTO</p>
+                    <p className="text-sm font-medium tracking-wider">DROP YOUR PHOTO</p>
                     <p className="text-xs text-muted-foreground mt-1">Your face will be preserved exactly</p>
                   </div>
                 </button>
               )}
             </motion.div>
 
-            {/* Era Selection - Responsive Grid */}
+            {/* Era Selection */}
             <motion.div 
-              className="surface-metal rounded-xl p-4 sm:p-5 border-metallic"
+              className="glass-panel rounded-2xl p-5 sm:p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <h3 className="text-base sm:text-lg font-bold tracking-wider">ERA SELECTOR</h3>
-                <div className="flex gap-2">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold tracking-[0.15em]">ERA SELECTOR</h3>
+                <div className="flex gap-3">
                   <button
                     onClick={() => setSelectedEras(new Set(eraOrder))}
-                    className="text-xs text-amber-500 hover:text-amber-400 px-2 py-1 rounded hover:bg-amber-500/10 transition-colors"
+                    className="text-xs text-gold hover:text-gold/80 px-3 py-1.5 rounded-lg hover:bg-gold/10 transition-all tracking-wider"
                   >
                     ALL
                   </button>
-                  <span className="text-muted-foreground">/</span>
+                  <span className="text-muted-foreground/30">|</span>
                   <button
                     onClick={() => setSelectedEras(new Set())}
-                    className="text-xs text-muted-foreground hover:text-foreground px-2 py-1 rounded hover:bg-muted/30 transition-colors"
+                    className="text-xs text-muted-foreground hover:text-foreground px-3 py-1.5 rounded-lg hover:bg-muted/30 transition-all tracking-wider"
                   >
                     NONE
                   </button>
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-2">
+              <div className="grid grid-cols-5 gap-2">
                 {eraOrder.map(era => {
                   const isSelected = selectedEras.has(era);
                   const isComplete = results.get(era)?.success;
-                  const isGenerating = generatingEras.has(era);
+                  const isGen = generatingEras.has(era);
                   
                   return (
                     <button
                       key={era}
                       onClick={() => toggleEra(era)}
-                      disabled={isGenerating}
-                      className={`px-2 sm:px-3 py-1.5 sm:py-2 rounded text-xs font-medium tracking-wider transition-all flex items-center justify-center gap-1 ${
+                      disabled={isGen}
+                      className={`relative px-2 py-3 rounded-lg text-xs font-bold tracking-wider transition-all ${
                         isSelected
-                          ? `bg-gradient-to-r ${eraConfig[era].gradient} text-white shadow-lg`
-                          : 'bg-muted/30 text-muted-foreground hover:bg-muted/50'
-                      } ${isGenerating ? 'animate-pulse' : ''}`}
+                          ? `bg-gradient-to-br ${eraConfig[era].gradient} text-white shadow-lg`
+                          : 'glass-card text-muted-foreground hover:text-foreground'
+                      } ${isGen ? 'animate-pulse' : ''}`}
                     >
-                      {isComplete && <Check className="w-3 h-3" />}
-                      {isGenerating && <Loader2 className="w-3 h-3 animate-spin" />}
-                      <span className="truncate">{eraConfig[era].year}</span>
+                      {isComplete && (
+                        <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
+                          <Check className="w-2.5 h-2.5 text-white" />
+                        </div>
+                      )}
+                      {isGen && <Loader2 className="w-3 h-3 animate-spin mx-auto" />}
+                      {!isGen && <span>{eraConfig[era].year}</span>}
                     </button>
                   );
                 })}
               </div>
 
-              {/* Era info preview */}
-              <div className="mt-3 pt-3 border-t border-border/30">
+              <div className="mt-4 pt-4 border-t border-border/30 flex items-center justify-between">
                 <p className="text-xs text-muted-foreground">
-                  <span className="text-amber-500">{selectedEras.size}</span> eras selected • 
-                  <span className="text-amber-500 ml-1">{selectedEras.size * 12}+</span> legends will appear
+                  <span className="text-gold font-bold">{selectedEras.size}</span> eras selected
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  <span className="text-gold font-bold">{selectedEras.size * 12}+</span> legends
                 </p>
               </div>
             </motion.div>
 
             {/* Generate Controls */}
             <motion.div 
-              className="space-y-2 sm:space-y-3"
+              className="space-y-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -362,25 +385,24 @@ export default function TimeTravelLab() {
               <button
                 onClick={generateAll}
                 disabled={!sourceImage || isGenerating || selectedEras.size === 0}
-                className="w-full btn-gold py-3 sm:py-4 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 sm:gap-3 relative overflow-hidden group"
+                className="w-full btn-gold py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 relative overflow-hidden group"
               >
                 {isGenerating ? (
                   <>
-                    <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />
+                    <Loader2 className="w-6 h-6 animate-spin" />
                     <span>GENERATING {generatingEras.size} ERAS...</span>
                   </>
                 ) : (
                   <>
-                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 group-hover:animate-pulse" />
+                    <Zap className="w-6 h-6 group-hover:animate-pulse" />
                     <span>GENERATE {selectedEras.size} ERAS</span>
                   </>
                 )}
                 
-                {/* Progress bar */}
                 {isGenerating && (
-                  <div className="absolute bottom-0 left-0 h-1 bg-black/30 w-full">
+                  <div className="absolute bottom-0 left-0 h-1 bg-black/20 w-full">
                     <motion.div 
-                      className="h-full bg-white/50"
+                      className="h-full bg-white/40"
                       initial={{ width: 0 }}
                       animate={{ width: `${((selectedEras.size - generatingEras.size) / selectedEras.size) * 100}%` }}
                       transition={{ duration: 0.3 }}
@@ -392,28 +414,28 @@ export default function TimeTravelLab() {
               <button
                 onClick={downloadAll}
                 disabled={completedCount === 0}
-                className="w-full btn-record py-2.5 sm:py-3 text-foreground disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 sm:gap-3"
+                className="w-full btn-record py-3.5 text-foreground disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
-                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Download className="w-5 h-5" />
                 <span>DOWNLOAD ALL ({completedCount})</span>
               </button>
             </motion.div>
 
-            {/* Album Preview - Responsive Grid */}
+            {/* Album Preview */}
             <AnimatePresence>
               {completedCount > 0 && (
                 <motion.div 
-                  className="surface-metal rounded-xl p-4 sm:p-5 border-metallic"
+                  className="glass-panel rounded-2xl p-5 sm:p-6"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                 >
-                  <h3 className="text-base sm:text-lg font-bold tracking-wider mb-3 sm:mb-4 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-amber-500" />
-                    YOUR ALBUM ({completedCount} PORTRAITS)
+                  <h3 className="text-lg font-bold tracking-[0.15em] mb-4 flex items-center gap-3">
+                    <Sparkles className="w-5 h-5 text-gold" />
+                    YOUR ALBUM ({completedCount})
                   </h3>
                   
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
+                  <div className="grid grid-cols-5 gap-2">
                     {eraOrder.map(era => {
                       const result = results.get(era);
                       if (!result?.success || !result.imageUrl) return null;
@@ -422,8 +444,10 @@ export default function TimeTravelLab() {
                         <motion.button
                           key={era}
                           onClick={() => setActiveEra(era)}
-                          className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                            activeEra === era ? 'border-amber-500 ring-2 ring-amber-500/30' : 'border-transparent hover:border-amber-500/50'
+                          className={`aspect-square rounded-lg overflow-hidden transition-all ${
+                            activeEra === era 
+                              ? 'ring-2 ring-gold shadow-[0_0_20px_hsla(var(--gold),0.4)]' 
+                              : 'ring-1 ring-border/50 hover:ring-gold/50'
                           }`}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
@@ -448,7 +472,7 @@ export default function TimeTravelLab() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
-                  className="surface-metal rounded-xl overflow-hidden border-metallic"
+                  className="glass-panel rounded-2xl overflow-hidden"
                 >
                   <div className="relative">
                     <img 
@@ -457,23 +481,23 @@ export default function TimeTravelLab() {
                       className="w-full aspect-square object-cover"
                     />
                     {/* TLC Watermark */}
-                    <div className="absolute bottom-2 right-2 bg-black/50 px-2 py-1 rounded text-xs text-white/70 backdrop-blur-sm">
-                      TLC STUDIOS REWIND™
+                    <div className="absolute bottom-3 right-3 glass-ultra px-3 py-1.5 rounded-lg">
+                      <span className="text-[10px] tracking-[0.2em] text-white/80 font-mono">TLC STUDIOS REWIND™</span>
                     </div>
                   </div>
-                  <div className="p-3 sm:p-4">
-                    <p className="text-base sm:text-lg font-bold">{activeEra && eraConfig[activeEra].name}</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground">{activeEra && eraConfig[activeEra].tagline}</p>
-                    <p className="text-xs text-amber-500/70 mt-1">Featuring: {activeEra && eraConfig[activeEra].featuring}</p>
+                  <div className="p-4 sm:p-5">
+                    <p className="text-xl font-bold">{activeEra && eraConfig[activeEra].name}</p>
+                    <p className="text-sm text-muted-foreground mt-1">{activeEra && eraConfig[activeEra].tagline}</p>
+                    <p className="text-xs text-gold/70 mt-2">Featuring: {activeEra && eraConfig[activeEra].featuring}</p>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
 
-            {/* Prompt Viewer - Collapsible */}
+            {/* Prompt Viewer */}
             {activeEra && (
               <motion.div 
-                className="surface-metal rounded-xl p-4 sm:p-5 border-metallic"
+                className="glass-panel rounded-2xl p-5 sm:p-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
@@ -481,7 +505,7 @@ export default function TimeTravelLab() {
                   onClick={() => setShowPrompt(!showPrompt)}
                   className="w-full flex items-center justify-between"
                 >
-                  <h3 className="text-base sm:text-lg font-bold tracking-wider">PROMPT VIEWER</h3>
+                  <h3 className="text-lg font-bold tracking-[0.15em]">PROMPT VIEWER</h3>
                   {showPrompt ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                 </button>
 
@@ -493,24 +517,24 @@ export default function TimeTravelLab() {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-3 sm:mt-4 space-y-2 sm:space-y-3">
+                      <div className="mt-4 space-y-3">
                         <button
                           onClick={() => setShowGlobalStyle(!showGlobalStyle)}
-                          className="w-full surface-inset rounded-lg p-2 sm:p-3 text-left"
+                          className="w-full glass-card rounded-xl p-4 text-left"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-xs tracking-wider text-amber-500">GLOBAL STYLE (TRIBUTE TO LEGENDS)</span>
+                            <span className="text-xs tracking-wider text-gold font-mono">GLOBAL STYLE</span>
                             {showGlobalStyle ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                           </div>
                           {showGlobalStyle && (
-                            <p className="mt-2 text-xs text-muted-foreground whitespace-pre-wrap font-mono max-h-40 overflow-y-auto">
+                            <p className="mt-3 text-xs text-muted-foreground whitespace-pre-wrap font-mono max-h-40 overflow-y-auto scrollbar-premium">
                               {GLOBAL_STYLE}
                             </p>
                           )}
                         </button>
 
-                        <div className="surface-inset rounded-lg p-2 sm:p-3 max-h-60 overflow-y-auto">
-                          <p className="text-xs tracking-wider text-amber-500 mb-2">
+                        <div className="glass-card rounded-xl p-4 max-h-60 overflow-y-auto scrollbar-premium">
+                          <p className="text-xs tracking-wider text-gold mb-3 font-mono">
                             {eraConfig[activeEra].name.toUpperCase()} PROMPT
                           </p>
                           <p className="text-xs text-muted-foreground whitespace-pre-wrap font-mono">
@@ -523,28 +547,6 @@ export default function TimeTravelLab() {
                 </AnimatePresence>
               </motion.div>
             )}
-          </div>
-        </div>
-
-        {/* Stats Bar */}
-        <div className="mt-4 sm:mt-6 surface-metal rounded-xl p-3 sm:p-4 border-metallic">
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm">
-            <div className="text-center">
-              <span className="text-muted-foreground">TOTAL:</span>
-              <span className="ml-2 text-amber-500 font-bold">{eraOrder.length}</span>
-            </div>
-            <div className="text-center">
-              <span className="text-muted-foreground">COMPLETE:</span>
-              <span className="ml-2 text-emerald-500 font-bold">{completedCount}</span>
-            </div>
-            <div className="text-center">
-              <span className="text-muted-foreground">GENERATING:</span>
-              <span className="ml-2 text-cyan-500 font-bold">{generatingEras.size}</span>
-            </div>
-            <div className="text-center hidden sm:block">
-              <span className="text-muted-foreground">LEGENDS FEATURED:</span>
-              <span className="ml-2 text-amber-500 font-bold">100+</span>
-            </div>
           </div>
         </div>
       </main>
