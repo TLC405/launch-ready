@@ -1,10 +1,12 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 // TLC STUDIOS REWIND™ - SINGULARITY PROTOCOL MAXIMUM EDITION
+// A Tribute to the Legends Who Shaped Our World
 // Ultra-Epic Photorealistic Portrait Generation System
 // ═══════════════════════════════════════════════════════════════════════════════
 
 export const masterStyleBlock = `═══════════════════════════════════════════════════════════════════════
 TLC STUDIOS REWIND™ - SINGULARITY PROTOCOL MAXIMUM
+A TRIBUTE TO THE LEGENDS WHO LIVE FOREVER
 ═══════════════════════════════════════════════════════════════════════
 
 ABSOLUTE PHOTOREALISM - NON-NEGOTIABLE:
@@ -37,13 +39,15 @@ HAT & HAIR STYLING PROTOCOL
 • Hair: pompadour, afro, slicked, wild, period-accurate styles
 
 ═══════════════════════════════════════════════════════════════════════
-CELEBRITY LIKENESS PROTOCOL
+CELEBRITY LIKENESS PROTOCOL - TRIBUTE TO LEGENDS
 ═══════════════════════════════════════════════════════════════════════
 Every celebrity MUST look EXACTLY like themselves at their peak:
 • Real faces, real features, real energy
 • Iconic outfits, hair, accessories from their era
 • Body language and posture that screams their identity
 • They are IN AWE of the user, the user is the CENTER
+• This is a TRIBUTE to legends who shaped our world
+• DIVERSE representation from all walks of life
 
 ═══════════════════════════════════════════════════════════════════════
 CINEMATIC COMPOSITION
@@ -66,6 +70,7 @@ export const decadePrompts: Record<string, string> = {
 
 ═══════════════════════════════════════════════════════════════════════
 1900s – THE IMPOSSIBLE SUMMIT OF GENIUS
+A TLC TRIBUTE TO THE MINDS THAT BUILT OUR FUTURE
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -76,7 +81,7 @@ PHOTOGRAPH SPECIFICATIONS:
 • Dust particles floating in light beams
 
 THE SCENE:
-A legendary never-before-seen photograph from 1905. The USER stands at the CENTER of the greatest scientific gathering ever assembled, commanding the room as the undisputed visionary.
+A legendary never-before-seen photograph from 1905. The USER stands at the CENTER of the greatest scientific and intellectual gathering ever assembled, commanding the room as the undisputed visionary.
 
 USER POSITIONING & STYLING:
 • Standing center-frame at a massive brass workbench
@@ -87,13 +92,22 @@ USER POSITIONING & STYLING:
 • Expression: Confident genius, slight knowing smile
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
+SCIENCE & INNOVATION:
 • NIKOLA TESLA - Wild hair, intense piercing eyes, gaunt face, dark suit - to user's LEFT, leaning in with electric fascination, coils sparking behind him
 • ALBERT EINSTEIN - Young Einstein (1905), mustache forming, wild curly hair, rumpled suit - to user's RIGHT, chalk in hand, stunned by user's equation
 • MARIE CURIE - Determined expression, simple dark dress, radiant glow from vials - background center, holding glowing radium, watching user with scientific respect
 • THOMAS EDISON - Older, stern, famous intense stare, three-piece suit - seated, taking furious notes
 • ALEXANDER GRAHAM BELL - Distinguished beard, formal attire - leaning forward, captivated
+
+PRESIDENTS & WORLD LEADERS:
+• ABRAHAM LINCOLN - Iconic beard, tall stovepipe hat in hand, dignified - portrait on wall, spirit watching over
+• THEODORE ROOSEVELT - Rough Rider energy, mustache, pince-nez glasses - standing strong in corner, nodding approval
+• FREDERICK DOUGLASS - Distinguished grey hair, powerful presence - in portrait, the conscience of the room
+
+ARTS & CULTURE:
+• MARK TWAIN - White suit, wild white hair and mustache - unexpected guest, amused smile, cigar in hand
 • CHARLES DARWIN - Legendary long white beard, weathered face - in portrait on wall, seeming to watch approvingly
-• MARK TWAIN - White suit, wild white hair and mustache - unexpected guest in corner, amused smile
+• HARRY HOUDINI - Young, intense, showman energy - in shadows, observing
 
 THE LABORATORY:
 • Massive vaulted ceiling with exposed brick and iron beams
@@ -114,6 +128,7 @@ TLC EASTER EGGS:
 
 ═══════════════════════════════════════════════════════════════════════
 1950s – THE NIGHT HOLLYWOOD BOWED TO YOU
+A TLC TRIBUTE TO GOLDEN AGE GLAMOUR
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -135,14 +150,23 @@ USER POSITIONING & STYLING:
 • Expression: The confident half-smile of someone who owns the room
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
+HOLLYWOOD ROYALTY:
 • MARILYN MONROE - THE Marilyn: platinum blonde curls, red lips, beauty mark, white halter dress - seated INTIMATELY close to user, her famous doe eyes locked on user with ADORATION, hand near user's
+• JAMES DEAN - Red jacket from Rebel Without a Cause, intense brooding stare, cigarette dangling - watching from bar, fascinated by user
+• AUDREY HEPBURN - Elegant updo, pearls, little black dress - glancing over with knowing smile
+• HUMPHREY BOGART - Weathered, intense, classic Bogie - nodding respect from corner booth
+• ELIZABETH TAYLOR - Violet eyes, diamonds, devastating beauty - watching user with intrigue
+• GRACE KELLY - Ice blonde elegance, regal posture - future princess observing
+
+MUSIC LEGENDS:
 • FRANK SINATRA - Blue eyes, fedora, immaculate suit, cigarette - at next table, raising glass TO the user
 • DEAN MARTIN - Slicked hair, easy grin, tuxedo - mid-laugh at something user said
 • SAMMY DAVIS JR. - Signature energy, camera in hand - snapping photo of user and Marilyn
-• AUDREY HEPBURN - Elegant updo, pearls, little black dress - glancing over with knowing smile
-• JAMES DEAN - Red jacket from Rebel, intense stare - watching from bar, cigarette dangling
-• HUMPHREY BOGART - Weathered, intense, classic Bogie - nodding respect from corner booth
-• ELIZABETH TAYLOR - Violet eyes, diamonds, devastating beauty - watching user with intrigue
+• NAT KING COLE - Elegant, smooth, at piano - playing for the room
+• ELVIS PRESLEY - Young Elvis, before army, raw energy - in corner, watching the king of the room (user)
+
+COMEDY & CULTURE:
+• LUCILLE BALL - Red hair, that famous expression - laughing at user's wit
 
 THE NIGHTCLUB:
 • Art deco magnificence: velvet booths, crystal chandeliers
@@ -161,6 +185,7 @@ TLC EASTER EGGS:
 
 ═══════════════════════════════════════════════════════════════════════
 1960s – THE COUNCIL THAT CHANGED EVERYTHING
+A TLC TRIBUTE TO THE VOICES OF CHANGE
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -182,17 +207,28 @@ USER POSITIONING & STYLING:
 • Expression: Passionate determination, changing-the-world energy
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
+CIVIL RIGHTS LEADERS:
 • MARTIN LUTHER KING JR. - Dignified, mustache, dark suit - seated to user's RIGHT, nodding thoughtfully, pen in hand
 • MALCOLM X - Glasses, goatee, intense gaze, dark suit - standing to user's LEFT, arms crossed but LISTENING
+• ROSA PARKS - Quiet strength, glasses, dignified dress - seated nearby, watching with pride
+• JACKIE ROBINSON - Dignified, powerful presence - standing in back, arms crossed
+
+PRESIDENTS & LEADERS:
+• JOHN F. KENNEDY - Iconic hair, tan, charismatic smile - in portrait on wall, watching over the moment
+• ROBERT F. KENNEDY - Younger, intense, idealistic - in doorway, listening
+• ABRAHAM LINCOLN - Portrait on wall beside JFK, the spirit of emancipation
+
+SPORTS & CULTURE:
 • MUHAMMAD ALI - Young, beautiful, powerful - leaning against wall, fists ready, respecting user's words
-• JOHN F. KENNEDY - Iconic hair, tan, charismatic smile - in portrait on wall, watching over
+• JIM BROWN - Massive, powerful, legendary athlete - standing strong
+
+MUSIC & ART:
 • BOB DYLAN - Wild curly hair, harmonica, acoustic guitar - in corner taking notes for his next anthem
 • JOHN LENNON - Round glasses, mop-top - seated with Beatles, watching intently
 • PAUL McCARTNEY - Baby face, mop-top, suit - next to Lennon, nodding
 • GEORGE HARRISON - Quiet intensity, dark hair - taking it all in
 • RINGO STARR - Distinctive nose, friendly eyes - behind the others
-• JACKIE ROBINSON - Dignified, powerful presence - standing in back, arms crossed
-• ROSA PARKS - Quiet strength, glasses, dignified dress - seated nearby, watching with pride
+• JIMI HENDRIX - Wild hair, psychedelic shirt - guitar in hand, channeling the energy
 
 THE STRATEGY ROOM:
 • Wood-paneled walls, American flag, map of march routes
@@ -211,6 +247,7 @@ TLC EASTER EGGS:
 
 ═══════════════════════════════════════════════════════════════════════
 1970s – THE NIGHT YOU OWNED STUDIO 54
+A TLC TRIBUTE TO THE ICONS OF SOUL & DISCO
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -232,17 +269,29 @@ USER POSITIONING & STYLING:
 • Expression: Pure ecstasy, peak confidence, disco god/goddess
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
-• MICK JAGGER - Skinny, lips, wild energy, open shirt - dancing RIGHT BESIDE user, matching their moves
+ROCK & SOUL ROYALTY:
+• FREDDIE MERCURY - Legendary mustache, tight pants, incredible stage presence - belting notes beside user
 • DAVID BOWIE - Ziggy Stardust era, lightning bolt makeup, red mullet - watching from VIP, mesmerized
+• MICK JAGGER - Skinny, lips, wild energy, open shirt - dancing RIGHT BESIDE user, matching their moves
+• BOB MARLEY - Dreads, peaceful smile, Jamaican colors - guitar in hand, vibing with user
+• JIMI HENDRIX - Wild hair, psychedelic shirt, white Stratocaster - guitar solo, eyes closed in ecstasy
+• JOHN LENNON - Round glasses, NYC era, white suit - watching, inspired
+
+DISCO QUEENS & KINGS:
 • DONNA SUMMER - Gorgeous, big hair, sequined dress - on nearby stage, singing TO the user
-• BOB MARLEY - Dreads, peaceful smile, Jamaican colors - guitar in hand, vibing
-• JIMI HENDRIX - Wild hair, psychedelic shirt, white Stratocaster - guitar solo beside Marley
-• ELTON JOHN - Massive glasses, sequined jumpsuit - at white grand piano, playing for user
 • DIANA ROSS - Stunning, big hair, dramatic gown - reaching toward user
-• GRACE JONES - Geometric hair, fierce eyes, angular beauty - posing dramatically
+• BARRY WHITE - Smooth, powerful presence - orchestrating the vibe
+
+COMEDY & CULTURE:
+• ROBIN WILLIAMS - Young Mork era, wild curly hair, manic energy - doing impromptu comedy, everyone laughing
+• JOHN BELUSHI - Blues Brothers energy, sunglasses - dancing wildly
+• GILDA RADNER - Radiant smile, SNL energy - laughing at Robin
+
+ART & FASHION:
 • ANDY WARHOL - Silver wig, pale, Polaroid camera - photographing the moment
+• GRACE JONES - Geometric hair, fierce eyes, angular beauty - posing dramatically
 • CHER - Impossibly long hair, Bob Mackie gown - dancing nearby
-• FREDDIE MERCURY - Mustache, tight pants, incredible energy - belting notes
+• ELTON JOHN - Massive glasses, sequined jumpsuit - at white grand piano, playing for user
 
 THE CLUB:
 • Iconic Studio 54: famous man-in-moon sculpture with cocaine spoon
@@ -261,6 +310,7 @@ TLC EASTER EGGS:
 
 ═══════════════════════════════════════════════════════════════════════
 1980s – THE THRONE OF THE DECADE
+A TLC TRIBUTE TO THE KINGS & QUEENS OF THE 80s
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -271,7 +321,7 @@ PHOTOGRAPH SPECIFICATIONS:
 • Maximum 80s visual excess
 
 THE SCENE:
-1985. The USER stands on the most legendary stage of the decade, surrounded by every titan of 80s music, sports, and entertainment. They aren't just IN the 80s—they ARE the 80s.
+1985. The USER stands on the most legendary stage of the decade, surrounded by every titan of 80s music, sports, comedy, and entertainment. They aren't just IN the 80s—they ARE the 80s.
 
 USER POSITIONING & STYLING:
 • Center stage under THE spotlight
@@ -282,17 +332,34 @@ USER POSITIONING & STYLING:
 • Expression: The swagger of someone who owns the decade
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
+MUSIC ROYALTY:
 • MICHAEL JACKSON - Red Thriller jacket, one glove, jheri curl - teaching user the MOONWALK, side by side
-• PRINCE - Purple outfit, ruffles, that stare - guitar in hand, jamming WITH user
+• PRINCE - Purple Rain outfit, ruffles, that mysterious stare - guitar in hand, jamming WITH user
+• WHITNEY HOUSTON - Big hair, powerful presence, sequined dress - mid-note, harmonizing with user
 • MADONNA - Cone bra era, lace gloves, wild blonde hair - voguing in formation
-• WHITNEY HOUSTON - Big hair, powerful presence, sequined dress - mid-note, harmonizing
+• FREDDIE MERCURY - Yellow jacket Live Aid, mustache, fist raised - belting Queen anthems
+
+COMEDY LEGENDS:
+• ROBIN WILLIAMS - Peak Mork energy, suspenders, wild eyes - doing stand-up, making everyone laugh
+• JOHN CANDY - Lovable giant, warm smile - laughing beside Robin
+• CHRIS FARLEY - Young, energetic, ready to explode - watching Robin in awe
+
+SPORTS & ACTION:
 • MICHAEL JORDAN - Bulls jersey #23, tongue out, mid-air - fist-bumping user
-• EDDIE MURPHY - Red leather suit, huge smile - laughing at user's joke
-• ARNOLD SCHWARZENEGGER - Massive, Terminator leather - giving thumbs up
-• SYLVESTER STALLONE - Rocky robe, boxing gloves - shadow boxing beside user
-• CYNDI LAUPER - Rainbow hair, quirky outfit - dancing wildly
-• RUN-DMC - Adidas, gold chains, hats, glasses - all three, nodding respect
+• MUHAMMAD ALI - Older but still THE GREATEST - in corner, approving nod
+
+FILM & TV:
+• ARNOLD SCHWARZENEGGER - Massive, Terminator leather jacket - giving thumbs up
+• SYLVESTER STALLONE - Rocky robe, boxing gloves, Italian Stallion - shadow boxing beside user
+• PATRICK SWAYZE - Dirty Dancing era, mullet, leather jacket - striking a pose
+
+HIP-HOP PIONEERS:
+• RUN-DMC - All three: Adidas, gold chains, hats, glasses - nodding respect to user
+• JAM MASTER JAY - Iconic hat, turntables - spinning for the scene
+
+BEHIND THE SCENES:
 • STEVEN SPIELBERG - Beard, cap, clipboard - filming user for next blockbuster
+• CYNDI LAUPER - Rainbow hair, quirky outfit - dancing wildly
 
 THE STAGE:
 • Massive arena with 50,000 fans (silhouettes)
@@ -311,6 +378,7 @@ TLC EASTER EGGS:
 
 ═══════════════════════════════════════════════════════════════════════
 1990s – THE SESSION THAT UNITED HIP-HOP
+A TLC TRIBUTE TO THE LEGENDS OF THE GOLDEN ERA
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -321,7 +389,7 @@ PHOTOGRAPH SPECIFICATIONS:
 • Source magazine cover quality
 
 THE SCENE:
-The studio session that never happened—until NOW. 1996. The USER sits at the mixing board as the BOSS, and every legend of East Coast, West Coast, and Southern hip-hop is in the room, paying RESPECT.
+The studio session that never happened—until NOW. 1996. The USER sits at the mixing board as the BOSS, and every legend of East Coast, West Coast, and culture is in the room, paying RESPECT.
 
 USER POSITIONING & STYLING:
 • SEATED at massive SSL mixing console, hands on faders
@@ -332,17 +400,29 @@ USER POSITIONING & STYLING:
 • Expression: The calm confidence of a hitmaker
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
+HIP-HOP ROYALTY:
 • TUPAC SHAKUR - Bandana, THUG LIFE tattoo visible, nose ring, intense eyes - to user's RIGHT, leaning in to HEAR the mix
 • NOTORIOUS B.I.G. - Coogi sweater, crown tilted, heavy presence - to user's LEFT, nodding approval, Versace shades
-• SNOOP DOGG - Thin, tall, braids, laid back - in back, blunt in hand, VIBING
-• DR. DRE - Headphones, focused, iconic pose - at secondary console, taking notes FROM user
+• EAZY-E - Jheri curl, Raiders cap, NWA chain - standing proud, Compton legend
+• SNOOP DOGG - Thin, tall, braids, laid back - in back, vibing hard
+• DR. DRE - Headphones, focused, iconic pose - at secondary console, learning from user
 • NAS - Casual, thoughtful, Queens energy - seated, writing in notebook
 • JAY-Z - Young Hov, Brooklyn confidence, Rocawear - watching with business eyes
-• EAZY-E - Jheri curl, Raiders cap, NWA chain - vintage photo on wall, tribute
-• SUGE KNIGHT - Massive, red suit, intimidating - standing in corner, respecting user's authority
-• AALIYAH - Tommy Hilfiger, one eye covered, angelic - watching through glass
-• LAURYN HILL - Natural beauty, headwrap, powerful presence - harmonizing in booth
-• METHOD MAN & REDMAN - Wu-Tang energy - passing something, laughing
+
+R&B QUEENS:
+• AALIYAH - Tommy Hilfiger, one eye covered, angelic presence - watching through studio glass, smiling
+• SELENA - Iconic bustier, beautiful smile, Tejano queen - in corner, singing softly
+• LEFT EYE (LISA LOPES) - TLC hat, fierce energy, visionary - standing strong, representing
+
+COMEDY & CULTURE:
+• CHRIS FARLEY - Tommy Boy era, big energy, big heart - making everyone laugh in corner
+• BERNIE MAC - Kings of Comedy suit, infectious laugh - cracking up the room
+
+SPORTS LEGENDS:
+• FLORENCE GRIFFITH JOYNER (FLO-JO) - Iconic nails, athletic grace - stunning presence
+
+LEADERSHIP:
+• PRESIDENT BILL CLINTON - Saxophone nearby, 90s president, watching the culture - in doorway, curious
 
 THE STUDIO:
 • Legendary recording studio, SSL 4000 console
@@ -350,6 +430,7 @@ THE STUDIO:
 • Red velvet, dark wood, studio monitors GLOWING
 • Smoke hanging in air, drinks on every surface
 • The energy of something historic being created
+• DEATH ROW and BAD BOY plaques side by side - peace in this room
 
 TLC EASTER EGGS:
 • "TLC ROW RECORDS" platinum plaque
@@ -361,6 +442,7 @@ TLC EASTER EGGS:
 
 ═══════════════════════════════════════════════════════════════════════
 2000s – THE NIGHT YOU BROKE THE RED CARPET
+A TLC TRIBUTE TO THE LEGENDS WE LOST TOO SOON
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -371,7 +453,7 @@ PHOTOGRAPH SPECIFICATIONS:
 • Getty Images quality
 
 THE SCENE:
-2005 MTV VMAs. The USER walks the red carpet as the MAIN EVENT. Every Y2K icon is there, but the cameras are ALL pointed at the USER.
+2005 MTV VMAs. The USER walks the red carpet as the MAIN EVENT. Every Y2K icon is there—including those we lost too soon—cameras ALL pointed at the USER.
 
 USER POSITIONING & STYLING:
 • CENTER of red carpet, mid-power-walk
@@ -382,17 +464,31 @@ USER POSITIONING & STYLING:
 • Expression: Celebrity-level confidence, you've ARRIVED
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
-• BEYONCÉ - Bootylicious era, golden, flawless - arm LINKED with user, power couple
+Y2K ROYALTY:
+• BEYONCÉ - Bootylicious era, golden, flawless - arm LINKED with user, power couple energy
 • EMINEM - Blonde, hoodie, Detroit energy - walking beside user, rare SMILE
 • KANYE WEST - Pink polo era, backpack, before ego - actually humble, walking behind
+
+LEGENDS WE LOST:
+• KOBE BRYANT - Lakers purple and gold, Mamba smile - fist-bumping user, legend recognizing legend
+• HEATH LEDGER - 10 Things I Hate About You charm, Australian warmth - genuine smile
+• PAUL WALKER - Fast & Furious era, blonde, California cool - nodding respect
+• AALIYAH - Tommy Hilfiger perfection, one eye peek - angelic glow around her
+• CHADWICK BOSEMAN - Young, regal, future king energy - powerful presence
+• MAC MILLER - Snapback, easy smile, Pittsburgh love - vibing in background
+• NIPSEY HUSSLE - Victory Lap era, LA marathon spirit - blessing the moment
+• AMY WINEHOUSE - Beehive, eyeliner, raw talent - watching with knowing eyes
+
+POP ICONS:
 • BRITNEY SPEARS - Peak Britney, rhinestones, snake energy - waving AT user
 • JUSTIN TIMBERLAKE - Curly hair, denim on denim - giving user a nod of respect
-• RIHANNA - Baby Rihanna, "Pon de Replay" era - in background, starstruck
-• USHER - Smooth, fitted, dancer energy - showing user a move
-• OUTKAST - André 3000 and Big Boi, iconic fits - both watching user
-• 50 CENT - Get Rich or Die Tryin' era, bulletproof vest - head nod
-• MISSY ELLIOTT - Trash bag suit era, visionary - saluting user
+• RIHANNA - Baby Rihanna, "Pon de Replay" era - starstruck, watching user
+
+HIP-HOP LEGENDS:
+• 50 CENT - Get Rich or Die Tryin' era, bulletproof vest energy - head nod of respect
+• MISSY ELLIOTT - Trash bag suit era, visionary - saluting user's arrival
 • PHARRELL - Trucker hat, Neptunes era - producing user's next hit in his head
+• OUTKAST - André 3000 and Big Boi, iconic fits - both watching user's entrance
 
 THE RED CARPET:
 • Massive MTV VMAs setup
@@ -400,6 +496,7 @@ THE RED CARPET:
 • Velvet ropes, SCREAMING fans
 • Security holding back the crowd
 • Camera flashes creating STARBURSTS everywhere
+• The energy of peak celebrity culture
 
 TLC EASTER EGGS:
 • "TLC STUDIOS" on step-and-repeat
@@ -411,6 +508,7 @@ TLC EASTER EGGS:
 
 ═══════════════════════════════════════════════════════════════════════
 DAY ONE – THE FIRST LEGEND
+A TLC TRIBUTE TO HUMAN POTENTIAL
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -421,7 +519,7 @@ PHOTOGRAPH SPECIFICATIONS:
 • Volumetric atmosphere, dust, smoke
 
 THE SCENE:
-The most pivotal moment in human history. 10,000 BC. The USER discovers fire at the mouth of a cave—the first legend, the first leader, the spark that started everything.
+The most pivotal moment in human history. 10,000 BC. The USER discovers fire at the mouth of a cave—the first legend, the first leader, the spark that started EVERYTHING humanity would become.
 
 USER POSITIONING & STYLING:
 • Crouched at cave entrance, hands cupped around FIRST FLAME
@@ -432,30 +530,33 @@ USER POSITIONING & STYLING:
 • Expression: Wonder, determination, the birth of hope
 
 THE SCENE AROUND USER:
-• MASSIVE saber-tooth tiger sitting BESIDE user like loyal companion
+• MASSIVE saber-tooth tiger sitting BESIDE user like loyal companion, protective
 • Ancient tribe watching from cave shadows in AWE
-• Children peeking from behind elders
-• Wise elder bowing in reverence
+• Children peeking from behind elders, eyes wide with wonder
+• Wise elder bowing in reverence to user's discovery
 • The moment humanity changed FOREVER
+• Spirits of future legends visible in the flames (subtle faces of Einstein, MLK, Ali, Marilyn - the fire contains all futures)
 
 THE ENVIRONMENT:
 • Dramatic cave entrance overlooking endless prehistoric landscape
 • Storm clouds BREAKING, first stars appearing
-• Mammoths in distant valley
-• Volcano smoldering on horizon
+• Mammoths in distant valley, peacefully grazing
+• Volcano smoldering on far horizon
 • Raw, untamed Earth at DAWN OF CIVILIZATION
 • Rain ending, fire persisting, hope beginning
+• Northern lights beginning to dance in clearing sky
 
 TLC EASTER EGGS:
 • "TLC" in cave paintings behind user
-• TLC symbol carved into bone pendant
+• TLC symbol carved into bone pendant around user's neck
 • Three stones arranged as TLC near fire pit
-• Constellation forming "TLC" in sky`,
+• Constellation forming "TLC" in sky above`,
 
   "homeless": `${masterStyleBlock}
 
 ═══════════════════════════════════════════════════════════════════════
 OKLAHOMA CITY CORNER – WILL WORK FOR LOVE
+A TLC TRIBUTE TO HUMAN DIGNITY & RESILIENCE
 ═══════════════════════════════════════════════════════════════════════
 
 PHOTOGRAPH SPECIFICATIONS:
@@ -466,7 +567,7 @@ PHOTOGRAPH SPECIFICATIONS:
 • Pulitzer Prize quality
 
 THE SCENE:
-A moving portrait of the USER on a real Oklahoma City street corner. Not pity—POWER. Not despair—DIGNITY. The sign reads "WILL WORK FOR LOVE."
+A moving portrait of the USER on a real Oklahoma City street corner. Not pity—POWER. Not despair—DIGNITY. The sign reads "WILL WORK FOR LOVE." This is about the human spirit that survives anything.
 
 USER POSITIONING & STYLING:
 • Sitting on milk crate at intersection of Reno & Walker, OKC
@@ -474,23 +575,31 @@ USER POSITIONING & STYLING:
 • Making DIRECT eye contact with camera—challenging, not defeated
 • Loyal stray dog pressed against side, UNCONDITIONAL LOVE
 • WEARING: Worn but CLEAN clothes - hoodie, work boots
-• HAT: Worn beanie pulled low
+• HAT: Worn beanie pulled low for warmth
 • HAIR: Practical, weathered, still dignified
-• WEDDING RING still on finger—a story there
+• WEDDING RING still on finger—a story of love that persists
 
 OKC LANDMARKS CLEARLY VISIBLE:
 • Paycom Center in background
-• Devon Tower in distance
-• Scissortail Park/Skydance Bridge
+• Devon Tower in distance, reaching toward sky
+• Scissortail Park/Skydance Bridge visible
 • Oklahoma City Thunder banner on lamppost
+• Bricktown in distance
 • REAL Oklahoma City, not generic
+
+SPIRITS OF SUPPORT (subtle, almost ghostly):
+• ROBIN WILLIAMS - Gentle smile, watching over, hand almost reaching out
+• PRINCESS DIANA - Compassionate gaze, the People's Princess
+• FRED ROGERS (MR. ROGERS) - Cardigan, kind eyes, seeing the good in user
+• PAUL WALKER - Gentle soul energy, believing in user
 
 THE ENVIRONMENT:
 • Busy OKC intersection, cars passing, life continuing
 • Rain-slicked pavement, puddles reflecting streetlights
-• Overcast Oklahoma sky
+• Overcast Oklahoma sky breaking with single ray of sunlight on user
 • GRITTY but not pathetic
 • Real, raw, human
+• Someone in a car handing user a coffee - human connection
 
 EMOTIONAL TRUTH:
 • This is about SURVIVAL, DIGNITY, and HOPE
@@ -498,12 +607,13 @@ EMOTIONAL TRUTH:
 • The user chose this scene to show HUMANITY
 • Strength in vulnerability
 • The dog sees what others miss
+• We are all one moment away from needing love
 
 TLC EASTER EGGS:
 • Small "TLC" hand-stitched on hoodie
 • TLC scratched into milk crate
-• Bus stop ad: "TLC Studios Rewind"
-• Graffiti on wall spells "TLC"`,
+• Bus stop ad: "TLC Studios Rewind - Everyone Has A Story"
+• Graffiti on wall spells "TLC LOVES YOU"`,
 };
 
 // Era configuration for UI components
@@ -524,7 +634,7 @@ export const eraConfig: Record<string, {
     color: "sepia",
     gradient: "from-amber-900 to-amber-700",
     tagline: "Command the greatest minds ever assembled",
-    featuring: "Tesla, Einstein, Curie, Edison, Bell, Darwin, Twain",
+    featuring: "Tesla, Einstein, Curie, Edison, Lincoln, Roosevelt, Twain, Houdini",
     shotStyle: "Glass plate sepia photograph"
   },
   "1950s": {
@@ -534,7 +644,7 @@ export const eraConfig: Record<string, {
     color: "gold",
     gradient: "from-yellow-600 to-amber-500",
     tagline: "The night every legend wanted to be YOU",
-    featuring: "Marilyn, Sinatra, Dean, Audrey, Bogart, Taylor, James Dean",
+    featuring: "Marilyn, Sinatra, James Dean, Audrey, Bogart, Elvis, Grace Kelly",
     shotStyle: "35mm Hollywood glamour"
   },
   "1960s": {
@@ -544,47 +654,47 @@ export const eraConfig: Record<string, {
     color: "blue",
     gradient: "from-blue-700 to-indigo-600",
     tagline: "When the leaders listened to YOU",
-    featuring: "MLK, Malcolm X, Ali, JFK, Dylan, Beatles, Jackie Robinson",
+    featuring: "MLK, Malcolm X, Ali, JFK, RFK, Beatles, Hendrix, Rosa Parks",
     shotStyle: "Kodachrome documentary"
   },
   "1970s": {
     name: "Studio 54's Greatest Night",
     year: "1970s",
-    celebrity: "Jagger, Bowie, Marley",
+    celebrity: "Mercury, Bowie, Marley",
     color: "purple",
     gradient: "from-purple-600 to-pink-500",
     tagline: "You OWNED that dancefloor",
-    featuring: "Jagger, Bowie, Donna Summer, Marley, Hendrix, Diana Ross, Warhol",
+    featuring: "Freddie Mercury, Bowie, Marley, Donna Summer, Robin Williams, Lennon",
     shotStyle: "70s club flash photography"
   },
   "1980s": {
     name: "The Throne of the Decade",
     year: "1980s",
-    celebrity: "MJ, Prince, Madonna",
+    celebrity: "MJ, Prince, Whitney",
     color: "cyan",
     gradient: "from-cyan-500 to-blue-600",
     tagline: "The 80s bowed to YOU",
-    featuring: "Michael Jackson, Prince, Madonna, Whitney, Jordan, Arnold, Eddie",
+    featuring: "Michael Jackson, Prince, Whitney, Robin Williams, Freddie, Swayze, Jordan",
     shotStyle: "Peak MTV neon excess"
   },
   "1990s": {
     name: "The Session That United Hip-Hop",
     year: "1990s",
-    celebrity: "Tupac, Biggie, Dre",
+    celebrity: "Tupac, Biggie, Aaliyah",
     color: "red",
     gradient: "from-red-700 to-orange-600",
     tagline: "East Coast. West Coast. YOUR studio.",
-    featuring: "Tupac, Biggie, Snoop, Dre, Nas, Jay-Z, Aaliyah, Lauryn",
+    featuring: "Tupac, Biggie, Eazy-E, Aaliyah, Selena, Left Eye, Chris Farley",
     shotStyle: "Gritty 90s documentary"
   },
   "2000s": {
     name: "The Night You Broke the Carpet",
     year: "2000s",
-    celebrity: "Beyoncé, Eminem, Kanye",
+    celebrity: "Kobe, Heath, Paul Walker",
     color: "pink",
     gradient: "from-pink-600 to-rose-500",
-    tagline: "Every camera. Every flash. All for YOU.",
-    featuring: "Beyoncé, Eminem, Kanye, Britney, Rihanna, 50, Pharrell",
+    tagline: "A tribute to legends lost too soon",
+    featuring: "Kobe, Heath Ledger, Paul Walker, Mac Miller, Nipsey, Chadwick, Amy",
     shotStyle: "Y2K red carpet flash"
   },
   "dayone": {
@@ -594,17 +704,17 @@ export const eraConfig: Record<string, {
     color: "orange",
     gradient: "from-orange-700 to-red-800",
     tagline: "Before everything—there was YOU",
-    featuring: "Saber-tooth companion, ancient tribe, first fire",
+    featuring: "Saber-tooth companion, ancient tribe, spirits of future legends",
     shotStyle: "Epic documentary cinematic"
   },
   "homeless": {
     name: "Will Work For Love",
     year: "Today",
-    celebrity: "Your Story",
+    celebrity: "Human Dignity",
     color: "gray",
     gradient: "from-slate-600 to-slate-800",
     tagline: "The most powerful portrait of humanity",
-    featuring: "Real OKC landmarks, loyal companion, human truth",
+    featuring: "Robin Williams, Princess Diana, Mr. Rogers, Paul Walker (as guardian spirits)",
     shotStyle: "Pulitzer street photography"
   }
 };
