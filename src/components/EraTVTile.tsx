@@ -31,15 +31,15 @@ export function EraTVTile({
     >
       {/* Glow effect when active */}
       {isActive && (
-        <div className="absolute -inset-2 rounded-2xl bg-amber-500/20 blur-xl -z-10" />
+        <div className="absolute -inset-2 rounded-2xl bg-amber-500/30 blur-xl -z-10" />
       )}
       
       {/* CRT Frame */}
-      <div className={`relative rounded-xl overflow-hidden transition-all duration-300 ${
+      <div className={`relative rounded-xl overflow-hidden transition-all duration-300 shadow-2xl ${
         isActive 
-          ? 'ring-2 ring-amber-500 shadow-[0_0_30px_rgba(245,158,11,0.3)]' 
-          : 'ring-1 ring-zinc-700/50'
-      }`} style={{ background: 'linear-gradient(145deg, hsl(230 12% 12%), hsl(230 12% 6%))' }}>
+          ? 'ring-2 ring-amber-500 shadow-[0_0_30px_rgba(245,158,11,0.4)]' 
+          : 'ring-1 ring-zinc-600'
+      }`} style={{ background: 'linear-gradient(145deg, hsl(230 15% 15%), hsl(230 15% 8%))' }}>
         
         {/* Chrome highlight */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -59,8 +59,11 @@ export function EraTVTile({
             </>
           ) : (
             <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
+              {/* Solid dark background for visibility */}
+              <div className="absolute inset-0 bg-black/60" />
+              
               {/* Gradient background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${era.gradient} opacity-30`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${era.gradient} opacity-50`} />
               
               {/* Noise texture */}
               <div 
@@ -71,7 +74,7 @@ export function EraTVTile({
               />
               
               {/* Year - big visual */}
-              <span className="relative text-2xl sm:text-3xl font-bold text-white/90 drop-shadow-lg tracking-wider">
+              <span className="relative text-2xl sm:text-3xl font-bold text-white drop-shadow-lg tracking-wider">
                 {era.year}
               </span>
             </div>
