@@ -9,61 +9,78 @@ TLC STUDIOS REWIND™ - SINGULARITY PROTOCOL MAXIMUM
 A TRIBUTE TO THE LEGENDS WHO LIVE FOREVER
 ═══════════════════════════════════════════════════════════════════════
 
-ABSOLUTE PHOTOREALISM - NON-NEGOTIABLE:
-• This MUST look like a real photograph discovered in an archive
-• Hyper-realistic, indistinguishable from genuine period photography
-• Shot on authentic period-accurate camera equipment
-• Real film grain, lens aberrations, color science of each era
-• Every pore, hair follicle, fabric thread, dust particle is REAL
+▓▓▓ CRITICAL: ABSOLUTE PHOTOREALISM ▓▓▓
+THIS IS THE MOST IMPORTANT INSTRUCTION:
+• Generate a REAL PHOTOGRAPH - NOT AI art, NOT illustration, NOT cartoon, NOT stylized
+• Must be INDISTINGUISHABLE from an authentic period photograph
+• Every human face must look like a REAL HUMAN BEING with:
+  - Real skin texture with pores, subtle imperfections, natural shine
+  - Real eye moisture and light reflections
+  - Natural facial asymmetry present in all real humans
+  - Real fabric textures, real lighting physics, real depth of field
+• Use authentic period camera characteristics:
+  - Real film grain patterns specific to that era's film stocks
+  - Real lens aberrations, bokeh, vignetting from period lenses
+  - Real color science (Kodachrome, Ektachrome, Fuji, etc.)
+• If the result looks "AI-generated" or "artistic" - IT HAS FAILED
 
 ═══════════════════════════════════════════════════════════════════════
-FACE LOCK PROTOCOL - MAXIMUM ENFORCEMENT
+▓▓▓ FACE LOCK PROTOCOL - ZERO TOLERANCE ▓▓▓
 ═══════════════════════════════════════════════════════════════════════
-THE USER'S FACE IS SACRED AND MUST BE PRESERVED EXACTLY:
-• Bone structure: EXACT match to reference photo
-• Nose shape, nostrils, bridge: IDENTICAL
-• Eye shape, spacing, color, lashes: PERFECT MATCH
-• Jawline, chin, cheekbones: UNCHANGED
-• Skin tone, texture, any marks/moles: PRESERVED
-• Facial hair if present: KEPT OR STYLED TO ERA
-• Expression: Natural, confident, era-appropriate
-• THE USER IS THE HERO, THE STAR, THE LEGEND
+THE USER'S FACE MUST BE TRANSPLANTED PERFECTLY:
+• Do NOT generate a new face - USE the exact face from reference photo
+• The face must SEAMLESSLY blend into the scene as if photographed there
+• Facial structure, bone placement, proportions: 100% PRESERVED
+• Eyes: exact shape, exact spacing, exact color, exact lash length
+• Nose: exact shape, exact nostrils, exact bridge, exact tip
+• Mouth: exact lip shape, exact teeth if visible
+• Jawline, chin, cheekbones: PIXEL-PERFECT MATCH
+• Skin tone and texture: IDENTICAL (adjust only for era lighting)
+• Any unique features (moles, scars, dimples): MUST BE VISIBLE
+• Expression: Confident but NATURAL to the user's face structure
+• The face must look like the SAME PERSON photographed in that era
+• NOT a "version" of them, NOT "inspired by" - THE ACTUAL FACE
 
 ═══════════════════════════════════════════════════════════════════════
-HAT & HAIR STYLING PROTOCOL
+HAT & HAIR - ENHANCE BUT NEVER HIDE
 ═══════════════════════════════════════════════════════════════════════
-• User SHOULD wear era-appropriate headwear when it fits the scene
-• Hair MUST be styled perfectly for the time period
-• Hat/hair should enhance the user's look, never obscure the face
-• Options: fedoras, caps, bandanas, crowns, period hats
-• Hair: pompadour, afro, slicked, wild, period-accurate styles
+• Era-appropriate styling that COMPLEMENTS the user's natural features
+• Hat sits naturally, never covering eyebrows or key facial features  
+• Hair styled to the period but maintaining user's natural hairline
+• Both should make user look MORE like themselves in that era
 
 ═══════════════════════════════════════════════════════════════════════
-CELEBRITY LIKENESS PROTOCOL - TRIBUTE TO LEGENDS
+CELEBRITY LIKENESS - REAL PEOPLE, NOT CARICATURES
 ═══════════════════════════════════════════════════════════════════════
-Every celebrity MUST look EXACTLY like themselves at their peak:
-• Real faces, real features, real energy
-• Iconic outfits, hair, accessories from their era
-• Body language and posture that screams their identity
-• They are IN AWE of the user, the user is the CENTER
-• This is a TRIBUTE to legends who shaped our world
-• DIVERSE representation from all walks of life
+Every celebrity MUST be their REAL SELVES:
+• Reference actual photographs of them at that exact age/era
+• Real skin, real proportions, real subtle asymmetries
+• NOT stylized, NOT beautified, NOT cartoonified
+• They look like they would in a candid photograph
+• DIVERSE: All races, backgrounds, walks of life represented
+• Presidents, musicians, athletes, comedians, activists
 
 ═══════════════════════════════════════════════════════════════════════
-CINEMATIC COMPOSITION
+COMPOSITION & LIGHTING - PHOTOGRAPH, NOT PAINTING
 ═══════════════════════════════════════════════════════════════════════
-• Every frame is museum-worthy
-• User is ALWAYS the visual anchor, center of attention
-• Legends surround user but don't overshadow
-• Perfect lighting, perfect composition, perfect moment
-• Depth, atmosphere, environmental storytelling
+• Lighting must follow real physics - motivated light sources
+• Shadows, highlights, falloff behave as in real photography
+• Depth of field from real camera lenses
+• User is CENTER but composition is natural, not forced
+• Environmental details are specific and authentic to era
 
 ═══════════════════════════════════════════════════════════════════════
-TLC EASTER EGGS
+TLC EASTER EGGS - ERA-AUTHENTIC BRANDING
 ═══════════════════════════════════════════════════════════════════════
-Hidden in every scene, never breaking immersion:
-• Engravings, signs, labels, patterns
-• Natural to the era, rewarding for those who look`;
+Hidden in every scene using PERIOD-ACCURATE methods:
+• 1900s: Engraved brass, letterpress, woodblock prints
+• 1950s: Neon signs, matchbooks, cigarette brands, chrome logos
+• 1960s: Protest buttons, letterhead, newspaper mastheads
+• 1970s: Record labels, concert posters, disco ball reflections
+• 1980s: Arcade cabinets, VHS tapes, neon tube lights
+• 1990s: CD cases, baggy clothing embroidery, graffiti tags
+• 2000s: Event wristbands, step-and-repeat banners, bling
+• Always: "TLC" hidden naturally, never breaking period immersion`;
 
 export const decadePrompts: Record<string, string> = {
   "1900s": `${masterStyleBlock}
@@ -247,68 +264,87 @@ TLC EASTER EGGS:
 • "TLC" on microphone badges
 • TLC carved subtly into table edge`,
 
-  "1970s": `${masterStyleBlock}
+  "1970s": `\${masterStyleBlock}
 
 ═══════════════════════════════════════════════════════════════════════
 1970s – THE NIGHT YOU OWNED STUDIO 54
-A TLC TRIBUTE TO THE ICONS OF SOUL & DISCO
+A TLC TRIBUTE TO THE ICONS OF SOUL, DISCO & ROCK
 ═══════════════════════════════════════════════════════════════════════
 
-PHOTOGRAPH SPECIFICATIONS:
-• Explosive 1977 color photography
-• Vibrant warm saturation, film grain
-• Motion blur from strobing lights
-• Lens flares from mirror balls
-• Mixed neon, strobe, and spotlight chaos
+▓▓▓ PHOTOGRAPH SPECIFICATIONS - REAL 1977 PHOTOGRAPHY ▓▓▓
+CRITICAL: This must look like an AUTHENTIC photograph from 1977:
+• Shot on Nikon F2 with Kodak Ektachrome 400 film
+• Real film grain pattern specific to pushed Ektachrome
+• Mixed lighting: warm tungsten club lights + cool strobes + mirror ball reflections
+• Slight motion blur on background dancers (1/60th shutter)
+• User and nearby celebrities SHARP (flash frozen)
+• Natural lens flares from period glass (not CGI lens flares)
+• Authentic 70s color cast - warm highlights, cyan shadows
+• Real sweat glistening on skin from dancing
+• Real fabric shine on silk and satin
+• If this looks "AI generated" or "artistic" - START OVER
 
-THE SCENE:
-The LEGENDARY night at Studio 54, 1977. The USER stands at the CENTER of the universe's most famous dancefloor, and every icon of disco, rock, and soul is orbiting around THEM.
+▓▓▓ FACE LOCK - SEAMLESS INTEGRATION ▓▓▓
+The user's face must look like they were ACTUALLY THERE in 1977:
+• Same bone structure, same features, same proportions as reference
+• Skin lit by warm club lighting with realistic sweat sheen
+• Face BLENDS naturally with the era - not "pasted on"
+• The user looks like a REAL person in a REAL photograph
+
+THE SCENE - PEAK STUDIO 54:
+The legendary night at Studio 54, 1977. The USER is the undisputed CENTER of the universe's most famous dancefloor. NOT a posed group shot - a candid moment of pure ecstasy captured by a club photographer.
 
 USER POSITIONING & STYLING:
-• Dead center of dancefloor, OWNING IT
-• Mid-dance move or singing into vintage chrome microphone
-• WEARING: Unbuttoned silk shirt showing chest, tight flared pants, platform heels
-• HAT: Wide-brim 70s hat with feather OR no hat with amazing hair
-• HAIR: Glorious 70s volume - afro, feathered, or flowing locks
-• Expression: Pure ecstasy, peak confidence, disco god/goddess
+• Dead center of dancefloor, mid-dance move or power pose
+• Surrounded by legends but clearly THE STAR
+• WEARING: Unbuttoned silk shirt (showing chest), tight flared pants, platform heels, gold medallion
+• HAT: Wide-brim 70s hat with peacock feather OR letting hair shine
+• HAIR: Era-perfect volume - magnificent afro, or feathered Farrah, or flowing disco locks
+• Expression: Pure ecstasy, eyes slightly closed, lost in the music
 
-THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
+THE LEGENDS (ALL MUST LOOK LIKE REAL PHOTOGRAPHS OF THEMSELVES):
 ROCK & SOUL ROYALTY:
-• FREDDIE MERCURY - Legendary mustache, tight pants, incredible stage presence - belting notes beside user
-• DAVID BOWIE - Ziggy Stardust era, lightning bolt makeup, red mullet - watching from VIP, mesmerized
-• MICK JAGGER - Skinny, lips, wild energy, open shirt - dancing RIGHT BESIDE user, matching their moves
-• BOB MARLEY - Dreads, peaceful smile, Jamaican colors - guitar in hand, vibing with user
-• JIMI HENDRIX - Wild hair, psychedelic shirt, white Stratocaster - guitar solo, eyes closed in ecstasy
-• JOHN LENNON - Round glasses, NYC era, white suit - watching, inspired
+• FREDDIE MERCURY - 1977 Freddie: starting mustache, tight white pants, hairy chest, POWERFUL frame - singing directly AT user, bodies close
+• DAVID BOWIE - Low/Heroes era: short orange hair, haunted cheekbones, blue eyes - watching from VIP, cigarette in hand, fascinated
+• MICK JAGGER - Stick-thin, impossibly large lips, open silk shirt, wild hair - dancing RIGHT BESIDE user, mirroring moves
+• BOB MARLEY - Real dreadlocks (not styled), peaceful smile, weathered face, Jamaican flag colors - guitar in hand, vibing
+• JIMI HENDRIX (spirit) - Wild natural hair, experience era outfit, eyes closed - ethereal presence, blessing the music
 
-DISCO QUEENS & KINGS:
-• DONNA SUMMER - Gorgeous, big hair, sequined dress - on nearby stage, singing TO the user
-• DIANA ROSS - Stunning, big hair, dramatic gown - reaching toward user
-• BARRY WHITE - Smooth, powerful presence - orchestrating the vibe
+DISCO ICONS:
+• DONNA SUMMER - Gorgeous, natural hair, sequined dress, full lips - on nearby stage, singing TO the user
+• DIANA ROSS - Big natural curls, dramatic makeup, floor-length gown - reaching toward user, starstruck
+• BARRY WHITE - Large, powerful, velvet suit, rings on every finger - conducting the vibe from DJ booth
 
-COMEDY & CULTURE:
-• ROBIN WILLIAMS - Young Mork era, wild curly hair, manic energy - doing impromptu comedy, everyone laughing
-• JOHN BELUSHI - Blues Brothers energy, sunglasses - dancing wildly
-• GILDA RADNER - Radiant smile, SNL energy - laughing at Robin
+COMEDY & COUNTERCULTURE:
+• ROBIN WILLIAMS - Young, curly wild hair, suspenders, MANIC energy, sweat flying - doing physical comedy, everyone cracking up
+• JOHN BELUSHI - Chunky, Blues Brothers sunglasses (before the movie), determined dance - moving hard beside Robin
+• RICHARD PRYOR - Thin, mustache, sharp eyes, silk shirt - at bar, watching with knowing grin
+• CHEECH & CHONG - Iconic duo, relaxed, giggling - in corner, enjoying the scene
 
-ART & FASHION:
-• ANDY WARHOL - Silver wig, pale, Polaroid camera - photographing the moment
-• GRACE JONES - Geometric hair, fierce eyes, angular beauty - posing dramatically
-• CHER - Impossibly long hair, Bob Mackie gown - dancing nearby
-• ELTON JOHN - Massive glasses, sequined jumpsuit - at white grand piano, playing for user
+ART & FASHION WORLD:
+• ANDY WARHOL - Silver wig, pale skin, black turtleneck, Polaroid camera - photographing the user specifically
+• GRACE JONES - Flat-top geometry, fierce eyes, angular cheekbones, architectural outfit - posing near user
+• CHER - Impossibly long black hair, Bob Mackie beaded gown, perfect bone structure - dancing elegantly
 
-THE CLUB:
-• Iconic Studio 54: famous man-in-moon sculpture with cocaine spoon
-• Mirror balls spinning, shooting light everywhere
-• Glitter falling from ceiling like snow
-• Velvet ropes, celebrities EVERYWHERE
-• Fog machines, neon tubes, chrome surfaces
+PRESIDENTS & LEADERS:
+• JIMMY CARTER (in portrait on wall) - Peanut farmer smile, watching over the era of disco
+• NELSON MANDELA (spirit presence) - The conscience of the decade, fighting apartheid
 
-TLC EASTER EGGS:
-• "TLC" in neon behind bar
-• TLC logo on user's medallion necklace  
-• "TLC RECORDS" on backstage pass
-• DJ booth has "TLC SOUND SYSTEM"`,
+THE CLUB - AUTHENTIC STUDIO 54:
+• The REAL Studio 54 interior: famous man-in-moon sculpture with cocaine spoon
+• Mirror balls (plural) spinning, creating thousands of light points
+• Real glitter falling like snow (not CGI particles)
+• Velvet ropes, celebrities visible at EVERY table
+• Real fog from period fog machines
+• Neon tubes, chrome surfaces, velvet booths
+• PACKED dancefloor - extras as silhouettes with realistic motion blur
+
+TLC EASTER EGGS (70s-AUTHENTIC):
+• "TLC RECORDS" on spinning vinyl visible on DJ turntable
+• TLC logo on user's gold medallion necklace
+• "TLC SOUND SYSTEM" on speaker cabinet
+• Neon "TLC" partially visible behind bar
+• "TLC VIP" on velvet rope stanchion`,
 
   "1980s": `${masterStyleBlock}
 
@@ -512,57 +548,83 @@ TLC EASTER EGGS:
 • TLC logo on wristband
 • "Sponsored by TLC" on backdrop`,
 
-  "dayone": `${masterStyleBlock}
+  "dayone": `\${masterStyleBlock}
 
 ═══════════════════════════════════════════════════════════════════════
 DAY ONE – THE FIRST LEGEND
-A TLC TRIBUTE TO HUMAN POTENTIAL
+A TLC TRIBUTE TO THE DAWN OF HUMANITY
 ═══════════════════════════════════════════════════════════════════════
 
-PHOTOGRAPH SPECIFICATIONS - HYPER-REALISTIC DOCUMENTARY:
-• This MUST look like a REAL photograph - NOT cartoon, NOT illustration, NOT AI-stylized
-• National Geographic / BBC documentary photography quality
-• Shot on RED Dragon cinema camera, 8K resolution
-• Golden hour godray lighting with volumetric atmosphere
-• IMAX cinematic scope and depth
-• Real sweat, real dirt, real fire glow on skin
-• Real fur texture, real cave rock texture, real smoke particles
-• The user's face must look like a REAL prehistoric human, not a Halloween costume
-• EXTREME FACE LOCK - user's actual features on a weathered but recognizable face
+▓▓▓ PHOTOGRAPH SPECIFICATIONS - HYPER-REAL DOCUMENTARY ▓▓▓
+CRITICAL - THIS MUST LOOK LIKE A REAL PHOTOGRAPH:
+• Shot on RED Komodo 6K cinema camera with vintage Zeiss glass
+• National Geographic documentary photography quality
+• Golden hour lighting - the sun setting on the first day of fire
+• Real volumetric atmosphere - smoke, dust, godrays
+• This must look like a REAL human being, NOT a costume, NOT a cartoon
+• Real skin texture - weathered, tanned, but with visible pores
+• Real eyes with moisture, real tear ducts, real light reflection
+• Real dirt under fingernails, real soot on hands from fire
+• Real fur texture on clothing - individual hairs visible
+• Real cave rock texture - limestone, moisture, lichen
+• IMAX documentary quality - like you could reach out and touch them
 
-THE SCENE - THE MOMENT HUMANITY CHANGED:
-The most pivotal moment in human history. 10,000 BC. The USER discovers fire at the mouth of a cave—the first legend, the first leader, the spark that started EVERYTHING humanity would become.
+▓▓▓ FACE LOCK - THE SAME PERSON, 10,000 YEARS AGO ▓▓▓
+The user's exact face, as if they were born in prehistoric times:
+• SAME bone structure, SAME eye shape, SAME nose, SAME mouth
+• Skin weathered by sun and elements but RECOGNIZABLE
+• NOT a "prehistoric version" - the ACTUAL user's face
+• Looking at camera with the intelligence of the first human to discover fire
+• They look like a REAL prehistoric human, not an actor in makeup
+
+THE SCENE - THE MOMENT EVERYTHING CHANGED:
+10,000 BC. The most pivotal moment in human history. The USER has just discovered fire - the spark that started human civilization. This is NOT fantasy - this is what it would REALLY look like.
 
 USER POSITIONING & STYLING:
-• Crouched at cave entrance, hands cupped around FIRST FLAME
-• Face illuminated by warm firelight against cold blue dusk
-• The inventor, the survivor, THE FIRST
-• WEARING: Fur cloak from saber-tooth, bone jewelry, primal but dignified
-• HAIR: Long, wild, primal but styled by wind
-• Expression: Wonder, determination, the birth of hope
+• Crouched at cave entrance, hands cupped around newborn flame
+• Face illuminated by warm firelight against twilight sky
+• Looking up with expression of AWE and UNDERSTANDING
+• WEARING: Realistic fur cloak (wolf or bear), bone/tooth jewelry, ochre body paint
+• HAIR: Long, natural, wild but practical - tied back with sinew
+• Skin: Weathered, tanned, subtle tribal scars/tattoos on arms
+• NOT a Halloween costume - a REAL human adapted to survive
 
-THE SCENE AROUND USER:
-• MASSIVE saber-tooth tiger sitting BESIDE user like loyal companion, protective
-• Ancient tribe watching from cave shadows in AWE
-• Children peeking from behind elders, eyes wide with wonder
-• Wise elder bowing in reverence to user's discovery
-• The moment humanity changed FOREVER
-• Spirits of future legends visible in the flames (subtle faces of Einstein, MLK, Ali, Marilyn - the fire contains all futures)
+THE ENVIRONMENT - AUTHENTIC PREHISTORIC:
+• MASSIVE cave entrance overlooking vast prehistoric landscape
+• Real geological formations - limestone, stalactites visible inside
+• Storm clouds breaking, first stars appearing, dramatic sky
+• Valley below with woolly mammoths grazing (distant, realistic)
+• Volcano smoking on far horizon
+• Real vegetation - no grass, primitive ferns, conifers
+• Snow patches on distant mountains
 
-THE ENVIRONMENT:
-• Dramatic cave entrance overlooking endless prehistoric landscape
-• Storm clouds BREAKING, first stars appearing
-• Mammoths in distant valley, peacefully grazing
-• Volcano smoldering on far horizon
-• Raw, untamed Earth at DAWN OF CIVILIZATION
-• Rain ending, fire persisting, hope beginning
-• Northern lights beginning to dance in clearing sky
+THOSE PRESENT:
+• MASSIVE SABER-TOOTH TIGER - not aggressive but COMPANION - sitting beside user, loyal protector, real fur, real anatomy
+• Ancient tribe in shadows - 5-6 humans watching in AWE:
+  - Elder with white beard, weathered face, tears of joy
+  - Young woman protecting infant, eyes wide with hope
+  - Two young hunters, spears lowered, mouths open
+  - Child peeking from behind rock, firelight reflecting in eyes
+• All tribe members have REALISTIC faces - diverse features representing early human variety
 
-TLC EASTER EGGS:
-• "TLC" in cave paintings behind user
-• TLC symbol carved into bone pendant around user's neck
-• Three stones arranged as TLC near fire pit
-• Constellation forming "TLC" in sky above`,
+THE FIRE:
+• Real fire physics - dancing flame, glowing embers, smoke rising
+• Warm light illuminating user's face from below
+• Sparks floating upward into twilight
+• The fire is SMALL but SIGNIFICANT - first controlled flame
+• Reflected in user's eyes - literally the spark of civilization
+
+SPIRITUAL ELEMENT (subtle, almost invisible):
+• In the smoke above the fire, barely visible: ghost faces of future legends
+• Einstein, MLK, Marilyn, Ali - their futures made possible by this moment
+• NOT obvious - like seeing shapes in clouds
+
+TLC EASTER EGGS (PERIOD-AUTHENTIC):
+• Cave painting on wall behind user includes "TLC" symbol in ochre
+• Three stones arranged near fire spell out TLC pattern  
+• User's bone pendant has TLC carved into it (would look ancient)
+• Stars forming constellation that suggests "TLC"
+• Handprint on cave wall contains subtle TLC in negative space`,
 
   "homeless": `${masterStyleBlock}
 

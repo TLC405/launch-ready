@@ -27,27 +27,39 @@ serve(async (req) => {
     const enhancedPrompt = `${prompt}
 
 ═══════════════════════════════════════════════════════════════════════
-FINAL RENDERING INSTRUCTIONS - ABSOLUTE REQUIREMENTS
+▓▓▓ FINAL RENDERING INSTRUCTIONS - ABSOLUTE REQUIREMENTS ▓▓▓
 ═══════════════════════════════════════════════════════════════════════
 
-CRITICAL PHOTOREALISM MANDATE:
-• This MUST be PHOTOREALISTIC - indistinguishable from a real photograph
-• NOT cartoon, NOT illustration, NOT painting, NOT artistic interpretation
-• A REAL photograph that could have been discovered in an archive
-• Every detail must be hyper-realistic: skin pores, fabric texture, lighting
+▓▓▓ MANDATORY PHOTOREALISM ▓▓▓
+This is NOT optional - the output MUST be:
+• A REAL PHOTOGRAPH - indistinguishable from authentic archival footage
+• NOT cartoon, NOT illustration, NOT painting, NOT CGI, NOT artistic
+• NOT "AI-looking" - if it looks AI-generated, it has FAILED
+• Real skin with pores, imperfections, natural asymmetry
+• Real eyes with moisture, reflections, tear ducts
+• Real lighting physics with motivated sources
+• Real fabric textures, real metal surfaces, real environmental details
+• Real film grain specific to the era's camera equipment
 
-FACE LOCK - MAXIMUM ENFORCEMENT:
-• The user's face from the reference image MUST be preserved EXACTLY
-• Same bone structure, same nose, same eyes, same jawline
-• Natural expression for the era but the SAME PERSON
-• The user is the CENTRAL FIGURE, the HERO, the STAR
+▓▓▓ FACE TRANSPLANT PROTOCOL ▓▓▓
+The user's face from the reference image MUST be:
+• TRANSPLANTED onto the scene as if they were actually photographed there
+• SAME bone structure - no changes to skull shape
+• SAME eye shape, spacing, color - pixel-perfect
+• SAME nose - exact shape, nostrils, bridge
+• SAME mouth and lips - exact proportions
+• SAME jawline and chin - no modifications
+• SAME skin tone - only adjust for era lighting
+• The face must BLEND seamlessly - not look "pasted on"
+• They must look like the SAME PERSON in a real period photograph
 
-CELEBRITY ACCURACY:
-• Every celebrity MUST look EXACTLY like their real selves
-• Correct era, correct outfit, correct hair, correct energy
-• They are supporting the USER who is the main subject
+▓▓▓ CELEBRITY ACCURACY ▓▓▓
+• Every celebrity is their REAL SELF - reference actual photos
+• NOT caricatures, NOT beautified, NOT stylized
+• Correct age/era, correct outfit, correct hair
+• They surround the USER who is the undisputed STAR
 
-OUTPUT: A museum-quality photorealistic image ready for print.`;
+OUTPUT: A museum-quality photorealistic photograph ready for auction.`;
 
     // Build the message content with image
     const messageContent: any[] = [
