@@ -23,104 +23,104 @@ export function EraTVTile({
 }: EraTVTileProps) {
   return (
     <motion.div
-      className={`relative cursor-pointer group ${isActive ? 'ring-2 ring-amber-500 ring-offset-2 ring-offset-background' : ''}`}
+      className={`relative cursor-pointer group ${isActive ? 'z-10' : ''}`}
       onClick={onClick}
-      whileHover={{ scale: 1.03, y: -4 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.05, y: -6 }}
+      whileTap={{ scale: 0.97 }}
       layout
     >
+      {/* Glow effect when active */}
+      {isActive && (
+        <div className="absolute -inset-2 rounded-2xl bg-amber-500/20 blur-xl -z-10" />
+      )}
+      
       {/* CRT Frame */}
-      <div className="surface-metal rounded-xl p-2 border-metallic">
+      <div className={`relative rounded-xl overflow-hidden transition-all duration-300 ${
+        isActive 
+          ? 'ring-2 ring-amber-500 shadow-[0_0_30px_rgba(245,158,11,0.3)]' 
+          : 'ring-1 ring-zinc-700/50'
+      }`} style={{ background: 'linear-gradient(145deg, hsl(230 12% 12%), hsl(230 12% 6%))' }}>
+        
+        {/* Chrome highlight */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        
         {/* Screen */}
-        <div className="relative aspect-[4/3] surface-inset rounded-lg overflow-hidden screen-glow">
+        <div className="relative aspect-[4/3] overflow-hidden">
           {/* Content */}
           {resultUrl ? (
-            <img 
-              src={resultUrl} 
-              alt={era.name}
-              className="w-full h-full object-cover"
-            />
+            <>
+              <img 
+                src={resultUrl} 
+                alt={era.name}
+                className="w-full h-full object-cover"
+              />
+              {/* Success overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </>
           ) : (
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-3">
-              {/* Static noise pattern */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
+              {/* Gradient background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${era.gradient} opacity-30`} />
+              
+              {/* Noise texture */}
               <div 
-                className="absolute inset-0 opacity-20"
+                className="absolute inset-0 opacity-20 mix-blend-overlay"
                 style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-                  backgroundSize: '100px 100px'
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
                 }}
               />
               
-              {/* Era badge */}
-              <span className={`text-xs font-bold tracking-wider px-2 py-0.5 rounded bg-gradient-to-r ${era.gradient} text-white mb-2`}>
+              {/* Year - big visual */}
+              <span className="relative text-2xl sm:text-3xl font-bold text-white/90 drop-shadow-lg tracking-wider">
                 {era.year}
               </span>
-              
-              {/* Era name */}
-              <h4 className="text-sm font-bold text-center text-foreground leading-tight">
-                {era.name}
-              </h4>
             </div>
           )}
 
           {/* Scanlines */}
           <div 
-            className="absolute inset-0 pointer-events-none opacity-30"
+            className="absolute inset-0 pointer-events-none opacity-20"
             style={{
-              backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.2) 2px, rgba(0,0,0,0.2) 4px)'
+              backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.3) 1px, rgba(0,0,0,0.3) 2px)'
             }}
           />
 
-          {/* Screen curvature effect */}
-          <div className="absolute inset-0 pointer-events-none rounded-lg" style={{
-            boxShadow: 'inset 0 0 30px rgba(0,0,0,0.5), inset 0 0 60px rgba(0,0,0,0.3)'
+          {/* Screen curvature */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            boxShadow: 'inset 0 0 40px rgba(0,0,0,0.6)'
           }} />
-        </div>
-
-        {/* Status indicator */}
-        <div className="flex items-center justify-between mt-2 px-1">
-          <div className="flex items-center gap-1.5">
-            {isGenerating ? (
-              <>
-                <Loader2 className="w-3 h-3 animate-spin text-amber-500" />
-                <span className="text-[10px] text-amber-500 tracking-wider">GENERATING</span>
-              </>
-            ) : isComplete ? (
-              <>
-                <Check className="w-3 h-3 text-emerald-500" />
-                <span className="text-[10px] text-emerald-500 tracking-wider">COMPLETE</span>
-              </>
-            ) : (
-              <>
-                <div className="w-2 h-2 rounded-full bg-zinc-600" />
-                <span className="text-[10px] text-muted-foreground tracking-wider">IDLE</span>
-              </>
-            )}
-          </div>
-
-          {/* Generate button */}
+          
+          {/* Generate button overlay */}
           {!isComplete && !isGenerating && (
             <motion.button
               onClick={(e) => {
                 e.stopPropagation();
                 onGenerate();
               }}
-              className="opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              className="absolute inset-0 flex items-center justify-center bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300"
+              whileTap={{ scale: 0.95 }}
             >
-              <Zap className="w-3 h-3 text-amber-500" />
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-full bg-amber-500/30 blur-lg" />
+                <div className="relative w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-black" />
+                </div>
+              </div>
             </motion.button>
           )}
         </div>
 
-        {/* Power LED */}
-        <div className="absolute bottom-3 right-3">
-          <div className={`w-1.5 h-1.5 rounded-full ${
-            isGenerating ? 'bg-amber-500 animate-pulse' : 
-            isComplete ? 'bg-emerald-500' : 
-            'bg-red-500/50'
-          }`} />
+        {/* Status strip */}
+        <div className="h-1.5 bg-zinc-900 flex items-center justify-between px-2">
+          {/* LED indicators */}
+          <div className="flex gap-1">
+            <div className={`w-1 h-1 rounded-full ${isGenerating ? 'bg-amber-500 animate-pulse' : isComplete ? 'bg-emerald-500' : 'bg-zinc-700'}`} />
+            <div className={`w-1 h-1 rounded-full ${isActive ? 'bg-amber-500' : 'bg-zinc-700'}`} />
+          </div>
+          
+          {/* Status icon */}
+          {isGenerating && <Loader2 className="w-2 h-2 animate-spin text-amber-500" />}
+          {isComplete && <Check className="w-2 h-2 text-emerald-500" />}
         </div>
       </div>
     </motion.div>

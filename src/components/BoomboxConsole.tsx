@@ -1,74 +1,78 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Play, Radio, Disc3, Volume2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Play, Pause, Volume2 } from 'lucide-react';
 import { eraConfig, eraOrder, EraId } from '@/lib/decadePrompts';
 
-interface VUMeterProps {
-  level: number;
-  color?: string;
-}
-
-function VUMeter({ level, color = 'gold' }: VUMeterProps) {
+function VUMeter({ level }: { level: number }) {
   return (
-    <div className="flex gap-0.5 items-end h-8">
-      {[...Array(10)].map((_, i) => (
-        <motion.div
-          key={i}
-          className={`w-1.5 rounded-sm ${
-            i < level 
-              ? i > 7 ? 'bg-red-500' : i > 5 ? 'bg-yellow-500' : 'bg-emerald-500'
-              : 'bg-muted/30'
-          }`}
-          initial={{ height: 4 }}
-          animate={{ height: i < level ? 8 + i * 2.5 : 4 }}
-          transition={{ duration: 0.15, delay: i * 0.02 }}
-        />
-      ))}
+    <div className="flex gap-px items-end h-10">
+      {[...Array(12)].map((_, i) => {
+        const isActive = i < level;
+        const isHot = i > 9;
+        const isWarm = i > 6;
+        return (
+          <motion.div
+            key={i}
+            className={`w-1.5 rounded-sm ${
+              isActive
+                ? isHot ? 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]' 
+                : isWarm ? 'bg-amber-500 shadow-[0_0_6px_rgba(245,158,11,0.4)]' 
+                : 'bg-emerald-500 shadow-[0_0_4px_rgba(16,185,129,0.3)]'
+                : 'bg-zinc-800/50'
+            }`}
+            animate={{ 
+              height: isActive ? 8 + i * 2.5 : 3,
+              opacity: isActive ? 1 : 0.3
+            }}
+            transition={{ duration: 0.1, delay: i * 0.015 }}
+          />
+        );
+      })}
     </div>
   );
 }
 
-function TimeDial({ activeEra }: { activeEra: EraId }) {
-  const activeIndex = eraOrder.indexOf(activeEra);
-  const rotation = (activeIndex / (eraOrder.length - 1)) * 270 - 135;
-
+function RotaryKnob({ value, label }: { value: number; label: string }) {
+  const rotation = (value / 100) * 270 - 135;
   return (
-    <div className="relative w-20 h-20">
-      {/* Dial background */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700 shadow-inner" />
-      
-      {/* Dial markers */}
-      {eraOrder.map((_, i) => {
-        const angle = (i / (eraOrder.length - 1)) * 270 - 135;
-        return (
-          <div
-            key={i}
-            className="absolute w-1 h-2 bg-zinc-500 rounded-full"
+    <div className="relative group">
+      {/* Outer ring */}
+      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-zinc-700 via-zinc-800 to-zinc-900 p-0.5 shadow-lg">
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-zinc-800 to-zinc-950 relative overflow-hidden">
+          {/* Indicator notches */}
+          {[...Array(11)].map((_, i) => {
+            const angle = (i / 10) * 270 - 135;
+            return (
+              <div
+                key={i}
+                className="absolute w-0.5 h-1.5 bg-zinc-600"
+                style={{
+                  top: '8%',
+                  left: '50%',
+                  transformOrigin: '50% 400%',
+                  transform: `translateX(-50%) rotate(${angle}deg)`
+                }}
+              />
+            );
+          })}
+          {/* Pointer */}
+          <motion.div
+            className="absolute w-0.5 h-4 bg-gradient-to-b from-amber-400 to-amber-600 rounded-full"
             style={{
-              top: '10%',
+              top: '15%',
               left: '50%',
-              transformOrigin: '50% 300%',
-              transform: `translateX(-50%) rotate(${angle}deg)`
+              transformOrigin: '50% 250%'
             }}
+            animate={{ rotate: rotation }}
+            transition={{ type: 'spring', stiffness: 150, damping: 20 }}
           />
-        );
-      })}
-      
-      {/* Dial needle */}
-      <motion.div
-        className="absolute w-1 h-8 bg-gradient-to-b from-amber-400 to-amber-600 rounded-full shadow-lg"
-        style={{
-          top: '15%',
-          left: '50%',
-          transformOrigin: '50% 85%'
-        }}
-        animate={{ rotate: rotation }}
-        transition={{ type: 'spring', stiffness: 100, damping: 15 }}
-      />
-      
-      {/* Center cap */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-zinc-600 to-zinc-800 border border-zinc-500" />
+          {/* Center cap */}
+          <div className="absolute inset-[30%] rounded-full bg-gradient-to-br from-zinc-600 to-zinc-800 shadow-inner" />
+        </div>
+      </div>
+      {/* Label */}
+      <p className="text-[7px] tracking-[0.2em] text-zinc-500 text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity">{label}</p>
     </div>
   );
 }
@@ -76,164 +80,201 @@ function TimeDial({ activeEra }: { activeEra: EraId }) {
 export function BoomboxConsole() {
   const navigate = useNavigate();
   const [activeEra, setActiveEra] = useState<EraId>('1980s');
-  const [vuLevels, setVuLevels] = useState([5, 6]);
-  const [isHovered, setIsHovered] = useState(false);
+  const [vuLevels, setVuLevels] = useState([6, 7]);
+  const [isPlaying, setIsPlaying] = useState(true);
 
-  // Animate VU meters
   useEffect(() => {
     const interval = setInterval(() => {
       setVuLevels([
-        Math.floor(Math.random() * 4) + 4,
-        Math.floor(Math.random() * 4) + 5
+        Math.floor(Math.random() * 5) + 5,
+        Math.floor(Math.random() * 5) + 6
       ]);
-    }, 200);
+    }, 150);
     return () => clearInterval(interval);
   }, []);
 
-  // Cycle through eras
   useEffect(() => {
+    if (!isPlaying) return;
     const interval = setInterval(() => {
       setActiveEra(prev => {
         const currentIndex = eraOrder.indexOf(prev);
         return eraOrder[(currentIndex + 1) % eraOrder.length];
       });
-    }, 3000);
+    }, 2500);
     return () => clearInterval(interval);
-  }, []);
+  }, [isPlaying]);
 
   const currentEra = eraConfig[activeEra];
 
   return (
     <motion.div
       className="relative w-full max-w-lg mx-auto"
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      transition={{ duration: 1 }}
     >
-      {/* Main boombox body */}
-      <div className="surface-metal rounded-2xl p-6 border-metallic">
-        {/* Top section - branding */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <Radio className="w-5 h-5 text-amber-500" />
-            <span className="text-xs font-medium tracking-[0.3em] text-muted-foreground">TLC</span>
-          </div>
-          <motion.h2 
-            className="text-3xl font-bold tracking-wider text-gradient-gold"
-            animate={{ textShadow: isHovered ? '0 0 30px rgba(217, 164, 78, 0.5)' : '0 0 10px rgba(217, 164, 78, 0.2)' }}
-          >
-            REWIND
-          </motion.h2>
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-medium tracking-wider text-muted-foreground">PLATINUM</span>
-            <Disc3 className="w-5 h-5 text-amber-500" />
-          </div>
-        </div>
+      {/* Solid backing for visibility */}
+      <div className="absolute -inset-4 rounded-3xl bg-black/80 blur-xl" />
+      
+      {/* Ambient glow */}
+      <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-amber-500/10 via-transparent to-amber-500/10 blur-2xl" />
 
-        {/* Display screen */}
-        <div className="surface-inset rounded-lg p-4 mb-4 screen-glow">
-          <div className="flex justify-between items-start mb-3">
+      {/* Main body */}
+      <div className="relative rounded-2xl overflow-hidden border border-zinc-700/50 shadow-2xl" style={{ background: 'linear-gradient(145deg, hsl(230 12% 10%), hsl(230 12% 6%))' }}>
+        {/* Chrome trim top */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        
+        {/* Inner padding */}
+        <div className="p-5">
+          {/* Top bar - Brand & VU meters */}
+          <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <TimeDial activeEra={activeEra} />
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center border border-zinc-600">
+                <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)] animate-pulse" />
+              </div>
               <div>
-                <p className="text-[10px] tracking-[0.2em] text-muted-foreground mb-1">ERA TUNER</p>
-                <motion.p 
-                  key={activeEra}
-                  className="text-sm font-semibold text-foreground"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                >
-                  {currentEra.year}
-                </motion.p>
+                <p className="text-[8px] tracking-[0.4em] text-zinc-500">TLC</p>
+                <p className="text-lg font-bold tracking-[0.2em] text-gradient-gold">REWIND</p>
               </div>
             </div>
-            <div className="flex gap-4">
-              <div className="text-center">
-                <p className="text-[10px] tracking-wider text-muted-foreground mb-1">L</p>
+            
+            <div className="flex items-center gap-6">
+              <div className="text-right">
+                <p className="text-[7px] tracking-wider text-zinc-600 mb-1">LEFT</p>
                 <VUMeter level={vuLevels[0]} />
               </div>
-              <div className="text-center">
-                <p className="text-[10px] tracking-wider text-muted-foreground mb-1">R</p>
+              <div className="text-right">
+                <p className="text-[7px] tracking-wider text-zinc-600 mb-1">RIGHT</p>
                 <VUMeter level={vuLevels[1]} />
               </div>
             </div>
           </div>
 
-          {/* Era display */}
-          <motion.div 
-            key={activeEra}
-            className="text-center py-4"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <p className={`text-xs tracking-[0.3em] text-transparent bg-clip-text bg-gradient-to-r ${currentEra.gradient} mb-1`}>
-              {currentEra.year}
-            </p>
-            <h3 className="text-2xl font-bold text-foreground tracking-wide mb-2">
-              {currentEra.name}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {currentEra.tagline}
-            </p>
-          </motion.div>
-
-          {/* Scanlines overlay */}
-          <div className="absolute inset-0 pointer-events-none opacity-20 rounded-lg overflow-hidden">
-            <div className="w-full h-full" style={{
-              backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)'
+          {/* Main display screen */}
+          <div className="relative surface-inset rounded-xl overflow-hidden mb-4">
+            {/* Screen glass effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none" />
+            
+            {/* Scanlines */}
+            <div className="absolute inset-0 pointer-events-none opacity-30" style={{
+              backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px)'
             }} />
+            
+            {/* Content */}
+            <div className="relative p-6">
+              <AnimatePresence mode="wait">
+                <motion.div 
+                  key={activeEra}
+                  className="text-center"
+                  initial={{ opacity: 0, y: 10, filter: 'blur(4px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: -10, filter: 'blur(4px)' }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {/* Era year - big visual focus */}
+                  <div className="relative inline-block">
+                    <span className={`text-6xl font-bold tracking-wider bg-gradient-to-r ${currentEra.gradient} bg-clip-text text-transparent`}>
+                      {currentEra.year}
+                    </span>
+                    <div className={`absolute -inset-4 bg-gradient-to-r ${currentEra.gradient} opacity-20 blur-xl -z-10`} />
+                  </div>
+                  
+                  {/* Era name */}
+                  <h3 className="text-xl font-bold text-foreground/90 tracking-[0.15em] mt-3">
+                    {currentEra.name}
+                  </h3>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Era indicator dots */}
+              <div className="flex justify-center gap-1.5 mt-6">
+                {eraOrder.map((era, i) => (
+                  <button
+                    key={era}
+                    onClick={() => setActiveEra(era)}
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                      era === activeEra 
+                        ? 'bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)] scale-125' 
+                        : 'bg-zinc-700 hover:bg-zinc-600'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Screen glow */}
+            <div className={`absolute inset-0 pointer-events-none opacity-20 bg-gradient-to-r ${currentEra.gradient} mix-blend-overlay`} />
+          </div>
+
+          {/* Controls row */}
+          <div className="flex items-center justify-between">
+            <RotaryKnob value={35} label="TIME" />
+            
+            {/* Center controls */}
+            <div className="flex items-center gap-3">
+              <button 
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 border border-zinc-600 flex items-center justify-center hover:border-zinc-500 transition-colors"
+              >
+                {isPlaying ? (
+                  <Pause className="w-4 h-4 text-zinc-400" />
+                ) : (
+                  <Play className="w-4 h-4 text-zinc-400 ml-0.5" />
+                )}
+              </button>
+              
+              {/* Main action button */}
+              <motion.button
+                onClick={() => navigate('/lab')}
+                className="relative px-10 py-4 rounded-lg overflow-hidden group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {/* Button gradients */}
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="absolute inset-px rounded-lg bg-gradient-to-br from-amber-400/50 to-transparent" />
+                
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                
+                {/* Text */}
+                <span className="relative flex items-center gap-3 text-black font-bold tracking-[0.2em]">
+                  <Play className="w-5 h-5 fill-current" />
+                  BEGIN
+                </span>
+              </motion.button>
+            </div>
+            
+            <RotaryKnob value={70} label="VOL" />
           </div>
         </div>
 
-        {/* Control labels */}
-        <div className="flex justify-between text-[9px] tracking-[0.2em] text-muted-foreground mb-3 px-2">
-          <span>TIME DIAL</span>
-          <span>ERA SELECTOR</span>
-          <span>VOLUME</span>
-        </div>
-
-        {/* Bottom controls */}
-        <div className="flex items-center justify-between gap-4">
-          {/* Fake knob left */}
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 border border-zinc-600 shadow-lg flex items-center justify-center">
-            <div className="w-1 h-3 bg-zinc-400 rounded-full transform -translate-y-1" />
-          </div>
-
-          {/* Main BEGIN REWIND button */}
-          <motion.button
-            onClick={() => navigate('/lab')}
-            className="flex-1 btn-gold flex items-center justify-center gap-3 py-5 text-lg rounded-lg"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Play className="w-6 h-6 fill-current" />
-            <span className="tracking-[0.15em]">BEGIN REWIND</span>
-          </motion.button>
-
-          {/* Fake knob right */}
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 border border-zinc-600 shadow-lg flex items-center justify-center">
-            <Volume2 className="w-4 h-4 text-zinc-400" />
-          </div>
-        </div>
-
-        {/* Decorative screws */}
-        {['top-3 left-3', 'top-3 right-3', 'bottom-3 left-3', 'bottom-3 right-3'].map((pos, i) => (
-          <div key={i} className={`absolute ${pos} w-2 h-2 rounded-full bg-gradient-to-br from-zinc-600 to-zinc-800 border border-zinc-500`}>
-            <div className="absolute inset-0.5 rounded-full bg-zinc-700" />
+        {/* Bottom trim */}
+        <div className="h-1 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800" />
+        
+        {/* Corner screws */}
+        {['top-2 left-2', 'top-2 right-2', 'bottom-2 left-2', 'bottom-2 right-2'].map((pos, i) => (
+          <div key={i} className={`absolute ${pos} w-2.5 h-2.5 rounded-full bg-gradient-to-br from-zinc-500 to-zinc-700`}>
+            <div className="absolute inset-0.5 rounded-full bg-zinc-800" />
+            <div className="absolute inset-[3px] rounded-full bg-gradient-to-br from-zinc-600 to-zinc-700" />
           </div>
         ))}
       </div>
 
       {/* Speaker grilles */}
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between mt-5 px-4">
         {[0, 1].map(i => (
-          <div key={i} className="w-20 h-20 rounded-full bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700 p-2">
-            <div className="w-full h-full rounded-full" style={{
-              background: 'repeating-radial-gradient(circle at center, transparent 0, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px)'
-            }} />
+          <div key={i} className="relative">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-zinc-800 to-zinc-950 border border-zinc-700 overflow-hidden">
+              <div className="absolute inset-2 rounded-full" style={{
+                background: 'repeating-radial-gradient(circle at center, transparent 0, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px)'
+              }} />
+              {/* Center dust cap */}
+              <div className="absolute inset-[30%] rounded-full bg-gradient-to-br from-zinc-600 to-zinc-800" />
+            </div>
+            {/* Speaker shadow */}
+            <div className="absolute -inset-2 rounded-full bg-black/30 blur-md -z-10" />
           </div>
         ))}
       </div>
