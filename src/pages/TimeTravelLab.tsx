@@ -23,23 +23,75 @@ export default function TimeTravelLab() {
   const [showPrompt, setShowPrompt] = useState(false);
   const [showGlobalStyle, setShowGlobalStyle] = useState(false);
   const [mobileView, setMobileView] = useState<'wall' | 'console'>('console');
+  const [isDragging, setIsDragging] = useState(false);
 
-  const handleImageUpload = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  // Process image file
+  const processImageFile = useCallback((file: File) => {
+    if (!file.type.startsWith('image/')) {
+      toast({
+        title: 'Invalid file',
+        description: 'Please upload an image file (JPG, PNG, etc.)',
+        variant: 'destructive'
+      });
+      return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+      toast({
+        title: 'File too large',
+        description: 'Please upload an image under 10MB',
+        variant: 'destructive'
+      });
+      return;
+    }
 
     const reader = new FileReader();
     reader.onload = (event) => {
       const base64 = event.target?.result as string;
       setSourceImage(base64);
       setResults(new Map());
+      setActiveEra(null);
       toast({
         title: '📼 Master Tape Loaded',
         description: 'Your face is locked. Ready to rewind through history.'
       });
     };
+    reader.onerror = () => {
+      toast({
+        title: 'Upload failed',
+        description: 'Could not read the image file. Please try again.',
+        variant: 'destructive'
+      });
+    };
     reader.readAsDataURL(file);
   }, [toast]);
+
+  const handleImageUpload = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) processImageFile(file);
+  }, [processImageFile]);
+
+  // Drag and drop handlers
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  }, []);
+
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+    
+    const file = e.dataTransfer.files?.[0];
+    if (file) processImageFile(file);
+  }, [processImageFile]);
 
   const toggleEra = useCallback((era: EraId) => {
     setSelectedEras(prev => {
@@ -155,8 +207,28 @@ export default function TimeTravelLab() {
   const isGenerating = generatingEras.size > 0;
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div 
+      className="min-h-screen relative overflow-hidden"
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
       <PremiumBackground3D />
+      
+      {/* Global drag overlay */}
+      {isDragging && (
+        <div className="fixed inset-0 z-[100] bg-background/90 backdrop-blur-xl flex items-center justify-center">
+          <div className="text-center space-y-6 animate-pulse">
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center mx-auto ring-2 ring-gold/30 ring-dashed">
+              <Upload className="w-12 h-12 text-gold" />
+            </div>
+            <div>
+              <p className="text-2xl font-bold tracking-wider text-gold">DROP YOUR PHOTO</p>
+              <p className="text-sm text-muted-foreground mt-2">Release to upload your master tape</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Header */}
       <header className="relative z-50 p-4 sm:p-6">
