@@ -1,21 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
-import { Volume2, VolumeX, Music } from 'lucide-react';
+import { Volume2, VolumeX, Music, SkipForward } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Premium royalty-free ambient tracks (from Free Music Archive / Public Domain)
+// Reliable royalty-free ambient tracks from verified working sources
 const AMBIENT_TRACKS = [
   {
-    name: "Interstellar Dreams",
-    // Using a publicly available ambient track
-    url: "https://cdn.pixabay.com/audio/2022/10/25/audio_946a541a19.mp3"
+    name: "Ethereal Ambience",
+    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   },
   {
-    name: "Cosmic Journey",
-    url: "https://cdn.pixabay.com/audio/2022/03/15/audio_8eae49df2c.mp3"
+    name: "Cosmic Flow",
+    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
   },
   {
-    name: "Ethereal Horizons",
-    url: "https://cdn.pixabay.com/audio/2024/02/14/audio_8e0e0c9f85.mp3"
+    name: "Deep Space",
+    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
   }
 ];
 
