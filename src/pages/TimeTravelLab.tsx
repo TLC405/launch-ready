@@ -8,6 +8,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import PremiumBackground3D from '@/components/PremiumBackground3D';
 import { EraTVWall } from '@/components/EraTVWall';
+import { AmbientMusic } from '@/components/AmbientMusic';
 import { eraConfig, eraOrder, EraId, GLOBAL_STYLE, getFullPrompt } from '@/lib/decadePrompts';
 import generationService, { GenerationResult } from '@/services/generationService';
 
@@ -382,7 +383,7 @@ export default function TimeTravelLab() {
               )}
             </motion.div>
 
-            {/* Era Selection */}
+            {/* Era Selector 1 - Quick Select Grid */}
             <motion.div 
               className="glass-panel rounded-2xl p-5 sm:p-6"
               initial={{ opacity: 0, y: 20 }}
@@ -390,7 +391,10 @@ export default function TimeTravelLab() {
               transition={{ delay: 0.1 }}
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold tracking-[0.15em]">ERA SELECTOR</h3>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                  <h3 className="text-lg font-bold tracking-[0.15em]">ERA SELECTOR</h3>
+                </div>
                 <div className="flex gap-3">
                   <button
                     onClick={() => setSelectedEras(new Set(eraOrder))}
@@ -444,6 +448,62 @@ export default function TimeTravelLab() {
                 <p className="text-xs text-muted-foreground">
                   <span className="text-gold font-bold">{selectedEras.size * 12}+</span> legends
                 </p>
+              </div>
+            </motion.div>
+
+            {/* Era Selector 2 - Visual Cards */}
+            <motion.div 
+              className="glass-panel rounded-2xl p-5 sm:p-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <h3 className="text-lg font-bold tracking-[0.15em]">ERA DETAILS</h3>
+              </div>
+
+              <div className="space-y-2 max-h-[200px] overflow-y-auto scrollbar-premium">
+                {eraOrder.map(era => {
+                  const isSelected = selectedEras.has(era);
+                  const isComplete = results.get(era)?.success;
+                  const isGen = generatingEras.has(era);
+                  const config = eraConfig[era];
+                  
+                  return (
+                    <button
+                      key={era}
+                      onClick={() => toggleEra(era)}
+                      disabled={isGen}
+                      className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-all ${
+                        isSelected
+                          ? 'glass-card ring-1 ring-gold/50 bg-gold/5'
+                          : 'hover:bg-muted/20'
+                      }`}
+                    >
+                      <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${config.gradient} flex items-center justify-center text-white font-bold text-xs shrink-0`}>
+                        {config.year}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium truncate">{config.name}</p>
+                        <p className="text-[10px] text-muted-foreground truncate">{config.featuring}</p>
+                      </div>
+                      <div className="flex items-center gap-2 shrink-0">
+                        {isComplete && (
+                          <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                            <Check className="w-3 h-3 text-emerald-500" />
+                          </div>
+                        )}
+                        {isGen && <Loader2 className="w-4 h-4 text-gold animate-spin" />}
+                        <div className={`w-4 h-4 rounded border-2 transition-all ${
+                          isSelected ? 'bg-gold border-gold' : 'border-muted-foreground/30'
+                        }`}>
+                          {isSelected && <Check className="w-full h-full text-background" />}
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </motion.div>
 
@@ -622,6 +682,9 @@ export default function TimeTravelLab() {
           </div>
         </div>
       </main>
+      
+      {/* Ambient Music Player */}
+      <AmbientMusic />
     </div>
   );
 }
