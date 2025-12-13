@@ -29,51 +29,71 @@ export function EraTVTile({
     <motion.div
       className={`relative cursor-pointer group ${isActive ? 'z-10' : ''}`}
       onClick={onClick}
-      whileHover={{ scale: 1.04, y: -6 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.06, y: -8 }}
+      whileTap={{ scale: 0.97 }}
       layout
     >
-      {/* Glow effect when active */}
+      {/* Multi-layer glow effect when active */}
       <AnimatePresence>
         {isActive && (
-          <motion.div 
-            className="absolute -inset-3 rounded-2xl blur-xl -z-10"
-            style={{
-              background: `linear-gradient(135deg, hsla(var(--gold), 0.4), transparent)`
-            }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          />
+          <>
+            <motion.div 
+              className="absolute -inset-4 rounded-2xl blur-2xl -z-10"
+              style={{
+                background: `radial-gradient(circle, hsla(var(--gold), 0.5), transparent 70%)`
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+            />
+            <motion.div 
+              className="absolute -inset-2 rounded-xl blur-md -z-10"
+              style={{
+                background: `linear-gradient(135deg, hsla(var(--gold), 0.3), transparent)`
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+          </>
         )}
       </AnimatePresence>
       
-      {/* Card */}
+      {/* Card Container */}
       <div 
-        className={`relative rounded-xl overflow-hidden transition-all duration-300 ${
+        className={`relative rounded-xl overflow-hidden transition-all duration-500 ${
           isActive 
-            ? 'ring-2 ring-gold shadow-[0_0_40px_hsla(var(--gold),0.3)]' 
+            ? 'ring-2 ring-gold shadow-[0_0_50px_hsla(var(--gold),0.35)]' 
             : hasError
-              ? 'ring-1 ring-destructive/50 hover:ring-destructive'
-              : 'ring-1 ring-zinc-700/50 hover:ring-zinc-600'
+              ? 'ring-1 ring-destructive/60 hover:ring-destructive shadow-[0_0_30px_hsla(0,62%,50%,0.2)]'
+              : 'ring-1 ring-zinc-700/60 hover:ring-zinc-500/80 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]'
         }`}
       >
-        {/* Glass background */}
+        {/* Premium glass background */}
         <div className="absolute inset-0 glass-card" />
         
-        {/* Chrome highlight */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        {/* Animated chrome highlight */}
+        <motion.div 
+          className="absolute top-0 left-0 right-0 h-px"
+          style={{
+            background: isActive 
+              ? 'linear-gradient(90deg, transparent, hsla(var(--gold), 0.6), transparent)'
+              : 'linear-gradient(90deg, transparent, hsla(var(--silver), 0.3), transparent)'
+          }}
+          animate={isActive ? { opacity: [0.5, 1, 0.5] } : {}}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
         
-        {/* Screen */}
+        {/* Screen Area */}
         <div className="relative aspect-[3/4] overflow-hidden">
-          {/* Content */}
           <AnimatePresence mode="wait">
             {resultUrl ? (
               <motion.div
                 key="result"
-                initial={{ opacity: 0, scale: 1.1 }}
+                initial={{ opacity: 0, scale: 1.15 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="absolute inset-0"
               >
                 <img 
@@ -81,52 +101,70 @@ export function EraTVTile({
                   alt={era.name}
                   className="w-full h-full object-cover"
                 />
-                {/* Success gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                {/* Premium gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/10" />
                 
-                {/* Success badge */}
+                {/* Shine overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
+                
+                {/* Success badge with pulse */}
                 <motion.div 
-                  className="absolute top-2 right-2"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: 'spring', bounce: 0.5, delay: 0.2 }}
+                  className="absolute top-2.5 right-2.5"
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ type: 'spring', bounce: 0.5, delay: 0.3 }}
                 >
-                  <div className="w-6 h-6 rounded-full bg-emerald-500/90 flex items-center justify-center shadow-lg">
-                    <Check className="w-3.5 h-3.5 text-white" />
+                  <div className="relative">
+                    <div className="absolute inset-0 w-7 h-7 rounded-full bg-success/40 animate-ping" />
+                    <div className="relative w-7 h-7 rounded-full bg-gradient-to-br from-success to-emerald-600 flex items-center justify-center shadow-lg shadow-success/40">
+                      <Check className="w-4 h-4 text-success-foreground" strokeWidth={3} />
+                    </div>
                   </div>
                 </motion.div>
+                
+                {/* Era label on result */}
+                <div className="absolute bottom-2.5 left-2.5 right-2.5">
+                  <div className="glass-ultra px-2.5 py-1.5 rounded-lg">
+                    <p className="text-[10px] tracking-[0.2em] text-platinum font-mono truncate">{era.name}</p>
+                  </div>
+                </div>
               </motion.div>
             ) : (
               <motion.div 
                 key="placeholder"
-                className="absolute inset-0 flex flex-col items-center justify-center p-3"
+                className="absolute inset-0 flex flex-col items-center justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                {/* Deep dark base */}
+                {/* Deep layered background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-black to-zinc-950" />
                 
-                {/* Era gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${era.gradient} opacity-40`} />
+                {/* Era gradient with better blending */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${era.gradient} opacity-50 mix-blend-overlay`} />
+                <div className={`absolute inset-0 bg-gradient-to-t ${era.gradient} opacity-20`} />
                 
-                {/* Noise texture */}
+                {/* Premium noise texture */}
                 <div 
-                  className="absolute inset-0 opacity-30 mix-blend-overlay"
+                  className="absolute inset-0 opacity-40 mix-blend-overlay"
                   style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
                   }}
                 />
                 
-                {/* Vignette */}
-                <div className="absolute inset-0" style={{ boxShadow: 'inset 0 0 60px rgba(0,0,0,0.8)' }} />
+                {/* Deep vignette */}
+                <div className="absolute inset-0" style={{ boxShadow: 'inset 0 0 80px rgba(0,0,0,0.9)' }} />
                 
-                {/* Year */}
-                <div className="relative z-10 text-center">
-                  <span className="text-4xl sm:text-5xl font-bold text-white drop-shadow-2xl tracking-wider">
+                {/* Center content */}
+                <div className="relative z-10 text-center px-2">
+                  <motion.span 
+                    className="text-4xl sm:text-5xl lg:text-4xl xl:text-5xl font-bold text-platinum drop-shadow-2xl tracking-wider block"
+                    animate={isActive ? { scale: [1, 1.02, 1] } : {}}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
                     {era.year}
-                  </span>
-                  <p className="text-[9px] tracking-[0.3em] text-white/60 mt-2 font-mono uppercase">
+                  </motion.span>
+                  <p className="text-[8px] sm:text-[9px] tracking-[0.25em] text-platinum/60 mt-2 font-mono uppercase">
                     {era.name.split(' ').slice(0, 2).join(' ')}
                   </p>
                 </div>
@@ -134,18 +172,20 @@ export function EraTVTile({
             )}
           </AnimatePresence>
 
-          {/* Scanlines */}
+          {/* Premium scanlines */}
           <div 
-            className="absolute inset-0 pointer-events-none opacity-15"
+            className="absolute inset-0 pointer-events-none opacity-20"
             style={{
-              backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px)'
+              backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.5) 2px, rgba(0,0,0,0.5) 4px)'
             }}
           />
 
-          {/* Screen curvature */}
+          {/* Screen curvature effect */}
           <div 
             className="absolute inset-0 pointer-events-none" 
-            style={{ boxShadow: 'inset 0 0 50px rgba(0,0,0,0.5)' }} 
+            style={{ 
+              boxShadow: 'inset 0 0 60px rgba(0,0,0,0.6), inset 0 0 120px rgba(0,0,0,0.3)' 
+            }} 
           />
           
           {/* Generate/Retry button overlay */}
@@ -155,78 +195,113 @@ export function EraTVTile({
                 e.stopPropagation();
                 onGenerate();
               }}
-              className="absolute inset-0 flex items-center justify-center bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm"
+              className="absolute inset-0 flex flex-col items-center justify-center bg-black/85 opacity-0 group-hover:opacity-100 transition-all duration-400 backdrop-blur-md"
               whileTap={{ scale: 0.95 }}
             >
               <div className="relative">
-                {/* Glow */}
-                <div className={`absolute -inset-6 rounded-full blur-xl animate-pulse ${hasError ? 'bg-destructive/30' : 'bg-gold/30'}`} />
+                {/* Animated glow ring */}
+                <motion.div 
+                  className={`absolute -inset-8 rounded-full blur-2xl ${hasError ? 'bg-destructive/40' : 'bg-gold/40'}`}
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
                 
                 {/* Button */}
-                <div className={`relative w-14 h-14 rounded-full flex items-center justify-center shadow-2xl ${
-                  hasError 
-                    ? 'bg-gradient-to-br from-destructive via-destructive to-destructive/80' 
-                    : 'bg-gradient-to-br from-gold via-gold to-gold-muted'
-                }`}>
+                <motion.div 
+                  className={`relative w-16 h-16 rounded-full flex items-center justify-center shadow-2xl ${
+                    hasError 
+                      ? 'bg-gradient-to-br from-destructive via-destructive to-red-700' 
+                      : 'bg-gradient-to-br from-gold via-gold to-gold-muted'
+                  }`}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  {/* Inner shine */}
+                  <div className="absolute inset-1 rounded-full bg-gradient-to-br from-white/30 to-transparent" />
+                  
                   {hasError ? (
-                    <RotateCcw className="w-6 h-6 text-white" />
+                    <RotateCcw className="w-7 h-7 text-destructive-foreground relative z-10" />
                   ) : (
-                    <Zap className="w-6 h-6 text-background" />
+                    <Zap className="w-7 h-7 text-primary-foreground relative z-10" />
                   )}
-                </div>
+                </motion.div>
               </div>
               
-              {hasError && (
-                <p className="absolute bottom-4 text-[10px] text-destructive/80 font-mono tracking-wider">
-                  TAP TO RETRY
-                </p>
-              )}
+              <p className={`mt-4 text-[10px] font-mono tracking-[0.2em] ${hasError ? 'text-destructive' : 'text-gold'}`}>
+                {hasError ? 'TAP TO RETRY' : 'GENERATE'}
+              </p>
             </motion.button>
           )}
           
-          {/* Generating overlay */}
+          {/* Generating overlay with premium animation */}
           <AnimatePresence>
             {isGenerating && (
               <motion.div 
-                className="absolute inset-0 flex flex-col items-center justify-center bg-black/70 backdrop-blur-sm gap-3"
+                className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 backdrop-blur-md"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
                 <div className="relative">
-                  <div className="absolute -inset-4 rounded-full bg-gold/20 blur-lg animate-pulse" />
-                  <Loader2 className="w-10 h-10 text-gold animate-spin" />
+                  {/* Animated rings */}
+                  <motion.div 
+                    className="absolute -inset-6 rounded-full border-2 border-gold/30"
+                    animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  />
+                  <motion.div 
+                    className="absolute -inset-4 rounded-full border border-gold/40"
+                    animate={{ scale: [1, 1.3], opacity: [0.6, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
+                  />
+                  
+                  {/* Glow */}
+                  <div className="absolute -inset-4 rounded-full bg-gold/25 blur-xl animate-pulse" />
+                  
+                  {/* Spinner */}
+                  <Loader2 className="w-12 h-12 text-gold animate-spin relative z-10" />
                 </div>
-                <p className="text-[10px] text-gold/80 font-mono tracking-wider animate-pulse">
+                <motion.p 
+                  className="text-[10px] text-gold font-mono tracking-[0.2em] mt-4"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
                   GENERATING...
-                </p>
+                </motion.p>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-        {/* Bottom bar */}
-        <div className="relative h-3 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900">
-          {/* LEDs */}
-          <div className="absolute left-2 top-1/2 -translate-y-1/2 flex gap-1">
-            <div className={`w-1.5 h-1.5 rounded-full transition-all ${
-              isGenerating 
-                ? 'bg-gold shadow-[0_0_6px_rgba(201,169,98,0.9)] animate-pulse' 
-                : hasError
-                  ? 'bg-destructive shadow-[0_0_6px_rgba(239,68,68,0.8)]'
-                  : isComplete 
-                    ? 'bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.8)]' 
-                    : 'bg-zinc-700'
-            }`} />
-            <div className={`w-1.5 h-1.5 rounded-full transition-all ${
-              isActive ? 'bg-gold shadow-[0_0_6px_rgba(201,169,98,0.8)]' : 'bg-zinc-700'
+        {/* Premium bottom bar */}
+        <div className="relative h-4 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 border-t border-zinc-700/50">
+          {/* LED indicators */}
+          <div className="absolute left-2.5 top-1/2 -translate-y-1/2 flex gap-1.5">
+            <motion.div 
+              className={`w-2 h-2 rounded-full transition-all ${
+                isGenerating 
+                  ? 'bg-gold shadow-[0_0_8px_hsla(var(--gold),0.9)]' 
+                  : hasError
+                    ? 'bg-destructive shadow-[0_0_8px_hsla(var(--destructive),0.8)]'
+                    : isComplete 
+                      ? 'bg-success shadow-[0_0_8px_hsla(var(--success),0.8)]' 
+                      : 'bg-zinc-700'
+              }`}
+              animate={isGenerating ? { opacity: [0.5, 1, 0.5] } : {}}
+              transition={{ duration: 0.8, repeat: Infinity }}
+            />
+            <div className={`w-2 h-2 rounded-full transition-all ${
+              isActive ? 'bg-gold shadow-[0_0_8px_hsla(var(--gold),0.8)]' : 'bg-zinc-700'
             }`} />
           </div>
           
           {/* Model number */}
-          <div className="absolute right-2 top-1/2 -translate-y-1/2">
-            <span className="text-[6px] text-zinc-600 font-mono tracking-wider">TLC-{era.year}</span>
+          <div className="absolute right-2.5 top-1/2 -translate-y-1/2">
+            <span className="text-[7px] text-zinc-500 font-mono tracking-wider">TLC-{era.year}</span>
           </div>
+          
+          {/* Chrome accent line */}
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-600/50 to-transparent" />
         </div>
       </div>
     </motion.div>

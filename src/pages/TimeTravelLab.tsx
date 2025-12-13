@@ -216,99 +216,165 @@ export default function TimeTravelLab() {
     >
       <PremiumBackground3D />
       
-      {/* Global drag overlay */}
-      {isDragging && (
-        <div className="fixed inset-0 z-[100] bg-background/90 backdrop-blur-xl flex items-center justify-center">
-          <div className="text-center space-y-6 animate-pulse">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center mx-auto ring-2 ring-gold/30 ring-dashed">
-              <Upload className="w-12 h-12 text-gold" />
-            </div>
-            <div>
-              <p className="text-2xl font-bold tracking-wider text-gold">DROP YOUR PHOTO</p>
-              <p className="text-sm text-muted-foreground mt-2">Release to upload your master tape</p>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Global drag overlay - Premium */}
+      <AnimatePresence>
+        {isDragging && (
+          <motion.div 
+            className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div 
+              className="text-center space-y-8"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+            >
+              <motion.div 
+                className="relative w-40 h-40 mx-auto"
+                animate={{ rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                {/* Animated rings */}
+                <motion.div 
+                  className="absolute inset-0 rounded-full border-2 border-dashed border-gold/40"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                />
+                <motion.div 
+                  className="absolute inset-4 rounded-full border-2 border-dashed border-gold/30"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+                />
+                
+                {/* Center */}
+                <div className="absolute inset-8 rounded-full glass-panel-gold flex items-center justify-center">
+                  <Upload className="w-12 h-12 text-gold" />
+                </div>
+              </motion.div>
+              
+              <div>
+                <motion.p 
+                  className="text-3xl font-bold tracking-[0.2em] text-gradient-gold"
+                  animate={{ opacity: [0.7, 1, 0.7] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  DROP YOUR PHOTO
+                </motion.p>
+                <p className="text-sm text-muted-foreground mt-3 tracking-wider">Release to upload your master tape</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Premium Header */}
       <header className="relative z-50 py-4 sm:py-6">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="glass-panel rounded-2xl px-6 py-4 flex items-center justify-between">
+          <motion.div 
+            className="glass-panel rounded-2xl px-5 sm:px-6 py-4 flex items-center justify-between"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+          >
             <Link 
               to="/" 
               className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-all group"
             >
-              <div className="w-12 h-12 rounded-xl glass-ultra flex items-center justify-center group-hover:ring-1 ring-gold/40 group-hover:bg-gold/5 transition-all">
+              <motion.div 
+                className="w-11 h-11 rounded-xl glass-ultra flex items-center justify-center border border-transparent group-hover:border-gold/30 group-hover:bg-gold/5 transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
-              </div>
+              </motion.div>
               <div className="hidden sm:block">
-                <span className="text-[10px] tracking-[0.3em] text-muted-foreground/60 font-mono block">RETURN TO</span>
+                <span className="text-[9px] tracking-[0.3em] text-muted-foreground/50 font-mono block">RETURN TO</span>
                 <span className="text-xs tracking-[0.15em] font-semibold">MAIN CONSOLE</span>
               </div>
             </Link>
             
             <div className="flex items-center gap-5">
-              <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-xl bg-gold/5 border border-gold/10">
-                <div className="w-2 h-2 rounded-full bg-gold animate-pulse shadow-[0_0_12px_hsla(var(--gold),0.6)]" />
+              <motion.div 
+                className="hidden md:flex items-center gap-3 px-4 py-2.5 rounded-xl bg-gold/5 border border-gold/15"
+                animate={{ borderColor: ['hsla(38, 35%, 55%, 0.15)', 'hsla(38, 35%, 55%, 0.3)', 'hsla(38, 35%, 55%, 0.15)'] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <motion.div 
+                  className="w-2 h-2 rounded-full bg-gold shadow-[0_0_12px_hsla(var(--gold),0.8)]"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                />
                 <span className="text-[10px] tracking-[0.2em] text-gold font-mono">SINGULARITY PROTOCOL</span>
-              </div>
+              </motion.div>
               <div className="text-center">
-                <div className="flex items-center gap-3 justify-center">
-                  <Sparkles className="w-6 h-6 text-gold animate-pulse" />
-                  <h1 className="text-3xl sm:text-4xl font-bold tracking-[0.1em] text-gradient-gold">
+                <div className="flex items-center gap-2 justify-center">
+                  <Sparkles className="w-5 h-5 text-gold animate-pulse" />
+                  <h1 className="text-2xl sm:text-3xl font-bold tracking-[0.12em] text-gradient-gold">
                     TLC REWIND LAB
                   </h1>
-                  <Sparkles className="w-6 h-6 text-gold animate-pulse" />
+                  <Sparkles className="w-5 h-5 text-gold animate-pulse" />
                 </div>
-                <p className="text-[10px] tracking-[0.3em] text-muted-foreground/50 font-mono mt-1 hidden sm:block">
+                <p className="text-[9px] tracking-[0.3em] text-muted-foreground/50 font-mono mt-1 hidden sm:block">
                   TEMPORAL LOOP CONTROL™
                 </p>
               </div>
             </div>
             
-            <div className="flex items-center gap-4">
-              <div className="glass-ultra px-5 py-3 rounded-xl flex items-center gap-3 border border-emerald-500/20">
+            <div className="flex items-center gap-3">
+              <motion.div 
+                className="glass-ultra px-4 py-2.5 rounded-xl flex items-center gap-3 border border-success/20"
+                whileHover={{ scale: 1.02 }}
+              >
                 <div className="relative">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_12px_rgba(16,185,129,0.8)]" />
-                  <div className="absolute inset-0 w-3 h-3 rounded-full bg-emerald-500 animate-ping opacity-50" />
+                  <motion.div 
+                    className="w-2.5 h-2.5 rounded-full bg-success shadow-[0_0_12px_hsla(var(--success),0.9)]"
+                    animate={{ scale: [1, 1.3, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  />
                 </div>
                 <div className="hidden sm:block">
-                  <span className="text-[10px] tracking-[0.2em] text-emerald-400 font-mono block">SYSTEM</span>
-                  <span className="text-xs tracking-[0.1em] text-emerald-300 font-semibold">ONLINE</span>
+                  <span className="text-[9px] tracking-[0.2em] text-success/70 font-mono block">SYSTEM</span>
+                  <span className="text-[11px] tracking-[0.1em] text-success font-semibold">ONLINE</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </header>
 
-      {/* Mobile View Toggle */}
+      {/* Mobile View Toggle - Premium */}
       <div className="lg:hidden relative z-40 px-4 pb-4">
-        <div className="glass-ultra rounded-xl p-2 flex gap-2">
-          <button
+        <motion.div 
+          className="glass-panel rounded-xl p-1.5 flex gap-1.5"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <motion.button
             onClick={() => setMobileView('console')}
-            className={`flex-1 px-4 py-3 rounded-lg text-xs font-medium tracking-wider transition-all flex items-center justify-center gap-2 ${
+            className={`flex-1 px-4 py-3 rounded-lg text-xs font-bold tracking-wider transition-all flex items-center justify-center gap-2 ${
               mobileView === 'console' 
-                ? 'bg-gradient-to-r from-gold to-gold-muted text-background' 
-                : 'text-muted-foreground hover:text-foreground'
+                ? 'bg-gradient-to-r from-gold to-gold-muted text-primary-foreground shadow-lg shadow-gold/20' 
+                : 'text-muted-foreground hover:text-foreground hover:bg-muted/20'
             }`}
+            whileTap={{ scale: 0.98 }}
           >
             <Camera className="w-4 h-4" />
             CONTROLS
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={() => setMobileView('wall')}
-            className={`flex-1 px-4 py-3 rounded-lg text-xs font-medium tracking-wider transition-all flex items-center justify-center gap-2 ${
+            className={`flex-1 px-4 py-3 rounded-lg text-xs font-bold tracking-wider transition-all flex items-center justify-center gap-2 ${
               mobileView === 'wall' 
-                ? 'bg-gradient-to-r from-gold to-gold-muted text-background' 
-                : 'text-muted-foreground hover:text-foreground'
+                ? 'bg-gradient-to-r from-gold to-gold-muted text-primary-foreground shadow-lg shadow-gold/20' 
+                : 'text-muted-foreground hover:text-foreground hover:bg-muted/20'
             }`}
+            whileTap={{ scale: 0.98 }}
           >
             <Sparkles className="w-4 h-4" />
             ERA WALL
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
 
       {/* Main Content */}
@@ -336,28 +402,33 @@ export default function TimeTravelLab() {
               animate={{ opacity: 1, y: 0 }}
             >
               {/* Panel Header */}
-              <div className="px-5 py-4 border-b border-border/30 bg-gradient-to-r from-red-500/5 to-transparent">
+              <div className="px-5 py-4 border-b border-border/30 bg-gradient-to-r from-destructive/5 to-transparent">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="relative">
-                      <div className="w-4 h-4 rounded-full bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.8)] animate-pulse" />
-                      <div className="absolute inset-0 w-4 h-4 rounded-full bg-red-500 animate-ping opacity-30" />
+                      <motion.div 
+                        className="w-3.5 h-3.5 rounded-full bg-destructive shadow-[0_0_15px_hsla(var(--destructive),0.8)]"
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold tracking-[0.15em]">MASTER TAPE</h3>
-                      <p className="text-[10px] tracking-[0.2em] text-muted-foreground/60 font-mono">FACE LOCK PROTOCOL</p>
+                      <p className="text-[9px] tracking-[0.2em] text-muted-foreground/50 font-mono">FACE LOCK PROTOCOL</p>
                     </div>
                   </div>
                   {sourceImage && (
-                    <button
+                    <motion.button
                       onClick={() => {
                         setSourceImage(null);
                         setResults(new Map());
                       }}
-                      className="w-10 h-10 rounded-xl glass-ultra flex items-center justify-center text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
+                      className="w-9 h-9 rounded-xl glass-ultra flex items-center justify-center text-muted-foreground hover:text-destructive hover:bg-destructive/10 hover:border-destructive/30 border border-transparent transition-all"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      <X className="w-5 h-5" />
-                    </button>
+                      <X className="w-4 h-4" />
+                    </motion.button>
                   )}
                 </div>
               </div>
@@ -374,58 +445,91 @@ export default function TimeTravelLab() {
               />
 
                 {sourceImage ? (
-                  <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-5">
                     <div className="relative flex-shrink-0">
                       {/* Multi-layer glow */}
-                      <div className="absolute -inset-4 rounded-full bg-gold/10 blur-2xl" />
-                      <div className="absolute -inset-2 rounded-full bg-gold/20 blur-xl" />
-                      {/* Image */}
-                      <div className="relative w-28 h-28 rounded-2xl overflow-hidden ring-2 ring-gold/50 shadow-2xl shadow-gold/20">
+                      <motion.div 
+                        className="absolute -inset-4 rounded-full bg-gold/10 blur-2xl"
+                        animate={{ opacity: [0.5, 0.8, 0.5] }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                      />
+                      <motion.div 
+                        className="absolute -inset-2 rounded-full bg-gold/20 blur-xl"
+                        animate={{ opacity: [0.3, 0.6, 0.3] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                      {/* Image container */}
+                      <div className="relative w-24 h-24 rounded-2xl overflow-hidden ring-2 ring-gold/60 shadow-2xl shadow-gold/30">
                         <img src={sourceImage} alt="Your photo" className="w-full h-full object-cover" />
                         {/* Scanline overlay */}
-                        <div className="absolute inset-0 scanlines opacity-30" />
+                        <div className="absolute inset-0 scanlines opacity-20" />
+                        {/* Shine */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
                       </div>
-                      {/* Check badge */}
-                      <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                        <Check className="w-5 h-5 text-white" />
-                      </div>
+                      {/* Success badge */}
+                      <motion.div 
+                        className="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-lg bg-gradient-to-br from-success to-emerald-600 flex items-center justify-center shadow-lg shadow-success/40"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: 'spring', bounce: 0.5 }}
+                      >
+                        <Check className="w-4 h-4 text-success-foreground" strokeWidth={3} />
+                      </motion.div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <p className="text-sm font-bold text-emerald-400 tracking-wider">FACE LOCKED</p>
+                        <motion.div 
+                          className="w-2 h-2 rounded-full bg-success shadow-[0_0_8px_hsla(var(--success),0.8)]"
+                          animate={{ scale: [1, 1.3, 1] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        />
+                        <p className="text-sm font-bold text-success tracking-wider">FACE LOCKED</p>
                       </div>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        Your exact facial features will be preserved across all eras. Hair and styling will transform to match each decade.
+                      <p className="text-xs text-muted-foreground/80 leading-relaxed">
+                        Exact facial features preserved. Hair & styling transform per era.
                       </p>
-                      <button
+                      <motion.button
                         onClick={() => fileInputRef.current?.click()}
-                        className="mt-4 text-xs text-muted-foreground hover:text-gold flex items-center gap-2 transition-colors group"
+                        className="mt-3 text-xs text-muted-foreground hover:text-gold flex items-center gap-2 transition-colors group"
+                        whileHover={{ x: 2 }}
                       >
                         <Camera className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
                         <span className="underline underline-offset-4">Change photo</span>
-                      </button>
+                      </motion.button>
                     </div>
                   </div>
                 ) : (
-                  <button
+                  <motion.button
                     onClick={() => fileInputRef.current?.click()}
-                    className="w-full aspect-[16/9] glass-card rounded-2xl border-2 border-dashed border-muted/50 hover:border-gold/40 transition-all flex flex-col items-center justify-center gap-5 group relative overflow-hidden"
+                    className="w-full aspect-[16/9] glass-card-interactive rounded-2xl border-2 border-dashed border-muted/40 hover:border-gold/50 flex flex-col items-center justify-center gap-4 group relative overflow-hidden"
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
                   >
                     {/* Background pattern */}
                     <div className="absolute inset-0 opacity-5 synthwave-grid" />
+                    
+                    {/* Animated corner accents */}
+                    <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-gold/30 rounded-tl-lg" />
+                    <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-gold/30 rounded-tr-lg" />
+                    <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-gold/30 rounded-bl-lg" />
+                    <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-gold/30 rounded-br-lg" />
+                    
                     <div className="relative z-10">
-                      <div className="absolute -inset-6 rounded-full bg-gold/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="relative w-20 h-20 rounded-2xl glass-ultra flex items-center justify-center group-hover:ring-2 ring-gold/30 group-hover:scale-105 transition-all duration-300">
-                        <Upload className="w-9 h-9 text-gold group-hover:animate-bounce" />
+                      <motion.div 
+                        className="absolute -inset-8 rounded-full bg-gold/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                      <div className="relative w-16 h-16 rounded-2xl glass-ultra flex items-center justify-center group-hover:ring-2 ring-gold/40 transition-all duration-300">
+                        <Upload className="w-7 h-7 text-gold group-hover:scale-110 transition-transform" />
                       </div>
                     </div>
                     <div className="text-center relative z-10">
-                      <p className="text-base font-bold tracking-[0.15em] group-hover:text-gold transition-colors">DROP YOUR PHOTO</p>
-                      <p className="text-xs text-muted-foreground mt-2">Drag & drop or click to upload</p>
-                      <p className="text-[10px] text-muted-foreground/50 mt-1 font-mono tracking-wider">MAX 10MB • JPG, PNG</p>
+                      <p className="text-sm font-bold tracking-[0.15em] group-hover:text-gold transition-colors">DROP YOUR PHOTO</p>
+                      <p className="text-xs text-muted-foreground/60 mt-1.5">Drag & drop or click to upload</p>
+                      <p className="text-[9px] text-muted-foreground/40 mt-1 font-mono tracking-wider">MAX 10MB • JPG, PNG</p>
                     </div>
-                  </button>
+                  </motion.button>
                 )}
               </div>
             </motion.div>
@@ -569,50 +673,61 @@ export default function TimeTravelLab() {
               </div>
             </motion.div>
 
-            {/* Generate Controls */}
+            {/* Generate Controls - Premium */}
             <motion.div 
               className="space-y-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <button
+              <motion.button
                 onClick={generateAll}
                 disabled={!sourceImage || isGenerating || selectedEras.size === 0}
-                className="w-full btn-gold py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 relative overflow-hidden group"
+                className="w-full btn-gold py-4 text-base disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 relative overflow-hidden group"
+                whileHover={{ scale: sourceImage && !isGenerating ? 1.01 : 1 }}
+                whileTap={{ scale: sourceImage && !isGenerating ? 0.99 : 1 }}
               >
+                {/* Animated background on generating */}
+                {isGenerating && (
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-gold/0 via-white/20 to-gold/0"
+                    animate={{ x: ['-100%', '100%'] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  />
+                )}
+                
                 {isGenerating ? (
                   <>
-                    <Loader2 className="w-6 h-6 animate-spin" />
-                    <span>GENERATING {generatingEras.size} ERAS...</span>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span className="font-bold tracking-wider">GENERATING {generatingEras.size} ERAS...</span>
                   </>
                 ) : (
                   <>
-                    <Zap className="w-6 h-6 group-hover:animate-pulse" />
-                    <span>GENERATE {selectedEras.size} ERAS</span>
+                    <Zap className="w-5 h-5 group-hover:animate-pulse" />
+                    <span className="font-bold tracking-wider">GENERATE {selectedEras.size} ERAS</span>
                   </>
                 )}
                 
                 {isGenerating && (
-                  <div className="absolute bottom-0 left-0 h-1 bg-black/20 w-full">
-                    <motion.div 
-                      className="h-full bg-white/40"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${((selectedEras.size - generatingEras.size) / selectedEras.size) * 100}%` }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </div>
+                  <motion.div 
+                    className="absolute bottom-0 left-0 h-1 bg-background/30 w-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: (selectedEras.size - generatingEras.size) / selectedEras.size }}
+                    style={{ transformOrigin: 'left' }}
+                  />
                 )}
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
                 onClick={downloadAll}
                 disabled={completedCount === 0}
-                className="w-full btn-record py-3.5 text-foreground disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="w-full btn-record py-3.5 text-foreground disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                whileHover={{ scale: completedCount > 0 ? 1.01 : 1 }}
+                whileTap={{ scale: completedCount > 0 ? 0.99 : 1 }}
               >
                 <Download className="w-5 h-5" />
-                <span>DOWNLOAD ALL ({completedCount})</span>
-              </button>
+                <span className="font-semibold tracking-wider">DOWNLOAD ALL ({completedCount})</span>
+              </motion.button>
             </motion.div>
 
             {/* Album Preview */}

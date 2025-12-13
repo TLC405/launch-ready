@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Radio, Sparkles } from 'lucide-react';
 import { EraTVTile } from './EraTVTile';
 import { eraConfig, eraOrder, EraId } from '@/lib/decadePrompts';
 import { GenerationResult } from '@/services/generationService';
@@ -19,32 +20,50 @@ export function EraTVWall({
   onGenerateEra
 }: EraTVWallProps) {
   const completedCount = Array.from(results.values()).filter(r => r.success).length;
+  const progressPercent = Math.round((completedCount / eraOrder.length) * 100);
   
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          {/* Decorative line */}
-          <div className="w-1 h-8 rounded-full bg-gradient-to-b from-gold via-gold/50 to-transparent" />
+    <div className="space-y-5">
+      {/* Premium Header */}
+      <motion.div 
+        className="glass-panel-gold rounded-2xl p-5"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            {/* Animated accent bar */}
+            <motion.div 
+              className="w-1.5 h-10 rounded-full bg-gradient-to-b from-gold via-gold/60 to-transparent"
+              animate={{ opacity: [0.6, 1, 0.6] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+            
+            <div>
+              <p className="text-[9px] tracking-[0.4em] text-gold/60 font-mono mb-1">TEMPORAL LINE CATALOG</p>
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-[0.15em] text-gradient-gold">ERA SELECTION</h3>
+            </div>
+          </div>
           
-          <div>
-            <p className="text-[9px] tracking-[0.4em] text-muted-foreground/60 font-mono">TEMPORAL LINE CATALOG</p>
-            <h3 className="text-2xl font-bold tracking-[0.2em] text-gradient-gold">ERA SELECTION</h3>
+          {/* Live status indicator */}
+          <div className="glass-ultra px-4 py-2.5 rounded-xl flex items-center gap-3 border border-success/20">
+            <div className="relative">
+              <motion.div 
+                className="w-2.5 h-2.5 rounded-full bg-success"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              />
+              <div className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-success animate-ping opacity-50" />
+            </div>
+            <div className="hidden sm:block">
+              <span className="text-[9px] tracking-[0.25em] text-success/80 font-mono block">SYSTEM</span>
+              <span className="text-[10px] tracking-[0.15em] text-success font-semibold">ONLINE</span>
+            </div>
           </div>
         </div>
-        
-        {/* Live indicator */}
-        <div className="glass-ultra px-4 py-2 rounded-full flex items-center gap-3">
-          <div className="relative">
-            <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <div className="absolute inset-0 w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-          </div>
-          <span className="text-[10px] tracking-[0.3em] text-emerald-400 font-mono">ONLINE</span>
-        </div>
-      </div>
+      </motion.div>
 
-      {/* TV Grid */}
+      {/* TV Grid with staggered animation */}
       <motion.div 
         className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4"
         initial="hidden"
@@ -53,7 +72,7 @@ export function EraTVWall({
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.05 }
+            transition: { staggerChildren: 0.06, delayChildren: 0.1 }
           }
         }}
       >
@@ -65,8 +84,13 @@ export function EraTVWall({
             <motion.div
               key={eraId}
               variants={{
-                hidden: { opacity: 0, y: 20, scale: 0.95 },
-                visible: { opacity: 1, y: 0, scale: 1 }
+                hidden: { opacity: 0, y: 30, scale: 0.9 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0, 
+                  scale: 1,
+                  transition: { type: 'spring', stiffness: 300, damping: 25 }
+                }
               }}
             >
               <EraTVTile
@@ -84,39 +108,66 @@ export function EraTVWall({
         })}
       </motion.div>
 
-      {/* Status bar */}
-      <div className="glass-ultra rounded-xl p-4">
-        <div className="flex items-center justify-between">
-          {/* Stats */}
-          <div className="flex items-center gap-8">
+      {/* Premium Status Bar */}
+      <motion.div 
+        className="glass-panel rounded-2xl p-5"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          {/* Stats Grid */}
+          <div className="flex items-center gap-6 sm:gap-10">
             {[
-              { label: 'TOTAL', value: eraOrder.length, color: 'text-foreground' },
-              { label: 'COMPLETE', value: completedCount, color: 'text-emerald-400' },
-              { label: 'GENERATING', value: generatingEras.size, color: 'text-gold' }
+              { label: 'TOTAL', value: eraOrder.length, color: 'text-platinum', icon: Radio },
+              { label: 'COMPLETE', value: completedCount, color: 'text-success', icon: null },
+              { label: 'GENERATING', value: generatingEras.size, color: 'text-gold', icon: Sparkles }
             ].map((stat, i) => (
               <div key={i} className="flex items-center gap-3">
-                <span className={`text-2xl font-bold ${stat.color}`}>{stat.value}</span>
-                <span className="text-[8px] tracking-[0.3em] text-muted-foreground/60 font-mono">{stat.label}</span>
+                <motion.span 
+                  className={`text-3xl sm:text-4xl font-bold ${stat.color}`}
+                  animate={stat.label === 'GENERATING' && stat.value > 0 ? { opacity: [0.7, 1, 0.7] } : {}}
+                  transition={{ duration: 1, repeat: Infinity }}
+                >
+                  {stat.value}
+                </motion.span>
+                <div className="flex flex-col">
+                  <span className="text-[8px] tracking-[0.3em] text-muted-foreground/60 font-mono">{stat.label}</span>
+                  {stat.icon && <stat.icon className="w-3 h-3 text-muted-foreground/40 mt-0.5" />}
+                </div>
               </div>
             ))}
           </div>
           
-          {/* Progress bar */}
-          <div className="flex items-center gap-3">
-            <div className="w-32 h-1.5 rounded-full bg-muted overflow-hidden">
+          {/* Progress Bar */}
+          <div className="flex items-center gap-4 w-full sm:w-auto">
+            <div className="relative flex-1 sm:w-40 h-2 rounded-full bg-muted/50 overflow-hidden">
+              {/* Background glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/10 to-transparent" />
+              
+              {/* Progress fill */}
               <motion.div 
-                className="h-full bg-gradient-to-r from-gold to-emerald-500 rounded-full"
+                className="absolute inset-y-0 left-0 bg-gradient-to-r from-gold via-success to-success rounded-full"
                 initial={{ width: 0 }}
-                animate={{ width: `${(completedCount / eraOrder.length) * 100}%` }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
+                animate={{ width: `${progressPercent}%` }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+              />
+              
+              {/* Shine effect */}
+              <motion.div 
+                className="absolute inset-y-0 w-8 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                animate={{ x: ['-100%', '500%'] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
               />
             </div>
-            <span className="text-[10px] tracking-wider text-muted-foreground font-mono">
-              {Math.round((completedCount / eraOrder.length) * 100)}%
-            </span>
+            
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-bold text-gold">{progressPercent}%</span>
+              <span className="text-[9px] tracking-wider text-muted-foreground/60 font-mono hidden sm:block">COMPLETE</span>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
