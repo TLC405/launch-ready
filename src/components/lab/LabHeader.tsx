@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useAuth } from '@/hooks/useAuth';
-import { Button } from '@/components/ui/button';
-import { Terminal, LogOut, Shield, Home } from 'lucide-react';
+import { Terminal, LogOut, Shield, Home, Sparkles } from 'lucide-react';
 
 interface LabHeaderProps {
   onTerminalToggle: () => void;
@@ -17,56 +17,79 @@ export function LabHeader({ onTerminalToggle }: LabHeaderProps) {
   };
 
   return (
-    <header className="border-b border-border bg-card sticky top-0 z-40">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <motion.header 
+      className="glass-panel border-b border-border/30 sticky top-0 z-40"
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+    >
+      <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <button onClick={() => navigate('/')} className="flex items-center gap-2">
-            <Home className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
-          </button>
+          <motion.button 
+            onClick={() => navigate('/')} 
+            className="w-10 h-10 rounded-xl glass-ultra flex items-center justify-center hover:bg-gold/10 hover:border-gold/30 border border-transparent transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Home className="w-5 h-5 text-muted-foreground" />
+          </motion.button>
           <div>
-            <h1 className="text-2xl font-display font-bold text-gradient-retro">
-              TLC REWIND
-            </h1>
-            <p className="text-xs text-muted-foreground">
-              Time Travel Lab
+            <div className="flex items-center gap-2">
+              <h1 className="text-xl sm:text-2xl font-display font-bold text-gradient-gold tracking-wider">
+                TLC REWIND
+              </h1>
+              <Sparkles className="w-4 h-4 text-gold animate-pulse" />
+            </div>
+            <p className="text-[10px] tracking-[0.2em] text-muted-foreground/60 font-mono">
+              TIME TRAVEL LAB
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Button
-            variant="outline"
-            size="sm"
+        <div className="flex items-center gap-2 sm:gap-3">
+          <motion.button
             onClick={onTerminalToggle}
-            className="hidden sm:flex"
+            className="hidden sm:flex glass-ultra px-4 py-2.5 rounded-xl items-center gap-2 text-xs font-medium tracking-wider hover:bg-gold/10 hover:border-gold/30 border border-transparent transition-all"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <Terminal className="w-4 h-4 mr-2" />
-            Master Terminal
-          </Button>
+            <Terminal className="w-4 h-4 text-gold" />
+            <span>TERMINAL</span>
+          </motion.button>
 
           {isAdmin && (
-            <Button
-              variant="outline"
-              size="sm"
+            <motion.button
               onClick={() => navigate('/admin')}
+              className="glass-ultra px-4 py-2.5 rounded-xl flex items-center gap-2 text-xs font-medium tracking-wider hover:bg-gold/10 hover:border-gold/30 border border-transparent transition-all"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <Shield className="w-4 h-4 mr-2" />
-              Admin
-            </Button>
+              <Shield className="w-4 h-4 text-gold" />
+              <span className="hidden sm:inline">ADMIN</span>
+            </motion.button>
           )}
 
           {user ? (
-            <Button variant="ghost" size="sm" onClick={handleSignOut}>
-              <LogOut className="w-4 h-4 mr-2" />
-              Logout
-            </Button>
+            <motion.button 
+              onClick={handleSignOut}
+              className="glass-ultra px-4 py-2.5 rounded-xl flex items-center gap-2 text-xs font-medium tracking-wider hover:bg-destructive/10 hover:border-destructive/30 border border-transparent transition-all text-muted-foreground hover:text-destructive"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="hidden sm:inline">LOGOUT</span>
+            </motion.button>
           ) : (
-            <Button variant="default" size="sm" onClick={() => navigate('/auth')}>
-              Login
-            </Button>
+            <motion.button 
+              onClick={() => navigate('/auth')}
+              className="btn-gold px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              LOGIN
+            </motion.button>
           )}
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }
