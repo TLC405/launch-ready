@@ -42,12 +42,24 @@ THE USER'S FACE MUST BE TRANSPLANTED PERFECTLY:
 • NOT a "version" of them, NOT "inspired by" - THE ACTUAL FACE
 
 ═══════════════════════════════════════════════════════════════════════
-HAT & HAIR - ENHANCE BUT NEVER HIDE
+SOURCE IMAGE ARTIFACT REMOVAL - CRITICAL
 ═══════════════════════════════════════════════════════════════════════
-• Era-appropriate styling that COMPLEMENTS the user's natural features
-• Hat sits naturally, never covering eyebrows or key facial features  
-• Hair styled to the period but maintaining user's natural hairline
-• Both should make user look MORE like themselves in that era
+• REMOVE any hats, caps, beanies from the source photo - DO NOT TRANSFER to output
+• REMOVE any glasses or sunglasses from source - DO NOT TRANSFER
+• REMOVE any accessories that hide or obscure facial features
+• Only use the NAKED FACE from the reference - style hair for the ERA, not from source
+• The user's hair should be styled ERA-APPROPRIATELY, not copied from their selfie
+
+═══════════════════════════════════════════════════════════════════════
+FACIAL PROPORTION PRESERVATION - ZERO TOLERANCE
+═══════════════════════════════════════════════════════════════════════
+• NOSE: Preserve EXACT nose - same width, bridge height, nostril shape, tip angle
+• DO NOT enlarge the nose - this is a common AI error that MUST be avoided
+• DO NOT modify nose proportions in ANY way - copy exactly from reference
+• EYES: Same shape, spacing, size - no enlargement or reduction
+• MOUTH: Same lip shape, width, proportions
+• JAWLINE: Same jaw shape, chin prominence, face width
+• All facial ratios must be IDENTICAL to the source photo
 
 ═══════════════════════════════════════════════════════════════════════
 CELEBRITY LIKENESS - REAL PEOPLE, NOT CARICATURES
@@ -371,13 +383,13 @@ USER POSITIONING & STYLING:
 • Center stage under THE spotlight
 • Everyone else reacting to user's PRESENCE
 • WEARING: Red leather jacket (Thriller vibes), high-top sneakers, gold chains
-• HAT: Backwards snapback OR bandana tied 80s style
-• HAIR: Peak 80s volume - big, bold, gravity-defying
+• DO NOT include any hat from source photo - style hair in era-appropriate 80s volume
+• HAIR: Peak 80s volume - big, bold, gravity-defying, teased and styled for the decade
 • Expression: The swagger of someone who owns the decade
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
 MUSIC ROYALTY:
-• MICHAEL JACKSON - Red Thriller jacket, one glove, jheri curl - teaching user the MOONWALK, side by side
+• MICHAEL JACKSON - Red Thriller jacket, one glove, iconic jheri curl - standing NEXT TO user, both caught mid-dance move, natural candid energy NOT a posed fist-bump
 • PRINCE - Purple Rain outfit, ruffles, that mysterious stare - guitar in hand, jamming WITH user
 • WHITNEY HOUSTON - Big hair, powerful presence, sequined dress - mid-note, harmonizing with user
 • MADONNA - Cone bra era, lace gloves, wild blonde hair - voguing in formation
@@ -548,83 +560,79 @@ TLC EASTER EGGS:
 • TLC logo on wristband
 • "Sponsored by TLC" on backdrop`,
 
-  "dayone": `\${masterStyleBlock}
+  "dayone": `${masterStyleBlock}
 
 ═══════════════════════════════════════════════════════════════════════
-DAY ONE – THE FIRST LEGEND
-A TLC TRIBUTE TO THE DAWN OF HUMANITY
+DAY ONE – THE FIRST TRIBAL LEADER
+A TLC TRIBUTE TO OUR ANCIENT ANCESTORS
 ═══════════════════════════════════════════════════════════════════════
 
-▓▓▓ PHOTOGRAPH SPECIFICATIONS - HYPER-REAL DOCUMENTARY ▓▓▓
+▓▓▓ PHOTOGRAPH SPECIFICATIONS - CINEMATIC DOCUMENTARY ▓▓▓
 CRITICAL - THIS MUST LOOK LIKE A REAL PHOTOGRAPH:
-• Shot on RED Komodo 6K cinema camera with vintage Zeiss glass
-• National Geographic documentary photography quality
-• Golden hour lighting - the sun setting on the first day of fire
-• Real volumetric atmosphere - smoke, dust, godrays
-• This must look like a REAL human being, NOT a costume, NOT a cartoon
-• Real skin texture - weathered, tanned, but with visible pores
-• Real eyes with moisture, real tear ducts, real light reflection
-• Real dirt under fingernails, real soot on hands from fire
-• Real fur texture on clothing - individual hairs visible
-• Real cave rock texture - limestone, moisture, lichen
-• IMAX documentary quality - like you could reach out and touch them
+• Shot on RED cinema camera with vintage glass - National Geographic quality
+• Golden hour lighting - warm sunset glow on ancient landscape
+• Real volumetric atmosphere - campfire smoke, dust motes, soft godrays
+• This must look like a REAL human being photographed for a documentary
+• Real skin texture - sun-kissed, healthy, with visible pores and natural oil
+• Real eyes with moisture, intelligence, and depth
+• Real earth tones - warm browns, ochres, sunset oranges
+• Cinematic shallow depth of field - user sharp, background soft
+• NOT a costume drama - authentic anthropological reconstruction
 
-▓▓▓ FACE LOCK - THE SAME PERSON, 10,000 YEARS AGO ▓▓▓
-The user's exact face, as if they were born in prehistoric times:
+▓▓▓ FACE LOCK - THE SAME PERSON AS AN ANCIENT LEADER ▓▓▓
+The user's exact face, as if they were born as an ancient tribal leader:
 • SAME bone structure, SAME eye shape, SAME nose, SAME mouth
-• Skin weathered by sun and elements but RECOGNIZABLE
-• NOT a "prehistoric version" - the ACTUAL user's face
-• Looking at camera with the intelligence of the first human to discover fire
-• They look like a REAL prehistoric human, not an actor in makeup
+• Skin healthy and sun-touched but RECOGNIZABLE as the same person
+• NOT a "caveman stereotype" - a dignified LEADER of their people
+• Expression of wisdom, strength, and quiet authority
+• NO hat from source photo - hair styled for the era
 
-THE SCENE - THE MOMENT EVERYTHING CHANGED:
-10,000 BC. The most pivotal moment in human history. The USER has just discovered fire - the spark that started human civilization. This is NOT fantasy - this is what it would REALLY look like.
+THE SCENE - THE WISE LEADER AT SUNSET:
+The USER is the respected leader of an ancient tribe, photographed at the mouth of their shelter at sunset. This is a portrait of DIGNITY and LEADERSHIP - the ancestor we all carry within us.
 
 USER POSITIONING & STYLING:
-• Crouched at cave entrance, hands cupped around newborn flame
-• Face illuminated by warm firelight against twilight sky
-• Looking up with expression of AWE and UNDERSTANDING
-• WEARING: Realistic fur cloak (wolf or bear), bone/tooth jewelry, ochre body paint
-• HAIR: Long, natural, wild but practical - tied back with sinew
-• Skin: Weathered, tanned, subtle tribal scars/tattoos on arms
-• NOT a Halloween costume - a REAL human adapted to survive
+• Standing at entrance of rock shelter, overlooking valley at sunset
+• One hand resting on carved wooden staff (symbol of leadership)
+• Face lit by warm golden sunset light - dignified pose
+• WEARING: Quality fur cloak draped over shoulders, leather chest piece, bone and shell jewelry denoting status
+• HAIR: Long, healthy, decorated with feathers and beads - STYLED for era, NOT from source photo
+• Skin: Healthy bronze tan, tribal ochre markings on cheeks (status symbols)
+• Posture: Tall, proud, the bearing of someone who protects their people
+• Expression: Calm wisdom, quiet strength - a leader surveying their domain
 
-THE ENVIRONMENT - AUTHENTIC PREHISTORIC:
-• MASSIVE cave entrance overlooking vast prehistoric landscape
-• Real geological formations - limestone, stalactites visible inside
-• Storm clouds breaking, first stars appearing, dramatic sky
-• Valley below with woolly mammoths grazing (distant, realistic)
-• Volcano smoking on far horizon
-• Real vegetation - no grass, primitive ferns, conifers
-• Snow patches on distant mountains
+THE ENVIRONMENT - ANCIENT BEAUTY:
+• Rock shelter entrance framing a vast prehistoric valley
+• Sunset painting the sky in oranges, pinks, and purples
+• Distant mountains with snow caps catching last light
+• Ancient forest in the valley below - primitive trees, ferns
+• Small campfire glowing nearby (controlled fire = civilization)
+• Evidence of prosperous tribe: drying meats, tools, pottery
 
-THOSE PRESENT:
-• MASSIVE SABER-TOOTH TIGER - not aggressive but COMPANION - sitting beside user, loyal protector, real fur, real anatomy
-• Ancient tribe in shadows - 5-6 humans watching in AWE:
-  - Elder with white beard, weathered face, tears of joy
-  - Young woman protecting infant, eyes wide with hope
-  - Two young hunters, spears lowered, mouths open
-  - Child peeking from behind rock, firelight reflecting in eyes
-• All tribe members have REALISTIC faces - diverse features representing early human variety
+THE TRIBE (in background, showing user's people):
+• Elder woman tending the fire - weathered face, wise eyes
+• Young hunters returning with successful hunt - respect for leader visible
+• Children playing near the shelter entrance
+• A wolf-dog (early domesticated canine) sitting loyally at user's feet
+• All tribe members healthy and thriving under user's leadership
+• Diverse faces representing early human variety and dignity
 
-THE FIRE:
-• Real fire physics - dancing flame, glowing embers, smoke rising
-• Warm light illuminating user's face from below
-• Sparks floating upward into twilight
-• The fire is SMALL but SIGNIFICANT - first controlled flame
-• Reflected in user's eyes - literally the spark of civilization
+THE ATMOSPHERE:
+• Peaceful, prosperous, civilized (for the era)
+• NOT a "survival" scene - a thriving community
+• The user is clearly the LEADER, not a struggling survivor
+• Warmth, safety, wisdom - the foundation of humanity
+• This is an ANCESTOR to be proud of
 
-SPIRITUAL ELEMENT (subtle, almost invisible):
-• In the smoke above the fire, barely visible: ghost faces of future legends
-• Einstein, MLK, Marilyn, Ali - their futures made possible by this moment
-• NOT obvious - like seeing shapes in clouds
+SPIRITUAL ELEMENT (subtle):
+• In the sunset clouds, very faint suggestion of future cities
+• The fire represents the spark that led to all human achievement
+• Connection to all future generations visible in user's eyes
 
 TLC EASTER EGGS (PERIOD-AUTHENTIC):
-• Cave painting on wall behind user includes "TLC" symbol in ochre
-• Three stones arranged near fire spell out TLC pattern  
-• User's bone pendant has TLC carved into it (would look ancient)
-• Stars forming constellation that suggests "TLC"
-• Handprint on cave wall contains subtle TLC in negative space`,
+• Cave painting on rock wall includes "TLC" symbol in ochre
+• Three stones arranged near fire spell out TLC pattern
+• User's bone pendant has TLC carved into it
+• Stars beginning to appear form constellation suggesting "TLC"`,
 
   "homeless": `${masterStyleBlock}
 
@@ -641,17 +649,31 @@ PHOTOGRAPH SPECIFICATIONS:
 • Pulitzer Prize quality
 
 THE SCENE:
-A moving portrait of the USER on a real Oklahoma City street corner. Not pity—POWER. Not despair—DIGNITY. The sign reads "WILL WORK FOR LOVE." This is about the human spirit that survives anything.
+A moving portrait of the USER and THREE LEGENDARY COMPANIONS on a real Oklahoma City street corner. They are ALL homeless TOGETHER - sitting side by side on the corner. This is about solidarity, brotherhood, and the human spirit. Not pity—POWER. Not despair—DIGNITY.
 
 USER POSITIONING & STYLING:
 • Sitting on milk crate at intersection of Reno & Walker, OKC
 • Cardboard sign held with PRIDE: "WILL WORK FOR LOVE"
 • Making DIRECT eye contact with camera—challenging, not defeated
 • Loyal stray dog pressed against side, UNCONDITIONAL LOVE
-• WEARING: Worn but CLEAN clothes - hoodie, work boots
-• HAT: Worn beanie pulled low for warmth
-• HAIR: Practical, weathered, still dignified
+• WEARING: Worn, dirty, layered clothes - multiple hoodies, ripped jacket
+• HAIR: Wild, crazy, unkempt, unwashed - LONG and tangled, sticking up
+• BEARD: Long, scraggly, unkempt beard (if male) - homeless aesthetic
+• Dirt on face, weathered skin, but DIGNITY in eyes
+• NO HAT from source photo - hair is wild and free
 • WEDDING RING still on finger—a story of love that persists
+
+THE LEGENDARY HOMELESS COMPANIONS (sitting WITH user on the corner):
+• ROBIN WILLIAMS - AS A HOMELESS MAN: wild crazy unkempt hair, long scraggly gray beard, dirty worn clothes, sitting RIGHT NEXT to user, still has that gentle smile in his eyes despite circumstances, cardboard sign that says "WILL DO COMEDY FOR FOOD"
+• WARREN BUFFETT - AS A HOMELESS MAN: disheveled white hair, scraggly beard, dirty old suit jacket over multiple layers, sitting on user's other side, holding coffee cup for change, looks like a wise old man of the streets
+• BILL GATES - AS A HOMELESS MAN: messy graying hair, unkempt stubble growing into beard, glasses held together with tape, oversized dirty sweater, sitting nearby with a broken laptop, still trying to compute something
+
+ALL THREE CELEBRITIES:
+• They are ACTUALLY homeless - not ghosts, not spirits, not watching from afar
+• They are sitting WITH the user on the same corner as brothers in struggle
+• Dirty clothes, weathered skin, wild unkempt hair and beards
+• But maintaining their RECOGNIZABLE faces beneath the homeless aesthetic
+• Solidarity - they're all in this together
 
 OKC LANDMARKS CLEARLY VISIBLE:
 • Paycom Center in background
@@ -661,30 +683,24 @@ OKC LANDMARKS CLEARLY VISIBLE:
 • Bricktown in distance
 • REAL Oklahoma City, not generic
 
-SPIRITS OF SUPPORT (subtle, almost ghostly):
-• ROBIN WILLIAMS - Gentle smile, watching over, hand almost reaching out
-• PRINCESS DIANA - Compassionate gaze, the People's Princess
-• FRED ROGERS (MR. ROGERS) - Cardigan, kind eyes, seeing the good in user
-• PAUL WALKER - Gentle soul energy, believing in user
-
 THE ENVIRONMENT:
 • Busy OKC intersection, cars passing, life continuing
 • Rain-slicked pavement, puddles reflecting streetlights
-• Overcast Oklahoma sky breaking with single ray of sunlight on user
-• GRITTY but not pathetic
-• Real, raw, human
-• Someone in a car handing user a coffee - human connection
+• Overcast Oklahoma sky breaking with single ray of sunlight on the group
+• Shopping cart with belongings, cardboard boxes, sleeping bags
+• Coffee cups, cigarette butts, the reality of street life
+• GRITTY but with BROTHERHOOD and DIGNITY
 
 EMOTIONAL TRUTH:
-• This is about SURVIVAL, DIGNITY, and HOPE
-• Not mockery, not pity, not exploitation
-• The user chose this scene to show HUMANITY
-• Strength in vulnerability
+• This is about SOLIDARITY and BROTHERHOOD
+• Four men who could have been anything - together on the corner
+• Not mockery, not pity - POWER in unity
 • The dog sees what others miss
 • We are all one moment away from needing love
+• Even legends can fall - and there's dignity in survival
 
 TLC EASTER EGGS:
-• Small "TLC" hand-stitched on hoodie
+• Small "TLC" hand-stitched on user's hoodie
 • TLC scratched into milk crate
 • Bus stop ad: "TLC Studios Rewind - Everyone Has A Story"
 • Graffiti on wall spells "TLC LOVES YOU"`,
