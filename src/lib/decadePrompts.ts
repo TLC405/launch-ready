@@ -120,8 +120,9 @@ USER POSITIONING & STYLING:
 • Standing center-frame at a massive brass workbench
 • Holding glowing prototype invention, all eyes on it
 • WEARING: Tailored three-piece tweed suit, silk cravat, gold pocket watch chain
-• HAT: Distinguished bowler hat or top hat, tilted rakishly
-• HAIR: Slicked back with pomade, immaculate side part
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: Dramatic mad scientist hair - slicked back on sides but wild and voluminous on top, pomade creating sculptural waves, single rebellious curl falling over forehead (like a young Einstein)
+• FACIAL HAIR: Distinguished handlebar mustache with waxed curled tips, OR thick mutton chops with clean chin (Victorian gentleman scientist style)
 • Expression: Confident genius, slight knowing smile
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
@@ -178,8 +179,9 @@ USER POSITIONING & STYLING:
 • Seated at center of the most exclusive booth
 • Champagne glass raised in mid-toast
 • WEARING: Flawless black tuxedo, white pocket square, diamond cufflinks
-• HAT: Classic fedora resting on table beside them
-• HAIR: Perfect 50s pompadour, slicked and gleaming
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: IMMACULATE 1950s pompadour - sky-high, slicked with Brylcreem, side part so sharp it could cut glass, jet black and gleaming like patent leather (think Elvis meets James Dean)
+• FACIAL HAIR: Clean-shaven with visible 5 o'clock shadow for rugged charm, OR thin pencil mustache (Errol Flynn style) for debonair sophistication
 • Expression: The confident half-smile of someone who owns the room
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
@@ -235,8 +237,9 @@ USER POSITIONING & STYLING:
 • Standing at HEAD of table, pointing at strategy map
 • Every eye in the room locked on user
 • WEARING: Crisp button-down shirt, thin black tie, sleeves rolled
-• HAT: Black beret worn at angle (revolutionary style)
-• HAIR: Era-perfect afro or mod cut, immaculately styled
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: Iconic 1960s revolutionary style - either a GLORIOUS perfectly-shaped afro (Black Panther pride), OR a slicked-back mod pompadour (Beatles influence), OR wild tousled poet hair (Bob Dylan/Jim Morrison style)
+• FACIAL HAIR: Bold 60s statement - goatee with soul patch, OR thick sideburns down to jaw, OR clean-shaven activist look with strong jaw visible
 • Expression: Passionate determination, changing-the-world energy
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
@@ -310,8 +313,9 @@ USER POSITIONING & STYLING:
 • Dead center of dancefloor, mid-dance move or power pose
 • Surrounded by legends but clearly THE STAR
 • WEARING: Unbuttoned silk shirt (showing chest), tight flared pants, platform heels, gold medallion
-• HAT: Wide-brim 70s hat with peacock feather OR letting hair shine
-• HAIR: Era-perfect volume - magnificent afro, or feathered Farrah, or flowing disco locks
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: MAXIMUM 70s VOLUME - either a MASSIVE perfectly-spherical afro that defies gravity, OR long flowing Bee Gees disco locks with feathered layers, OR Farrah Fawcett feathered wings, OR Rick James/Jimi long wild curls
+• FACIAL HAIR: Full 70s glory - thick bushy mustache with curved ends (Freddie Mercury), OR mutton chop sideburns connecting to mustache (funk style), OR full wild beard (Bee Gees Barry Gibb)
 • Expression: Pure ecstasy, eyes slightly closed, lost in the music
 
 THE LEGENDS (ALL MUST LOOK LIKE REAL PHOTOGRAPHS OF THEMSELVES):
@@ -383,8 +387,9 @@ USER POSITIONING & STYLING:
 • Center stage under THE spotlight
 • Everyone else reacting to user's PRESENCE
 • WEARING: Red leather jacket (Thriller vibes), high-top sneakers, gold chains
-• DO NOT include any hat from source photo - style hair in era-appropriate 80s volume
-• HAIR: Peak 80s volume - big, bold, gravity-defying, teased and styled for the decade
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: PEAK 80s EXCESS - either a MASSIVE teased-to-the-heavens mullet (business front, party back), OR big bouncy jheri curl with wet sheen, OR spiky punk/new wave with one side shaved, OR long flowing rock god mane with crimped volume
+• FACIAL HAIR: 80s cool - designer stubble (Miami Vice), OR thin line mustache (Prince style), OR clean-shaven with sharp jawline emphasis
 • Expression: The swagger of someone who owns the decade
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
@@ -451,8 +456,9 @@ USER POSITIONING & STYLING:
 • SEATED at massive SSL mixing console, hands on faders
 • Headphones around neck, mic nearby
 • WEARING: Baggy Pelle Pelle or Coogi, Timberland boots, chunky gold
-• HAT: Bandana tied West Coast style OR fitted cap backwards
-• HAIR: Fresh 90s cut - fade, braids, or waves
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: Fresh 90s HIP-HOP - either a razor-sharp high-top fade (Kid 'n Play height), OR long braids/cornrows (Snoop style), OR perfect 360 waves with crisp shape-up, OR bleached blonde top (Sisqo/Eminem influence), OR bald head with perfect shape
+• FACIAL HAIR: 90s R&B/rap style - thin lined goatee with precision edges, OR full thick beard with shape-up (Biggie), OR clean shaven with visible stubble shadow
 • Expression: The calm confidence of a hitmaker
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
@@ -515,8 +521,9 @@ USER POSITIONING & STYLING:
 • CENTER of red carpet, mid-power-walk
 • Cameras EXPLODING all around
 • WEARING: Peak Y2K drip - velour tracksuit or designer suit, diamond everything
-• HAT: Fitted cap fresh or trucker hat tilted
-• HAIR: Fresh 2000s cut - Caesar fade, frosted tips, or sleek straight
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: Peak 2000s style - either FROSTED TIPS with spiky gel (NSYNC era), OR cornrows/braids with beads, OR emo side-swept bangs covering one eye, OR clean buzzcut with designs, OR slicked back with too much gel
+• FACIAL HAIR: 2000s grooming - thin chinstrap beard with precision lines, OR soul patch only, OR clean baby face (boy band fresh), OR short stubble with sharp edges
 • Expression: Celebrity-level confidence, you've ARRIVED
 
 THE LEGENDS SURROUNDING THE USER (ALL MUST LOOK EXACTLY LIKE THEMSELVES):
@@ -595,7 +602,9 @@ USER POSITIONING & STYLING:
 • One hand resting on carved wooden staff (symbol of leadership)
 • Face lit by warm golden sunset light - dignified pose
 • WEARING: Quality fur cloak draped over shoulders, leather chest piece, bone and shell jewelry denoting status
-• HAIR: Long, healthy, decorated with feathers and beads - STYLED for era, NOT from source photo
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: WILD ANCIENT WARRIOR - long, thick, untamed mane flowing past shoulders, decorated with feathers, bones, and clay beads woven in, natural dreadlock-like texture from the elements, windswept and powerful
+• FACIAL HAIR: Full PRIMAL BEARD - thick, long, untrimmed natural beard reaching chest, possibly with braided sections or bone decorations, the mark of a seasoned tribal leader
 • Skin: Healthy bronze tan, tribal ochre markings on cheeks (status symbols)
 • Posture: Tall, proud, the bearing of someone who protects their people
 • Expression: Calm wisdom, quiet strength - a leader surveying their domain
@@ -657,10 +666,10 @@ USER POSITIONING & STYLING:
 • Making DIRECT eye contact with camera—challenging, not defeated
 • Loyal stray dog pressed against side, UNCONDITIONAL LOVE
 • WEARING: Worn, dirty, layered clothes - multiple hoodies, ripped jacket
-• HAIR: Wild, crazy, unkempt, unwashed - LONG and tangled, sticking up
-• BEARD: Long, scraggly, unkempt beard (if male) - homeless aesthetic
-• Dirt on face, weathered skin, but DIGNITY in eyes
-• NO HAT from source photo - hair is wild and free
+• NO HAT from source photo - remove any hats/caps from source image
+• HAIR: MAXIMUM CRAZY HOMELESS - wild Einstein-level mess going in ALL directions, long matted tangles, greasy and unwashed, sticking straight up in places, falling over face in others, possibly with bits of leaves/debris, the hair of someone who hasn't seen a brush in months
+• FACIAL HAIR: FULL WILD HOMELESS BEARD - LONG scraggly untrimmed beard reaching chest, tangled and matted, possibly graying from stress, the kind of beard that tells a story of hard times, patchy in places from malnutrition
+• Dirt on face, weathered cracked skin, sunburned, but FIERCE DIGNITY in eyes
 • WEDDING RING still on finger—a story of love that persists
 
 THE LEGENDARY HOMELESS COMPANIONS (sitting WITH user on the corner):

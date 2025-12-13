@@ -231,29 +231,54 @@ export default function TimeTravelLab() {
         </div>
       )}
 
-      {/* Header */}
-      <header className="relative z-50 p-4 sm:p-6">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link 
-            to="/" 
-            className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
-          >
-            <div className="w-10 h-10 rounded-full glass-ultra flex items-center justify-center group-hover:ring-1 ring-gold/30 transition-all">
-              <ArrowLeft className="w-4 h-4" />
+      {/* Premium Header */}
+      <header className="relative z-50 py-4 sm:py-6">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="glass-panel rounded-2xl px-6 py-4 flex items-center justify-between">
+            <Link 
+              to="/" 
+              className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-all group"
+            >
+              <div className="w-12 h-12 rounded-xl glass-ultra flex items-center justify-center group-hover:ring-1 ring-gold/40 group-hover:bg-gold/5 transition-all">
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
+              </div>
+              <div className="hidden sm:block">
+                <span className="text-[10px] tracking-[0.3em] text-muted-foreground/60 font-mono block">RETURN TO</span>
+                <span className="text-xs tracking-[0.15em] font-semibold">MAIN CONSOLE</span>
+              </div>
+            </Link>
+            
+            <div className="flex items-center gap-5">
+              <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-xl bg-gold/5 border border-gold/10">
+                <div className="w-2 h-2 rounded-full bg-gold animate-pulse shadow-[0_0_12px_hsla(var(--gold),0.6)]" />
+                <span className="text-[10px] tracking-[0.2em] text-gold font-mono">SINGULARITY PROTOCOL</span>
+              </div>
+              <div className="text-center">
+                <div className="flex items-center gap-3 justify-center">
+                  <Sparkles className="w-6 h-6 text-gold animate-pulse" />
+                  <h1 className="text-3xl sm:text-4xl font-bold tracking-[0.1em] text-gradient-gold">
+                    TLC REWIND LAB
+                  </h1>
+                  <Sparkles className="w-6 h-6 text-gold animate-pulse" />
+                </div>
+                <p className="text-[10px] tracking-[0.3em] text-muted-foreground/50 font-mono mt-1 hidden sm:block">
+                  TEMPORAL LOOP CONTROL™
+                </p>
+              </div>
             </div>
-            <span className="text-xs tracking-[0.2em] hidden sm:inline font-mono">EXIT LAB</span>
-          </Link>
-          
-          <div className="flex items-center gap-4">
-            <Sparkles className="w-5 h-5 text-gold" />
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-[0.15em] text-gradient-gold">
-              TLC REWIND LAB
-            </h1>
-          </div>
-          
-          <div className="glass-ultra px-4 py-2 rounded-full flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
-            <span className="text-[10px] tracking-[0.2em] text-emerald-400 font-mono hidden sm:inline">ONLINE</span>
+            
+            <div className="flex items-center gap-4">
+              <div className="glass-ultra px-5 py-3 rounded-xl flex items-center gap-3 border border-emerald-500/20">
+                <div className="relative">
+                  <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_12px_rgba(16,185,129,0.8)]" />
+                  <div className="absolute inset-0 w-3 h-3 rounded-full bg-emerald-500 animate-ping opacity-50" />
+                </div>
+                <div className="hidden sm:block">
+                  <span className="text-[10px] tracking-[0.2em] text-emerald-400 font-mono block">SYSTEM</span>
+                  <span className="text-xs tracking-[0.1em] text-emerald-300 font-semibold">ONLINE</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -304,29 +329,40 @@ export default function TimeTravelLab() {
           {/* Right - CONTROL CONSOLE */}
           <div className={`lg:col-span-5 space-y-4 ${mobileView === 'console' ? 'block' : 'hidden lg:block'}`}>
             
-            {/* Upload Panel */}
+            {/* Upload Panel - Premium */}
             <motion.div 
-              className="glass-panel rounded-2xl p-5 sm:p-6"
+              className="glass-panel rounded-2xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)] animate-pulse" />
-                  <h3 className="text-lg font-bold tracking-[0.15em]">MASTER TAPE</h3>
+              {/* Panel Header */}
+              <div className="px-5 py-4 border-b border-border/30 bg-gradient-to-r from-red-500/5 to-transparent">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="relative">
+                      <div className="w-4 h-4 rounded-full bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.8)] animate-pulse" />
+                      <div className="absolute inset-0 w-4 h-4 rounded-full bg-red-500 animate-ping opacity-30" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold tracking-[0.15em]">MASTER TAPE</h3>
+                      <p className="text-[10px] tracking-[0.2em] text-muted-foreground/60 font-mono">FACE LOCK PROTOCOL</p>
+                    </div>
+                  </div>
+                  {sourceImage && (
+                    <button
+                      onClick={() => {
+                        setSourceImage(null);
+                        setResults(new Map());
+                      }}
+                      className="w-10 h-10 rounded-xl glass-ultra flex items-center justify-center text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  )}
                 </div>
-                {sourceImage && (
-                  <button
-                    onClick={() => {
-                      setSourceImage(null);
-                      setResults(new Map());
-                    }}
-                    className="w-8 h-8 rounded-full glass-ultra flex items-center justify-center text-muted-foreground hover:text-destructive transition-colors"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
               </div>
+              
+              <div className="p-5 sm:p-6">
 
               <input
                 ref={fileInputRef}
@@ -337,117 +373,143 @@ export default function TimeTravelLab() {
                 className="hidden"
               />
 
-              {sourceImage ? (
-                <div className="flex items-center gap-5">
-                  <div className="relative flex-shrink-0">
-                    {/* Glow */}
-                    <div className="absolute -inset-2 rounded-full bg-gold/20 blur-xl" />
-                    {/* Image */}
-                    <div className="relative w-24 h-24 rounded-full overflow-hidden ring-2 ring-gold shadow-2xl">
-                      <img src={sourceImage} alt="Your photo" className="w-full h-full object-cover" />
+                {sourceImage ? (
+                  <div className="flex items-center gap-6">
+                    <div className="relative flex-shrink-0">
+                      {/* Multi-layer glow */}
+                      <div className="absolute -inset-4 rounded-full bg-gold/10 blur-2xl" />
+                      <div className="absolute -inset-2 rounded-full bg-gold/20 blur-xl" />
+                      {/* Image */}
+                      <div className="relative w-28 h-28 rounded-2xl overflow-hidden ring-2 ring-gold/50 shadow-2xl shadow-gold/20">
+                        <img src={sourceImage} alt="Your photo" className="w-full h-full object-cover" />
+                        {/* Scanline overlay */}
+                        <div className="absolute inset-0 scanlines opacity-30" />
+                      </div>
+                      {/* Check badge */}
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                        <Check className="w-5 h-5 text-white" />
+                      </div>
                     </div>
-                    {/* Check badge */}
-                    <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-gold tracking-wider">FACE LOCKED</p>
-                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                      Your features will be preserved exactly across all eras.
-                    </p>
-                    <button
-                      onClick={() => fileInputRef.current?.click()}
-                      className="mt-3 text-xs text-muted-foreground hover:text-gold underline underline-offset-4 transition-colors"
-                    >
-                      Change photo
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <button
-                  onClick={() => fileInputRef.current?.click()}
-                  className="w-full aspect-video glass-card rounded-xl border-2 border-dashed border-muted hover:border-gold/50 transition-all flex flex-col items-center justify-center gap-4 group"
-                >
-                  <div className="relative">
-                    <div className="absolute -inset-4 rounded-full bg-gold/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative w-16 h-16 rounded-full glass-ultra flex items-center justify-center group-hover:ring-1 ring-gold/30 transition-all">
-                      <Upload className="w-7 h-7 text-gold" />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                        <p className="text-sm font-bold text-emerald-400 tracking-wider">FACE LOCKED</p>
+                      </div>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        Your exact facial features will be preserved across all eras. Hair and styling will transform to match each decade.
+                      </p>
+                      <button
+                        onClick={() => fileInputRef.current?.click()}
+                        className="mt-4 text-xs text-muted-foreground hover:text-gold flex items-center gap-2 transition-colors group"
+                      >
+                        <Camera className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+                        <span className="underline underline-offset-4">Change photo</span>
+                      </button>
                     </div>
                   </div>
-                  <div className="text-center">
-                    <p className="text-sm font-medium tracking-wider">DROP YOUR PHOTO</p>
-                    <p className="text-xs text-muted-foreground mt-1">Your face will be preserved exactly</p>
-                  </div>
-                </button>
-              )}
+                ) : (
+                  <button
+                    onClick={() => fileInputRef.current?.click()}
+                    className="w-full aspect-[16/9] glass-card rounded-2xl border-2 border-dashed border-muted/50 hover:border-gold/40 transition-all flex flex-col items-center justify-center gap-5 group relative overflow-hidden"
+                  >
+                    {/* Background pattern */}
+                    <div className="absolute inset-0 opacity-5 synthwave-grid" />
+                    <div className="relative z-10">
+                      <div className="absolute -inset-6 rounded-full bg-gold/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative w-20 h-20 rounded-2xl glass-ultra flex items-center justify-center group-hover:ring-2 ring-gold/30 group-hover:scale-105 transition-all duration-300">
+                        <Upload className="w-9 h-9 text-gold group-hover:animate-bounce" />
+                      </div>
+                    </div>
+                    <div className="text-center relative z-10">
+                      <p className="text-base font-bold tracking-[0.15em] group-hover:text-gold transition-colors">DROP YOUR PHOTO</p>
+                      <p className="text-xs text-muted-foreground mt-2">Drag & drop or click to upload</p>
+                      <p className="text-[10px] text-muted-foreground/50 mt-1 font-mono tracking-wider">MAX 10MB • JPG, PNG</p>
+                    </div>
+                  </button>
+                )}
+              </div>
             </motion.div>
 
             {/* Era Selector 1 - Quick Select Grid */}
             <motion.div 
-              className="glass-panel rounded-2xl p-5 sm:p-6"
+              className="glass-panel rounded-2xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                  <h3 className="text-lg font-bold tracking-[0.15em]">ERA SELECTOR</h3>
-                </div>
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => setSelectedEras(new Set(eraOrder))}
-                    className="text-xs text-gold hover:text-gold/80 px-3 py-1.5 rounded-lg hover:bg-gold/10 transition-all tracking-wider"
-                  >
-                    ALL
-                  </button>
-                  <span className="text-muted-foreground/30">|</span>
-                  <button
-                    onClick={() => setSelectedEras(new Set())}
-                    className="text-xs text-muted-foreground hover:text-foreground px-3 py-1.5 rounded-lg hover:bg-muted/30 transition-all tracking-wider"
-                  >
-                    NONE
-                  </button>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-5 gap-2">
-                {eraOrder.map(era => {
-                  const isSelected = selectedEras.has(era);
-                  const isComplete = results.get(era)?.success;
-                  const isGen = generatingEras.has(era);
-                  
-                  return (
+              <div className="px-5 py-4 border-b border-border/30 bg-gradient-to-r from-gold/5 to-transparent">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 rounded-full bg-gold animate-pulse shadow-[0_0_10px_hsla(var(--gold),0.6)]" />
+                    <div>
+                      <h3 className="text-lg font-bold tracking-[0.15em]">ERA SELECTOR</h3>
+                      <p className="text-[10px] tracking-[0.2em] text-muted-foreground/60 font-mono">TEMPORAL LINE CATALOG</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
                     <button
-                      key={era}
-                      onClick={() => toggleEra(era)}
-                      disabled={isGen}
-                      className={`relative px-2 py-3 rounded-lg text-xs font-bold tracking-wider transition-all ${
-                        isSelected
-                          ? `bg-gradient-to-br ${eraConfig[era].gradient} text-white shadow-lg`
-                          : 'glass-card text-muted-foreground hover:text-foreground'
-                      } ${isGen ? 'animate-pulse' : ''}`}
+                      onClick={() => setSelectedEras(new Set(eraOrder))}
+                      className="text-xs text-gold hover:text-background px-4 py-2 rounded-lg hover:bg-gold transition-all tracking-wider font-semibold"
                     >
-                      {isComplete && (
-                        <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
-                          <Check className="w-2.5 h-2.5 text-white" />
-                        </div>
-                      )}
-                      {isGen && <Loader2 className="w-3 h-3 animate-spin mx-auto" />}
-                      {!isGen && <span>{eraConfig[era].year}</span>}
+                      ALL
                     </button>
-                  );
-                })}
+                    <button
+                      onClick={() => setSelectedEras(new Set())}
+                      className="text-xs text-muted-foreground hover:text-foreground px-4 py-2 rounded-lg hover:bg-muted/30 transition-all tracking-wider"
+                    >
+                      NONE
+                    </button>
+                  </div>
+                </div>
               </div>
+              
+              <div className="p-5 sm:p-6">
 
-              <div className="mt-4 pt-4 border-t border-border/30 flex items-center justify-between">
-                <p className="text-xs text-muted-foreground">
-                  <span className="text-gold font-bold">{selectedEras.size}</span> eras selected
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  <span className="text-gold font-bold">{selectedEras.size * 12}+</span> legends
-                </p>
+                <div className="grid grid-cols-5 gap-2.5">
+                  {eraOrder.map(era => {
+                    const isSelected = selectedEras.has(era);
+                    const isComplete = results.get(era)?.success;
+                    const isGen = generatingEras.has(era);
+                    
+                    return (
+                      <motion.button
+                        key={era}
+                        onClick={() => toggleEra(era)}
+                        disabled={isGen}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`relative px-2 py-4 rounded-xl text-xs font-bold tracking-wider transition-all ${
+                          isSelected
+                            ? `bg-gradient-to-br ${eraConfig[era].gradient} text-white shadow-lg shadow-black/30`
+                            : 'glass-card text-muted-foreground hover:text-foreground hover:ring-1 ring-white/10'
+                        } ${isGen ? 'animate-pulse' : ''}`}
+                      >
+                        {isComplete && (
+                          <div className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-md">
+                            <Check className="w-3 h-3 text-white" />
+                          </div>
+                        )}
+                        {isGen && <Loader2 className="w-4 h-4 animate-spin mx-auto" />}
+                        {!isGen && <span>{eraConfig[era].year}</span>}
+                      </motion.button>
+                    );
+                  })}
+                </div>
+
+                <div className="mt-5 pt-4 border-t border-border/20 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-gold" />
+                    <p className="text-xs text-muted-foreground">
+                      <span className="text-gold font-bold text-sm">{selectedEras.size}</span> eras selected
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-3.5 h-3.5 text-gold" />
+                    <p className="text-xs text-muted-foreground">
+                      <span className="text-gold font-bold text-sm">{selectedEras.size * 12}+</span> legends
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
