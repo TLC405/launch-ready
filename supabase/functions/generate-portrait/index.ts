@@ -41,17 +41,35 @@ This is NOT optional - the output MUST be:
 • Real fabric textures, real metal surfaces, real environmental details
 • Real film grain specific to the era's camera equipment
 
-▓▓▓ FACE TRANSPLANT PROTOCOL ▓▓▓
-The user's face from the reference image MUST be:
-• TRANSPLANTED onto the scene as if they were actually photographed there
-• SAME bone structure - no changes to skull shape
-• SAME eye shape, spacing, color - pixel-perfect
-• SAME nose - exact shape, nostrils, bridge
-• SAME mouth and lips - exact proportions
-• SAME jawline and chin - no modifications
-• SAME skin tone - only adjust for era lighting
-• The face must BLEND seamlessly - not look "pasted on"
-• They must look like the SAME PERSON in a real period photograph
+▓▓▓ ULTRA FACE LOCK PROTOCOL - ZERO TOLERANCE ▓▓▓
+CRITICAL - THE USER'S FACE MUST BE PIXEL-PERFECT:
+
+STEP 1 - STRIP SOURCE IMAGE ARTIFACTS:
+• REMOVE any hats, caps, beanies, headwear from the source photo - DO NOT TRANSFER
+• REMOVE any glasses, sunglasses from source - DO NOT TRANSFER
+• REMOVE any accessories that obscure the face - DO NOT TRANSFER
+• Only use the NAKED FACE from the reference image
+
+STEP 2 - PRESERVE EXACT FACIAL PROPORTIONS:
+• NOSE: Copy the EXACT nose - same width, same bridge, same nostrils, same tip angle
+• DO NOT enlarge the nose under ANY circumstances
+• DO NOT modify nose shape in ANY way
+• EYES: Same shape, same spacing, same size, same color, same eyelids
+• MOUTH: Same lip shape, same width, same proportions
+• JAWLINE: Same exact jaw shape, chin shape, face width
+• CHEEKBONES: Same placement, same prominence
+• FOREHEAD: Same shape, same hairline position
+
+STEP 3 - SEAMLESS BLEND:
+• The face must BLEND seamlessly into the era - not look "pasted on"
+• Skin tone adjusted ONLY for era lighting - not for "beautification"
+• Expression natural to the user's face structure
+• They must be IMMEDIATELY RECOGNIZABLE as the same person
+
+STEP 4 - STYLE FOR ERA (NOT SOURCE):
+• HAIR: Style in era-appropriate fashion, NOT from source photo
+• FACIAL HAIR: Add era-appropriate beard/stubble if scene calls for it
+• MAKEUP/STYLING: Era-appropriate only
 
 ▓▓▓ CELEBRITY ACCURACY ▓▓▓
 • Every celebrity is their REAL SELF - reference actual photos
