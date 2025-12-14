@@ -575,3 +575,232 @@
 .bg-chrome-purple { background-color: hsl(var(--chrome-purple)); }
 .border-neon-pink { border-color: hsl(var(--neon-pink)); }
 .border-electric-blue { border-color: hsl(var(--electric-blue)); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BACK TO THE FUTURE - TIME CIRCUIT UI SYSTEM
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* TIME CIRCUIT PANEL */
+.time-circuit-panel {
+  @apply bg-zinc-950/95 backdrop-blur-xl;
+  background-image: linear-gradient(to bottom, hsla(240, 5%, 10%, 0.95), hsla(240, 5%, 4%, 0.98), hsla(0, 0%, 0%, 0.95));
+  border: 1px solid hsla(var(--gold), 0.2);
+  box-shadow: 
+    0 0 40px hsla(var(--gold), 0.1),
+    inset 0 1px 0 hsla(var(--platinum), 0.1);
+}
+
+.time-circuit-header {
+  @apply bg-gradient-to-r from-gold/10 via-transparent to-gold/5 border-b border-gold/15;
+}
+
+.time-circuit-title {
+  @apply text-lg font-bold tracking-[0.2em] text-gradient-gold;
+}
+
+.time-circuit-subtitle {
+  @apply text-[10px] tracking-[0.25em] text-gold/50 font-mono;
+}
+
+/* FLUX INDICATOR */
+.flux-indicator {
+  @apply w-10 h-10 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30;
+  @apply flex items-center justify-center;
+}
+
+.time-circuit-btn-small {
+  @apply px-4 py-2 rounded-lg text-xs font-bold tracking-wider;
+  @apply bg-gold/10 text-gold border border-gold/20;
+  @apply hover:bg-gold hover:text-primary-foreground transition-all;
+}
+
+.time-circuit-btn-ghost {
+  @apply bg-transparent text-muted-foreground border-muted/30;
+  @apply hover:bg-muted/20 hover:text-foreground hover:border-muted/50;
+}
+
+/* ERA CHIPS - BTTF Style */
+.era-chip {
+  @apply relative px-2 py-4 rounded-xl text-xs transition-all duration-300 cursor-pointer;
+  @apply bg-zinc-900/80 text-muted-foreground border border-zinc-700/50;
+  @apply hover:bg-zinc-800/80 hover:text-foreground hover:border-zinc-600/80;
+}
+
+.era-chip-selected {
+  @apply bg-gradient-to-br from-gold/30 via-gold/20 to-gold/10 text-gold border-gold/50;
+  @apply shadow-[0_0_25px_hsla(var(--gold),0.25)];
+}
+
+.era-chip-generating {
+  @apply bg-gold/10 text-gold border-gold/40;
+  animation: bttfFlicker 0.5s ease-in-out infinite;
+}
+
+.era-chip-complete {
+  @apply border-success/40;
+}
+
+.era-chip-tooltip {
+  @apply absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md text-[8px];
+  @apply bg-black/90 text-platinum whitespace-nowrap opacity-0 pointer-events-none;
+  @apply transition-opacity duration-200 z-20;
+}
+
+.era-chip:hover .era-chip-tooltip {
+  @apply opacity-100;
+}
+
+@keyframes bttfFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* LED DISPLAY */
+.led-display {
+  @apply bg-black/60 rounded-xl p-4 border border-zinc-800/50;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.led-display-row {
+  @apply flex items-center justify-center gap-6;
+}
+
+.led-stat {
+  @apply text-center;
+}
+
+.led-label {
+  @apply text-[9px] tracking-[0.3em] text-muted-foreground/50 font-mono block mb-1;
+}
+
+.led-value {
+  @apply text-2xl font-bold font-mono tracking-wider;
+}
+
+.led-value-gold {
+  @apply text-gold;
+  text-shadow: 0 0 15px hsla(var(--gold), 0.6);
+}
+
+.led-value-cyan {
+  color: hsl(var(--electric-blue));
+  text-shadow: 0 0 15px hsla(var(--electric-blue), 0.6);
+}
+
+.led-value-green {
+  @apply text-success;
+  text-shadow: 0 0 15px hsla(var(--success), 0.6);
+}
+
+.led-divider {
+  @apply w-px h-8 bg-gradient-to-b from-transparent via-zinc-600/50 to-transparent;
+}
+
+/* TIME WARP BUTTON */
+.time-warp-btn {
+  @apply relative py-4 rounded-xl font-bold text-base tracking-wider overflow-hidden;
+  @apply bg-gradient-to-r from-gold via-gold to-gold-muted text-primary-foreground;
+  @apply shadow-[0_0_40px_hsla(var(--gold),0.3),0_4px_20px_hsla(var(--gold),0.2)];
+  @apply disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none;
+  @apply transition-all duration-300;
+}
+
+.time-warp-btn:not(:disabled):hover {
+  @apply shadow-[0_0_60px_hsla(var(--gold),0.4),0_4px_30px_hsla(var(--gold),0.3)];
+}
+
+/* DOWNLOAD BUTTON */
+.download-album-btn {
+  @apply py-3.5 rounded-xl font-semibold tracking-wider flex items-center justify-center gap-3;
+  @apply bg-zinc-800/80 text-foreground border border-zinc-700/50;
+  @apply hover:bg-zinc-700/80 hover:border-zinc-600/80;
+  @apply disabled:opacity-40 disabled:cursor-not-allowed;
+  @apply transition-all duration-300;
+}
+
+/* PHOTO UPLOADER PANEL */
+.photo-uploader-panel {
+  @apply bg-zinc-950/95 backdrop-blur-xl;
+  background-image: linear-gradient(to bottom, hsla(240, 5%, 10%, 0.95), hsla(240, 5%, 4%, 0.98), hsla(0, 0%, 0%, 0.95));
+  border: 1px solid hsla(var(--success), 0.15);
+  box-shadow: 0 0 30px hsla(var(--success), 0.05);
+}
+
+.photo-uploader-header {
+  @apply bg-gradient-to-r from-success/10 via-transparent to-success/5 border-b border-success/15;
+}
+
+.photo-uploader-title {
+  @apply text-lg font-bold tracking-[0.2em] text-foreground;
+}
+
+.photo-uploader-subtitle {
+  @apply text-[10px] tracking-[0.25em] text-muted-foreground/60 font-mono;
+}
+
+.scan-indicator {
+  @apply w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/50;
+  @apply flex items-center justify-center transition-all duration-300;
+}
+
+.scan-indicator-active {
+  @apply bg-success/10 border-success/30;
+}
+
+.clear-btn {
+  @apply w-9 h-9 rounded-lg bg-zinc-800/80 border border-zinc-700/50;
+  @apply flex items-center justify-center text-muted-foreground;
+  @apply hover:text-destructive hover:bg-destructive/10 hover:border-destructive/30;
+  @apply transition-all duration-200;
+}
+
+.upload-zone {
+  @apply relative rounded-xl border-2 border-dashed border-gold/20 bg-gold/5;
+  @apply hover:border-gold/40 hover:bg-gold/10 transition-all duration-300;
+  @apply cursor-pointer overflow-hidden;
+}
+
+/* RESULTS GALLERY */
+.results-gallery {
+  @apply bg-zinc-950/95 backdrop-blur-xl;
+  background-image: linear-gradient(to bottom, hsla(240, 5%, 10%, 0.95), hsla(240, 5%, 4%, 0.98), hsla(0, 0%, 0%, 0.95));
+  border: 1px solid hsla(var(--gold), 0.15);
+}
+
+.results-header {
+  @apply bg-gradient-to-r from-gold/10 via-transparent to-gold/5 border-b border-gold/15;
+}
+
+.results-title {
+  @apply text-lg font-bold tracking-[0.2em] text-gradient-gold;
+}
+
+.results-subtitle {
+  @apply text-[10px] tracking-[0.25em] text-gold/50 font-mono;
+}
+
+.result-thumb {
+  @apply relative aspect-square rounded-lg overflow-hidden cursor-pointer;
+  @apply ring-1 ring-zinc-700/50 transition-all duration-200;
+}
+
+.result-thumb-active {
+  @apply ring-2 ring-gold shadow-[0_0_25px_hsla(var(--gold),0.3)];
+}
+
+.result-thumb-overlay {
+  @apply absolute inset-0 flex items-center justify-center;
+  @apply bg-black/50 opacity-0 hover:opacity-100 transition-opacity;
+  @apply text-platinum;
+}
+
+.result-preview {
+  @apply relative rounded-xl overflow-hidden;
+  @apply ring-1 ring-gold/30;
+}
+
+.result-action-btn {
+  @apply w-9 h-9 rounded-lg bg-white/10 backdrop-blur-sm;
+  @apply flex items-center justify-center text-platinum;
+  @apply hover:bg-white/20 transition-all;
+}
