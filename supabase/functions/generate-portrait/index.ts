@@ -102,7 +102,7 @@ OUTPUT: A museum-quality photorealistic photograph ready for auction.`;
       console.log(`⚠️ No source image provided - face lock not possible`);
     }
 
-    // Use the best available image generation model
+    // Use the recommended image generation model
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -110,7 +110,7 @@ OUTPUT: A museum-quality photorealistic photograph ready for auction.`;
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-3-pro-image-preview", // Upgraded to next-gen model
+        model: "google/gemini-2.5-flash-image-preview", // Stable image generation model
         messages: [
           {
             role: "user",
@@ -165,7 +165,7 @@ OUTPUT: A museum-quality photorealistic photograph ready for auction.`;
       era,
       generationTimeMs,
       success: true,
-      model: "gemini-3-pro-image-preview"
+      model: "gemini-2.5-flash-image-preview"
     }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
