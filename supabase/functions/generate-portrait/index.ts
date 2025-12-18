@@ -23,61 +23,56 @@ serve(async (req) => {
     console.log(`📝 Prompt length: ${prompt?.length || 0} characters`);
     const startTime = Date.now();
 
-    // Build the ENHANCED prompt with explicit photorealism instructions
+    // Build the ENHANCED prompt with ULTRA face lock instructions
     const enhancedPrompt = `${prompt}
 
 ═══════════════════════════════════════════════════════════════════════
-▓▓▓ FINAL RENDERING INSTRUCTIONS - ABSOLUTE REQUIREMENTS ▓▓▓
+▓▓▓ FINAL RENDERING - ULTRA FACE LOCK PROTOCOL ▓▓▓
 ═══════════════════════════════════════════════════════════════════════
 
 ▓▓▓ MANDATORY PHOTOREALISM ▓▓▓
-This is NOT optional - the output MUST be:
-• A REAL PHOTOGRAPH - indistinguishable from authentic archival footage
-• NOT cartoon, NOT illustration, NOT painting, NOT CGI, NOT artistic
-• NOT "AI-looking" - if it looks AI-generated, it has FAILED
+• Output MUST be a REAL PHOTOGRAPH - indistinguishable from authentic archival footage
+• NOT cartoon, NOT illustration, NOT painting, NOT CGI, NOT "AI-looking"
 • Real skin with pores, imperfections, natural asymmetry
 • Real eyes with moisture, reflections, tear ducts
 • Real lighting physics with motivated sources
-• Real fabric textures, real metal surfaces, real environmental details
 • Real film grain specific to the era's camera equipment
 
-▓▓▓ ULTRA FACE LOCK PROTOCOL - ZERO TOLERANCE ▓▓▓
-CRITICAL - THE USER'S FACE MUST BE PIXEL-PERFECT:
+▓▓▓ ULTRA FACE LOCK - FACE ONLY, NO HAIR/BEARD TRANSFER ▓▓▓
+CRITICAL - EXTRACT ONLY THE FACE FROM SOURCE:
 
-STEP 1 - STRIP SOURCE IMAGE ARTIFACTS:
-• REMOVE any hats, caps, beanies, headwear from the source photo - DO NOT TRANSFER
-• REMOVE any glasses, sunglasses from source - DO NOT TRANSFER
-• REMOVE any accessories that obscure the face - DO NOT TRANSFER
-• Only use the NAKED FACE from the reference image
+STEP 1 - STRIP EVERYTHING EXCEPT FACE:
+• REMOVE any hats, caps, beanies from source - DO NOT TRANSFER
+• REMOVE any glasses, sunglasses from source - DO NOT TRANSFER  
+• REMOVE user's hair from source - DO NOT COPY IT
+• REMOVE user's beard/facial hair from source - DO NOT COPY IT
+• Only use the NAKED FACE geometry from reference
 
-STEP 2 - PRESERVE EXACT FACIAL PROPORTIONS:
-• NOSE: Copy the EXACT nose - same width, same bridge, same nostrils, same tip angle
-• DO NOT enlarge the nose under ANY circumstances
-• DO NOT modify nose shape in ANY way
-• EYES: Same shape, same spacing, same size, same color, same eyelids
-• MOUTH: Same lip shape, same width, same proportions
-• JAWLINE: Same exact jaw shape, chin shape, face width
-• CHEEKBONES: Same placement, same prominence
-• FOREHEAD: Same shape, same hairline position
+STEP 2 - STYLE HAIR/BEARD FOR THE ERA (NOT FROM SOURCE):
+• Give user ERA-APPROPRIATE hair styled for the decade
+• Give user ERA-APPROPRIATE facial hair (or clean shaven) for the scene
+• If source has long hair → IGNORE IT, use era hair
+• If source has beard → IGNORE IT, use era beard or clean shave
+• The source photo is ONLY for facial structure reference
 
-STEP 3 - SEAMLESS BLEND:
-• The face must BLEND seamlessly into the era - not look "pasted on"
-• Skin tone adjusted ONLY for era lighting - not for "beautification"
-• Expression natural to the user's face structure
+STEP 3 - PRESERVE EXACT FACIAL GEOMETRY:
+• NOSE: EXACT same width, bridge, nostrils, tip - DO NOT ENLARGE
+• EYES: Same shape, spacing, size, color, eyelids
+• MOUTH: Same lip shape, width, proportions  
+• JAWLINE: Same jaw shape, chin, face width
+• CHEEKBONES: Same placement, prominence
 • They must be IMMEDIATELY RECOGNIZABLE as the same person
 
-STEP 4 - STYLE FOR ERA (NOT SOURCE):
-• HAIR: Style in era-appropriate fashion, NOT from source photo
-• FACIAL HAIR: Add era-appropriate beard/stubble if scene calls for it
-• MAKEUP/STYLING: Era-appropriate only
+STEP 4 - NATURAL COMPOSITION:
+• Celebrities at REALISTIC distances (5-15 feet apart)
+• NO ONE overlapping or "stacked" on top of each other
+• Natural depth and breathing room in the scene
 
 ▓▓▓ CELEBRITY ACCURACY ▓▓▓
-• Every celebrity is their REAL SELF - reference actual photos
+• Every celebrity is their REAL SELF from actual photos
 • NOT caricatures, NOT beautified, NOT stylized
-• Correct age/era, correct outfit, correct hair
-• They surround the USER who is the undisputed STAR
 
-OUTPUT: A museum-quality photorealistic photograph ready for auction.`;
+OUTPUT: Museum-quality photorealistic photograph.`;
 
     // Build the message content with image
     const messageContent: any[] = [
