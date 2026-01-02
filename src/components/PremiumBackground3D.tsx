@@ -1,306 +1,51 @@
-import { useRef, useMemo, useState, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
-import * as THREE from 'three';
-
-// Check if WebGL is available
-function isWebGLAvailable(): boolean {
-  try {
-    const canvas = document.createElement('canvas');
-    return !!(
-      window.WebGLRenderingContext &&
-      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
-    );
-  } catch (e) {
-    return false;
-  }
-}
-
-// CSS-only fallback background
-function FallbackBackground() {
-  return (
-    <div
-      className="fixed inset-0 z-0"
-      style={{
-        background: `
-          radial-gradient(ellipse 80% 50% at 50% 100%, 
-            rgba(255, 107, 53, 0.4) 0%, 
-            rgba(255, 41, 117, 0.2) 30%, 
-            transparent 70%
-          ),
-          linear-gradient(to bottom, 
-            #0a0812 0%, 
-            #0d0618 30%, 
-            #000000 100%
-          )
-        `,
-      }}
-    >
-      {/* Grid overlay effect */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0, 240, 255, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 240, 255, 0.3) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px',
-          backgroundPosition: 'center bottom',
-          transform: 'perspective(500px) rotateX(60deg)',
-          transformOrigin: 'bottom center',
-          maskImage: 'linear-gradient(to top, black 0%, transparent 80%)',
-          WebkitMaskImage: 'linear-gradient(to top, black 0%, transparent 80%)',
-        }}
-      />
-      
-      {/* Stars effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 50 }).map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-white animate-pulse"
-            style={{
-              width: Math.random() * 2 + 1 + 'px',
-              height: Math.random() * 2 + 1 + 'px',
-              top: Math.random() * 60 + '%',
-              left: Math.random() * 100 + '%',
-              opacity: Math.random() * 0.7 + 0.3,
-              animationDelay: Math.random() * 3 + 's',
-              animationDuration: Math.random() * 2 + 2 + 's',
-            }}
-          />
-        ))}
-      </div>
-      
-      {/* Sun glow */}
-      <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
-        style={{
-          width: '600px',
-          height: '300px',
-          background: `
-            radial-gradient(ellipse at center, 
-              rgba(255, 107, 53, 0.8) 0%,
-              rgba(255, 41, 117, 0.5) 30%,
-              transparent 70%
-            )
-          `,
-          filter: 'blur(40px)',
-        }}
-      />
-    </div>
-  );
-}
-
-// Glowing Sun with pulsating effect
-function Sun() {
-  const sunRef = useRef<THREE.Group>(null);
-  const glowRef = useRef<THREE.Mesh>(null);
-  const corona1Ref = useRef<THREE.Mesh>(null);
-  const corona2Ref = useRef<THREE.Mesh>(null);
-  
-  useFrame((state) => {
-    const t = state.clock.elapsedTime;
-    
-    // Pulsating glow
-    if (glowRef.current) {
-      const scale = 1 + Math.sin(t * 0.5) * 0.05;
-      glowRef.current.scale.setScalar(scale);
-    }
-    if (corona1Ref.current) {
-      corona1Ref.current.scale.setScalar(1.2 + Math.sin(t * 0.3) * 0.08);
-    }
-    if (corona2Ref.current) {
-      corona2Ref.current.scale.setScalar(1.4 + Math.sin(t * 0.4 + 1) * 0.1);
-    }
-  });
-
-  return (
-    <group ref={sunRef} position={[0, 0, -50]}>
-      {/* Core sun */}
-      <mesh>
-        <sphereGeometry args={[8, 64, 64]} />
-        <meshBasicMaterial color="#ff6b35" />
-      </mesh>
-      
-      {/* Inner glow layer */}
-      <mesh ref={glowRef}>
-        <sphereGeometry args={[8.5, 32, 32]} />
-        <meshBasicMaterial 
-          color="#ff2975" 
-          transparent 
-          opacity={0.6}
-        />
-      </mesh>
-      
-      {/* Corona layer 1 */}
-      <mesh ref={corona1Ref}>
-        <sphereGeometry args={[10, 32, 32]} />
-        <meshBasicMaterial 
-          color="#ff6b35" 
-          transparent 
-          opacity={0.3}
-        />
-      </mesh>
-      
-      {/* Corona layer 2 */}
-      <mesh ref={corona2Ref}>
-        <sphereGeometry args={[12, 32, 32]} />
-        <meshBasicMaterial 
-          color="#ff2975" 
-          transparent 
-          opacity={0.15}
-        />
-      </mesh>
-      
-      {/* Outer glow */}
-      <mesh>
-        <sphereGeometry args={[15, 32, 32]} />
-        <meshBasicMaterial 
-          color="#ff2975" 
-          transparent 
-          opacity={0.08}
-        />
-      </mesh>
-      
-      {/* Sun light */}
-      <pointLight color="#ff6b35" intensity={2} distance={200} />
-      <pointLight color="#ff2975" intensity={1} distance={150} />
-    </group>
-  );
-}
-
-// Animated perspective grid with wave displacement
-function Grid() {
-  const gridRef = useRef<THREE.Mesh>(null);
-  
-  const geometry = useMemo(() => {
-    const geo = new THREE.PlaneGeometry(200, 200, 100, 100);
-    geo.rotateX(-Math.PI / 2);
-    return geo;
-  }, []);
-  
-  useFrame((state) => {
-    if (!gridRef.current) return;
-    
-    const geo = gridRef.current.geometry;
-    const positions = geo.attributes.position;
-    const time = state.clock.elapsedTime;
-    
-    for (let i = 0; i < positions.count; i++) {
-      const x = positions.getX(i);
-      const z = positions.getZ(i);
-      
-      // Wave displacement
-      const wave = Math.sin(z * 0.05 + time * 0.5) * 0.5 + 
-                   Math.sin(x * 0.03 + time * 0.3) * 0.3;
-      positions.setY(i, wave);
-    }
-    
-    positions.needsUpdate = true;
-  });
-
-  return (
-    <mesh ref={gridRef} geometry={geometry} position={[0, -5, 0]}>
-      <meshBasicMaterial 
-        color="#00f0ff"
-        wireframe
-        transparent
-        opacity={0.4}
-      />
-    </mesh>
-  );
-}
-
-// Second grid layer for depth
-function GridOverlay() {
-  const gridRef = useRef<THREE.Mesh>(null);
-  
-  const geometry = useMemo(() => {
-    const geo = new THREE.PlaneGeometry(200, 200, 50, 50);
-    geo.rotateX(-Math.PI / 2);
-    return geo;
-  }, []);
-  
-  useFrame((state) => {
-    if (!gridRef.current) return;
-    
-    const geo = gridRef.current.geometry;
-    const positions = geo.attributes.position;
-    const time = state.clock.elapsedTime;
-    
-    for (let i = 0; i < positions.count; i++) {
-      const x = positions.getX(i);
-      const z = positions.getZ(i);
-      
-      const wave = Math.sin(z * 0.04 + time * 0.4 + 1) * 0.4 + 
-                   Math.sin(x * 0.025 + time * 0.25 + 2) * 0.25;
-      positions.setY(i, wave - 0.1);
-    }
-    
-    positions.needsUpdate = true;
-  });
-
-  return (
-    <mesh ref={gridRef} geometry={geometry} position={[0, -5, -2]}>
-      <meshBasicMaterial 
-        color="#ff2975"
-        wireframe
-        transparent
-        opacity={0.3}
-      />
-    </mesh>
-  );
-}
-
-function WebGLCanvas() {
-  return (
-    <Canvas
-      style={{ 
-        background: 'linear-gradient(to bottom, #0a0812, #000000)',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 0,
-      }}
-      camera={{ position: [0, 2, 0], fov: 45 }}
-    >
-      <ambientLight intensity={0.1} />
-      <Sun />
-      <Grid />
-      <GridOverlay />
-      <Stars 
-        radius={100} 
-        depth={50} 
-        count={5000} 
-        factor={4} 
-        saturation={0} 
-        fade 
-      />
-    </Canvas>
-  );
-}
+import synthwaveBackground from '@/assets/synthwave-background.png';
 
 function PremiumBackground3D() {
-  const [webGLSupported, setWebGLSupported] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    setWebGLSupported(isWebGLAvailable());
-  }, []);
-
-  // Show nothing while checking
-  if (webGLSupported === null) {
-    return <FallbackBackground />;
-  }
-
-  // Use CSS fallback if WebGL is not available
-  if (!webGLSupported) {
-    return <FallbackBackground />;
-  }
-
-  return <WebGLCanvas />;
+  return (
+    <div className="fixed inset-0 z-0">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${synthwaveBackground})`,
+        }}
+      />
+      
+      {/* Text Overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-start pt-[8vh]">
+        {/* REWIND Title */}
+        <h1
+          className="text-[12vw] md:text-[10vw] font-black tracking-wider"
+          style={{
+            fontFamily: "'Orbitron', 'Rajdhani', sans-serif",
+            background: 'linear-gradient(180deg, #00f0ff 0%, #a855f7 50%, #ff2975 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            filter: 'drop-shadow(0 0 30px rgba(0, 240, 255, 0.8)) drop-shadow(0 6px 0 rgba(168, 85, 247, 0.7)) drop-shadow(0 12px 0 rgba(255, 41, 117, 0.5))',
+            letterSpacing: '0.05em',
+          }}
+        >
+          REWIND
+        </h1>
+        
+        {/* by TLC */}
+        <p
+          className="text-[3vw] md:text-[2vw] font-semibold tracking-[0.4em] -mt-2 md:-mt-4"
+          style={{
+            fontFamily: "'Orbitron', 'Rajdhani', sans-serif",
+            background: 'linear-gradient(180deg, #00f0ff 0%, #a855f7 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            filter: 'drop-shadow(0 0 15px rgba(0, 240, 255, 0.6))',
+          }}
+        >
+          by TLC
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default PremiumBackground3D;
