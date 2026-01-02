@@ -1,7 +1,96 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 import * as THREE from 'three';
+
+// Check if WebGL is available
+function isWebGLAvailable(): boolean {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
+    );
+  } catch (e) {
+    return false;
+  }
+}
+
+// CSS-only fallback background
+function FallbackBackground() {
+  return (
+    <div
+      className="fixed inset-0 z-0"
+      style={{
+        background: `
+          radial-gradient(ellipse 80% 50% at 50% 100%, 
+            rgba(255, 107, 53, 0.4) 0%, 
+            rgba(255, 41, 117, 0.2) 30%, 
+            transparent 70%
+          ),
+          linear-gradient(to bottom, 
+            #0a0812 0%, 
+            #0d0618 30%, 
+            #000000 100%
+          )
+        `,
+      }}
+    >
+      {/* Grid overlay effect */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(0, 240, 255, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 240, 255, 0.3) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px',
+          backgroundPosition: 'center bottom',
+          transform: 'perspective(500px) rotateX(60deg)',
+          transformOrigin: 'bottom center',
+          maskImage: 'linear-gradient(to top, black 0%, transparent 80%)',
+          WebkitMaskImage: 'linear-gradient(to top, black 0%, transparent 80%)',
+        }}
+      />
+      
+      {/* Stars effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        {Array.from({ length: 50 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white animate-pulse"
+            style={{
+              width: Math.random() * 2 + 1 + 'px',
+              height: Math.random() * 2 + 1 + 'px',
+              top: Math.random() * 60 + '%',
+              left: Math.random() * 100 + '%',
+              opacity: Math.random() * 0.7 + 0.3,
+              animationDelay: Math.random() * 3 + 's',
+              animationDuration: Math.random() * 2 + 2 + 's',
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Sun glow */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
+        style={{
+          width: '600px',
+          height: '300px',
+          background: `
+            radial-gradient(ellipse at center, 
+              rgba(255, 107, 53, 0.8) 0%,
+              rgba(255, 41, 117, 0.5) 30%,
+              transparent 70%
+            )
+          `,
+          filter: 'blur(40px)',
+        }}
+      />
+    </div>
+  );
+}
 
 // Glowing Sun with pulsating effect
 function Sun() {
@@ -89,7 +178,6 @@ function Grid() {
     const geo = new THREE.PlaneGeometry(200, 200, 100, 100);
     geo.rotateX(-Math.PI / 2);
     return geo;
-    return geo;
   }, []);
   
   useFrame((state) => {
@@ -165,7 +253,7 @@ function GridOverlay() {
   );
 }
 
-function PremiumBackground3D() {
+function WebGLCanvas() {
   return (
     <Canvas
       style={{ 
@@ -193,6 +281,26 @@ function PremiumBackground3D() {
       />
     </Canvas>
   );
+}
+
+function PremiumBackground3D() {
+  const [webGLSupported, setWebGLSupported] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setWebGLSupported(isWebGLAvailable());
+  }, []);
+
+  // Show nothing while checking
+  if (webGLSupported === null) {
+    return <FallbackBackground />;
+  }
+
+  // Use CSS fallback if WebGL is not available
+  if (!webGLSupported) {
+    return <FallbackBackground />;
+  }
+
+  return <WebGLCanvas />;
 }
 
 export default PremiumBackground3D;
