@@ -15,12 +15,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Secret admin credentials - in production this would be server-validated
-const ADMIN_CREDENTIALS = {
-  username: 'tlcadmin',
-  password: 'rewind2024'
-};
-
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
@@ -89,43 +83,37 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsAdmin(false);
   };
 
-  // Check if the quick access code matches admin credentials
+  // Validate admin credentials via secure edge function
   const checkAdminAccess = async (quickCode: string): Promise<boolean> => {
-    // Parse the code as username:password
     const parts = quickCode.split(':');
     if (parts.length !== 2) return false;
     
     const [username, password] = parts;
-    
-    if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
-      // If user is logged in, grant them admin role
-      if (user) {
-        try {
-          // Check if they already have admin role
-          const { data: existingRole } = await supabase
-            .from('user_roles')
-            .select('id')
-            .eq('user_id', user.id)
-            .eq('role', 'admin')
-            .maybeSingle();
 
-          if (!existingRole) {
-            // Grant admin role
-            await supabase
-              .from('user_roles')
-              .insert({ user_id: user.id, role: 'admin' });
-          }
-          
-          setIsAdmin(true);
-          return true;
-        } catch (err) {
-          console.error('Error granting admin access:', err);
-          return false;
-        }
+    try {
+      // Call edge function for server-side validation
+      const { data, error } = await supabase.functions.invoke('verify-admin', {
+        body: { username, password }
+      });
+
+      if (error) {
+        console.error('Admin verification failed:', error);
+        return false;
       }
-      return true;
+
+      if (data?.success) {
+        // If user was authenticated and granted admin, update local state
+        if (data.authenticated) {
+          setIsAdmin(true);
+        }
+        return true;
+      }
+
+      return false;
+    } catch (err) {
+      console.error('Error calling verify-admin:', err);
+      return false;
     }
-    return false;
   };
 
   return (

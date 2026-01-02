@@ -1,1 +1,7 @@
 project_id = "efxeeqklhgmbkihdasrw"
+
+[functions.generate-portrait]
+verify_jwt = false
+
+[functions.verify-admin]
+verify_jwt = false
