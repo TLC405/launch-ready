@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -6,21 +7,141 @@ const corsHeaders = {
 };
 
 const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+
+// Allowed eras - strict validation
+const ALLOWED_ERAS = ['1865', '1900s', '1950s', '1960s', '1970s', '1980s', '1990s', 'homeless', 'dayone'];
+
+// Rate limiting configuration
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const MAX_REQUESTS_PER_WINDOW = 50; // 50 requests per hour per IP
+
+// Hash IP for privacy
+async function hashIP(ip: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(ip + "tlc-salt");
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.slice(0, 8).map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
+  const supabaseAdmin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+
   try {
+    // ═══════════════════════════════════════════════════════════════
+    // SECURITY: Rate Limiting
+    // ═══════════════════════════════════════════════════════════════
+    const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+                     req.headers.get('x-real-ip') || 
+                     'unknown';
+    const ipHash = await hashIP(clientIP);
+    
+    const windowStart = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString();
+    
+    // Check rate limit
+    const { data: rateLimitData, error: rateLimitError } = await supabaseAdmin
+      .from('rate_limits')
+      .select('request_count')
+      .eq('ip_hash', ipHash)
+      .eq('endpoint', 'generate-portrait')
+      .gte('window_start', windowStart)
+      .single();
+
+    if (!rateLimitError && rateLimitData && rateLimitData.request_count >= MAX_REQUESTS_PER_WINDOW) {
+      console.warn(`⚠️ Rate limit exceeded for IP hash: ${ipHash}`);
+      return new Response(JSON.stringify({ 
+        error: "Rate limit exceeded. Time machine overheated - try again later.",
+        code: "RATE_LIMIT_EXCEEDED",
+        success: false
+      }), {
+        status: 429,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Update or insert rate limit record
+    if (rateLimitData) {
+      await supabaseAdmin
+        .from('rate_limits')
+        .update({ request_count: rateLimitData.request_count + 1 })
+        .eq('ip_hash', ipHash)
+        .eq('endpoint', 'generate-portrait')
+        .gte('window_start', windowStart);
+    } else {
+      await supabaseAdmin
+        .from('rate_limits')
+        .insert({ 
+          ip_hash: ipHash, 
+          endpoint: 'generate-portrait', 
+          request_count: 1,
+          window_start: new Date().toISOString()
+        });
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // Parse and Validate Request
+    // ═══════════════════════════════════════════════════════════════
     const { era, sourceImageBase64, prompt } = await req.json();
 
+    // Validate era
+    if (!era || !ALLOWED_ERAS.includes(era)) {
+      console.error(`❌ Invalid era: ${era}`);
+      return new Response(JSON.stringify({ 
+        error: "Invalid era selected",
+        code: "INVALID_ERA",
+        success: false
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Validate prompt length
+    if (prompt && prompt.length > 15000) {
+      console.error(`❌ Prompt too long: ${prompt.length} chars`);
+      return new Response(JSON.stringify({ 
+        error: "Prompt too long (max 15000 characters)",
+        code: "PROMPT_TOO_LONG",
+        success: false
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    // Validate image size (max 10MB)
+    if (sourceImageBase64) {
+      const base64Data = sourceImageBase64.replace(/^data:image\/\w+;base64,/, '');
+      const sizeInBytes = (base64Data.length * 3) / 4;
+      if (sizeInBytes > 10 * 1024 * 1024) {
+        console.error(`❌ Image too large: ${(sizeInBytes / 1024 / 1024).toFixed(2)}MB`);
+        return new Response(JSON.stringify({ 
+          error: "Image too large (max 10MB)",
+          code: "IMAGE_TOO_LARGE",
+          success: false
+        }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // API Key Check
+    // ═══════════════════════════════════════════════════════════════
     if (!LOVABLE_API_KEY) {
       throw new Error('LOVABLE_API_KEY is not configured');
     }
 
     console.log(`🎬 TLC STUDIOS REWIND - Generating ${era} portrait`);
     console.log(`📝 Prompt length: ${prompt?.length || 0} characters`);
+    console.log(`🔒 IP hash: ${ipHash}`);
     const startTime = Date.now();
 
     // Build the ENHANCED prompt with ULTRA face lock instructions
@@ -105,7 +226,7 @@ OUTPUT: Museum-quality photorealistic photograph.`;
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash-image-preview", // Stable image generation model
+        model: "google/gemini-2.5-flash-image-preview",
         messages: [
           {
             role: "user",
@@ -118,10 +239,10 @@ OUTPUT: Museum-quality photorealistic photograph.`;
 
     if (!response.ok) {
       if (response.status === 429) {
-        console.error("⚠️ Rate limit exceeded");
+        console.error("⚠️ AI gateway rate limit exceeded");
         return new Response(JSON.stringify({ 
-          error: "Rate limit exceeded. The time machine needs to cool down. Try again in a moment.",
-          code: "RATE_LIMIT",
+          error: "AI rate limit exceeded. The time machine needs to cool down.",
+          code: "AI_RATE_LIMIT",
           success: false
         }), {
           status: 429,
@@ -152,7 +273,7 @@ OUTPUT: Museum-quality photorealistic photograph.`;
 
     if (!generatedImageUrl) {
       console.error("❌ No image in response:", JSON.stringify(data, null, 2));
-      throw new Error("No image generated from AI - the time machine encountered a temporal anomaly");
+      throw new Error("No image generated from AI - temporal anomaly occurred");
     }
 
     return new Response(JSON.stringify({ 

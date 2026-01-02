@@ -8,7 +8,6 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { AmbientMusic } from "@/components/AmbientMusic";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
-import TimeTravelLab from "./pages/TimeTravelLab";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
@@ -25,12 +24,10 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
-              <Route path="/lab" element={<TimeTravelLab />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
-          {/* Premium Ambient Music Player */}
           <AmbientMusic />
         </TooltipProvider>
       </AuthProvider>
