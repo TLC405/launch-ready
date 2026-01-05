@@ -18,8 +18,8 @@ const ERAS = [
   { id: '1980s', label: '1980s', color: 'hsl(300, 80%, 50%)' },
   { id: '1990s', label: '1990s', color: 'hsl(180, 80%, 40%)' },
   { id: '2000s', label: '2000s', color: 'hsl(210, 80%, 50%)' },
-  { id: 'Homeless', label: 'HOMELESS', color: 'hsl(40, 30%, 35%)' },
-  { id: 'Day One', label: 'DAY ONE', color: 'hsl(185, 100%, 50%)' },
+  { id: 'homeless', label: 'HOMELESS', color: 'hsl(40, 30%, 35%)' },
+  { id: 'dayone', label: 'DAY ONE', color: 'hsl(185, 100%, 50%)' },
 ];
 
 export function HoloSceneSelector({ selectedEras, onToggleEra, onSelectAll, onSelectNone }: HoloSceneSelectorProps) {
