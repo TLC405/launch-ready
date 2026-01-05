@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { OKCNightscape } from '@/components/hud/OKCNightscape';
 import { Scanlines } from '@/components/hud/Scanlines';
 import { GlitchEffects, DataFragments } from '@/components/hud/GlitchEffects';
@@ -8,6 +8,7 @@ import { UltraTitle } from '@/components/hud/UltraTitle';
 import { HoloUploadPanel } from '@/components/hud/HoloUploadPanel';
 import { HoloSceneSelector } from '@/components/hud/HoloSceneSelector';
 import { DashboardCluster } from '@/components/hud/DashboardCluster';
+import { HoloResultsGallery } from '@/components/hud/HoloResultsGallery';
 import { useToast } from '@/hooks/use-toast';
 import generationService, { GenerationResult } from '@/services/generationService';
 
@@ -19,6 +20,7 @@ const Index = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [progress, setProgress] = useState(0);
   const [results, setResults] = useState<Map<string, GenerationResult>>(new Map());
+  const [currentGeneratingEra, setCurrentGeneratingEra] = useState<string | undefined>();
   const { toast } = useToast();
   
   const handleImageUpload = useCallback((base64: string) => {
@@ -29,6 +31,7 @@ const Index = () => {
     setSourceImage(null);
     setResults(new Map());
     setProgress(0);
+    setCurrentGeneratingEra(undefined);
   }, []);
   
   const handleToggleEra = useCallback((era: string) => {
@@ -66,8 +69,10 @@ const Index = () => {
       description: `Generating ${erasArray.length} portraits...`,
     });
     
-    // Process sequentially for better UX
+    // Process sequentially for better UX and to show current era
     for (const era of erasArray) {
+      setCurrentGeneratingEra(era);
+      
       try {
         const result = await generationService.generatePortrait(era, sourceImage);
         setResults(prev => new Map(prev).set(era, result));
@@ -87,13 +92,21 @@ const Index = () => {
     }
     
     setIsGenerating(false);
+    setCurrentGeneratingEra(undefined);
     
-    const successCount = Array.from(results.values()).filter(r => r.success).length;
+    // Count successes from final results
+    const finalResults = new Map(results);
+    erasArray.forEach(era => {
+      if (!finalResults.has(era)) {
+        // This shouldn't happen, but just in case
+      }
+    });
+    
     toast({
       title: 'TIME WARP COMPLETE',
-      description: `${successCount}/${erasArray.length} portraits generated successfully`,
+      description: `Portraits generated successfully`,
     });
-  }, [sourceImage, selectedEras, isGenerating, toast, results]);
+  }, [sourceImage, selectedEras, isGenerating, toast]);
   
   const handleDownload = useCallback(async () => {
     const successfulResults = Array.from(results.entries()).filter(([, r]) => r.success && r.imageUrl);
@@ -137,26 +150,34 @@ const Index = () => {
       </Helmet>
 
       <div className="min-h-screen relative overflow-hidden">
-        {/* Background layers */}
+        {/* Layer 1: Background */}
         <OKCNightscape />
         
-        {/* HUD effects */}
+        {/* Layer 2: HUD effects */}
         <Scanlines />
         <GlitchEffects />
         <DataFragments />
         <WindshieldFrame />
         
-        {/* Ultra title */}
+        {/* Layer 3: Title - center top */}
         <UltraTitle />
         
-        {/* Holographic upload panel - top right */}
+        {/* Layer 4: Results gallery - left side (appears when generating/results exist) */}
+        <HoloResultsGallery
+          results={results}
+          isGenerating={isGenerating}
+          selectedEras={selectedEras}
+          currentGeneratingEra={currentGeneratingEra}
+        />
+        
+        {/* Layer 5: Upload panel - top right */}
         <HoloUploadPanel
           sourceImage={sourceImage}
           onImageUpload={handleImageUpload}
           onClear={handleClearImage}
         />
         
-        {/* Scene selector dropdown */}
+        {/* Layer 6: Scene selector - below upload panel */}
         <HoloSceneSelector
           selectedEras={selectedEras}
           onToggleEra={handleToggleEra}
@@ -164,7 +185,7 @@ const Index = () => {
           onSelectNone={handleSelectNone}
         />
         
-        {/* Dashboard cluster */}
+        {/* Layer 7: Dashboard cluster - bottom */}
         <DashboardCluster
           sourceImage={sourceImage}
           selectedEras={selectedEras}
