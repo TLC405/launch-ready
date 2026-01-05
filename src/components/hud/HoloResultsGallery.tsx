@@ -10,6 +10,19 @@ interface HoloResultsGalleryProps {
   currentGeneratingEra?: string;
 }
 
+const ERA_LABELS: Record<string, string> = {
+  '1865': '1865',
+  '1900s': '1900s',
+  '1950s': '1950s',
+  '1960s': '1960s',
+  '1970s': '1970s',
+  '1980s': '1980s',
+  '1990s': '1990s',
+  '2000s': '2000s',
+  'homeless': 'HOMELESS',
+  'dayone': 'DAY ONE',
+};
+
 export function HoloResultsGallery({ 
   results, 
   isGenerating, 
@@ -29,14 +42,14 @@ export function HoloResultsGallery({
   return (
     <>
       <motion.div
-        className="fixed left-4 top-1/2 -translate-y-1/2 z-30 max-h-[60vh] overflow-y-auto scrollbar-thin"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        className="fixed bottom-28 left-1/2 -translate-x-1/2 z-30"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         {/* Gallery header */}
         <motion.div
-          className="mb-3 px-2"
+          className="mb-3 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -52,8 +65,8 @@ export function HoloResultsGallery({
           </span>
         </motion.div>
         
-        {/* Polaroid grid */}
-        <div className="flex flex-col gap-3">
+        {/* Horizontal polaroid row */}
+        <div className="flex gap-3 justify-center flex-wrap max-w-[95vw]">
           {displayEras.map((era, index) => {
             const result = results.get(era);
             const isCurrentlyGenerating = isGenerating && !result && era === currentGeneratingEra;
@@ -63,6 +76,7 @@ export function HoloResultsGallery({
               <PolaroidCard
                 key={era}
                 era={era}
+                label={ERA_LABELS[era] || era}
                 result={result}
                 isGenerating={isCurrentlyGenerating}
                 isPending={isPending}
@@ -147,6 +161,7 @@ export function HoloResultsGallery({
 
 interface PolaroidCardProps {
   era: string;
+  label: string;
   result?: GenerationResult;
   isGenerating: boolean;
   isPending: boolean;
@@ -154,7 +169,7 @@ interface PolaroidCardProps {
   onExpand: () => void;
 }
 
-function PolaroidCard({ era, result, isGenerating, isPending, index, onExpand }: PolaroidCardProps) {
+function PolaroidCard({ era, label, result, isGenerating, isPending, index, onExpand }: PolaroidCardProps) {
   const hasImage = result?.success && result?.imageUrl;
   const hasError = result && !result.success;
   
@@ -163,10 +178,10 @@ function PolaroidCard({ era, result, isGenerating, isPending, index, onExpand }:
   
   return (
     <motion.div
-      className="relative cursor-pointer"
-      initial={{ opacity: 0, x: -30, rotate: rotation - 5 }}
-      animate={{ opacity: 1, x: 0, rotate: rotation }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
+      className="relative cursor-pointer flex-shrink-0"
+      initial={{ opacity: 0, y: 30, rotate: rotation - 5 }}
+      animate={{ opacity: 1, y: 0, rotate: rotation }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
       whileHover={hasImage ? { 
         scale: 1.08, 
         rotate: 0,
@@ -177,7 +192,7 @@ function PolaroidCard({ era, result, isGenerating, isPending, index, onExpand }:
     >
       {/* Polaroid frame */}
       <div
-        className="relative w-28 p-2 pb-6 rounded-sm"
+        className="relative w-20 md:w-24 p-1.5 pb-5 rounded-sm"
         style={{
           background: hasImage 
             ? 'linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 250, 0.9))'
@@ -209,15 +224,15 @@ function PolaroidCard({ era, result, isGenerating, isPending, index, onExpand }:
           )}
           
           {isGenerating && (
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-1">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               >
-                <Loader2 size={20} style={{ color: 'rgba(0, 240, 255, 0.8)' }} />
+                <Loader2 size={16} style={{ color: 'rgba(0, 240, 255, 0.8)' }} />
               </motion.div>
               <span 
-                className="font-mono text-[8px] tracking-wider"
+                className="font-mono text-[7px] tracking-wider"
                 style={{ color: 'rgba(0, 240, 255, 0.6)' }}
               >
                 WARPING...
@@ -228,11 +243,11 @@ function PolaroidCard({ era, result, isGenerating, isPending, index, onExpand }:
           {isPending && (
             <div className="flex flex-col items-center gap-1">
               <div 
-                className="w-6 h-6 rounded-full border-2 border-dashed"
+                className="w-4 h-4 rounded-full border-2 border-dashed"
                 style={{ borderColor: 'rgba(100, 100, 110, 0.4)' }}
               />
               <span 
-                className="font-mono text-[7px] tracking-wider"
+                className="font-mono text-[6px] tracking-wider"
                 style={{ color: 'rgba(100, 100, 110, 0.5)' }}
               >
                 QUEUED
@@ -241,28 +256,28 @@ function PolaroidCard({ era, result, isGenerating, isPending, index, onExpand }:
           )}
           
           {hasError && (
-            <div className="flex flex-col items-center gap-1 p-2">
-              <AlertCircle size={16} style={{ color: 'rgba(255, 100, 100, 0.8)' }} />
+            <div className="flex flex-col items-center gap-1 p-1">
+              <AlertCircle size={14} style={{ color: 'rgba(255, 100, 100, 0.8)' }} />
               <span 
-                className="font-mono text-[7px] tracking-wider text-center"
+                className="font-mono text-[6px] tracking-wider text-center"
                 style={{ color: 'rgba(255, 100, 100, 0.7)' }}
               >
-                TEMPORAL ANOMALY
+                ERROR
               </span>
             </div>
           )}
         </div>
         
-        {/* Era label (handwritten style) */}
-        <div className="absolute bottom-1.5 left-0 right-0 text-center">
+        {/* Era label */}
+        <div className="absolute bottom-1 left-0 right-0 text-center">
           <span 
-            className="font-display text-[10px] tracking-wide"
+            className="font-mono text-[8px] tracking-wide"
             style={{ 
               color: hasImage ? 'rgba(40, 40, 50, 0.8)' : 'rgba(0, 240, 255, 0.6)',
               textShadow: hasImage ? 'none' : '0 0 5px rgba(0, 240, 255, 0.3)',
             }}
           >
-            {era}
+            {label}
           </span>
         </div>
         
@@ -289,7 +304,7 @@ function PolaroidCard({ era, result, isGenerating, isPending, index, onExpand }:
       {/* Tape piece decoration for completed polaroids */}
       {hasImage && (
         <div
-          className="absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-3 rounded-sm"
+          className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-6 h-2 rounded-sm"
           style={{
             background: 'rgba(255, 255, 200, 0.4)',
             transform: 'translateX(-50%) rotate(-2deg)',

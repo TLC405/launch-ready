@@ -12,7 +12,7 @@ import { HoloResultsGallery } from '@/components/hud/HoloResultsGallery';
 import { useToast } from '@/hooks/use-toast';
 import generationService, { GenerationResult } from '@/services/generationService';
 
-const ALL_ERAS = ['1865', '1900s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', 'Homeless', 'Day One'];
+const ALL_ERAS = ['1865', '1900s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', 'homeless', 'dayone'];
 
 const Index = () => {
   const [sourceImage, setSourceImage] = useState<string | null>(null);
