@@ -10,8 +10,8 @@ const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
-// Allowed eras - strict validation
-const ALLOWED_ERAS = ['1865', '1900s', '1950s', '1960s', '1970s', '1980s', '1990s', 'homeless', 'dayone'];
+// Allowed eras - strict validation (must match frontend exactly)
+const ALLOWED_ERAS = ['1865', '1900s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', 'Homeless', 'Day One'];
 
 // Rate limiting configuration
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
