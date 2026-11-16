@@ -1,0 +1,19 @@
+plugins { id 'com.android.application' }
+android {
+  namespace 'com.trevel.skilltree'
+  compileSdk 35
+  defaultConfig {
+    applicationId 'com.trevel.skilltree'
+    minSdk 24
+    targetSdk 34
+    versionCode 14
+    versionName '3.8'
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+  buildTypes {
+    release { minifyEnabled false }
+  }
+}
