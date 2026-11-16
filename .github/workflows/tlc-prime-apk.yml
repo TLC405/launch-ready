@@ -19,6 +19,8 @@ jobs:
           distribution: temurin
           java-version: "17"
       - uses: android-actions/setup-android@v3
+      - name: Install Android SDK 35
+        run: sdkmanager --install 'platforms;android-35' 'build-tools;35.0.0'
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.9"
@@ -31,9 +33,9 @@ jobs:
           mkdir -p release
           keytool -genkeypair -noprompt -keystore release/tlc-prime-keystore.jks -storepass "${{ github.run_id }}" -keypass "${{ github.run_id }}" -alias tlcprime -keyalg RSA -keysize 3072 -validity 10000 -dname "CN=TLC Prime,OU=TLC,O=TLC,L=Oklahoma City,ST=Oklahoma,C=US"
           APK="tlc-prime-android/app/build/outputs/apk/release/app-release-unsigned.apk"
-          zipalign -f -p 4 "$APK" "release/tlc-prime-aligned.apk"
-          apksigner sign --ks release/tlc-prime-keystore.jks --ks-key-alias tlcprime --ks-pass "pass:${{ github.run_id }}" --key-pass "pass:${{ github.run_id }}" --out release/TLC-Prime-Kame-House.apk release/tlc-prime-aligned.apk
-          apksigner verify --verbose --print-certs release/TLC-Prime-Kame-House.apk
+          "$ANDROID_HOME/build-tools/35.0.0/zipalign" -f -p 4 "$APK" "release/tlc-prime-aligned.apk"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" sign --ks release/tlc-prime-keystore.jks --ks-key-alias tlcprime --ks-pass "pass:${{ github.run_id }}" --key-pass "pass:${{ github.run_id }}" --out release/TLC-Prime-Kame-House.apk release/tlc-prime-aligned.apk
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs release/TLC-Prime-Kame-House.apk
           unzip -t release/TLC-Prime-Kame-House.apk
           sha256sum release/TLC-Prime-Kame-House.apk > release/SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
