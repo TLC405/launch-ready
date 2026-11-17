@@ -1,3 +1,17 @@
+## Version 50 — Compact weather HUD, TLC TV and varied anime SFX (November 17, 2026)
+
+**Verified production:** https://tlc-hyperbolic-chamber.vercel.app/ and https://tlc-house-of-pain.vercel.app/
+
+- Replaced the oversized home weather panel with a small header weather/temperature and current power-level indicator. A tap opens the complete scrollable forecast, location and city controls.
+- Fixed the main no-sound bug in the battle-effects click handler: `TLCAudio` is a lexical `const`, not `window.TLCAudio`; use `typeof TLCAudio !== 'undefined'`. Varied original tap, navigation, impact, explosion and power-up effects. Sounds remain dependent on browser user gesture and enabled audio setting. Does not change music.
+- Introduced an original anime-styled **TLC TV** component with YouTube privacy-enhanced iframe player, official Vimeo embeds, supported HTTPS MP4 and local file option, searchable tutorial categories, 9 curated video options and an optional saved user library.
+- Preserved all prior Instagram reel references and added external-open fallback. Some owners disable YouTube/Vimeo embeds; the app cannot override those controls, and hosted video playback was not confirmed on physical Android devices.
+- Verified original `window.DATA` byte-for-byte unchanged from prior release: 142 exercises, 7 workouts, 70 steps, 14 lanes; old `skilltree_v1` and `skilltree_videos` keys untouched.
+- Local Chromium/Playwright checked all six views at 320/360/412/600/768/1180px with no horizontal overflow or JS errors; weather drawer and city controls, TLC TV UI, source selection, audio click triggers, light/dark modes, and set log. Local network mocks were used for weather and player loads. Remote video playback, real phone speaker and physical Fold 5 not verified.
+- Vercel deployment `dpl_A9eQ985KmwcYwtXqZprURA3vXndq` READY; live HTTP 200 for full app at both URLs, manifest, icons and service worker cache `tlc-hyperbolic-chamber-v50`.
+- No paid AI credits, no ElevenLabs, and no Android APK changes.
+
+---
 ## v49 — TLC Hyperbolic Chamber (November 17, 2026)
 
 **Full app:** https://tlc-hyperbolic-chamber.vercel.app/  
