@@ -1,3 +1,18 @@
+## Version 45 — UI/UX-only overhaul (November 16, 2026)
+
+Live app: https://tlc-house-of-pain.vercel.app/ and https://tlc-prime-kame-house.vercel.app/
+
+- Replaced all seven dark placeholder weekly Dragon Balls with original, detailed orange-glass inline SVGs: separate 1–7 crisp red stars, warm amber glass, highlights, rim reflections and earned-state glow; updated the 2-star hero ball to match.
+- Unified cards, spacing, typography, tool labels, touch targets, visual rhythm, buttons and active states throughout Home, Train, Skills, Scrolls, Analyzer and Scouter.
+- Improved narrow-phone six-tab navigation, skill-path readability, training exercise cards, set buttons, day/date labels, high-width layout and dark/light visual hierarchy.
+- Kept the existing original dojo illustration, cute anime identity, all workouts, training database, progress history, skill steps, video references, audio features and storage keys unchanged.
+- Introduced UI-only style layer `tlc-uiux-45`; updated offline service worker cache key `tlc-house-of-pain-v45` so old visual files are replaced.
+- Automated browser checks: all six tabs across widths 320/360/412/600/768/1180; seven SVG balls show precisely 1 to 7 stars; no JavaScript errors or horizontal overflow; workout sets saved; sound settings still open; both light and dark themes rendered; skill detail keyboard access works.
+- Existing domain `tlc-prime-kame-house.vercel.app` remains available to retain browser-origin-specific local workout progress. Switching domains does **not** automatically move localStorage data.
+- Vercel production deployment `dpl_aqM9UQXUPCcspcXhy21jxZ8aaYX4` was READY. Live HTTP 200 verified for both URLs plus service worker, manifest and icons. Physical Fold 5 testing remains unverified.
+- This release does not rebuild the separately signed Android APK or introduce paid AI voice/audio services.
+
+---
 # TLC Prime — House of Pain v44 (November 16, 2026)
 
 ## Direct live testing
