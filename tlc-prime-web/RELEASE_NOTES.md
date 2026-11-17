@@ -1,3 +1,17 @@
+## Version 47 — Dark DBZ design and overlap fixes (November 17, 2026)
+
+**LIVE:** https://tlc-house-of-pain.vercel.app/ and https://tlc-prime-kame-house.vercel.app/
+
+- Replaced repeated beige backgrounds with a dark navy/blue-black world, orange primary actions, blue controls and high-contrast cream exercise cards.
+- Updated header, six-tab navigation, world ribbons, day selector, gravity progress display, section headers, exercise cards, scouter dashboard and skill cards.
+- Moved `NEXT UP` inside the first unfinished exercise card so it no longer overlaps the section above or the exercise title.
+- Removed legacy blurry cloud overlay and extra section-underlining, reducing visual crowding.
+- Kept 142 drills, 7 programs, 14 skill lanes, 70 skill nodes, audio controls, progress storage keys and existing tutorial references unchanged. The Android APK was not rebuilt.
+- QA: all 5 JavaScript blocks syntax-checked; Chromium/Playwright smoke-tested six tabs at 320/360/412/600/768/1180px with no JS exceptions or sideways scrolling; tested set logging/storage, skill detail, Escape dismissal and theme control.
+- Vercel production deployment `dpl_4WGmx6W32UocUa25jEaya7PXqckc` READY. Confirmed HTTP 200 for both app URLs, new offline cache v47, manifest and app icon.
+- Not verified on real Galaxy Z Fold 5 hardware. Old and new website URLs each have their own local progress storage: continue using the origin where the user's workouts are saved.
+
+---
 ## Version 46 — Deeper anime-world visual upgrade (November 17, 2026)
 
 **Published live:** https://tlc-house-of-pain.vercel.app/  (previous URL https://tlc-prime-kame-house.vercel.app/ remains active)
