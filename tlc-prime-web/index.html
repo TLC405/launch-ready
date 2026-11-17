@@ -964,6 +964,277 @@ html:not(.light) nav button.on{background:linear-gradient(180deg,#485a7a,#2e3d60
 @media (max-width:390px){header .htop{gap:7px}header #subtitle{max-width:180px}#hact .sound-trigger,#hact .thm{min-width:43px!important;width:43px!important;min-height:45px!important}.world-ribbon{padding:9px 10px;gap:9px}.world-ribbon .world-sigil{width:42px;height:42px;min-width:42px}.world-ribbon .world-description{font-size:11px}.pain-title em{-webkit-text-stroke:1.25px #253956}}
 @media (min-width:720px){.world-ribbon{padding:15px 19px;gap:16px}.world-ribbon .world-sigil{width:55px;height:55px;min-width:55px;font-size:28px}.world-ribbon .world-name{font-size:23px}.world-ribbon .world-description{font-size:13px}header #title{font-size:27px!important}}
 </style>
+<style id="tlc-contrast-47">
+/* TLC HOUSE OF PAIN • v47 • ANIME NIGHT / NO-OVERLAP PASS
+   Visual styles only. Existing training, audio and saved data stay untouched. */
+:root{
+  --dbz-void:#080d18; --dbz-midnight:#0b172b; --dbz-navy:#122540;
+  --dbz-royal:#1765d7; --dbz-electric:#338bff;
+  --dbz-orange:#fa7b22; --dbz-gold:#ffc24c;
+  --dbz-parchment:#fff7e9; --dbz-ink:#17243b;
+  --dbz-soft:#d9e9ff; --dbz-edge:#39557b;
+  --bg:#080d18;--bg2:#0c182a;--card:#172b48;--card2:#1c3353;
+  --line:#385275;--tx:#f5f7ff;--mut:#b2c5e2;
+  --acc:#ff912f;--acc2:#ffbd4e;--blue:#338bff;
+}
+html.light{
+  --bg:#080d18;--bg2:#0e1c31;--card:#fff7e9;--card2:#edf3ff;
+  --line:#b9c9dd;--tx:#182840;--mut:#4c5e7a;
+  --acc:#e86c10;--acc2:#ffb936;--blue:#1468dd;
+}
+html,html.light,html body,html.light body{
+  background-color:var(--dbz-void)!important;
+}
+html body,html.light body{
+  background-image:
+    radial-gradient(ellipse 75% 42% at 95% -8%,#1775ff22,transparent 65%),
+    radial-gradient(ellipse 50% 33% at -15% 38%,#f37d1718,transparent 76%),
+    linear-gradient(155deg,#0a1528 0%,#080e1c 48%,#0b1727 100%)!important;
+  background-attachment:fixed!important;color:#f7faff;
+}
+body{overflow-x:clip; padding-bottom:calc(92px + env(safe-area-inset-bottom))!important;}
+/* Site chrome: an anime HUD instead of a beige toolbar. */
+header,html.light header,html:not(.light) header{
+  background:#0c1a30!important;background-image:linear-gradient(105deg,#0d223d 0%,#07101f 72%,#152b48 100%)!important;
+  border-top:4px solid transparent!important;
+  border-image:none!important;
+  border-bottom:2px solid #f08c26!important;
+  box-shadow:0 5px 20px #02071299!important;
+  padding:11px max(13px,env(safe-area-inset-left)) 11px!important;
+  isolation:isolate;
+}
+header:before{height:4px!important;background:linear-gradient(90deg,#ffad25 0 30%,#2877e4 30% 60%,#f47a24 60% 100%)!important;top:0;}
+header #title{
+  color:#fff6e2!important;text-shadow:1px 2px 0 #030c1a!important;
+  -webkit-text-stroke:0!important;letter-spacing:.018em!important;
+  font:900 clamp(20px,3.45vw,29px)/1.03 Impact,'Arial Black',system-ui,sans-serif!important;
+}
+header #subtitle{color:#b5c9e9!important;font-size:clamp(11px,2.45vw,13px)!important;line-height:1.35!important;max-height:2.75em;overflow:hidden;}
+header .htop{align-items:center!important;gap:12px!important;min-width:0;max-width:1090px!important;}
+#hact{gap:7px!important;align-items:center;flex-wrap:nowrap;}
+#hact .thm,#hact .sound-trigger,#hact .btn.icon,#hact .pchip{
+  background:#1b3252!important;color:#fff2ce!important;
+  border:1px solid #3f638d!important;border-radius:13px!important;
+  box-shadow:inset 0 1px 0 #ffffff20,0 3px 0 #071222!important;
+  min-height:47px!important;min-width:47px!important;
+}
+#hact .sound-trigger{color:#ffbc67!important;}
+#hact .pchip{color:#ffce7b!important;}
+#hact :is(button,.thm,.sound-trigger):active{transform:translateY(2px);box-shadow:inset 0 1px #ffffff21,0 1px 0 #06101d!important;}
+/* Subtle open canvas and genuine negative space between sections. */
+main{max-width:1080px!important;margin-inline:auto;padding:22px max(15px,env(safe-area-inset-left)) 48px!important;}
+main .world-ribbon{
+  margin:0 0 23px!important;padding:14px 17px!important;gap:14px!important;
+  border-radius:18px!important;border:1px solid #35598a!important;
+  border-left:5px solid #f7882b!important;
+  background:linear-gradient(112deg,#18345b 0%,#10233e 75%,#0d1c30 100%)!important;
+  box-shadow:inset 0 1px #ffffff20,0 8px 22px #01071166!important;color:#fff8ed!important;
+}
+.world-ribbon:after{border-color:#3589ff24!important;right:-23px!important;}
+.world-ribbon .world-sigil{
+  background:linear-gradient(150deg,#ffca67,#f57c1c)!important;color:#192947!important;
+  border:2px solid #ffc977!important;border-radius:13px!important;
+  box-shadow:inset 0 2px #fff5b8,0 3px 0 #a54f18!important;
+}
+.world-ribbon .world-id{color:#ffb15f!important;letter-spacing:.11em!important;}
+.world-ribbon .world-name{color:#fff7e9!important;text-shadow:1px 2px 0 #081629!important;}
+.world-ribbon .world-description{color:#c8dbfa!important;}
+/* Controls: recognizable, consistent selected states, not seven beige plates. */
+main .chips{display:flex!important;gap:9px!important;margin:0 0 18px!important;padding:4px 3px 7px!important;scroll-padding:8px;}
+main .chip,html.light main .chip,html:not(.light) main .chip{
+  min-height:47px!important;padding:10px 15px!important;
+  background:#193353!important;border:1.5px solid #426490!important;
+  color:#eaf3ff!important;border-radius:13px!important;
+  box-shadow:inset 0 1px 0 #ffffff20,0 3px 0 #061327!important;
+  font:850 13px/1.2 system-ui,sans-serif!important;
+}
+main .chip.on,html.light main .chip.on,html:not(.light) main .chip.on{
+  background:linear-gradient(180deg,#ffb14a,#f17821)!important;
+  border-color:#ffce78!important;color:#1c2b42!important;
+  box-shadow:inset 0 2px 0 #fff2ba,0 4px 0 #7d3510!important;
+}
+main .chip:focus-visible,nav button:focus-visible,.btn:focus-visible{outline:3px solid #75b9ff!important;outline-offset:3px!important;}
+/* The gravity meter was another cream card; treat it as a compact powered-up HUD. */
+body[data-view='train'] main .gravity{
+  margin:5px 0 8px!important;padding:14px 17px!important;min-height:77px;
+  display:flex;gap:15px;align-items:center;
+  border:1px solid #4772ad!important;border-left:5px solid #f88b28!important;
+  border-radius:16px!important;background:linear-gradient(100deg,#19385f 0%,#0e2543 62%,#102d4d 100%)!important;
+  box-shadow:inset 0 1px #ffffff1e,0 6px 14px #0005!important;
+  color:#eaf3ff!important;font:900 16px/1.1 system-ui,sans-serif!important;
+}
+body[data-view='train'] .gravity b{color:#ffc76d!important;font:900 italic 32px/1 Impact,'Arial Black',sans-serif;text-shadow:2px 2px 0 #803b14!important;flex:0 0 auto;}
+body[data-view='train'] .gravity .sp{font:850 14px/1.3 system-ui,sans-serif!important;color:#fff3d9!important;}
+body[data-view='train'] .gravity .muted{color:#bfd4f7!important;font-size:12px!important;margin-top:3px;}
+body[data-view='train'] .progwrap{margin:8px 0 27px!important;padding-top:23px!important;position:relative;}
+body[data-view='train'] .progwrap .pc{top:0!important;right:3px!important;color:#badbff!important;font:900 13px/1 system-ui,sans-serif!important;}
+body[data-view='train'] .prog{height:9px!important;border-radius:999px!important;background:#203958!important;border:1px solid #3f5d80!important;overflow:hidden;}
+body[data-view='train'] .prog i{background:linear-gradient(90deg,#fe831e,#ffd14b)!important;box-shadow:0 0 14px #f88d38a3!important;}
+/* Module headers are flat blue strips, clearly different from exercise content. */
+body[data-view='train'] main .grp{
+  display:flex;align-items:center;gap:10px;
+  margin:22px 0 13px!important;padding:13px 14px!important;
+  background:linear-gradient(95deg,#19395f,#102946)!important;
+  border:1px solid #385b86!important;border-left:4px solid #f68a25!important;
+  box-shadow:0 4px 12px #0004!important;color:#f3f7ff!important;
+  border-radius:14px!important;
+}
+body[data-view='train'] .grp .gt{color:#fff5e5!important;font:900 16px/1.2 Impact,'Arial Black',system-ui,sans-serif;letter-spacing:.02em;}
+body[data-view='train'] .grp .gc{color:#cedefa!important;background:#102340!important;border:1px solid #3a5b82!important;border-radius:50px;padding:6px 9px;font-size:11px;white-space:nowrap;}
+body[data-view='train'] .grp .gi{filter:none!important;background:#ff922d!important;box-shadow:none!important;border:1px solid #ffc46c;border-radius:11px;min-width:38px;width:38px;height:38px;display:grid;place-items:center;}
+/* Exercise cards: clean cream reading area on a dark world, orange action accents. */
+html.light body[data-view='train'] main .ex,
+html body[data-view='train'] main .ex{
+  background:#fff7e9!important;background-image:linear-gradient(165deg,#fffbf3,#fff1dc)!important;
+  color:#17243b!important;border:1px solid #e0b98d!important;border-left:4px solid #e37c20!important;
+  border-radius:18px!important;padding:20px 18px!important;margin-bottom:21px!important;
+  box-shadow:0 5px 0 #d7944b42,0 13px 23px #00000040!important;
+  animation:none!important;
+}
+html:not(.light) body[data-view='train'] main .ex{
+  background:#152844!important;background-image:linear-gradient(160deg,#192f4e,#11213a)!important;
+  border-color:#41608a!important;border-left-color:#fb8e2a!important;
+  color:#f5f8ff!important;box-shadow:0 4px 0 #081321,0 12px 24px #02071377!important;
+}
+/* Move NEXT UP entirely INSIDE the card: never overlap the preceding module. */
+body[data-view='train'] main .ex.next{padding-top:49px!important;border-top:2px solid #2778e7!important;}
+body[data-view='train'] main .ex.next:before{
+  content:'NEXT UP';position:absolute!important;left:17px!important;right:auto!important;
+  top:12px!important;bottom:auto!important;z-index:1;
+  padding:5px 11px!important;border-radius:6px!important;
+  background:#1266ca!important;color:white!important;
+  box-shadow:none!important;font:900 11px/1.2 system-ui,sans-serif!important;letter-spacing:.08em!important;
+}
+body[data-view='train'] main .ex .nm{font:900 clamp(16px,3.6vw,20px)/1.22 Impact,'Arial Black',system-ui,sans-serif!important;letter-spacing:.013em!important;color:var(--tx)!important;}
+html.light body[data-view='train'] main .ex .nm{color:#17243b!important;}
+body[data-view='train'] main .ex .ds{color:#bd5816!important;font-weight:900!important;font-size:15px!important;margin-top:7px!important;}
+html:not(.light) body[data-view='train'] main .ex .ds{color:#ffbc72!important;}
+body[data-view='train'] main .ex .nt{line-height:1.52!important;margin-top:9px!important;}
+body[data-view='train'] main .ex .tag{display:inline-flex;align-items:center;vertical-align:middle;gap:5px;margin:10px 7px 7px 0!important;border-radius:9px!important;font-size:12px!important;font-weight:750;}
+body[data-view='train'] main .ex .read-exercise{
+  min-height:45px!important;background:#ffb74a!important;color:#17243b!important;
+  border:1px solid #d47f27!important;border-radius:11px!important;
+  box-shadow:0 3px 0 #9e551e!important;font-weight:900!important;margin-top:9px!important;
+}
+body[data-view='train'] main .ex .sets{margin:17px 0 10px!important;gap:10px!important;}
+body[data-view='train'] main .ex .set,html:not(.light) body[data-view='train'] main .ex .set:not(.on){
+  min-width:49px!important;min-height:49px!important;border-radius:12px!important;
+  background:linear-gradient(180deg,#f1f6ff,#dceafd)!important;color:#1b3d6b!important;
+  border:2px solid #9ab9db!important;box-shadow:0 3px 0 #7795b2!important;
+}
+body[data-view='train'] main .ex .set.on,html:not(.light) body[data-view='train'] main .ex .set.on{
+  background:linear-gradient(180deg,#e0ffd8,#9bdfa9)!important;color:#145034!important;
+  border-color:#44ad70!important;box-shadow:0 3px 0 #287b48!important;
+}
+body[data-view='train'] main .ex .btn{max-width:100%;}
+/* Strong separation between panels throughout the other five views. */
+main :is(.card,.stat,.lane,.vcard,.pbody){border-radius:17px!important;}
+html.light main .card,html.light main .stat,html.light main .lane,html.light main .vcard,html.light main .pbody{
+  background:#fff7e9!important;background-image:none!important;border:1px solid #bdcbe0!important;
+  box-shadow:0 5px 0 #6185ac30,0 12px 21px #0004!important;
+}
+html:not(.light) main .card,html:not(.light) main .stat,html:not(.light) main .lane,html:not(.light) main .vcard,html:not(.light) main .pbody{
+  background:#162b49!important;background-image:linear-gradient(160deg,#1a3354,#122440)!important;
+  border:1px solid #45668e!important;box-shadow:0 4px 0 #081525,0 12px 21px #01061499!important;
+}
+main .card{margin-bottom:20px!important;padding:19px!important;}
+main .lbl{color:#fff3d5!important;letter-spacing:.08em!important;font-size:17px!important;margin:26px 3px 14px!important;}
+main .lbl:after{opacity:.45;background:linear-gradient(90deg,#f18925,#2673e9)!important;}
+html.light main .stat b{color:#dc6817!important;text-shadow:none!important;}
+html:not(.light) main .stat b{color:#ffbc55!important;}
+main .stats{gap:11px!important;margin:18px 0 22px!important;}
+main .stat{padding:18px 10px!important;}
+/* Power / scouter should read as a deliberately dark instrument, not another cream box. */
+main .scouter,html.light main .scouter{
+  background:radial-gradient(circle at 94% 0%,#2161ae4d,transparent 45%),linear-gradient(120deg,#142e4d,#091b35)!important;
+  border:1px solid #3a71aa!important;border-left:4px solid #ff9a35!important;
+  color:#e6f3ff!important;border-radius:17px!important;
+  box-shadow:inset 0 1px #ffffff15,0 7px 20px #01061188!important;
+  margin:0 0 21px!important;
+}
+main .scouter .cap{color:#add3fc!important;}
+main .scouter .pl{color:#ffc35d!important;text-shadow:1px 2px 0 #7e421f!important;}
+/* The radar and glowing orbs must have room against the darker page. */
+main .wd{background:transparent!important;}
+main .week{gap:7px!important;overflow:visible;}
+main .wd .orb{filter:drop-shadow(0 3px 6px #9c4f1e5e)!important;}
+main .wd b{font-size:clamp(9px,2.35vw,12px)!important;}
+main .pn{gap:12px!important;margin-bottom:13px!important;}
+main .pn .pbody{padding:15px!important;}
+main .pn.cur .pbody{border:2px solid #ff9d3c!important;}
+main .pn.locked .pbody{opacity:.85!important;}
+main .lane{padding:15px!important;margin-bottom:11px!important;}
+main .vcard{margin-bottom:15px!important;padding:13px!important;}
+main .btn.p{background:linear-gradient(180deg,#ffa849,#f27822)!important;border:1px solid #ffc26c!important;color:#122239!important;box-shadow:0 3px 0 #954117!important;}
+main .btn.g{background:linear-gradient(180deg,#43d890,#209c62)!important;color:#041e13!important;box-shadow:0 3px 0 #13673e!important;}
+main .btn:active,main .chip:active,main .lane:active{transform:translateY(2px)!important;}
+/* One strong, dark permanent navigation bar. No beige or floating selected pill. */
+nav,html.light nav,html:not(.light) nav{
+  background:#0b1a2f!important;background-image:linear-gradient(180deg,#132c4a,#071325)!important;
+  border-top:2px solid #2d78db!important;
+  box-shadow:0 -7px 23px #02060db8!important;
+  gap:3px!important;padding:7px max(5px,env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom))!important;
+}
+nav button,html.light nav button,html:not(.light) nav button{
+  color:#adc2df!important;background:transparent!important;border:1px solid transparent!important;
+  border-radius:12px!important;box-shadow:none!important;
+  min-height:61px!important;font:800 10px/1.12 system-ui,sans-serif!important;
+  text-transform:uppercase!important;padding:7px 2px!important;
+}
+nav button svg{width:23px!important;height:23px!important;margin:0 auto 5px!important;}
+nav button.on,html.light nav button.on,html:not(.light) nav button.on{
+  color:#fff4e3!important;border:1px solid #ff9d3f!important;
+  background:linear-gradient(180deg,#28508a,#174071)!important;
+  box-shadow:inset 0 2px 0 #ffffff20,0 0 0 1px #ff9d3f23!important;
+}
+nav button.on svg{color:#ffbd60!important;filter:drop-shadow(0 0 3px #ff9d3f7d);}
+/* Tight screen handling: prevent clipped toolbar buttons and cramped labels. */
+@media(max-width:620px){
+  header .htop{gap:9px!important;align-items:center!important;}
+  #hact{gap:5px!important;}
+  #hact .pchip{display:none!important;}
+  #hact .thm,#hact .sound-trigger,#hact .btn.icon{min-width:45px!important;width:45px!important;min-height:45px!important;padding:0!important;}
+  header #title{font-size:clamp(17px,5vw,21px)!important;}
+  header #subtitle{font-size:10.5px!important;line-height:1.32!important;}
+  main{padding-top:17px!important;padding-inline:12px!important;}
+  main .world-ribbon{padding:11px 12px!important;margin-bottom:21px!important;}
+  .world-ribbon .world-sigil{width:42px!important;min-width:42px!important;height:42px!important;}
+  main .world-ribbon .world-name{font-size:18px!important;}
+  main .world-ribbon .world-description{font-size:12px!important;}
+  body[data-view='train'] main .ex{padding:17px 15px!important;}
+  body[data-view='train'] main .ex.next{padding-top:49px!important;}
+  body[data-view='train'] main .grp .gc{font-size:10px!important;}
+  nav button{font-size:9px!important;}
+}
+@media(max-width:355px){
+  header{padding-inline:9px!important;}
+  header #title{font-size:16px!important;}
+  #hact .thm,#hact .sound-trigger,#hact .btn.icon{min-width:41px!important;width:41px!important;min-height:44px!important;}
+  #hact{gap:3px!important;}
+  nav{gap:1px!important;padding-inline:2px!important;}
+  nav button{font-size:8.5px!important;}
+  nav button svg{width:21px!important;height:21px!important;}
+  main .week{gap:3px!important;}
+}
+@media(min-width:720px){
+  main{padding-inline:23px!important;}
+  main .world-ribbon{padding:16px 20px!important;}
+  body[data-view='train'] main .ex{padding:25px!important;}
+  body[data-view='train'] main .ex.next{padding-top:51px!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  html,body{scroll-behavior:auto!important;}
+  main :is(.chip,.btn,.lane,.pn,.ex),nav button{animation:none!important;transition:none!important;}
+}
+/* Final visual QA fixes: remove legacy blurry energy/cloud overlay and section underline. */
+body:before,html.light body:before,html:not(.light) body:before{display:none!important;content:none!important;animation:none!important;}
+body[data-view='train'] main .grp:after{display:none!important;content:none!important;}
+html body[data-view='train'] main .ex.next,
+html.light body[data-view='train'] main .ex.next,
+html:not(.light) body[data-view='train'] main .ex.next{padding-top:56px!important;}
+html body[data-view='train'] main .ex.next:before{top:17px!important;left:17px!important;right:auto!important;}
+
+</style>
 </head>
 <body>
 <a class="skip-to-content" href="#main">Skip to workout content</a>
