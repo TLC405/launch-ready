@@ -2,7 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#07091a">
-<title>TLC House of Pain — Training Dojo</title>
+<title>TLC Hyperbolic Chamber — Training Dojo</title>
 <style>
 :root{--bg:#0b0d12;--bg2:#10131a;--card:#161a23;--card2:#1e2330;--line:#262c3a;--tx:#f4f6fa;--mut:#8d95a5;--acc:#ff9f2e;--acc2:#ff5e62;--ok:#2fd389;--blue:#4c8dff;--lock:#3a4152;--r:18px}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -580,7 +580,7 @@ html.light .dpre{background:#f1ece0;color:#16193a}html.light .anaErr .ae-h{color
 <link rel="manifest" href="./manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="TLC House of Pain: Saiyan-style skill training, progressions, workout logging and movement analysis.">
+<meta name="description" content="TLC Hyperbolic Chamber: Saiyan-style skill training, progressions, workout logging and movement analysis.">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <style id="tlc-layout-hardening">
 :root{color-scheme:dark light}
@@ -628,7 +628,7 @@ html:not(.light) nav button.on{color:#ffd400}
 </style>
 <style id="tlc-house-of-pain-core">
 /* =======================================================
-   TLC HOUSE OF PAIN — original anime training-world theme
+   TLC HYPERBOLIC CHAMBER — original anime training-world theme
    No trademarked character illustrations or borrowed music.
    ======================================================= */
 :root{--ink:#242c46;--paper:#fffaf0;--cherry:#e75f56;--sun:#f4a62d;--dojo-blue:#356cca;--dojo-cream:#f9e5bf;--tap-min:48px}
@@ -721,7 +721,7 @@ nav button:active{transform:translateY(2px)}
 
 </style>
 <style id="tlc-uiux-45">
-/* TLC House of Pain | UI/UX-only design system v45. Workout, audio and storage logic intact. */
+/* TLC Hyperbolic Chamber | UI/UX-only design system v45. Workout, audio and storage logic intact. */
 :root{--tlc-space-1:4px;--tlc-space-2:8px;--tlc-space-3:12px;--tlc-space-4:16px;--tlc-space-5:20px;--tlc-radius:18px;--tlc-focus:#1a6dda;--tlc-shadow:0 2px 0 #b9784a55,0 9px 25px #1b24401c}
 html.light{--tlc-shadow:0 3px 0 #c6926555,0 12px 25px #4f433018;--tlc-focus:#0b56b4}
 html:not(.light){--tlc-shadow:0 3px 0 #070e20,0 13px 26px #03061145;--tlc-focus:#ffe48b}
@@ -826,7 +826,7 @@ input,textarea,select{font-size:16px!important}
 @media (prefers-reduced-motion:reduce){.dragon-ball-svg,.pain-orb,.lane,.chip,.pn,.btn,nav button{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 <style id="tlc-world-depth-46">
-/* TLC HOUSE OF PAIN | WORLD-BUILDING VISUAL LANGUAGE • v46 */
+/* TLC HYPERBOLIC CHAMBER | WORLD-BUILDING VISUAL LANGUAGE • v46 */
 :root{
  --world-ink:#253650; --world-ink-deep:#182a45;
  --world-orange:#ef7c28; --world-amber:#ffbf53; --world-cream:#fff4dd;
@@ -965,7 +965,7 @@ html:not(.light) nav button.on{background:linear-gradient(180deg,#485a7a,#2e3d60
 @media (min-width:720px){.world-ribbon{padding:15px 19px;gap:16px}.world-ribbon .world-sigil{width:55px;height:55px;min-width:55px;font-size:28px}.world-ribbon .world-name{font-size:23px}.world-ribbon .world-description{font-size:13px}header #title{font-size:27px!important}}
 </style>
 <style id="tlc-contrast-47">
-/* TLC HOUSE OF PAIN • v47 • ANIME NIGHT / NO-OVERLAP PASS
+/* TLC HYPERBOLIC CHAMBER • v47 • ANIME NIGHT / NO-OVERLAP PASS
    Visual styles only. Existing training, audio and saved data stay untouched. */
 :root{
   --dbz-void:#080d18; --dbz-midnight:#0b172b; --dbz-navy:#122540;
@@ -1317,6 +1317,83 @@ html:not(.light) .tlc-sound-panel select{background:#0d254d!important;color:whit
 @media(max-width:390px){header #title{font-size:clamp(16px,4.9vw,19px)!important;}main .world-ribbon{margin-bottom:16px!important}.music-controls{flex-wrap:wrap;}}
 @media(prefers-reduced-motion:reduce){main *,nav *{scroll-behavior:auto!important;}}
 </style>
+
+<style id="tlc-hyperbolic-ui-v49">
+/* Purposeful anime styling: original hero art, legible weather UI and generous touch targets. */
+:root{--chamber-orange:#ff8626;--chamber-blue:#246ac8;--chamber-black:#0b172b}
+header #title{font-family:Impact,'Arial Black',system-ui,sans-serif!important;font-size:clamp(16px,3.85vw,25px)!important;line-height:1.07!important;max-width:100%;text-wrap:balance;overflow-wrap:normal}
+header .sub{max-width:100%;font-size:clamp(10px,2.6vw,13px)!important;line-height:1.35}
+@media(max-width:420px){header .htop{gap:5px}header #title{font-size:clamp(15px,4.15vw,18px)!important;letter-spacing:-.025em!important}}
+.pain-dojo{display:flex!important;flex-direction:column!important;min-height:0!important;overflow:hidden}
+.pain-dojo .pain-world{position:absolute!important;inset:0!important;height:390px!important;min-height:390px!important;opacity:.65!important;object-fit:cover!important;object-position:top center!important}
+.pain-world-label{display:flex!important;flex-direction:column!important;align-items:stretch!important;min-height:0!important;padding:17px 13px 18px!important;gap:10px!important;background:linear-gradient(180deg,rgba(7,22,52,.34),rgba(8,22,44,.05) 14%,transparent 32%,rgba(10,24,50,.76) 42%,rgba(10,20,40,.95) 100%)!important;pointer-events:none!important}
+.pain-world-index{align-self:flex-start;max-width:calc(100% - 68px);line-height:1.25!important}
+.pain-title{font-size:clamp(30px,8.9vw,50px)!important;line-height:.95!important;margin-top:7px!important;max-width:calc(100% - 45px)!important;letter-spacing:-.025em!important;text-wrap:balance;filter:drop-shadow(0 3px 1px #1119277a)!important}
+.pain-title em{font-size:.85em!important;letter-spacing:-.035em!important;-webkit-text-stroke:1px #1a2c4b!important}
+.pain-tagline{align-self:flex-start;margin:3px 0 16px!important;font-size:clamp(12px,3vw,14px)!important}
+.pain-orb{top:18px!important;right:10px!important;width:51px!important;height:51px!important}
+.pain-action{position:relative!important;inset:auto!important;align-self:stretch!important;width:100%!important;justify-content:center!important;margin-top:3px!important;margin-bottom:0!important;min-height:54px!important;pointer-events:auto!important;font:900 clamp(14px,3vw,17px)/1 system-ui,sans-serif!important;letter-spacing:.015em!important}
+.chamber-weather{position:relative;z-index:6;width:100%;border:2px solid #4d83d7;border-radius:20px;background:linear-gradient(146deg,rgba(5,19,49,.97),rgba(13,45,93,.97));box-shadow:0 5px 0 #091328,0 12px 23px #080e27aa,inset 0 1px 0 #c5e9ff33;padding:12px;color:#f5f9ff!important;pointer-events:auto!important;font:500 12px/1.42 system-ui,-apple-system,sans-serif;min-width:0;text-shadow:none!important}
+.chamber-weather *{box-sizing:border-box}
+.chamber-weather .cw-head{display:flex;align-items:center;gap:7px;border-bottom:1px solid #467cbe75;padding-bottom:10px}
+.cw-head-icon{display:grid;place-items:center;width:30px;height:30px;border:1px solid #8bbfff;border-radius:10px;background:#2469c4;color:#ffb03f;font-size:18px}
+.cw-head-title{font-weight:1000;font-size:clamp(12px,3vw,14px);letter-spacing:.04em;white-space:nowrap}
+.cw-live{margin-left:auto;font-size:9px;font-weight:900;letter-spacing:.1em;background:#154672;border:1px solid #3676b4;color:#bdeaff;padding:4px 6px;border-radius:20px}
+.cw-icon-btn{font:800 22px/1 system-ui;min-height:36px;min-width:36px;color:#fff;background:#1a4381;border:1px solid #7aace8;border-radius:10px;cursor:pointer}
+.cw-location{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;padding:9px 0}
+#cwCity{font-size:13px;font-weight:900;max-width:100%;overflow-wrap:anywhere}
+.cw-location-actions{display:flex;gap:5px;align-items:center}
+.cw-location-actions button,.cw-search button,.cw-unavailable button{background:#1e62aa;color:#fff;border:1px solid #75b4ff;border-radius:9px;min-height:33px;padding:5px 9px;font-size:11px;font-weight:800;cursor:pointer}
+.cw-search{padding:6px 0 10px;display:block!important}
+.cw-search[hidden]{display:none!important}
+.cw-search label{display:block;font-size:11px;font-weight:800;color:#bbdafb;margin-bottom:4px}
+.cw-search>div{display:flex;gap:7px}
+.cw-search input{flex:1;min-width:0;width:100%;min-height:40px;background:#f6fbff;border:2px solid #6faffe;border-radius:9px;color:#0c2c56;padding:8px;font-size:14px}
+.cw-body{min-height:150px}
+.cw-loading{height:152px;display:flex;align-items:center;justify-content:center;gap:10px;color:#c6defa;font-size:13px;font-weight:700}
+.cw-pulse{display:block;width:15px;height:15px;border-radius:50%;background:#f7a143;box-shadow:0 0 0 5px #f7a14322;animation:cwpulse 1.1s ease-in-out infinite}
+@keyframes cwpulse{50%{opacity:.3;transform:scale(.75)}}
+.cw-now{display:flex;align-items:center;gap:10px;padding:5px 2px 14px;min-width:0}
+.cw-main-icon{display:grid;place-items:center;width:64px;min-width:64px;height:64px;border-radius:18px;background:linear-gradient(#336dc3,#1e447e);border:1px solid #5798ec}
+.cw-weather-icon{display:block;width:64px;height:64px;flex:0 0 auto;filter:drop-shadow(0 3px 3px #01112580)}
+.cw-main-icon .cw-weather-icon{width:58px;height:58px}
+.cw-weather-icon.small{width:29px;height:29px}
+.cw-now-text{flex:1;min-width:0}
+.cw-temperature{font-size:clamp(39px,11vw,66px);font-weight:1000;letter-spacing:-.07em;line-height:1.0;color:#fff}
+.cw-temperature small{font-size:14px;letter-spacing:0;font-weight:800;color:#b2d5ff;margin-left:3px}
+.cw-condition{font-size:13px;font-weight:900;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.cw-hi-lo{font-size:11px;color:#c5dfff;font-weight:800}
+.cw-feels{align-self:flex-start;text-align:right;padding:6px 5px;border-left:1px solid #638ec663}
+.cw-feels span{display:block;font-size:9px;font-weight:800;letter-spacing:.05em;color:#c2defb}
+.cw-feels strong{font-size:22px;color:#ffb849}
+.cw-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:12px}
+.cw-metrics>div{background:#17477c;border:1px solid #3473b1;border-radius:10px;padding:8px 5px;text-align:center;min-width:0}
+.cw-metrics span{display:block;color:#b9daff;font-size:9px;font-weight:900;letter-spacing:.035em}
+.cw-metrics b{display:block;margin-top:2px;color:#fff;font-size:clamp(12px,3vw,15px);white-space:nowrap}
+.cw-section-title{color:#a5cdfd;font-size:10px;font-weight:900;letter-spacing:.1em;margin:10px 2px 6px}
+.cw-hours{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}
+.cw-hour{display:flex;flex-direction:column;align-items:center;gap:4px;background:#143c70;border:1px solid #2765a5;border-radius:10px;padding:7px 1px;min-width:0}
+.cw-hour>span:first-child{color:#b7d8fd;font-size:9px;font-weight:900}
+.cw-hour strong{font-size:13px}
+.cw-rain{font-size:8.5px;color:#9cc8ff;white-space:nowrap}
+.cw-days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.cw-day{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;background:#173e70;border:1px solid #3478ba;border-radius:11px;padding:8px 7px;min-width:0}
+.cw-day>span{font-weight:900;font-size:10px;color:#c4ddff}
+.cw-day b{font-weight:900;color:#fff;font-size:12px}
+.cw-day b span{color:#a8c6ea}
+.cw-day small{font-size:10px;color:#a4d0ff;white-space:nowrap}
+.cw-foot{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:9px 2px 0;color:#b2cee9;font-size:10px}
+.cw-foot a{color:#acd4ff!important;text-decoration:underline!important;pointer-events:auto!important}
+.cw-unavailable{padding:20px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.cw-unavailable span{color:#c1dbef}
+html.light .pain-dojo .pain-world-label{background:linear-gradient(180deg,#f9fbff50,#edf5ff26 18%,transparent 33%,#0d366aa8 52%,#08234cea 100%)!important}
+html.light .chamber-weather{background:linear-gradient(140deg,#104a92,#0c2a60)!important;color:#fff!important;border-color:#6098e6!important}
+html:not(.light) .chamber-weather{border-color:#ff922c!important;box-shadow:0 4px 0 #061126,0 11px 25px #070f2a,inset 0 1px 0 #fff3!important}
+@media(min-width:720px){.pain-dojo .pain-world{height:560px!important}.pain-world-label{padding:25px 25px 24px!important}.pain-title{font-size:clamp(42px,5.5vw,68px)!important}.chamber-weather{max-width:720px;margin-top:10px}.pain-action{max-width:720px!important}.cw-hours{gap:8px}.cw-day{padding:11px}}
+@media(max-width:360px){.pain-world-label{padding-inline:8px!important}.pain-title{font-size:clamp(26px,8.5vw,32px)!important}.chamber-weather{padding:9px}.cw-main-icon{width:53px;min-width:53px;height:53px}.cw-main-icon .cw-weather-icon{width:48px;height:48px}.cw-feels strong{font-size:18px}.cw-hour .cw-weather-icon{width:25px;height:25px}.cw-hour{padding:6px 0}.cw-day{padding:6px 4px}}
+@media(prefers-reduced-motion:reduce){.cw-pulse{animation:none}}
+</style>
+
 </head>
 <body>
 <a class="skip-to-content" href="#main">Skip to workout content</a>
@@ -1326,7 +1403,7 @@ html:not(.light) .tlc-sound-panel select{background:#0d254d!important;color:whit
 <div class="sp"><div class="muted">Time Chamber · Rest</div><div id="tnum">1:30</div></div><button class="btn sm" onclick="addTime(-15)">−15</button><button class="btn sm" onclick="addTime(15)">+15</button><button class="btn sm" onclick="stopTimer()">Skip</button></div>
 <div class="modal" id="modal" onclick="if(event.target.id==='modal')closeM()"><div class="sheet" id="sheet"></div></div>
 <nav>
-<button id="n-home" onclick="go('home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Dojo</button>
+<button id="n-home" onclick="go('home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Chamber</button>
 <button id="n-train" onclick="go('train')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg>Train</button>
 <button id="n-skills" onclick="go('skills')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5l-5 5M12 11.5l5 5"/></svg>Skills</button>
 <button id="n-learn" onclick="go('learn')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg>Scrolls</button>
@@ -1335,9 +1412,9 @@ html:not(.light) .tlc-sound-panel select{background:#0d254d!important;color:whit
 </nav>
 <div class="tlc-sound-shade" id="tlcAudioShade" hidden onclick="if(event.target===this)TLCAudio.close()">
   <section class="tlc-sound-panel" role="dialog" aria-modal="true" aria-labelledby="tlcAudioTitle">
-    <div class="tlc-sound-top"><span class="console-stamp">CAPSULE SOUND LAB · V1</span><button type="button" onclick="TLCAudio.close()" aria-label="Close sound settings">✕</button></div>
+    <div class="tlc-sound-top"><span class="console-stamp">HYPERBOLIC BATTLE LAB</span><button type="button" onclick="TLCAudio.close()" aria-label="Close sound settings">✕</button></div>
     <h2 id="tlcAudioTitle">SOUND LAB <span>♫</span></h2>
-    <p>Original instrumental training music and clean sound effects. No AI-generated voice or paid credits.</p>
+    <p>Original battle effects and optional instrumental music. No robotic voices or subscriptions.</p>
     <label class="tlc-audio-control">Training soundtrack
       <select id="tlcMusicTrack" onchange="TLCMusic.setTrack(this.value)">
         <option value="power">Power Up · energetic</option>
@@ -1346,18 +1423,18 @@ html:not(.light) .tlc-sound-panel select{background:#0d254d!important;color:whit
     </label>
     <div class="music-controls"><button type="button" id="tlcMusicPlay" onclick="TLCMusic.toggle()">▶ PLAY MUSIC</button><span id="tlcMusicStatus" role="status">Ready</span></div>
     <p class="tlc-music-hint">Music starts when you tap Play. It continues between screens and stops when you pause it. No autoplay or streaming is needed.</p>
-    <label class="tlc-toggle"><span><b>Dojo sound effects</b><small>Optional set, rest and training sounds</small></span><input id="tlcSoundOn" type="checkbox" onchange="TLCAudio.change('sound',this.checked)"></label>
+    <label class="tlc-toggle"><span><b>Anime battle FX</b><small>Original fight, power-up and explosion sounds</small></span><input id="tlcSoundOn" type="checkbox" onchange="TLCAudio.change('sound',this.checked)"></label>
     <label class="tlc-audio-control">Sound volume <input id="tlcVolume" type="range" min="0" max="100" step="5" onchange="TLCAudio.change('volume',Number(this.value)/100);TLCMusic.setVolume(Number(this.value)/100)"></label>
     <div class="sound-actions"><button type="button" onclick="TLCAudio.demo()">▶ TEST SOUND</button><button type="button" onclick="TLCMusic.stop();TLCAudio.change('sound',false)">◼ ALL SOUND OFF</button></div>
     <div class="tlc-sound-command"><b>Optional hands-free commands</b><p>Tap the microphone to open training, start a rest timer or open a skill. No speaking voice is generated.</p><button id="tlcMicBtn" onclick="TLCAudio.listen()">🎙 SPEAK A COMMAND</button><small id="tlcMicInfo">Your browser may process voice commands online. The microphone only starts when tapped.</small></div>
-    <div class="tlc-sound-note">No ElevenLabs, subscriptions or AI voice charges. Music is original and created locally on your device.</div>
+    <div class="tlc-sound-note">Original sounds are created on your device. No ElevenLabs, character clips or per-play charges.</div>
   </section>
 </div>
 <script id="tlc-audio-lab-v1">
 const TLCAudio=(()=>{
  'use strict';
  const key='tlc_audio_settings_v1';
- const defaults={sound:false,coach:false,volume:0.45,voice:''};
+ const defaults={sound:true,coach:false,volume:0.45,voice:''};
  let prefs={...defaults};
  try{let p=JSON.parse(localStorage.getItem(key)||'{}');if(p&&typeof p==='object')prefs={...defaults,...p}}catch(e){}
  let context=null,recognizer=null,unlocked=false,lastFocus=null;
@@ -1374,8 +1451,35 @@ const TLCAudio=(()=>{
  function close(){stopListening();$('tlcAudioShade').hidden=true;lastFocus?.focus?.()}
  function change(name,val){if(!Object.hasOwn(defaults,name))return;prefs[name]=name==='volume'?Math.min(1,Math.max(0,Number(val)||0)):val;save();draw();document.querySelectorAll('.sound-status').forEach(el=>el.textContent=enabled()?'ON':'OFF');if(name==='coach'&&!val)try{speechSynthesis.cancel()}catch(e){};}
  function getAudio(){if(!prefs.sound)return null;try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;if(!context)context=new AC();if(context.state==='suspended')context.resume().catch(()=>{});return context}catch(e){return null}}
- function effect(kind,force=false){if(!prefs.sound&&!force)return;let a=getAudio();if(!a)return;const time=a.currentTime;const seq=kind==='finish'?[[400,0,.13],[600,.15,.13],[780,.3,.18]]:kind==='rest'?[[720,0,.13],[910,.17,.22]]:kind==='set'?[[310,0,.07],[450,.075,.06]]:[[510,0,.1],[760,.12,.11]];
- seq.forEach(([freq,delay,length])=>{const osc=a.createOscillator(),gain=a.createGain();osc.type=kind==='set'?'triangle':'sine';osc.frequency.setValueAtTime(freq,time+delay);osc.frequency.exponentialRampToValueAtTime(Math.max(80,freq*0.82),time+delay+length);gain.gain.setValueAtTime(0.0001,time+delay);gain.gain.exponentialRampToValueAtTime(Math.max(.0002,prefs.volume*.095),time+delay+.013);gain.gain.exponentialRampToValueAtTime(.0001,time+delay+length);osc.connect(gain);gain.connect(a.destination);osc.start(time+delay);osc.stop(time+delay+length+.02);});}
+ let fxNoise=null,fxNoiseRate=0,lastFx=0;
+ function noise(a){if(fxNoise&&fxNoiseRate===a.sampleRate)return fxNoise;const len=Math.round(a.sampleRate*.85);const b=a.createBuffer(1,len,a.sampleRate),v=b.getChannelData(0);let prev=0;for(let i=0;i<len;i++){const white=Math.random()*2-1;prev=(prev+white*.16)/1.16;v[i]=prev*.65;}fxNoise=b;fxNoiseRate=a.sampleRate;return b}
+ function tone(a,t,from,to,duration,volume=1,type='sawtooth'){
+  const osc=a.createOscillator(),vol=a.createGain(),filter=a.createBiquadFilter();filter.type='lowpass';filter.frequency.value=3200;
+  osc.type=type;osc.frequency.setValueAtTime(Math.max(25,from),t);osc.frequency.exponentialRampToValueAtTime(Math.max(25,to),t+duration);
+  const v=Math.max(.0001,Math.min(.2,prefs.volume*.12*volume));vol.gain.setValueAtTime(.0001,t);vol.gain.exponentialRampToValueAtTime(v,t+.012);vol.gain.exponentialRampToValueAtTime(.0001,t+duration);
+  osc.connect(filter);filter.connect(vol);vol.connect(a.destination);osc.start(t);osc.stop(t+duration+.025);
+ }
+ function blastNoise(a,t,duration=0.24,pitch=1200,volume=1){
+  const src=a.createBufferSource(),filter=a.createBiquadFilter(),g=a.createGain();src.buffer=noise(a);filter.type='lowpass';filter.frequency.setValueAtTime(pitch,t);filter.frequency.exponentialRampToValueAtTime(110,t+duration);
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.min(.15,prefs.volume*.13*volume),t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+duration);
+  src.connect(filter);filter.connect(g);g.connect(a.destination);src.start(t);src.stop(t+duration+.01);
+ }
+ function effect(kind,force=false){
+  if(!prefs.sound&&!force)return;
+  const a=getAudio();if(!a)return;
+  const now=performance.now();if(kind==='tap'&&now-lastFx<75)return;lastFx=now;
+  const t=a.currentTime+.008;
+  // Original arcade-anime-inspired synthesis, not copyrighted DBZ character audio.
+  try{
+    if(kind==='tap'||kind==='demo'){tone(a,t,940,410,.09,.25,'triangle');blastNoise(a,t,.07,2600,.13)}
+    else if(kind==='navigate'){tone(a,t,360,940,.14,.37);tone(a,t+.045,640,1300,.11,.25,'triangle')}
+    else if(kind==='set'||kind==='impact'){tone(a,t,240,58,.16,.95,'sine');blastNoise(a,t,.17,950,.68);tone(a,t+.035,660,220,.15,.25)}
+    else if(kind==='power'||kind==='skill'){tone(a,t,190,1240,.35,.55);tone(a,t+.075,300,1800,.33,.42,'triangle');blastNoise(a,t+.21,.14,2100,.4)}
+    else if(kind==='finish'||kind==='blast'||kind==='rest'){tone(a,t,260,1500,.43,.58);tone(a,t+.16,1000,120,.38,.65,'sawtooth');blastNoise(a,t+.17,.49,2800,1.5);tone(a,t+.19,140,36,.48,1.35,'sine')}
+    else {tone(a,t,480,740,.12,.25,'triangle')}
+  }catch(e){ /* Silent fallback on devices lacking full Web Audio support. */ }
+ }
+
  function speak(){return false} // Device TTS deliberately disabled: no low-quality synthesized coach.
  function readExercise(dayId,i){try{const k='f'+dayId+i;if(typeof FORMS_OPEN!=='undefined'){FORMS_OPEN.add(k);render(true);setTimeout(()=>{document.querySelector('#ex'+i+' .fpanel')?.scrollIntoView({behavior:'smooth',block:'nearest'})},100);}else toast('Open the Form panel below for coaching cues.')}catch(e){toast('Open the Form panel below for coaching cues.')}}
  function demo(){if(!prefs.sound){change('sound',true);}effect('demo')}
@@ -1398,7 +1502,7 @@ const TLCAudio=(()=>{
 })();
 </script>
 <script id="tlc-original-music-v48">
-/* TLC House of Pain original training soundtrack, built with Web Audio.
+/* TLC Hyperbolic Chamber original training soundtrack, built with Web Audio.
    It is opt-in, locally synthesized, and never uses AI voice, downloads or credits. */
 const TLCMusic=(()=>{
  'use strict';
@@ -1596,7 +1700,7 @@ function go(t){if(tab==='train'&&t!=='train'&&typeof stopTimer==='function')stop
 function applyTheme(){const l=S.theme!=='dark';document.documentElement.classList.toggle('light',l);document.documentElement.setAttribute('data-theme',l?'light':'dark');const tm=document.querySelector('meta[name=theme-color]');if(tm)tm.content=l?'#edf5ff':'#0a2a60';try{if(window.Native&&Native.setBars)Native.setBars(l)}catch(e){}}
 function toggleTheme(){S.theme=S.theme==='dark'?'light':'dark';save();applyTheme();render(true);toast(S.theme==='dark'?'Night mode':'Day mode')}
 function render(keep){applyTheme();applyAura();const y=window.scrollY;setTimeout(()=>{document.querySelectorAll('.chips .chip.on').forEach(c=>c.scrollIntoView({block:'nearest',inline:'center'}))},0);({home:vHome,train:vTrain,skills:vSkills,learn:vLearn,ana:vAna,log:vLog})[tab]();if(keep)window.scrollTo(0,y)}
-function head(t,s,act){document.getElementById('title').textContent='TLC HOUSE OF PAIN';document.getElementById('subtitle').textContent=t+(s?' · '+s:'');document.body.dataset.view=tab;document.getElementById('hact').innerHTML=`<span class="thm" role="button" aria-label="Toggle theme" onclick="toggleTheme()">${S.theme==='dark'?'☀️':'🌙'}</span>`+`<button class="sound-trigger" onclick="TLCAudio.open()" aria-label="Sound and voice settings" title="Sound and voice settings">♫<span class="sound-status">${typeof TLCMusic!=='undefined'&&TLCMusic.isPlaying()?'PLAY':TLCAudio.enabled()?'SFX':'OFF'}</span></button>`+(act||'')+(typeof powerLevel==='function'&&tab!=='home'?`<span class="pchip" onclick="go('log')"><i></i>${fmt(powerLevel())}</span>`:'')}
+function head(t,s,act){document.getElementById('title').textContent='TLC HYPERBOLIC CHAMBER';document.getElementById('subtitle').textContent=t+(s?' · '+s:'');document.body.dataset.view=tab;document.getElementById('hact').innerHTML=`<span class="thm" role="button" aria-label="Toggle theme" onclick="toggleTheme()">${S.theme==='dark'?'☀️':'🌙'}</span>`+`<button class="sound-trigger" onclick="TLCAudio.open()" aria-label="Sound and voice settings" title="Sound and voice settings">♫<span class="sound-status">${typeof TLCMusic!=='undefined'&&TLCMusic.isPlaying()?'PLAY':TLCAudio.enabled()?'SFX':'OFF'}</span></button>`+(act||'')+(typeof powerLevel==='function'&&tab!=='home'?`<span class="pchip" onclick="go('log')"><i></i>${fmt(powerLevel())}</span>`:'')}
 const M=h=>{const m=document.getElementById('main');const live=EMB&&document.getElementById('emb-'+EMB.key);const room={train:['02','TRAINING GROUNDS','Build your next transformation','⚡'],skills:['03','POWER TREE','Master one move at a time','✦'],learn:['04','TECHNIQUE SCROLLS','Learn the details. Own the technique.','▣'],ana:['05','SCOUTER LAB','Check your form with clarity','◎'],log:['06','BATTLE RECORD','Your progress, all in one place','★']}[tab];const ribbon=room?'<section class="world-ribbon" aria-label="'+room[1]+'"><span class="world-sigil" aria-hidden="true">'+room[3]+'</span><span class="world-copy"><span class="world-id">WORLD '+room[0]+' / TLC DOJO</span><span class="world-name">'+room[1]+'</span><span class="world-description">'+room[2]+'</span></span></section>':'';const composed=ribbon+h;if(live&&m.contains(live)&&live.querySelector('iframe')&&morph(m,composed,live))return;m.innerHTML=composed};
 
 // ---------- HOME
@@ -1605,7 +1709,7 @@ function vHome(){
   head('Training HQ',(hr<12?'Morning training, Trevel':hr<18?'Afternoon training, Trevel':'Night training, Trevel')+' · '+new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'}));const pl=powerLevel(),fm=formOf(pl),nf=nextForm(pl);
   const day=D.days.find(d=>d.id===nd);const wk=streakWeek();const thisWeek=wk.filter(w=>w.done).length;
   const passedN=Object.keys(S.passed).filter(k=>S.passed[k]!=='start').length;
-  let h=`<section class="pain-dojo" aria-label="TLC House of Pain — original anime inspired training headquarters">
+  let h=`<section class="pain-dojo" aria-label="TLC Hyperbolic Chamber — original anime inspired training headquarters">
   <svg class="pain-world" viewBox="0 0 900 350" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cute martial arts dojo in a rocky mountain training valley">
   <defs>
     <pattern id="comicD" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#22374d" opacity=".07"/></pattern>
@@ -1642,8 +1746,15 @@ function vHome(){
   <g transform="translate(126 240)" stroke="#263147" stroke-width="5"><circle cx="30" cy="22" r="23" fill="#f6c241"/><path d="M15 8l-6-10M44 8l7-10"/><path d="M18 23q4-3 8 0M34 23q4-3 8 0" stroke-width="3" fill="none"/><path d="M25 33q7 6 13 0" stroke-width="3" fill="none"/><circle cx="30" cy="22" r="36" fill="none" stroke-dasharray="7 8" opacity=".5"/></g>
   <g fill="#fff9dc" stroke="#29384e" stroke-width="3"><path d="M90 144l8-14 8 14-8 14z"/><path d="M688 164l8-14 8 14-8 14z"/><path d="M815 223l5-10 5 10-5 10z"/></g>
   </svg>
-  <div class="pain-world-label"><span class="pain-world-index">WORLD 01 / YOUR TRAINING HQ</span><span class="pain-title">TLC'S<br><em>HOUSE OF PAIN</em></span><span class="pain-tagline">Small dojo. Big transformations. ♡</span></div>
-  <button class="pain-action" onclick="go('train')"><span aria-hidden="true">⚡</span> ENTER TRAINING <span aria-hidden="true">➜</span></button>
+  <div class="pain-world-label"><span class="pain-world-index">WORLD 01 / YOUR TRAINING HQ</span><span class="pain-title">TLC'S<br><em>HYPERBOLIC<br>CHAMBER</em></span><span class="pain-tagline">One chamber. Limitless strength. ♡</span>
+  <section class="chamber-weather" id="chamberWeather" aria-label="Live training weather">
+    <div class="cw-head"><span class="cw-head-icon" aria-hidden="true">◈</span><span class="cw-head-title">CHAMBER ATMOSPHERE</span><span class="cw-live" id="cwLive">FORECAST</span><button type="button" class="cw-icon-btn" title="Refresh forecast" aria-label="Refresh forecast" onclick="ChamberWeather.refresh()">↻</button></div>
+    <div class="cw-location"><span id="cwCity">Oklahoma City, OK</span><div class="cw-location-actions"><button type="button" onclick="ChamberWeather.locate()" aria-label="Use my current location">⌖ Near me</button><button type="button" onclick="ChamberWeather.toggleSearch()" aria-label="Choose another city">⌕ City</button></div></div>
+    <form class="cw-search" id="cwSearch" hidden onsubmit="ChamberWeather.search(event)"><label for="cwCityInput">City or town</label><div><input id="cwCityInput" autocomplete="address-level2" placeholder="Search any city" maxlength="80"><button type="submit">Find</button></div></form>
+    <div id="cwBody" class="cw-body" aria-live="polite"><div class="cw-loading"><span class="cw-pulse" aria-hidden="true"></span>Loading your forecast…</div></div>
+    <div class="cw-foot"><span id="cwUpdated">Live conditions and 3-day outlook</span><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Weather: Open-Meteo</a></div>
+  </section>
+  <button class="pain-action" onclick="go('train')"><span aria-hidden="true">⚡</span> ENTER TRAINING <span aria-hidden="true">➜</span></button></div>
   <div class="pain-orb" aria-label="Two-star Dragon Ball">${stars(2,'hero')}</div>
 </section><div class="scouter"><div class="ret"></div><div class="cap">SCOUTER · POWER LEVEL</div><div class="pl" id="plnum">${fmt(pl)}</div>${pl>9000?'<div class="over9000">IT\'S OVER 9000!</div>':''}<div class="cap" style="margin-top:4px">${nf?fmt(nf[0]-pl)+' TO '+nf[1].toUpperCase():'MAX FORM REACHED'}</div><div class="plbar"><i style="width:${nf?Math.min(100,(pl-fm[0])/(nf[0]-fm[0])*100):100}%"></i></div></div>`;
   const gp=nf?Math.min(1,(pl-fm[0])/(nf[0]-fm[0])):1,gc=2*Math.PI*36;
@@ -1653,7 +1764,7 @@ function vHome(){
   const plan=D.week;h+=`<div class="card"><div class="row" style="margin-bottom:10px"><div class="sp dbz" style="font-weight:900;color:#ffd400">Your Dragon Balls</div><div class="muted">${D.week.filter(x=>x!=='rest').join(' · ')}</div></div><div class="week">${wk.map((w,i)=>`<div class="wd ${plan[i]==='rest'?'rest':''} ${w.today?'today':''} ${w.done?'done':''}"><div class="orb" aria-label="${i+1}-star Dragon Ball, ${w.done?'earned':'not yet earned'}">${stars(i+1)}</div><b>${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][i]}${plan[i]==='rest'?' · Rest':''}</b></div>`).join('')}</div>${wk.filter(w=>w.done).length>=7?'<div class="shenron">🐉 All seven gathered. Make your wish.</div>':''}</div>`;
   h+='<div class="lbl">Dragon Radar</div><div class="card">'+radar()+'<div class="muted" style="text-align:center">Blips move to the center as you master each skill. Tap one to open it.</div></div>';
   h+='<div class="lbl">Training grounds</div><div class="lanes">'+D.lanes.filter(l=>l.id!=='foundation').map(l=>{const c=curNode(l.id);return `<div class="lane" onclick="lane='${l.id}';go('skills')">${ring(lanePct(l.id))}<div class="sp"><div class="n">${esc(l.name.replace('Legs: ',''))}</div><div class="c">${esc(c.name)}</div></div></div>`}).join('')+'</div>';
-  M(h);
+  M(h); if(window.ChamberWeather)ChamberWeather.mount();
 }
 
 // ---------- TRAIN
@@ -1766,7 +1877,7 @@ function addTime(s){tEnd=Math.max(Date.now()+1000,tEnd+s*1000);tLen=Math.max(1,t
 function tick(){const r=Math.max(0,(tEnd-Date.now())/1000),R=Math.ceil(r);document.getElementById('timer').classList.toggle('hot',r>0&&r<=3);if(r>0&&R<=3&&R!==window._lastBeat){window._lastBeat=R;if(navigator.vibrate)navigator.vibrate(60)}document.getElementById('tnum').textContent=Math.floor(R/60)+':'+String(R%60).padStart(2,'0');document.getElementById('tring').setAttribute('stroke-dashoffset',138.2*(1-r/tLen));
   if(r<=0){stopTimer();if(navigator.vibrate)navigator.vibrate([300,150,300]);TLCAudio.restFinished();toast('Rest is over. Next set!')}}
 function stopTimer(){clearInterval(tI);tI=null;document.getElementById('timer').classList.remove('on')}
-function beep(){try{const a=new (window.AudioContext||window.webkitAudioContext)();const o=a.createOscillator();o.frequency.value=880;o.connect(a.destination);o.start();setTimeout(()=>{o.stop();a.close()},400)}catch(e){}}
+function beep(){TLCAudio.effect('blast')}
 
 // ================= ANALYZER =================
 const IDB={db:null,open(){return new Promise((res,rej)=>{if(this.db)return res(this.db);if(!window.indexedDB)return rej('no idb');const r=indexedDB.open('skilltree_videos',1);r.onupgradeneeded=()=>r.result.createObjectStore('v',{keyPath:'id'});r.onsuccess=()=>{this.db=r.result;res(this.db)};r.onerror=()=>rej(r.error)})},
@@ -2080,4 +2191,89 @@ loadLV().then(()=>render(true));go('home');setTimeout(stShare,0);
  toastObserver.observe(document.body,{childList:true});
 })();
 </script>
+
+<script id="tlc-combat-tap-v49">
+(function(){
+  'use strict';
+  const fightSound=e=>{
+    const item=e.target.closest('button,[role="button"],.chip,.lane,.pn,.vcard,.blip,.orb');
+    if(!item||item.disabled||item.closest('[hidden]')||item.classList.contains('set'))return;
+    let k='tap';
+    if(item.matches('nav button,.chip,.lane,.pn,.blip'))k='navigate';
+    if(item.matches('.pain-action,.btn.p,.btn.g'))k='power';
+    if(item.matches('#tlcMusicPlay,#tlcSoundOn,#tlcVolume,.cw-location-actions button,.cw-icon-btn'))k='tap';
+    if(window.TLCAudio)TLCAudio.effect(k);
+  };
+  document.addEventListener('pointerdown',fightSound,{passive:true,capture:true});
+  document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('button,[role="button"],.chip,.pn,.lane'))fightSound({target:e.target})});
+})();
+</script>
+
+<script id="tlc-chamber-weather-v49">
+const ChamberWeather=(()=>{
+ 'use strict';
+ const CACHE='tlc_chamber_weather_v1';const FALLBACK={lat:35.4676,lon:-97.5164,name:'Oklahoma City, OK'};
+ let place={...FALLBACK},payload=null,lastAt=0,fetching=false,chosen='okc',op=0;
+ const el=id=>document.getElementById(id);
+ const escapeText=t=>String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const num=(x,unit='')=>Number.isFinite(Number(x))?Math.round(Number(x))+unit:'—';
+ const wmo=(c,day=true)=>{c=Number(c);if(c===0)return ['Clear sky',day?'sun':'moon'];if(c<=2)return ['Mostly clear','part'];if(c===3)return ['Cloudy','cloud'];if(c===45||c===48)return ['Fog','fog'];if(c>=51&&c<=57)return ['Drizzle','rain'];if(c>=61&&c<=67)return ['Rain','rain'];if(c>=71&&c<=77)return ['Snow','snow'];if(c>=80&&c<=82)return ['Showers','rain'];if(c>=85&&c<=86)return ['Snow showers','snow'];if(c>=95)return ['Thunderstorms','storm'];return ['Changing skies','part']};
+ const icon=(code,day=true,small=false)=>{
+   const type=wmo(code,day)[1];const cl=`cw-weather-icon ${small?'small':''}`;
+   const sun='<circle cx="22" cy="20" r="9" fill="#ffc849" stroke="#e88624" stroke-width="2"/><path d="M22 3v5M22 32v5M5 20h6M33 20h6M10 8l5 5M29 28l5 5M34 8l-5 5" stroke="#ffd568" stroke-linecap="round" stroke-width="3"/>';
+   const moon='<path d="M31 5C19 10 19 24 29 30c6 4 12 2 15-1C27 43 10 29 14 14 17 7 23 3 31 5z" fill="#ffcf70"/>';
+   const cloud='<path d="M15 42C6 42 5 29 14 27 15 17 25 12 34 18 42 12 52 17 51 28c11 6 6 16-4 16H15z" fill="#eff7ff" stroke="#4078b5" stroke-width="2.5"/>';
+   let detail='';if(type==='sun')detail=sun;else if(type==='moon')detail=moon;else if(type==='part')detail=sun+cloud;else if(type==='cloud'||type==='fog')detail=cloud+(type==='fog'?'<path d="M12 50h36M20 55h25" stroke="#a5d3f4" stroke-width="3"/>':'');else if(type==='rain')detail=cloud+'<path d="M17 48l-4 8M31 48l-4 8M46 48l-4 8" stroke="#57b8ff" stroke-linecap="round" stroke-width="4"/>';else if(type==='snow')detail=cloud+'<text x="27" y="58" text-anchor="middle" font-size="20" fill="#90dbff">✳ ✳</text>';else detail=cloud+'<path d="M35 40L23 55h11l-6 8" stroke="#ffc63e" stroke-width="5" fill="none"/>';
+   return `<svg class="${cl}" viewBox="0 0 64 64" role="img" aria-label="${escapeText(wmo(code,day)[0])}">${detail}</svg>`;
+ };
+ const fmtHour=time=>{const str=(time||'').split('T')[1]||'';let h=parseInt(str.slice(0,2),10);if(!Number.isFinite(h))return '—';return (h%12||12)+(h<12?'a':'p')};
+ const fmtDay=time=>{if(!time)return '—';const date=new Date(time+'T12:00:00');return date.toLocaleDateString('en-US',{weekday:'short'})};
+ function forecastView(x){
+  const cur=x.current||{},daily=x.daily||{},hr=x.hourly||{};const currentTemp=num(cur.temperature_2m,'°');const [desc]=wmo(cur.weather_code,cur.is_day!==0);
+  const dailyHigh=daily.temperature_2m_max?.[0],dailyLow=daily.temperature_2m_min?.[0];
+  const rainNow=hr.precipitation_probability||[];const hourlyTimes=hr.time||[];
+  let index=hourlyTimes.findIndex(t=>t===cur.time?.slice(0,13)+':00');if(index<0)index=hourlyTimes.findIndex(t=>t>=cur.time);if(index<0)index=0;
+  const hours=hourlyTimes.slice(index,index+6).map((time,i)=>{const k=index+i;return `<div class="cw-hour"><span>${i===0?'NOW':fmtHour(time)}</span>${icon(hr.weather_code?.[k],true,true)}<strong>${num(hr.temperature_2m?.[k],'°')}</strong><span class="cw-rain">${num(rainNow[k],'%')} rain</span></div>`}).join('');
+  const days=(daily.time||[]).slice(0,3).map((date,i)=>`<div class="cw-day"><span>${i===0?'Today':fmtDay(date)}</span>${icon(daily.weather_code?.[i],true,true)}<b>${num(daily.temperature_2m_max?.[i],'°')} <span>${num(daily.temperature_2m_min?.[i],'°')}</span></b><small>☂ ${num(daily.precipitation_probability_max?.[i],'%')}</small></div>`).join('');
+  return `<div class="cw-now"><div class="cw-main-icon">${icon(cur.weather_code,cur.is_day!==0)}</div><div class="cw-now-text"><div class="cw-temperature">${currentTemp}<small>F</small></div><div class="cw-condition">${escapeText(desc)}</div><span class="cw-hi-lo">H ${num(dailyHigh,'°')} · L ${num(dailyLow,'°')}</span></div><div class="cw-feels"><span>FEELS LIKE</span><strong>${num(cur.apparent_temperature,'°')}</strong></div></div>
+  <div class="cw-metrics"><div><span>RAIN CHANCE</span><b>${num(rainNow[index],'%')}</b></div><div><span>WIND</span><b>${num(cur.wind_speed_10m,' mph')}</b></div><div><span>HUMIDITY</span><b>${num(cur.relative_humidity_2m,'%')}</b></div></div>
+  <div class="cw-section-title">NEXT 6 HOURS</div><div class="cw-hours">${hours||'<span>Hourly forecast unavailable</span>'}</div>
+  <div class="cw-section-title">3-DAY OUTLOOK</div><div class="cw-days">${days||'<span>Daily forecast unavailable</span>'}</div>`;
+ }
+ function paint(){if(!el('cwBody'))return;el('cwCity').textContent=place.name;el('cwLive').textContent=payload?'LIVE':'FORECAST';
+  if(payload){el('cwBody').innerHTML=forecastView(payload);const ts=new Date(lastAt);el('cwUpdated').textContent='Updated '+ts.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'})+((Date.now()-lastAt)>15*60*1000?' · may be outdated':'');}
+ }
+ async function load(force=false){const body=el('cwBody');if(!body)return;if(!force&&payload&&Date.now()-lastAt<12*60*1000){paint();return}if(fetching&&!force)return;const token=++op;
+  fetching=true;body.innerHTML='<div class="cw-loading"><span class="cw-pulse" aria-hidden="true"></span>Checking current conditions…</div>';
+  const params=new URLSearchParams({latitude:String(place.lat),longitude:String(place.lon),current:'temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,is_day',hourly:'temperature_2m,precipitation_probability,weather_code',daily:'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max',temperature_unit:'fahrenheit',wind_speed_unit:'mph',timezone:'auto',forecast_days:'4'});
+  const ctrl=new AbortController(),timeout=setTimeout(()=>ctrl.abort(),11500);
+  try{const res=await fetch('https://api.open-meteo.com/v1/forecast?'+params.toString(),{signal:ctrl.signal,cache:'no-store'});if(!res.ok)throw Error('Weather service returned '+res.status);const data=await res.json();if(!data.current||!data.daily||!Array.isArray(data.hourly?.time))throw Error('Forecast missing');if(token!==op)return;
+    payload=data;lastAt=Date.now();paint();try{sessionStorage.setItem(CACHE,JSON.stringify({place,payload,lastAt,chosen}))}catch(e){}
+  }catch(e){if(token!==op)return;if(payload){paint();el('cwUpdated').textContent='Using last forecast · tap ↻ to retry';}else body.innerHTML='<div class="cw-unavailable"><strong>Weather temporarily unavailable</strong><span>Your workouts are ready. Reconnect and retry.</span><button type="button" onclick="ChamberWeather.refresh()">↻ Try again</button></div>';el('cwLive').textContent='OFFLINE';}
+  finally{clearTimeout(timeout);if(token===op)fetching=false;}
+ }
+ function mount(){if(!el('chamberWeather'))return;paint();if(!payload||Date.now()-lastAt>12*60*1000)load();}
+ function refresh(){load(true)}
+ function toggleSearch(){const c=el('cwSearch');if(!c)return;c.hidden=!c.hidden;if(!c.hidden)el('cwCityInput').focus()}
+ async function search(event){if(event)event.preventDefault();const input=el('cwCityInput'),name=(input?.value||'').trim();if(name.length<2){if(input)input.setCustomValidity('Enter at least 2 letters');input?.reportValidity();input?.setCustomValidity('');return}
+  const body=el('cwBody');if(body)body.innerHTML='<div class="cw-loading"><span class="cw-pulse"></span>Finding '+escapeText(name)+'…</div>';
+  try{const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),9000);let result;try{result=await fetch('https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(name)+'&count=5&language=en&format=json',{signal:ctl.signal}).then(r=>{if(!r.ok)throw Error('City search unavailable');return r.json()})}finally{clearTimeout(timer)}
+    const found=(result.results||[]).find(p=>p.country_code==='US')||result.results?.[0];if(!found)throw Error('City not found');const area=[found.name,found.admin1||found.country].filter(Boolean).join(', ');place={lat:Number(found.latitude),lon:Number(found.longitude),name:area};chosen='city';payload=null;lastAt=0;input.value='';el('cwSearch').hidden=true;load(true);
+  }catch(e){if(body)body.innerHTML='<div class="cw-unavailable"><strong>Could not find that city</strong><span>Try a city name or tap Near me.</span></div>';}
+ }
+ function locate(){if(!navigator.geolocation){if(el('cwUpdated'))el('cwUpdated').textContent='Location unavailable in this browser. Use City search.';return}
+  const b=el('cwBody');if(b)b.innerHTML='<div class="cw-loading"><span class="cw-pulse"></span>Finding local forecast…</div>';
+  navigator.geolocation.getCurrentPosition(position=>{place={lat:+position.coords.latitude.toFixed(3),lon:+position.coords.longitude.toFixed(3),name:'Near your location'};chosen='gps';payload=null;lastAt=0;load(true)},error=>{if(payload)paint();else {place={...FALLBACK};chosen='okc';load(true)}if(el('cwUpdated'))el('cwUpdated').textContent='Location blocked — showing Oklahoma City. Use City to change.';},{enableHighAccuracy:false,maximumAge:600000,timeout:11000});
+ }
+ // A saved forecast does not store precise GPS history; session-only cache on the current browser tab.
+ try{const cached=JSON.parse(sessionStorage.getItem(CACHE)||'null');if(cached&&cached.payload&&cached.place&&Date.now()-Number(cached.lastAt)<40*60*1000){place=cached.place;payload=cached.payload;lastAt=cached.lastAt;chosen=cached.chosen||'okc'}}catch(e){}
+ // Only reuse the device location automatically if permission was already granted earlier.
+ async function init(){mount();try{if(chosen!=='okc'||!navigator.permissions?.query)return;const perm=await navigator.permissions.query({name:'geolocation'});if(perm.state==='granted'&&el('chamberWeather'))locate()}catch(e){}}
+ window.addEventListener('focus',()=>{if(document.body.dataset.view==='home'&&Date.now()-lastAt>20*60*1000)mount()});
+ return{mount,refresh,toggleSearch,search,locate,init};
+})();
+window.ChamberWeather=ChamberWeather;
+ChamberWeather.init();
+</script>
+
 </body></html>
