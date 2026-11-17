@@ -1,42 +1,37 @@
-# TLC Prime — Kame House Web Build (v43)
+# TLC Prime — House of Pain v44 (November 16, 2026)
 
-The full training application is live at **https://tlc-prime-kame-house.vercel.app/**.
+## Direct live testing
+- **New branded URL:** https://tlc-house-of-pain.vercel.app/
+- **Legacy URL (still works):** https://tlc-prime-kame-house.vercel.app/
+- **Vercel production deployment:** dpl_B6xJf41bxgEimvp3BFZrDecpV7tF (READY)
 
-This is the full interactive website, not the APK download page. It uses the original TLC Prime workout database and preserves legacy progress keys `skilltree_v1` and `skilltree_videos`.
+## What changed
+- Replaced the Kame House tropical scene with an ORIGINAL cute anime-inspired martial arts dojo set in a rocky training valley.
+- Updated the header and home identity to **TLC House of Pain**; removed Kame House text throughout the actual app.
+- Added stronger orange, navy and cream cel-shaded visual design to Home, Train, Skills, Scrolls, Analyze and Scouter.
+- Kept the existing seven workout groups, exercises, videos, 70 skill tree steps, tracking and persistence keys.
+- Added optional audio: synthesized ki-style interface effects, spoken instructions from existing exercise cues, and rest notifications.
+- Added a Sound Lab: voice selection from available device English voices, sound and spoken-coach switches, volume.
+- Added push-to-talk OPTIONAL browser voice commands: open training, open skills, next drill, start/stop timer, read exercise, mute.
+- The new audio settings use separate local storage key `tlc_audio_settings_v1` and default to OFF.
+- The app requires no paid speech service, no ElevenLabs calls or credits.
+- Did not add background microphone recording; voice command mic only starts after the user taps, and may use the browser's online provider.
 
-## What's improved (plain English)
+## Verification
+- Node syntax validation: all five embedded script blocks passed.
+- Chromium browser smoke tests of all six main views at widths 320, 360, 412, 768, 1180px: no JavaScript errors or sideways scrolling.
+- Interactive checks: seven training groups, 70 skill nodes, workout set logging/persistence, light/dark switch, audio dialog, settings persistence, rest timer and keyboard dismissal.
+- Vercel: production READY; HTTP 200 at both live URLs; HTTP 200 manifest, service worker, 192px/512px icons.
+- Local test uses a browser localStorage shim because the sandbox blocks local HTTP navigation. Real-device Fold 5 testing, live microphone/provider compatibility and actual sound playback on phones remain unverified.
+- The separately signed Android APK is unchanged by the website update.
 
-- Training buttons are easier to tap on small screens.
-- Every clickable training tile and skill step can also be used with a keyboard.
-- Skill details now close with the Escape key.
-- People using screen readers can identify active tabs, selected sets and progress bars.
-- Text is easier to read in light and dark modes.
-- Faster, less distracting motion for users who prefer reduced animation.
-- The existing workouts, tutorial references and skill tree remain intact.
-- No paid voice or sound service was added; avoid spending external credits.
+## Design and research references
+- Official Sparking! ZERO beginner's guide: HUD and gauges: https://en.bandainamcoent.eu/dragon-ball/news/dragon-ball-sparking-zero-the-beginners-guide
+- Dokkan Battle training: https://bnfaq.channel.or.jp/faq/detail/3015/2439
+- MDN Web Speech API: https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+- MDN SpeechRecognition limits: https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
+- MDN WebAudio autoplay: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Best_practices
+- W3C WCAG 2.2: https://www.w3.org/TR/WCAG22/
 
-## Evidence
-
-The HTML/JavaScript was syntax checked. A local Chromium/Playwright smoke suite rendered all six main views at 320, 360, 412, 768 and 1180 px without horizontal scrolling or runtime errors. It tested keyboard access to skill tiles, opening/closing a skill panel with Escape, set toggling, and theme changes. The browser smoke tests used mocked localStorage due to local navigation limits; real-device persistence is not fully proven by this suite.
-
-Vercel reported deployment `dpl_7EsNMFtYySZUKAMnxpUuYysg5prL` READY. Direct HTTP checks returned 200 for the full HTML, PWA manifest, service worker (`tlc-prime-v43`), and both app icons.
-
-## Not yet verified
-
-- Real Galaxy Z Fold 5 physical-device operation
-- Instagram's third-party video playback under current embedded-player restrictions
-- Real recorded-video AI pose analysis
-- Installed Android APK compatibility: website changes do NOT update the separately signed Android package
-- Live Core Web Vitals (field data) and a complete automated WCAG audit
-
-## Budget-friendly third-party options
-
-- [Kenney Interface Sounds](https://kenney.nl/assets/interface-sounds): free CC0 sounds, if tasteful, optional sound effects are eventually desired.
-- [Android TextToSpeech](https://developer.android.com/reference/android/speech/tts/TextToSpeech): device speech instead of per-character voice API credits.
-- [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis): browser/device speech where supported.
-
-No audio was automatically added. Opt-in sound with silent default is the recommended direction.
-
-## Production notes
-
-Vercel project `tlc-prime-kame-house`; public URL above. Keep existing training data and persistent storage names unchanged unless a migration is explicitly designed and tested.
+## Preservation rules
+Do not remove workout data, exercise cues, tutorial source codes, old localStorage keys (`skilltree_v1`, `skilltree_videos`) or Android package ID `com.trevel.skilltree` without approved migration.
