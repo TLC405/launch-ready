@@ -1,3 +1,16 @@
+## Version 48 — Fixed music, robot voice, and both themes (November 17, 2026)
+
+LIVE: https://tlc-house-of-pain.vercel.app/ (old testing URL still works)
+
+- Built a real opt-in MUSIC player with original Web Audio instrumental compositions: Power Up and Focus Chamber. Play/Pause, track choice, volume, saved preference. Works without streaming, paid AI, or ElevenLabs. Browser requires a user tap to begin audio; never autoplays.
+- Removed the low-quality browser speech synthesis coach UI and disabled synthesized spoken prompts. Exercise cue buttons now open the existing form-instructions panel. Optional microphone-based commands remain push-to-talk; the app does not read back using a robotic voice.
+- Restored a clearly separate LIGHT theme: bright white and light-blue backgrounds, blue lettering, orange highlights, pale workout cards. DARK mode uses bold Gi orange, saturated blue like the pants, white, black and a subtle 悟 emblem.
+- Fixed prior background tiling and patterned artifacts; kept six screens, all 142 exercises, 70 skills, history, tutorials, previously-used local progress keys and prior audio settings untouched.
+- Local Chromium/Playwright: 12 visual checks across 320/360/412/600/768/1180px in dark and light with no JS errors/overflow; actual AudioContext state running with notes scheduled on Play, switching track and Pausing; training set updated storage; form cues opened.
+- Live Vercel deployment dpl_4Bra6zK3682dVPxV5ZRJvh7Kh8J8 READY. Both domains and assets HTTP 200; service worker cache v48.
+- Unverified on physical Galaxy Z Fold: actual audio speaker output, browser permissions and installed Android APK. Installed APK not rebuilt. The two web domains maintain separate local browser history; continue on prior domain for prior logs.
+
+---
 ## Version 47 — Dark DBZ design and overlap fixes (November 17, 2026)
 
 **LIVE:** https://tlc-house-of-pain.vercel.app/ and https://tlc-prime-kame-house.vercel.app/
