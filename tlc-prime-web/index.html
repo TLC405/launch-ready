@@ -1395,6 +1395,23 @@ html:not(.light) .chamber-weather{border-color:#ff922c!important;box-shadow:0 4p
 </style>
 
 </head>
+<style id="tlc-weather-tv-v50">
+/* Version 50 — two-tier weather: tiny top-right mini HUD, optional detail drawer. */
+header .htop{gap:8px;align-items:center!important}header #hact{display:flex!important;align-items:center!important;flex-wrap:wrap!important;gap:5px!important;justify-content:flex-end;max-width:214px}header .htop>.sp{min-width:0!important;flex:1 1 115px}header #title{font-size:clamp(13px,3.3vw,20px)!important;letter-spacing:-.018em!important;line-height:1.08!important}header .sub{font-size:clamp(9px,2.45vw,11px)!important;line-height:1.32!important}
+header #hact .thm,header #hact .sound-trigger,header #hact .btn.icon{width:36px!important;min-width:36px!important;height:38px!important;min-height:38px!important;padding:0!important;font-size:18px!important;box-shadow:0 2px 0 #101f3b!important;border-radius:12px!important}
+header #hact .sound-trigger .sound-status{font-size:8px!important;line-height:1!important}header #hact .wx-level{min-height:40px!important}
+.wx-level{display:flex;align-items:center;gap:4px;min-width:89px;max-width:114px;background:#102f65;color:#fff;border:1.5px solid #ffad46;border-radius:13px;box-shadow:0 3px 0 #06132f,inset 0 1px 0 #77aeff55;padding:4px 5px;cursor:pointer;font:700 11px/1.05 system-ui,sans-serif;touch-action:manipulation}
+.wx-level:focus-visible{outline:3px solid #ffba54;outline-offset:3px}.wx-level:active{transform:translateY(1px);box-shadow:0 1px 0 #06132f}.wx-level-icon{display:grid;place-items:center;flex:0 0 22px;font-size:19px}.wx-level-icon svg{width:25px!important;height:25px!important}.wx-level-reading,.wx-level-power{display:flex;flex-direction:column;text-align:left;gap:1px;min-width:0}.wx-level-reading strong{font-size:13px;font-weight:900}.wx-level-reading small{font-size:8px;color:#aac8ed;max-width:31px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.wx-level-divider{width:1px;height:27px;background:#ffcf7b77}.wx-level-power{flex-shrink:0;text-align:center}.wx-level-power small{color:#ffaf54;font:900 8px system-ui}.wx-level-power b{font-size:12px;color:#fff;white-space:nowrap}
+html.light .wx-level{background:#fff;color:#173c75;border-color:#2f72c6;box-shadow:0 3px 0 #97b6d7}html.light .wx-level-power b{color:#173c75}html.light .wx-level-reading small{color:#376093}
+.wx-shade{position:fixed!important;inset:0;z-index:4500;display:flex;justify-content:center;align-items:flex-start;background:#020814ce;padding:max(62px,env(safe-area-inset-top)) 9px max(90px,env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain}.wx-shade[hidden]{display:none!important}.wx-drawer{width:min(650px,100%);max-height:calc(100dvh - 140px);background:#0c2651;border:2px solid #ff9a32;border-radius:19px;box-shadow:0 20px 0 -15px #030d24,0 30px 65px #0009;overflow-y:auto;padding:10px;touch-action:pan-y}.wx-drawer-top{display:flex;align-items:center;justify-content:space-between;color:#fff4df;font:900 14px Impact,'Arial Black',sans-serif;letter-spacing:.09em;padding:3px 5px 10px}.wx-close{color:#fff;background:#b3460b;border:1px solid #ffba6f;min-width:37px;min-height:37px;border-radius:10px;cursor:pointer}.wx-drawer .chamber-weather{max-width:none!important;margin:0!important;box-shadow:none!important;border-radius:13px!important}.wx-drawer .cw-hours{gap:3px!important}.wx-drawer .cw-hour{min-width:0!important}.wx-drawer .cw-hour span{white-space:normal!important;overflow-wrap:anywhere}.wx-open{overflow:hidden}
+.pain-dojo{min-height:0!important}.pain-dojo .pain-world-label{min-height:0!important}.pain-dojo .pain-action{margin-top:14px!important}.pain-dojo .pain-title{margin-bottom:10px!important}
+@media(max-width:390px){header #hact{max-width:162px!important;gap:3px!important}header #title{font-size:clamp(12px,3.5vw,15px)!important}header #hact .thm,header #hact .sound-trigger,header #hact .btn.icon{width:33px!important;min-width:33px!important;min-height:34px!important;height:34px!important}header #hact .wx-level{min-width:85px!important;padding:3px!important}header #hact .wx-level-icon{flex-basis:18px}header #hact .wx-level-icon svg{width:21px!important;height:21px!important}.wx-level-reading strong{font-size:12px}.wx-level-power b{font-size:11px}}
+/* TLC TV — accessible responsive bespoke anime training display. */
+.tlc-tv{border-radius:20px;background:linear-gradient(145deg,#0e2352,#091225 80%);border:2px solid #ff8426;box-shadow:0 7px 0 #071023,0 18px 32px #04071199,inset 0 1px 0 #a3c7fd70;color:#f6f8ff!important;padding:clamp(9px,2.5vw,17px);margin-bottom:22px;min-width:0}.tv-mast{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:12px}.tv-mark{display:flex;align-items:center;gap:10px;min-width:0}.tv-mark-icon{display:grid;place-items:center;flex:0 0 42px;height:42px;background:linear-gradient(#ffa54c,#fe7218);color:#102144;border:2px solid #060b19;border-radius:11px;font-size:26px;box-shadow:0 3px 0 #071024}.tv-mark b{display:block;color:#fff;font:900 italic clamp(26px,6.4vw,40px)/1 Impact,'Arial Black',system-ui,sans-serif;letter-spacing:.02em}.tv-mark b span{color:#ff8a29;margin-left:2px}.tv-mark small{display:block;color:#a9c9ef;font-size:9px;letter-spacing:.08em;font-weight:800;line-height:1.3}.tv-live-dot{display:flex;gap:5px;align-items:center;border:1px solid #597aaf;border-radius:30px;padding:5px 8px;color:#d5e7ff;white-space:nowrap;font-size:9px;font-weight:900}.tv-live-dot span,.tv-led{display:inline-block;width:7px;height:7px;background:#66dfad;border-radius:50%;box-shadow:0 0 12px #3cfba1}.tv-console{background:linear-gradient(135deg,#213c69,#14234a);border-radius:18px;padding:10px;border:2px solid #547eb2;box-shadow:inset 0 2px 0 #91b4de80,0 6px 0 #030a19}.tv-bezel{border:4px solid #060b1c;border-radius:14px;background:#060b16;box-shadow:inset 0 0 0 2px #3b5a88,0 3px 6px #000b;overflow:hidden}.tv-bezel-top,.tv-bezel-bottom{display:flex;align-items:center;justify-content:space-between;background:#0b1630;color:#a6bad9;font:900 8px/1.3 system-ui,sans-serif;letter-spacing:.13em;padding:7px 9px;gap:6px}.tv-bezel-top b{color:#ffaf57}.tv-bezel-bottom{border-top:1px solid #27426f}.tv-bezel-bottom b{flex:1;text-align:center}.tv-screen{position:relative;background:#020918;min-height:202px;aspect-ratio:16/9;display:flex;align-items:stretch;justify-content:center;overflow:hidden}.tv-screen iframe,.tv-screen video{display:block;position:absolute;inset:0;width:100%;height:100%;min-height:202px;border:0;background:#000}.tv-standby{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;width:100%;padding:14px 15px;min-height:202px;isolation:isolate;background:radial-gradient(ellipse at 55% 0%,#224c93 0%,#06132f 60%,#030b1d 100%)}.tv-grid{pointer-events:none;position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,transparent 95%,#347af522 100%) 0 0/20px 20px,linear-gradient(transparent 95%,#347af522 100%) 0 0/20px 20px}.tv-ring{width:42px;height:42px;border:2px solid #ffa443;border-radius:50%;display:grid;place-items:center;color:#fff;background:#fb7d2070;box-shadow:0 0 20px #e38c3680;flex-shrink:0}.tv-standby-channel{font-size:9px;color:#9acaef;font-weight:900;letter-spacing:.1em}.tv-standby strong{font:900 clamp(13px,3.5vw,19px)/1.15 Impact,'Arial Black',system-ui;max-width:34ch;letter-spacing:.025em}.tv-play,.tv-primary{min-height:39px;background:linear-gradient(#ffc66d,#ff7922);color:#071832;border:2px solid #ffdb97;border-radius:10px;font:900 12px system-ui,sans-serif;letter-spacing:.03em;padding:8px 15px;box-shadow:0 3px 0 #9e3e10;cursor:pointer}.tv-standby small{font-size:9px;color:#97add0;line-height:1.3}.tv-controls{display:flex;align-items:center;gap:5px;margin-top:9px}.tv-control{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;flex:1;min-height:44px;background:#122957;border:1px solid #5476ae;border-radius:9px;color:#fff;font-size:16px;cursor:pointer}.tv-control span{font-size:8px;color:#bfd4f3;font-weight:900;letter-spacing:.08em}.tv-control:active{background:#e8751c}.tv-current{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:16px 2px 11px;border-bottom:1px solid #5278ac}.tv-current-title{min-width:0}.tv-current-title>span{display:block;font-size:9px;font-weight:900;color:#ffb05c;letter-spacing:.1em}.tv-current-title h3{font:900 20px/1.15 Impact,'Arial Black',system-ui,sans-serif;color:#fff;margin:4px 0;overflow-wrap:anywhere}.tv-current-title small{color:#aec6eb;font-size:11px}.tv-current>a{border:1px solid #7797c4;border-radius:9px;color:#fff!important;font-size:10px;letter-spacing:.05em;padding:9px 10px;text-decoration:none;white-space:nowrap;font-weight:900}.tv-note{border-left:3px solid #ff9230;padding:9px 10px;margin:12px 0;font-size:12px;line-height:1.5;color:#d6e9ff;background:#13326966}.tv-categories{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;padding:6px 0 11px;max-width:100%}.tv-tv-tab{flex:none;border-radius:8px;min-height:35px;border:1px solid #5781bb;background:#101f42;color:#c9ddfb;font-size:10px;font-weight:900;padding:7px 9px;white-space:nowrap;cursor:pointer}.tv-tv-tab.active{background:#ff892c;color:#0a2044;border-color:#ffd4a4}.tv-find{display:flex;gap:7px;min-width:0;margin:2px 0 15px}.tv-find input{min-width:0;flex:1;color:#101f37;background:#fff;border:1px solid #6494c8;border-radius:10px;min-height:43px;padding:7px 12px;font-size:12px}.tv-find button,.tv-library-title button{border:1px solid #ffb669;background:#ff9639;color:#10254a;border-radius:8px;font-size:11px;padding:7px 10px;min-height:43px;font-weight:900;cursor:pointer}.tv-library-title{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:8px 0}.tv-library-title>span{color:#f4f9ff;font:900 16px Impact,'Arial Black',sans-serif;letter-spacing:.06em}.tv-library-title small{font:600 10px system-ui;color:#9bb9df}.tv-library{display:grid;gap:7px;max-height:380px;overflow-y:auto;overscroll-behavior:contain;padding:2px}.tv-lesson{display:flex;align-items:center;gap:9px;text-align:left;width:100%;border-radius:11px;border:1px solid #3b629b;padding:11px;background:#0d2148;color:#fff;cursor:pointer;min-height:59px;box-shadow:inset 0 1px 0 #ffffff1b}.tv-lesson.active{border:2px solid #ff9945;background:#254374}.tv-lesson-play{display:grid;place-items:center;flex:0 0 32px;height:32px;background:#f98d2f;color:#061a32;border-radius:50%;font-size:12px}.tv-lesson-body{flex:1;min-width:0}.tv-lesson-body strong{font-size:12px;line-height:1.25;display:block;overflow-wrap:anywhere}.tv-lesson-body small{display:block;font-size:10px;color:#aecbef;margin-top:3px}.tv-lesson-arrow{font-size:17px;color:#ffae60}.tv-add{margin-top:10px;background:#0f2145;border:1px solid #4e7db4;padding:12px;border-radius:12px}.tv-add[hidden]{display:none!important}.tv-add>b{color:#ffb861;font:900 16px Impact,sans-serif}.tv-add p{color:#aec7ed;font-size:11px;line-height:1.5;margin:5px 0 11px}.tv-add label{display:block;font-size:10px;font-weight:900;color:#b4cdf3;margin-top:10px}.tv-add input,.tv-add select{display:block;width:100%;background:#fff;color:#1b2f47;border:1px solid #719ace;border-radius:9px;padding:10px;font-size:13px;margin-top:4px;min-height:42px}.tv-add .tv-primary{margin:13px 0}.tv-local-choice{border-top:1px solid #3a5d91;padding-top:10px}.tv-integrity{font-size:10px;line-height:1.5;color:#9dbbdf;padding:14px 3px 1px}.tv-no-results{color:#abc8ed;padding:12px}.tv-ig-archive{padding:12px;border:1px solid #4d7cb4;background:#0f244b;border-radius:14px;color:#fff;margin:18px 0 12px}.tv-ig-archive summary{font-weight:900;cursor:pointer;font-size:13px;line-height:1.4}.tv-ig-archive summary span{display:block;font-weight:600;color:#bbd1f2;font-size:11px}.tv-ig-archive p{color:#c7d8eb;font-size:11px;margin:9px 0 14px}.tv-ref-section h3{font:900 15px Impact,sans-serif;color:#ffba66;margin:13px 0 8px}.tv-source-ref{display:flex;align-items:center;gap:8px;padding:8px;border-bottom:1px solid #496895;min-width:0}.tv-ref-dot{color:#ffac61}.tv-ref-copy{flex:1;min-width:0}.tv-ref-copy b{display:block;font-size:11px;overflow-wrap:anywhere}.tv-ref-copy small{color:#b6cbea;font-size:10px}.tv-source-ref a,.tv-source-ref button{background:#103872;color:#fff!important;border:1px solid #5688c5;padding:8px;border-radius:7px;min-height:35px;font-size:10px;font-weight:900;white-space:nowrap;text-decoration:none;cursor:pointer}.tv-source-ref button{background:#d66721;border-color:#ffa64b}.tv-drill-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:10px;margin-top:9px;border-top:1px solid #d6dce8}.tv-watch-drill{background:#102d62;color:#fff;border:1px solid #ff9537;padding:10px;border-radius:10px;font-size:11px;font-weight:900;min-height:43px;cursor:pointer}.tv-ig-mini{border:1px solid #668cc1;border-radius:9px;color:#214c83!important;font-size:10px;font-weight:850;padding:8px 9px;min-height:36px;text-decoration:none}.tv-tv-tab:focus-visible,.tv-lesson:focus-visible,.tv-watch-drill:focus-visible,.tv-control:focus-visible{outline:3px solid #ffb553;outline-offset:2px}
+html.light .tlc-tv{background:linear-gradient(#163c78,#092852)!important}html.light .tv-ig-archive{background:#153d76!important}html.light .tv-ig-mini{color:#254f84!important}
+@media(max-width:400px){.tv-mark small{font-size:8px}.tv-live-dot{font-size:8px;padding:4px 5px}.tv-mark-icon{flex-basis:35px;height:35px}.tv-console{padding:6px}.tv-bezel{border-width:3px}.tv-standby{padding:12px 7px}.tv-source-ref{flex-wrap:wrap}.tv-source-ref a,.tv-source-ref button{padding:7px 8px}.tv-current{align-items:flex-start;flex-wrap:wrap}.tv-current>a{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.tv-play,.tv-standby,.tv-control,.wx-level{animation:none!important;transition:none!important}}
+</style>
 <body>
 <a class="skip-to-content" href="#main">Skip to workout content</a>
 <header><div class="htop"><div class="sp"><h1 id="title">Home</h1><div class="sub" id="subtitle"></div></div><div id="hact"></div></div></header>
@@ -1402,6 +1419,19 @@ html:not(.light) .chamber-weather{border-color:#ff922c!important;box-shadow:0 4p
 <div id="timer"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="22" stroke="#2a3040" stroke-width="5" fill="none"/><circle id="tring" cx="26" cy="26" r="22" stroke="url(#tg)" stroke-width="5" fill="none" stroke-linecap="round" transform="rotate(-90 26 26)" stroke-dasharray="138.2" stroke-dashoffset="0"/><defs><linearGradient id="tg"><stop offset="0" stop-color="#5fd4ff"/><stop offset="1" stop-color="#2f6bff"/></linearGradient></defs></svg>
 <div class="sp"><div class="muted">Time Chamber · Rest</div><div id="tnum">1:30</div></div><button class="btn sm" onclick="addTime(-15)">−15</button><button class="btn sm" onclick="addTime(15)">+15</button><button class="btn sm" onclick="stopTimer()">Skip</button></div>
 <div class="modal" id="modal" onclick="if(event.target.id==='modal')closeM()"><div class="sheet" id="sheet"></div></div>
+
+<div id="wxOverlay" class="wx-shade" hidden onclick="if(event.target===this)ChamberWeather.close()" role="presentation">
+  <div class="wx-drawer" role="dialog" aria-modal="true" aria-labelledby="wxTitle">
+    <div class="wx-drawer-top"><span id="wxTitle">◈ CHAMBER WEATHER</span><button type="button" class="wx-close" onclick="ChamberWeather.close()" aria-label="Close weather details">✕</button></div>
+    <section class="chamber-weather" id="chamberWeather" aria-label="Live training weather">
+    <div class="cw-head"><span class="cw-head-icon" aria-hidden="true">◈</span><span class="cw-head-title">CHAMBER ATMOSPHERE</span><span class="cw-live" id="cwLive">FORECAST</span><button type="button" class="cw-icon-btn" title="Refresh forecast" aria-label="Refresh forecast" onclick="ChamberWeather.refresh()">↻</button></div>
+    <div class="cw-location"><span id="cwCity">Oklahoma City, OK</span><div class="cw-location-actions"><button type="button" onclick="ChamberWeather.locate()" aria-label="Use my current location">⌖ Near me</button><button type="button" onclick="ChamberWeather.toggleSearch()" aria-label="Choose another city">⌕ City</button></div></div>
+    <form class="cw-search" id="cwSearch" hidden onsubmit="ChamberWeather.search(event)"><label for="cwCityInput">City or town</label><div><input id="cwCityInput" autocomplete="address-level2" placeholder="Search any city" maxlength="80"><button type="submit">Find</button></div></form>
+    <div id="cwBody" class="cw-body" aria-live="polite"><div class="cw-loading"><span class="cw-pulse" aria-hidden="true"></span>Loading your forecast…</div></div>
+    <div class="cw-foot"><span id="cwUpdated">Live conditions and 3-day outlook</span><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Weather: Open-Meteo</a></div>
+  </section>
+  </div>
+</div>
 <nav>
 <button id="n-home" onclick="go('home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Chamber</button>
 <button id="n-train" onclick="go('train')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12"/></svg>Train</button>
@@ -1604,8 +1634,10 @@ function handleOf(c,t){const m=String(rLabel(c,t)).match(/@[\w.]+/);return m?m[0
 function titleOf(c,t){const x=String(rLabel(c,t)).replace(/^@[\w.]+\s*·\s*/,'').replace(/\s*\(@[\w.]+\)/,'');return /^@/.test(x)?'Tutorial':x}
 function igKind(c){if((S.shared||[]).some(x=>x.c===c&&x.k==='p'))return 'p';return /\/p\//.test((D.reels||{})[c]||'')?'p':'reel'}
 function ekey(k){return String(k).replace(/[^\w-]/g,'_')}
-function igEmbed(code,key,title){key=ekey(key);const live=EMB&&EMB.key===key;
-  return `<div class="emb${live?' live':''}" id="emb-${key}" data-c="${esc(code)}" data-t="${esc(title||'')}" onclick="event.stopPropagation()">${live?embFrame(code):embPoster(code,key,title)}</div>`}
+function igEmbed(code,key,title){
+ const safe=String(code).replace(/[^\w-]/g,''),original='https://www.instagram.com/'+igKind(safe)+'/'+encodeURIComponent(safe)+'/';
+ return `<div class="tv-source-ref"><span class="tv-ref-dot">◈</span><div class="tv-ref-copy"><b>${esc(titleOf(safe,title))}</b><small>Original Instagram tutorial</small></div><a href="${original}" target="_blank" rel="noopener noreferrer" aria-label="Open original Instagram tutorial">OPEN ↗</a><button type="button" onclick="TLCTV.openFromReel('${safe}')" aria-label="Find an alternative video on TLC TV">TLC TV ▶</button></div>`;
+}
 function embPoster(code,key,title){return `<button class="embp" onclick="embLoad('${key}')" aria-label="Load tutorial: ${esc(titleOf(code,title))}"><span class="embglow"></span><span class="embplay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="embmeta"><span class="embh">${esc(handleOf(code,title))}</span><span class="embt">${esc(titleOf(code,title))}</span><span class="embs">Tap to load · plays right here</span></span></button>`}
 function embFrame(code){return `<div class="embf"><iframe src="https://www.instagram.com/${igKind(code)}/${encodeURIComponent(code)}/embed/" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen sandbox="allow-scripts allow-same-origin allow-presentation" referrerpolicy="strict-origin-when-cross-origin" title="Instagram tutorial"></iframe></div><div class="embbar"><span class="muted">${esc(handleOf(code))} · Instagram</span><button class="btn sm" onclick="embClose()">✕ Close video</button></div>`}
 function embOff(key,slow){return `<div class="embo"><div class="eoi" aria-hidden="true">📡</div><div><b>${slow?'Instagram didn\'t answer':'You\'re offline'}</b><div class="muted">${slow?'Check your connection, then retry.':'The tutorial loads here once you\'re back online. The form cues still work.'}</div></div><button class="btn sm" onclick="embLoad('${key}')">Retry</button></div>`}
@@ -1616,8 +1648,14 @@ function embLoad(key){const el=document.getElementById('emb-'+key);if(!el)return
   const f=el.querySelector('iframe');let ok=false;f.addEventListener('load',()=>{ok=true});
   clearTimeout(window._embT);window._embT=setTimeout(()=>{if(!ok&&EMB&&EMB.key===key){EMB=null;el.classList.remove('live');el.innerHTML=embOff(key,1)}},20000)}
 function embClose(){if(!EMB)return;const k=EMB.key;EMB=null;clearTimeout(window._embT);const el=document.getElementById('emb-'+k);if(el){el.classList.remove('live');el.innerHTML=embPoster(el.dataset.c,k,el.dataset.t)}}
-function embBlock(vs,key){if(!vs.length)return '';let h=igEmbed(vs[0][0],key+'_0',vs[0][1]);
-  if(vs.length>1)h+=`<div class="embmore">${vs.slice(1).map(([c,t],j)=>`<button class="btn sm" onclick="embSwap('${ekey(key+'_0')}','${esc(c)}','${esc(String(t).replace(/'/g,''))}')">▶ Also: ${esc(handleOf(c,t))}</button>`).join('')}</div>`;return h}
+function embBlock(vs,key){
+ if(!vs.length)return '';
+ const urls=vs.slice(0,2).map(([c,t])=>{
+  const safe=String(c).replace(/[^\w-]/g,''),url='https://www.instagram.com/'+igKind(safe)+'/'+encodeURIComponent(safe)+'/';
+  return `<a class="tv-ig-mini" href="${url}" target="_blank" rel="noopener noreferrer" title="Open original reel">Original reel ↗</a>`;
+ }).join('');
+ return `<div class="tv-drill-actions"><button type="button" class="tv-watch-drill" onclick="TLCTV.openFromDrill(this)">▶ WATCH ON TLC TV</button>${urls}</div>`;
+}
 function embSwap(key,c,t){const el=document.getElementById('emb-'+key);if(!el)return;if(EMB&&EMB.key===key)EMB=null;el.dataset.c=c;el.dataset.t=t;el.classList.remove('live');el.innerHTML=embPoster(c,key,t);embLoad(key)}
 // ---------- Form: cues + muscles + body map
 const MREG=[[/thoracic/i,['midback']],[/anterior delt/i,['delts']],[/lateral delt/i,['delts','rdelts']],[/posterior delt|rotator|teres/i,['rdelts']],[/pector/i,['chest']],[/serratus/i,['serratus']],[/biceps|brachialis/i,['biceps']],[/triceps/i,['triceps']],[/wrist|forearm|brachiorad|grip/i,['forearms','forearmsB']],[/upper trap/i,['traps','trapsB']],[/middle trap|lower trap|rhomboid/i,['midback']],[/latissimus/i,['lats']],[/erector|quadratus/i,['lowback']],[/rectus abdominis|transverse/i,['abs']],[/oblique/i,['obliques']],[/rectus femoris/i,['hipflex','quads']],[/hip flexor|iliopsoas|tensor/i,['hipflex']],[/quadricep/i,['quads']],[/adductor/i,['adductors']],[/glute|piriformis/i,['glutes']],[/hamstring/i,['hams']],[/gastroc|soleus|calves|peroneal/i,['calves']],[/tibialis|extensor digitorum/i,['shins']]];
@@ -1700,7 +1738,17 @@ function go(t){if(tab==='train'&&t!=='train'&&typeof stopTimer==='function')stop
 function applyTheme(){const l=S.theme!=='dark';document.documentElement.classList.toggle('light',l);document.documentElement.setAttribute('data-theme',l?'light':'dark');const tm=document.querySelector('meta[name=theme-color]');if(tm)tm.content=l?'#edf5ff':'#0a2a60';try{if(window.Native&&Native.setBars)Native.setBars(l)}catch(e){}}
 function toggleTheme(){S.theme=S.theme==='dark'?'light':'dark';save();applyTheme();render(true);toast(S.theme==='dark'?'Night mode':'Day mode')}
 function render(keep){applyTheme();applyAura();const y=window.scrollY;setTimeout(()=>{document.querySelectorAll('.chips .chip.on').forEach(c=>c.scrollIntoView({block:'nearest',inline:'center'}))},0);({home:vHome,train:vTrain,skills:vSkills,learn:vLearn,ana:vAna,log:vLog})[tab]();if(keep)window.scrollTo(0,y)}
-function head(t,s,act){document.getElementById('title').textContent='TLC HYPERBOLIC CHAMBER';document.getElementById('subtitle').textContent=t+(s?' · '+s:'');document.body.dataset.view=tab;document.getElementById('hact').innerHTML=`<span class="thm" role="button" aria-label="Toggle theme" onclick="toggleTheme()">${S.theme==='dark'?'☀️':'🌙'}</span>`+`<button class="sound-trigger" onclick="TLCAudio.open()" aria-label="Sound and voice settings" title="Sound and voice settings">♫<span class="sound-status">${typeof TLCMusic!=='undefined'&&TLCMusic.isPlaying()?'PLAY':TLCAudio.enabled()?'SFX':'OFF'}</span></button>`+(act||'')+(typeof powerLevel==='function'&&tab!=='home'?`<span class="pchip" onclick="go('log')"><i></i>${fmt(powerLevel())}</span>`:'')}
+function head(t,s,act){
+ const title=document.getElementById('title'), subtitle=document.getElementById('subtitle');
+ title.textContent='TLC HYPERBOLIC CHAMBER';subtitle.textContent=t+(s?' · '+s:'');
+ document.body.dataset.view=tab;
+ const pl=(typeof powerLevel==='function')?Math.round(powerLevel()):0;
+ const wx=`<button type="button" class="wx-level" id="wxIndicator" onclick="ChamberWeather.open()" title="Current weather and power level" aria-label="Open weather details and power level ${pl}"><span class="wx-level-icon" id="wxGlyph" aria-hidden="true">☀</span><span class="wx-level-reading"><strong id="wxTemp">—°</strong><small id="wxPlace">OKC</small></span><span class="wx-level-divider"></span><span class="wx-level-power"><small>LVL</small><b id="wxLevel">${fmt(pl)}</b></span></button>`;
+ const theme=`<button type="button" class="thm" aria-label="Switch between light and dark themes" onclick="toggleTheme()">${S.theme==='dark'?'☀️':'🌙'}</button>`;
+ const sound=`<button type="button" class="sound-trigger" onclick="TLCAudio.open()" aria-label="Sound settings" title="Sound settings">♫<span class="sound-status">${TLCAudio.enabled()?'SFX':'OFF'}</span></button>`;
+ document.getElementById('hact').innerHTML=wx+theme+sound+(act||'');
+ if(window.ChamberWeather)queueMicrotask(()=>ChamberWeather.paint());
+}
 const M=h=>{const m=document.getElementById('main');const live=EMB&&document.getElementById('emb-'+EMB.key);const room={train:['02','TRAINING GROUNDS','Build your next transformation','⚡'],skills:['03','POWER TREE','Master one move at a time','✦'],learn:['04','TECHNIQUE SCROLLS','Learn the details. Own the technique.','▣'],ana:['05','SCOUTER LAB','Check your form with clarity','◎'],log:['06','BATTLE RECORD','Your progress, all in one place','★']}[tab];const ribbon=room?'<section class="world-ribbon" aria-label="'+room[1]+'"><span class="world-sigil" aria-hidden="true">'+room[3]+'</span><span class="world-copy"><span class="world-id">WORLD '+room[0]+' / TLC DOJO</span><span class="world-name">'+room[1]+'</span><span class="world-description">'+room[2]+'</span></span></section>':'';const composed=ribbon+h;if(live&&m.contains(live)&&live.querySelector('iframe')&&morph(m,composed,live))return;m.innerHTML=composed};
 
 // ---------- HOME
@@ -1747,13 +1795,6 @@ function vHome(){
   <g fill="#fff9dc" stroke="#29384e" stroke-width="3"><path d="M90 144l8-14 8 14-8 14z"/><path d="M688 164l8-14 8 14-8 14z"/><path d="M815 223l5-10 5 10-5 10z"/></g>
   </svg>
   <div class="pain-world-label"><span class="pain-world-index">WORLD 01 / YOUR TRAINING HQ</span><span class="pain-title">TLC'S<br><em>HYPERBOLIC<br>CHAMBER</em></span><span class="pain-tagline">One chamber. Limitless strength. ♡</span>
-  <section class="chamber-weather" id="chamberWeather" aria-label="Live training weather">
-    <div class="cw-head"><span class="cw-head-icon" aria-hidden="true">◈</span><span class="cw-head-title">CHAMBER ATMOSPHERE</span><span class="cw-live" id="cwLive">FORECAST</span><button type="button" class="cw-icon-btn" title="Refresh forecast" aria-label="Refresh forecast" onclick="ChamberWeather.refresh()">↻</button></div>
-    <div class="cw-location"><span id="cwCity">Oklahoma City, OK</span><div class="cw-location-actions"><button type="button" onclick="ChamberWeather.locate()" aria-label="Use my current location">⌖ Near me</button><button type="button" onclick="ChamberWeather.toggleSearch()" aria-label="Choose another city">⌕ City</button></div></div>
-    <form class="cw-search" id="cwSearch" hidden onsubmit="ChamberWeather.search(event)"><label for="cwCityInput">City or town</label><div><input id="cwCityInput" autocomplete="address-level2" placeholder="Search any city" maxlength="80"><button type="submit">Find</button></div></form>
-    <div id="cwBody" class="cw-body" aria-live="polite"><div class="cw-loading"><span class="cw-pulse" aria-hidden="true"></span>Loading your forecast…</div></div>
-    <div class="cw-foot"><span id="cwUpdated">Live conditions and 3-day outlook</span><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Weather: Open-Meteo</a></div>
-  </section>
   <button class="pain-action" onclick="go('train')"><span aria-hidden="true">⚡</span> ENTER TRAINING <span aria-hidden="true">➜</span></button></div>
   <div class="pain-orb" aria-label="Two-star Dragon Ball">${stars(2,'hero')}</div>
 </section><div class="scouter"><div class="ret"></div><div class="cap">SCOUTER · POWER LEVEL</div><div class="pl" id="plnum">${fmt(pl)}</div>${pl>9000?'<div class="over9000">IT\'S OVER 9000!</div>':''}<div class="cap" style="margin-top:4px">${nf?fmt(nf[0]-pl)+' TO '+nf[1].toUpperCase():'MAX FORM REACHED'}</div><div class="plbar"><i style="width:${nf?Math.min(100,(pl-fm[0])/(nf[0]-fm[0])*100):100}%"></i></div></div>`;
@@ -1764,7 +1805,7 @@ function vHome(){
   const plan=D.week;h+=`<div class="card"><div class="row" style="margin-bottom:10px"><div class="sp dbz" style="font-weight:900;color:#ffd400">Your Dragon Balls</div><div class="muted">${D.week.filter(x=>x!=='rest').join(' · ')}</div></div><div class="week">${wk.map((w,i)=>`<div class="wd ${plan[i]==='rest'?'rest':''} ${w.today?'today':''} ${w.done?'done':''}"><div class="orb" aria-label="${i+1}-star Dragon Ball, ${w.done?'earned':'not yet earned'}">${stars(i+1)}</div><b>${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][i]}${plan[i]==='rest'?' · Rest':''}</b></div>`).join('')}</div>${wk.filter(w=>w.done).length>=7?'<div class="shenron">🐉 All seven gathered. Make your wish.</div>':''}</div>`;
   h+='<div class="lbl">Dragon Radar</div><div class="card">'+radar()+'<div class="muted" style="text-align:center">Blips move to the center as you master each skill. Tap one to open it.</div></div>';
   h+='<div class="lbl">Training grounds</div><div class="lanes">'+D.lanes.filter(l=>l.id!=='foundation').map(l=>{const c=curNode(l.id);return `<div class="lane" onclick="lane='${l.id}';go('skills')">${ring(lanePct(l.id))}<div class="sp"><div class="n">${esc(l.name.replace('Legs: ',''))}</div><div class="c">${esc(c.name)}</div></div></div>`}).join('')+'</div>';
-  M(h); if(window.ChamberWeather)ChamberWeather.mount();
+  M(h);
 }
 
 // ---------- TRAIN
@@ -1790,7 +1831,7 @@ function vTrain(){
 function checkForm(before){const a=formOf(before),b=formOf(powerLevel());if(a[1]!==b[1])setTimeout(()=>shout('Transformation!',b[1],b[3]),1900)}
 function doneThisWeek(id){const now=new Date(),st=new Date(now);st.setDate(now.getDate()-((now.getDay()+6)%7));st.setHours(0,0,0,0);return S.history.some(x=>x.day===id&&new Date(x.date)>=st)}
 function pickDay(id){S.day=id;openVid=null;EMB=null;save();render()}
-function tapSet(d,i,k,rest){S.sess[d]=S.sess[d]||{};const cur=S.sess[d][i]||0;S.sess[d][i]=(k<cur)?k:k+1;save();window._burst=S.sess[d][i]>cur?d+'-'+i+'-'+k:null;setTimeout(()=>{window._burst=null},700);if(S.sess[d][i]>cur){sparks(lastXY[0],lastXY[1]);TLCAudio.effect('set');startTimer(rest);const dd=D.days.find(x=>x.id===d);if(S.sess[d][i]>=nSets(dd.items[i].dose)){setTimeout(()=>{const nx=dd.items.findIndex((e,j)=>((S.sess[d]||{})[j]||0)<nSets(e.dose));const el=document.getElementById('ex'+nx);if(el)el.scrollIntoView({behavior:'smooth',block:'center'})},350)}if(navigator.vibrate)navigator.vibrate(30)}render(true)}
+function tapSet(d,i,k,rest){S.sess[d]=S.sess[d]||{};const cur=S.sess[d][i]||0;S.sess[d][i]=(k<cur)?k:k+1;save();window._burst=S.sess[d][i]>cur?d+'-'+i+'-'+k:null;setTimeout(()=>{window._burst=null},700);if(S.sess[d][i]>cur){sparks(lastXY[0],lastXY[1]);startTimer(rest);const dd=D.days.find(x=>x.id===d);if(S.sess[d][i]>=nSets(dd.items[i].dose)){setTimeout(()=>{const nx=dd.items.findIndex((e,j)=>((S.sess[d]||{})[j]||0)<nSets(e.dose));const el=document.getElementById('ex'+nx);if(el)el.scrollIntoView({behavior:'smooth',block:'center'})},350)}if(navigator.vibrate)navigator.vibrate(30)}render(true)}
 function finish(d){const day=D.days.find(x=>x.id===d);const sess=S.sess[d]||{};let sets=0,tot=0;day.items.forEach((e,i)=>{sets+=Math.min(sess[i]||0,nSets(e.dose));tot+=nSets(e.dose)});
   if(!sets){toast('Tick off at least one set first.');return}
   const plBefore=powerLevel();S.history.push({day:d,date:new Date().toISOString(),sets,tot});S.sess[d]={};if(/^[ABCDE]$/.test(d))S.day=nextDay();save();stopTimer();const pl0=plBefore;go('home');TLCAudio.effect('finish');fx('beam',1100);setTimeout(()=>shout('Ka-me-ha-me-ha!',`${sets} of ${tot} sets · power +${fmt(powerLevel()-pl0)}`,'#5fd4ff'),250);checkForm(pl0)}
@@ -1827,7 +1868,10 @@ function openNode(id,keep){
   <button class="btn" style="flex:1" onclick="setCur('${id}')">Make current</button></div>${o?'':'<div class="muted" style="margin-top:8px">Locked until the steps it needs are passed.</div>'}`;
   document.getElementById('modal').classList.add('on');if(keep)sh.scrollTop=y;else sh.scrollTop=0;
 }
-function playReel(c){if(String(c).startsWith('local:')){closeM();anaOpen(c.slice(6));return}if(window.Native&&Native.playReel){Native.playReel(c)}else{closeM();const sh=document.getElementById('sheet');sh.innerHTML='<div class="row" style="margin:10px 0 16px"><b>TRAINING SCROLL</b><span class="sp"></span><button class="btn sm" onclick="closeM()">✕ Close</button></div>'+igEmbed(c,'host_'+c,rLabel(c));document.getElementById('modal').classList.add('on');embLoad(ekey('host_'+c))}}
+function playReel(c){
+ if(String(c).startsWith('local:')){closeM();anaOpen(c.slice(6));return;}
+ closeM();if(window.TLCTV)TLCTV.openFromReel(String(c));
+}
 function closeM(){document.getElementById('modal').classList.remove('on');curSheet=null;openVid=null;if(EMB&&EMB.key[0]==='n')EMB=null;const sh=document.getElementById('sheet');if(sh)sh.querySelectorAll('iframe').forEach(f=>f.remove())}
 function addReel(l,id){const c=parseCode(document.getElementById('reelIn').value);if(!c){toast('That link doesn\'t look like an Instagram reel.');return}S.myReels[l]=S.myReels[l]||[];if(!S.myReels[l].includes(c))S.myReels[l].unshift(c);save();openVid='n'+id+'0';openNode(id,true);toast('Tutorial added.')}
 function rmReel(l,c){S.myReels[l]=(S.myReels[l]||[]).filter(x=>x!==c);save();openNode(curSheet,true)}
@@ -1838,13 +1882,14 @@ function pass(id,v){if(v){S.passed[id]=new Date().toISOString().slice(0,10);if(S
 // ---------- TUTORIALS
 let learnLane='all';
 function vLearn(){
-  head('Training Scrolls','Instagram tutorials play right here. Needs internet.');
-  const ls=D.lanes.filter(l=>vidsForLane(l.id).length);
-  let h='<div class="chips"><div class="chip '+(learnLane==='all'?'on':'')+'" onclick="learnLane=\'all\';openVid=null;render()">All</div>'+ls.map(l=>`<div class="chip ${learnLane===l.id?'on':''}" onclick="learnLane='${l.id}';openVid=null;render()">${esc(l.name.replace('Legs: ','Legs · '))}</div>`).join('')+'</div>';
-  ls.filter(l=>learnLane==='all'||learnLane===l.id).forEach(l=>{h+=`<div class="lbl">${esc(l.name)}</div>`;
-    vidsForLane(l.id).forEach(([c,t,mine],k)=>{const key='l'+l.id+k;h+=mine===3?`<div class="vcard" onclick="playReel('${c}')"><div class="vthumb">▶</div><div class="sp"><div class="t">${esc(t)}</div><div class="s">Your video · plays offline</div></div></div>`:`<div style="margin-bottom:10px">${igEmbed(c,key,mine===2?'Added by you':t)}</div>`})});
-  h+='<div class="muted" style="margin:14px 2px">To add a reel, open any step in Skills and paste its link.</div>';
-  M(h);
+ head('TLC TV','Video lessons and original sources · tap a lesson to watch');
+ let html=TLCTV.render();
+ const categories=D.lanes.filter(l=>vidsForLane(l.id).length);
+ const total=categories.reduce((sum,l)=>sum+vidsForLane(l.id).filter(v=>v[2]!==3).length,0);
+ html+=`<details class="tv-ig-archive"><summary>Original Instagram reference library <span>${total} saved references · opens on Instagram ↗</span></summary><p>Instagram may block playback in other apps. These original sources are preserved and open at Instagram. Use TLC TV above to watch embeddable alternatives.</p>`;
+ for(const l of categories){const vids=vidsForLane(l.id).filter(v=>v[2]!==3);if(!vids.length)continue;html+=`<div class="tv-ref-section"><h3>${esc(l.name)}</h3>${vids.map(([c,t],k)=>igEmbed(c,'ref'+l.id+k,t)).join('')}</div>`;}
+ html+='</details>';
+ M(html);
 }
 
 // ---------- PROGRESS
@@ -2192,20 +2237,26 @@ loadLV().then(()=>render(true));go('home');setTimeout(stShare,0);
 })();
 </script>
 
-<script id="tlc-combat-tap-v49">
+<script id="tlc-combat-tap-v50">
 (function(){
-  'use strict';
-  const fightSound=e=>{
-    const item=e.target.closest('button,[role="button"],.chip,.lane,.pn,.vcard,.blip,.orb');
-    if(!item||item.disabled||item.closest('[hidden]')||item.classList.contains('set'))return;
-    let k='tap';
-    if(item.matches('nav button,.chip,.lane,.pn,.blip'))k='navigate';
-    if(item.matches('.pain-action,.btn.p,.btn.g'))k='power';
-    if(item.matches('#tlcMusicPlay,#tlcSoundOn,#tlcVolume,.cw-location-actions button,.cw-icon-btn'))k='tap';
-    if(window.TLCAudio)TLCAudio.effect(k);
-  };
-  document.addEventListener('pointerdown',fightSound,{passive:true,capture:true});
-  document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('button,[role="button"],.chip,.pn,.lane'))fightSound({target:e.target})});
+ 'use strict';let sequence=0,lastPointer=0,lastKey=0;
+ const playable='button,[role="button"],a[href],[onclick],.chip,.lane,.pn,.vcard,.blip,.orb,summary';
+ function play(target){
+  const item=target?.closest?.(playable);
+  if(!item||item.disabled||item.matches('[disabled]')||item.closest('[hidden]'))return;
+  if(item.closest('#tlcSoundOn,#tlcVolume')||item.getAttribute('onclick')?.includes('TLCAudio.demo()'))return;
+  if(typeof TLCAudio==='undefined')return;
+  let kind;
+  if(item.matches('.set,.tv-lesson.active,.tv-watch-drill'))kind='impact';
+  else if(item.matches('.pain-action,.btn.p,.btn.g,.tv-play,.tv-primary'))kind='power';
+  else if(item.matches('nav button,.chip,.lane,.pn,.blip,.tv-channel,.tv-lesson,.tv-tv-tab'))kind='navigate';
+  else if(item.matches('.wx-level,.wx-close,.thm,.sound-trigger,.tv-control,.tv-source-ref a'))kind='tap';
+  else kind=['tap','navigate','tap','impact','tap','power'][sequence++%6];
+  TLCAudio.effect(kind);
+ }
+ document.addEventListener('pointerdown',e=>{lastPointer=Date.now();play(e.target)},true);
+ document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!e.repeat){lastKey=Date.now();play(e.target)}},true);
+ document.addEventListener('click',e=>{if(e.detail===0&&Date.now()-lastPointer>80&&Date.now()-lastKey>200)play(e.target)},true);
 })();
 </script>
 
@@ -2240,7 +2291,17 @@ const ChamberWeather=(()=>{
   <div class="cw-section-title">NEXT 6 HOURS</div><div class="cw-hours">${hours||'<span>Hourly forecast unavailable</span>'}</div>
   <div class="cw-section-title">3-DAY OUTLOOK</div><div class="cw-days">${days||'<span>Daily forecast unavailable</span>'}</div>`;
  }
- function paint(){if(!el('cwBody'))return;el('cwCity').textContent=place.name;el('cwLive').textContent=payload?'LIVE':'FORECAST';
+ function paint(){
+   const chip=el('wxIndicator'),temp=el('wxTemp'),glyph=el('wxGlyph'),loc=el('wxPlace');
+   if(chip){
+     const city=place.name||'Oklahoma City';chip.title=city+' · open weather details';
+     chip.setAttribute('aria-label',city+' weather details and your power level');
+     if(temp)temp.textContent=payload?num(payload.current?.temperature_2m,'°'):'—°';
+     if(glyph)glyph.innerHTML=payload?icon(payload.current?.weather_code,payload.current?.is_day!==0,true):'☀';
+     if(loc)loc.textContent=city==='Oklahoma City, OK'?'OKC':city==='Near your location'?'NEAR ME':city.split(',')[0].slice(0,11);
+   }
+   if(!el('cwBody'))return;
+   el('cwCity').textContent=place.name;el('cwLive').textContent=payload?'LIVE':'FORECAST';
   if(payload){el('cwBody').innerHTML=forecastView(payload);const ts=new Date(lastAt);el('cwUpdated').textContent='Updated '+ts.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'})+((Date.now()-lastAt)>15*60*1000?' · may be outdated':'');}
  }
  async function load(force=false){const body=el('cwBody');if(!body)return;if(!force&&payload&&Date.now()-lastAt<12*60*1000){paint();return}if(fetching&&!force)return;const token=++op;
@@ -2252,7 +2313,11 @@ const ChamberWeather=(()=>{
   }catch(e){if(token!==op)return;if(payload){paint();el('cwUpdated').textContent='Using last forecast · tap ↻ to retry';}else body.innerHTML='<div class="cw-unavailable"><strong>Weather temporarily unavailable</strong><span>Your workouts are ready. Reconnect and retry.</span><button type="button" onclick="ChamberWeather.refresh()">↻ Try again</button></div>';el('cwLive').textContent='OFFLINE';}
   finally{clearTimeout(timeout);if(token===op)fetching=false;}
  }
+ let focusedBeforeWeather=null;
  function mount(){if(!el('chamberWeather'))return;paint();if(!payload||Date.now()-lastAt>12*60*1000)load();}
+ function open(){const pane=el('wxOverlay');if(!pane)return;focusedBeforeWeather=document.activeElement;pane.hidden=false;document.body.classList.add('wx-open');mount();pane.querySelector('.wx-close')?.focus();}
+ function close(){const pane=el('wxOverlay');if(!pane)return;pane.hidden=true;document.body.classList.remove('wx-open');focusedBeforeWeather?.focus?.();}
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&el('wxOverlay')&&!el('wxOverlay').hidden){e.preventDefault();close();}});
  function refresh(){load(true)}
  function toggleSearch(){const c=el('cwSearch');if(!c)return;c.hidden=!c.hidden;if(!c.hidden)el('cwCityInput').focus()}
  async function search(event){if(event)event.preventDefault();const input=el('cwCityInput'),name=(input?.value||'').trim();if(name.length<2){if(input)input.setCustomValidity('Enter at least 2 letters');input?.reportValidity();input?.setCustomValidity('');return}
@@ -2270,10 +2335,95 @@ const ChamberWeather=(()=>{
  // Only reuse the device location automatically if permission was already granted earlier.
  async function init(){mount();try{if(chosen!=='okc'||!navigator.permissions?.query)return;const perm=await navigator.permissions.query({name:'geolocation'});if(perm.state==='granted'&&el('chamberWeather'))locate()}catch(e){}}
  window.addEventListener('focus',()=>{if(document.body.dataset.view==='home'&&Date.now()-lastAt>20*60*1000)mount()});
- return{mount,refresh,toggleSearch,search,locate,init};
+ return{mount,refresh,toggleSearch,search,locate,init,paint,open,close};
 })();
 window.ChamberWeather=ChamberWeather;
 ChamberWeather.init();
 </script>
 
+<script id="tlc-tv-v50">
+const TLCTV=(()=>{
+ 'use strict';
+ const KEY='tlc_tv_sources_v1',PREF='tlc_tv_preference_v1';
+ // Curated from identifiable creator videos. Embedding remains subject to each owner's settings.
+ const originals=[
+  {id:'calisthenics-intro',source:'youtube',code:'2Sih1rphy54',title:'Full calisthenics strength: pike, flag, planche and more',author:'Calisthenics technique',category:'all',cue:'Overview of key strength skills and movement patterns'},
+  {id:'handstand-pushup',source:'youtube',code:'uZWjFe4fufA',title:'Handstand push-up: beginner progressions',author:'FitnessFAQs',category:'handstand',cue:'Pike push-ups, wall eccentrics and strength progressions'},
+  {id:'wrist-mobility',source:'youtube',code:'20w70zUTZik',title:'Wrist mobility and strength',author:'GMB Fitness',category:'mobility',cue:'Warm up wrists before handstands, planche and rings'},
+  {id:'pistol-squat',source:'youtube',code:'Yi0XP1ty4C0',title:'Pistol squat: strength and balance',author:'GMB Fitness',category:'legs',cue:'Progress from deep squats toward a controlled single-leg squat'},
+  {id:'skill-path',source:'youtube',code:'J2JHDavNZB4',title:'Calisthenics skills in progression order',author:'Striqfitness',category:'all',cue:'A broad progression overview including pistol squats and pike push-ups'},
+  {id:'planche-basics',source:'youtube',code:'8mnNpNZ88Oo',title:'Planche positioning and tuck progressions',author:'GMB Fitness',category:'planche',cue:'Foundation positions and safer straight-arm technique'},
+  {id:'planche-straddle',source:'youtube',code:'6snDOgFBBFA',title:'Straddle planche progression exercises',author:'GMB Fitness',category:'planche',cue:'Straddle planche stepping stones and controlled holds'},
+  {id:'front-lever',source:'youtube',code:'AGhb8V8M758',title:'Front lever for beginners',author:'FitnessFAQs',category:'lever',cue:'Progressions toward the front lever and useful accessory drills'},
+  {id:'human-flag',source:'youtube',code:'bG0h7bSfxQI',title:'How to human flag',author:'THENX',category:'flag',cue:'Flag positions and full-body control; source player may restrict embeds'}
+ ];
+ const categories=[['all','ALL'],['handstand','HANDSTAND'],['mobility','WRISTS / GRIP'],['legs','LEGS'],['lever','LEVER'],['flag','FLAG'],['planche','PLANCHE']];
+ let extra=[],selected='calisthenics-intro',category='all',searchTerm='',playing=false,context='',localObject=null,localTitle='';
+ const E=t=>String(t??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+ try{const d=JSON.parse(localStorage.getItem(KEY)||'[]');if(Array.isArray(d))extra=d.filter(v=>v&&typeof v==='object'&&typeof v.title==='string'&&['youtube','vimeo','mp4'].includes(v.source)&&String(v.code).length<400).slice(0,80)}catch(e){}
+ try{const p=JSON.parse(localStorage.getItem(PREF)||'{}');if(typeof p.selected==='string')selected=p.selected;}catch(e){}
+ const items=()=>[...originals,...extra,...(localObject?[{id:'local',source:'local',code:localObject,title:localTitle||'Your video',author:'Local file · this tab only',category:'all',cue:'Video stays on this device and is not uploaded'}]:[])];
+ const active=()=>items().find(v=>v.id===selected)||originals[0];
+ const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(extra));localStorage.setItem(PREF,JSON.stringify({selected}))}catch(e){}};
+ const external=v=>v.source==='youtube'?'https://www.youtube.com/watch?v='+encodeURIComponent(v.code):v.source==='vimeo'?'https://vimeo.com/'+encodeURIComponent(v.code):v.source==='mp4'?v.code:null;
+ function iframe(v){
+  if(v.source==='youtube')return `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.code)}?rel=0&playsinline=1&cc_load_policy=1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen title="${E(v.title)}"></iframe>`;
+  if(v.source==='vimeo')return `<iframe src="https://player.vimeo.com/video/${encodeURIComponent(v.code)}?title=0&byline=0&portrait=0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${E(v.title)}"></iframe>`;
+  if(v.source==='mp4'||v.source==='local')return `<video src="${E(v.code)}" playsinline controls preload="metadata" controlslist="nodownload" title="${E(v.title)}"></video>`;
+  return '';
+ }
+ function libraryCards(){
+  const all=items().filter(v=>(category==='all'||v.category===category||v.category==='all')&&(!searchTerm||(`${v.title} ${v.author} ${v.category}`.toLowerCase().includes(searchTerm))));
+  if(!all.length)return '<div class="tv-no-results">No lesson matches that filter. Try ALL or add your own video.</div>';
+  return all.map(v=>`<button type="button" class="tv-lesson${selected===v.id?' active':''}" onclick="TLCTV.select('${E(v.id)}')"><span class="tv-lesson-play" aria-hidden="true">▶</span><span class="tv-lesson-body"><strong>${E(v.title)}</strong><small>${E(v.author)} · ${v.source==='local'?'LOCAL':v.source.toUpperCase()}</small></span><span class="tv-lesson-arrow" aria-hidden="true">${selected===v.id?'●':'›'}</span></button>`).join('');
+ }
+ function render(){const v=active();const hasUrl=external(v);
+ const buttons=categories.map(([id,text])=>`<button type="button" class="tv-tv-tab${category===id?' active':''}" onclick="TLCTV.filter('${id}')">${text}</button>`).join('');
+ return `<section class="tlc-tv" id="tlcTv" aria-label="TLC TV training library">
+ <div class="tv-mast"><div class="tv-mark"><span class="tv-mark-icon">▣</span><span><b>TLC<span>TV</span></b><small>HYPERBOLIC CHAMBER · TECHNIQUE CHANNEL</small></span></div><div class="tv-live-dot"><span></span> ON-DEMAND</div></div>
+ <div class="tv-console"><div class="tv-bezel"><div class="tv-bezel-top"><b>CAPSULE VIDEO SYSTEM</b><span>TV•50 / HD</span></div><div class="tv-screen" id="tvScreen">
+ ${playing?iframe(v):`<div class="tv-standby"><div class="tv-grid"></div><div class="tv-ring"><span>▶</span></div><span class="tv-standby-channel">${E(v.category==='all'?'TRAINING':v.category.toUpperCase())} / ${E(v.source.toUpperCase())}</span><strong>${E(v.title)}</strong><button class="tv-play" onclick="TLCTV.play()">▶ PLAY LESSON</button><small>Powered by the original creator's official player</small></div>`}
+ </div><div class="tv-bezel-bottom"><span class="tv-led"></span><b>TLC · TRAINING DISPLAY</b><span>◈ 60Hz</span></div></div>
+ <div class="tv-controls"><button class="tv-control" onclick="TLCTV.previous()" aria-label="Previous lesson">◀<span>PREV</span></button><button class="tv-control" onclick="TLCTV.play()" aria-label="Load video player">▶<span>${playing?'RELOAD':'PLAY'}</span></button><button class="tv-control" onclick="TLCTV.next()" aria-label="Next lesson">▶▶<span>NEXT</span></button><button class="tv-control" onclick="TLCTV.fullscreen()" aria-label="Fullscreen TV">⛶<span>FULL</span></button></div></div>
+ <div class="tv-current"><div class="tv-current-title"><span>NOW SELECTED</span><h3>${E(v.title)}</h3><small>${E(v.author)}</small></div>${hasUrl?`<a href="${E(hasUrl)}" target="_blank" rel="noopener noreferrer">OPEN SOURCE ↗</a>`:''}</div>
+ <div class="tv-note">${E(context||v.cue||'Watch, practise, then record your sets in Training.')}</div>
+ <div class="tv-categories" role="group" aria-label="Filter tutorials">${buttons}</div>
+ <form class="tv-find" onsubmit="event.preventDefault();TLCTV.search()"><input id="tvSearch" type="search" value="${E(searchTerm)}" placeholder="Find handstands, strength, mobility…" aria-label="Search videos" maxlength="70"><button type="submit">SEARCH</button></form>
+ <div class="tv-library-title"><span>VIDEO LIBRARY <small>${items().length} lessons</small></span><button onclick="TLCTV.toggleAdd()" type="button">＋ ADD VIDEO</button></div><div class="tv-library" id="tvLibrary">${libraryCards()}</div>
+ <form class="tv-add" id="tvAdd" hidden onsubmit="event.preventDefault();TLCTV.add()"><b>Add your own tutorial</b><p>Paste a YouTube, Vimeo or direct HTTPS MP4 link. The creator controls whether their video can be embedded.</p><label>Video URL<input id="tvNewUrl" type="url" placeholder="https://youtube.com/watch?v=…" required maxlength="450"></label><label>Title<input id="tvNewTitle" type="text" placeholder="My tutorial" maxlength="90"></label><label>Category<select id="tvNewCategory">${categories.map(([id,t])=>`<option value="${id}">${t}</option>`).join('')}</select></label><button class="tv-primary" type="submit">SAVE TO MY TV</button><label class="tv-local-choice">Or watch a video from your phone (this tab only)<input id="tvLocalFile" type="file" accept="video/mp4,video/webm,video/quicktime,video/*" onchange="TLCTV.loadFile(this.files[0])"></label></form>
+ <div class="tv-integrity">Official YouTube/Vimeo playback, no video copying. Some owners block embedding; use <b>Open Source</b> if that happens. Your saved workout progress is unchanged.</div>
+ </section>`;
+ }
+ function filter(id){category=categories.some(x=>x[0]===id)?id:'all';playing=false;const q=document.getElementById('tvSearch');if(q)searchTerm=q.value.trim().toLowerCase();if(typeof tab!=='undefined'&&tab==='learn')renderApp();}
+ function search(){searchTerm=(document.getElementById('tvSearch')?.value||'').trim().slice(0,70).toLowerCase();const e=document.getElementById('tvLibrary');if(e)e.innerHTML=libraryCards();}
+ function renderApp(){if(typeof tab!=='undefined'&&tab==='learn')vLearn();}
+ function select(id){if(!items().some(v=>v.id===id))return;selected=id;playing=false;context='';save();renderApp();const view=document.getElementById('tlcTv');view?.scrollIntoView({block:'start',behavior:'smooth'});}
+ function play(){playing=true;renderApp();}
+ function next(){const all=items().filter(v=>category==='all'||v.category===category||v.category==='all');if(!all.length)return;const i=all.findIndex(v=>v.id===selected);selected=all[(i+1)%all.length].id;playing=false;save();renderApp();}
+ function previous(){const all=items().filter(v=>category==='all'||v.category===category||v.category==='all');if(!all.length)return;const i=all.findIndex(v=>v.id===selected);selected=all[(i<0?0:i-1+all.length)%all.length].id;playing=false;save();renderApp();}
+ function fullscreen(){const screen=document.getElementById('tvScreen');if(!screen?.requestFullscreen){toast('Fullscreen is not available in this browser.');return;}screen.requestFullscreen().catch(()=>toast('Use the fullscreen icon inside the video player.'));}
+ function toggleAdd(){const el=document.getElementById('tvAdd');if(!el)return;el.hidden=!el.hidden;if(!el.hidden)document.getElementById('tvNewUrl')?.focus();}
+ function parseLink(raw){let u;try{u=new URL(raw)}catch(e){return null;}if(u.protocol!=='https:')return null;const host=u.hostname.toLowerCase().replace(/^www\./,'');
+  if(host==='youtu.be')return /^[-_A-Za-z0-9]{11}$/.test(u.pathname.split('/')[1]||'')?{source:'youtube',code:u.pathname.split('/')[1]}:null;
+  if(['youtube.com','m.youtube.com','music.youtube.com','youtube-nocookie.com'].includes(host)){const id=u.searchParams.get('v')||u.pathname.match(/^\/(?:shorts|embed|live)\/([-_A-Za-z0-9]{11})/)?.[1];return /^[-_A-Za-z0-9]{11}$/.test(id||'')?{source:'youtube',code:id}:null;}
+  if(host==='vimeo.com'||host==='player.vimeo.com'){const match=u.pathname.match(/(?:^\/|\/video\/)(\d{5,15})/);return match?{source:'vimeo',code:match[1]}:null;}
+  if(/\.mp4(?:$|\?)/i.test(u.pathname+u.search)&&u.href.length<450)return{source:'mp4',code:u.href};return null;
+ }
+ function add(){const raw=document.getElementById('tvNewUrl')?.value?.trim()||'',p=parseLink(raw),title=(document.getElementById('tvNewTitle')?.value||'My tutorial').trim().slice(0,90),cat=document.getElementById('tvNewCategory')?.value||'all';
+  if(!p){toast('Use a YouTube, Vimeo, or direct HTTPS MP4 link.');return;}
+  if(extra.length>=80){toast('Your TV library is full.');return;}
+  const match=items().find(v=>v.source===p.source&&v.code===p.code);if(match){selected=match.id;context='';playing=false;save();renderApp();toast('Already in your library.');return;}
+  const id='custom-'+Date.now().toString(36)+'-'+Math.floor(Math.random()*1000).toString(36);
+  extra.unshift({id,source:p.source,code:p.code,title:title||'My tutorial',author:'Added by you',category:categories.some(c=>c[0]===cat)?cat:'all',cue:'Your saved tutorial'});
+  selected=id;category='all';searchTerm='';playing=false;save();renderApp();toast('Saved to TLC TV.');
+ }
+ function loadFile(file){if(!file)return;if(!file.type.startsWith('video/')||file.size>450*1024*1024){toast('Choose a video file under 450 MB.');return;}
+  if(localObject)URL.revokeObjectURL(localObject);localObject=URL.createObjectURL(file);localTitle=file.name.slice(0,80);selected='local';playing=false;context='Video stays on this device and is not uploaded.';renderApp();}
+ function fromContext(name){const v=String(name||'').toLowerCase();if(/handstand|pike|overhead|press/.test(v))return 'handstand-pushup';if(/wrist|forearm|mobility|foam roll|stretch|band/.test(v))return 'wrist-mobility';if(/pistol|squat|lunge|leg|calf|quad/.test(v))return 'pistol-squat';if(/lever|row|pull.up/.test(v))return 'front-lever';if(/flag/.test(v))return 'human-flag';return 'calisthenics-intro';}
+ function openFromDrill(node){const el=node?.closest('.ex'),name=el?.querySelector('.nm')?.textContent?.trim()||'';selected=fromContext(name);context=name?'NOW PRACTISING · '+name:'';category='all';searchTerm='';playing=false;save();go('learn');}
+ function openFromReel(code){const name=typeof rLabel==='function'?rLabel(code):'Calisthenics tutorial';selected=fromContext(name);context='Alternative embeddable tutorial. Original reel remains linked in the reference library.';category='all';searchTerm='';playing=false;save();go('learn');}
+ return {render,play,select,filter,search,previous,next,fullscreen,toggleAdd,add,loadFile,openFromDrill,openFromReel,parseLink};
+})();
+window.TLCTV=TLCTV;
+</script>
 </body></html>
