@@ -1,3 +1,19 @@
+## Version 46 — Deeper anime-world visual upgrade (November 17, 2026)
+
+**Published live:** https://tlc-house-of-pain.vercel.app/  (previous URL https://tlc-prime-kame-house.vercel.app/ remains active)
+
+**Scope:** UI/UX, artwork, CSS and view presentation ONLY.
+
+- Upgraded the illustrated **TLC House of Pain** dojo: richer atmospheric sky, layered sun halo, dimensional rocks, small energy details, original cute character and warm cel-shaded lighting.
+- Added a cohesive premium look across six tabs: beveled anime mission cards, scouter HUD, richer energy-level panels, yellow/orange glass accents, readable training sets, game-like skill path, refined radar and collected Dragon Balls, detailed light and dark themes, improved buttons and responsive bottom navigation.
+- Added a visual **World 02–06** header to each non-home room (Training Grounds, Power Tree, Technique Scrolls, Scouter Lab, Battle Record).
+- Kept all 142 exercise definitions in seven programs, all 14 skill lanes and 70 skill steps, tutorials, progress, sound system and browser storage keys unchanged. No paid services or new asset dependencies.
+- Verified 5 inline scripts with Node syntax checks; Chromium/Playwright rendered all six tabs at 320, 360, 412, 600, 768 and 1180 px without JavaScript errors or horizontal scrolling. Basic tests covered workout logging, skill detail, light/dark theme, and opening Sound Lab.
+- Deployment `dpl_4F3f2BAseAZYSKcwGyu1pXnseoPC` READY; both domains assigned, direct HTTP 200 for full live app, `sw.js` cache `tlc-house-of-pain-v46`, manifest and both icons.
+- Not physically verified: Galaxy Z Fold 5, Instagram embeds, actual microphone and speaker behavior. **Android APK was not rebuilt.**
+- The old domain and new domain hold separate browser storage. Continue using the address with existing workout logs to preserve visible history.
+
+---
 ## Version 45 — UI/UX-only overhaul (November 16, 2026)
 
 Live app: https://tlc-house-of-pain.vercel.app/ and https://tlc-prime-kame-house.vercel.app/
