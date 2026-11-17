@@ -1,3 +1,18 @@
+## v49 — TLC Hyperbolic Chamber (November 17, 2026)
+
+**Full app:** https://tlc-hyperbolic-chamber.vercel.app/  
+**Previous site, same build and existing browser storage:** https://tlc-house-of-pain.vercel.app/
+
+- Renamed the site header, hero art lettering, page title and installable-web-app manifest to **TLC Hyperbolic Chamber**. Existing domains remain available, because workout progress is stored per website domain.
+- Embedded a custom live **Chamber Atmosphere** weather dashboard inside the home hero: current temperature and feels-like, condition, daily highs/lows, wind, humidity, rain chance, six hourly slots, and three-day outlook. Oklahoma City default, optional permission-gated Near me button and city search for other areas. Forecast data is fetched from Open-Meteo in the browser, credited in the UI. No paid weather key.
+- Added **original, locally synthesized, anime-inspired combat SFX** for button taps, navigation, impacts, power-ups and explosions. Works with the existing Sound Lab toggle and volume; no copyrighted character samples, ElevenLabs or remote audio bills. Existing optional music behavior was deliberately not modified.
+- Created new 192px and 512px install icons with orange 2-star glass sphere, blue frame and TLC CHAMBER lettering.
+- All 142 exercise definitions, 70 skill steps, 14 lanes, 7 training programs, tutorial references, audio source and progress keys remain intact. Android APK was **not** rebuilt; it retains its old package/Android share-sheet identity.
+- Local QA used Playwright/Chromium across widths 320, 360, 412, 600, 768 and 1180px: all six tabs, no horizontal overflow or JavaScript errors, weather layout contained in hero (no overlaps), both themes, set logging, location lookup, city search, sound effects/mute, and network-offline fallback.
+- Local weather fetches were mocked in test browsers; the deployed live app code, manifest, worker and icons were verified as HTTP 200. Physical Galaxy Z Fold and actual phone speaker tests remain unverified.
+- Vercel production deployment `dpl_5QsFm65efLfVqqVFoSWhKLEmTKv5` READY. Cache `tlc-hyperbolic-chamber-v49`.
+
+---
 ## Version 48 — Fixed music, robot voice, and both themes (November 17, 2026)
 
 LIVE: https://tlc-house-of-pain.vercel.app/ (old testing URL still works)
