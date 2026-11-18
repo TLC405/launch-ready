@@ -1394,6 +1394,10 @@ html:not(.light) .chamber-weather{border-color:#ff922c!important;box-shadow:0 4p
 @media(prefers-reduced-motion:reduce){.cw-pulse{animation:none}}
 </style>
 
+<style id="tlc-grip-variety-v51">
+/* TLC Hyperbolic Chamber — optional grip finishers + variation lab */
+.grip-finisher{margin:16px 0 22px;border:1px solid rgba(65,149,255,.48);border-left:4px solid #ff942f;border-radius:17px;overflow:hidden;background:linear-gradient(132deg,#0c2347,#143b70);box-shadow:0 12px 30px rgba(2,9,26,.24);color:#fff}.grip-finisher>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:15px 16px;min-height:68px}.grip-finisher>summary::-webkit-details-marker{display:none}.grip-finisher-icon{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#fa8e25;color:#10264c;font-size:22px}.grip-finisher-text{display:grid;gap:3px;flex:1;min-width:0}.grip-finisher-text b{font-size:16px;line-height:1.15;letter-spacing:.02em}.grip-finisher-text small{font-size:12px;color:#bfdafa}.grip-finisher-chevron{font-size:25px;color:#ffb65e;transition:transform .2s}.grip-finisher[open] .grip-finisher-chevron{transform:rotate(180deg)}.grip-finisher-body{padding:2px 14px 14px;background:#0d1f3c}.grip-finisher-body>p{font-size:13px;line-height:1.5;color:#d7e9ff;margin:10px 3px 16px}.grip-f-row{display:flex;gap:8px;justify-content:space-between;align-items:center;min-height:74px;border-top:1px solid rgba(183,215,255,.19);padding:11px 3px}.grip-f-row>div{flex:1;min-width:0}.grip-f-row b{font-size:14px;display:block;line-height:1.3}.grip-f-row small{display:block;color:#b6cbe9;font-size:12px;line-height:1.45;margin-top:4px}.grip-f-link{flex:none;border:1px solid #e79b3c;background:#fda53b;color:#08224d;border-radius:10px;min-height:44px;padding:8px 12px;font-size:12px;font-weight:900;cursor:pointer}.grip-f-link:active{transform:translateY(1px)}.grip-finisher-body .grip-foot{color:#f7c99a;margin-bottom:3px}.variety-lab{border:1px solid #456aa6;border-radius:16px;background:linear-gradient(155deg,#0d2a55,#101d38);margin:13px 0;color:#f5f8ff;overflow:hidden}.variety-lab>summary{display:flex;align-items:center;gap:12px;justify-content:space-between;list-style:none;cursor:pointer;min-height:53px;padding:13px 15px}.variety-lab>summary::-webkit-details-marker{display:none}.variety-lab>summary>span{font-weight:950;font-size:14px;letter-spacing:.05em}.variety-lab summary small{color:#c7dfff;font-size:12px}.variety-lab summary small b{display:inline-block;margin-left:5px;font-size:18px;color:#ffb862}.variety-choices{padding:3px 12px 7px;display:grid;gap:8px}.variety-choice{display:grid;gap:6px;background:#182c50;border:1px solid rgba(153,201,255,.25);border-radius:12px;padding:12px}.variety-choice strong{font-size:14px;color:#fff;line-height:1.35}.variety-choice small{font-size:12px;color:#bacee5;line-height:1.45}.variety-label{font-weight:900;letter-spacing:.1em;font-size:10px}.variety-label.easy{color:#9ed1ff}.variety-label.build{color:#ffb76f}.variety-label.fun{color:#aee7c1}.variety-safety{padding:0 14px 12px;color:#bad2f1;font-size:12px;line-height:1.5;margin:0}html.light .grip-finisher{background:linear-gradient(110deg,#e8f3ff,#cddffe);border-color:#74a8ea;color:#10284e}html.light .grip-finisher-text small{color:#32639c}html.light .grip-finisher-body{background:#ebf5ff}html.light .grip-finisher-body>p{color:#23466b}html.light .grip-f-row{border-top-color:#c3d6ed}html.light .grip-f-row b{color:#10284e}html.light .grip-f-row small{color:#376389}html.light .grip-finisher-body .grip-foot{color:#935415}html.light .variety-lab{background:#e3f0ff;color:#10284e}html.light .variety-lab summary small{color:#365c8e}html.light .variety-choice{background:#fff;border-color:#bfd4ea}html.light .variety-choice strong{color:#122b4b}html.light .variety-choice small,html.light .variety-safety{color:#496583}html.light .variety-label.easy{color:#215ea4}html.light .variety-label.build{color:#a4570a}html.light .variety-label.fun{color:#12754d}@media(max-width:375px){.grip-f-row{flex-wrap:wrap}.grip-f-link{margin-left:auto}.variety-lab summary small{font-size:11px}}@media(prefers-reduced-motion:reduce){.grip-finisher-chevron{transition:none}}
+</style>
 </head>
 <style id="tlc-weather-tv-v50">
 /* Version 50 — two-tier weather: tiny top-right mini HUD, optional detail drawer. */
@@ -2425,5 +2429,116 @@ const TLCTV=(()=>{
  return {render,play,select,filter,search,previous,next,fullscreen,toggleAdd,add,loadFile,openFromDrill,openFromReel,parseLink};
 })();
 window.TLCTV=TLCTV;
+</script>
+<script id="tlc-grip-variety-runtime-v51">
+(function gripVarietyUpgrade(){
+  'use strict';
+  if(window.__tlcGripVarietyV51)return;
+  window.__tlcGripVarietyV51=true;
+  const paths=[
+    {id:'grip_support',name:'Grip · Ape Hang',prefix:'GS',stages:[
+      ['Two-hand dead hang','2 × 30 seconds, relaxed breathing','Feet-assisted dead hang','Try different comfortable bar widths','Shoulder-packed active hang'],
+      ['Active hang','2 × 45–60 seconds, shoulders controlled','10–20-second active hangs','Scapula shrug ladder','Wrist-neutral bar hang'],
+      ['Towel grip hang','2 × 15–30 seconds','Feet-assisted towel hold','One towel in each hand with feet on floor','Towel row'],
+      ['Assisted Ape Hang','3 × 10 seconds per side with feet or spare hand helping','Two hands with side-to-side weight shifts','Side-to-side monkey-bar pauses, supported','Scapular depression hold'],
+      ['Ape Hang · one arm','2 × 5–10 seconds per arm, controlled shoulder','Assisted Ape Hang, 3 × 10 seconds per side','Alternate left/right micro-hangs over a mat','Active two-hand hang'],
+      ['Ape Hang · elite','2 × 20–30 seconds per arm without swinging','5–10-second Ape Hangs','Controlled ape-hang-to-assisted transitions','Grip recovery and shoulder control']
+    ]},
+    {id:'grip_crush',name:'Grip · Fingertip Power',prefix:'GC',stages:[
+      ['Fingertip wall lean','2 × 15 seconds; fingers stacked and pain-free','Palms-on-wall presses','Wall-finger weight shifts','Band finger extensions'],
+      ['Fingertip incline hold','2 × 15–20 seconds on a high bench','Fingertip wall lean','Incline fingertip clock shifts','Elevated plank'],
+      ['Fingertip incline push-ups','2 × 5 controlled repetitions','Higher incline or wall version','Slow 3-second lowering','Regular incline push-ups'],
+      ['Fingertip knee push-ups','2 × 3–6 controlled repetitions','Incline fingertip push-ups','Alternate 1 fingertip rep with 2 palm reps','Knee push-ups'],
+      ['Fingertip push-ups','2 × 3–8 clean, pain-free repetitions','Knee or incline fingertip version','Slow-tempo fingertip push-ups (only when ready)','Palm push-ups and extensions'],
+      ['Two-towel hang / gripper','2 × 20-second towel hangs or 2 × 8 heavy gripper closes','Feet-assisted towel hangs','Mix the two tools on different sessions','Hand gripper at comfortable resistance']
+    ]},
+    {id:'grip_pinch',name:'Grip · Dragon Pinch',prefix:'GN',stages:[
+      ['Pinch a single plate','2 × 15 seconds each hand with light plate','Book-edge pinch on a safe padded surface','Alternating hand plate pickups','Thumb mobility'],
+      ['Plate pinch hold','2 × 25 seconds each hand','Short 10-second holds','Switch between smooth/rough plate sides','Thumb and finger control'],
+      ['Plate pinch pickup','2 × 5 controlled pickups each side','Two-handed pickup','Gentle pinch lift + controlled set-down','Wrist neutral hold'],
+      ['Heavier plate pinch','3 × 20 seconds each hand, modest load','Return to light plates','Pinch-hold mini ladder','Finger extension band'],
+      ['Advanced pinch control','3 × 30 seconds with a manageable load','20-second hold','Single-hand plate transfer at chest level, no throwing','Wrist and thumb recovery']
+    ]},
+    {id:'grip_open',name:'Grip · Finger Armor',prefix:'GO',stages:[
+      ['Band finger opens','2 × 20 controlled openings','Light rubber band','Finger waves without tension','Hand mobility'],
+      ['Band finger extensions','3 × 25 reps, full opening','2 × 15 with light band','Five-finger piano-tap finisher','Wrist extension'],
+      ['Rice bucket twists','2 × 45 seconds easy resistance','Gentle rice stir','Different-direction rice swirls','Forearm rotation'],
+      ['Thicker band extensions','3 × 20 without wrist bending','Light band','Slow open + 2-second pause','Controlled wrist curls'],
+      ['Balanced opener circuit','2 rounds: band 20 + rice bucket 45 sec','One round only','Finger-wave finale','Grip day recovery']
+    ]},
+    {id:'grip_forearm',name:'Grip · Forearm Size',prefix:'GW',stages:[
+      ['Wrist curl base','2 × 12–15 wrist curls, full comfortable motion','Very light dumbbell','Smooth alternating curls','Forearm flexors'],
+      ['Reverse wrist curls','2 × 12–20, lower for 3 seconds','Short range, very light load','Tempo challenge without heavier weight','Wrist extensors'],
+      ['Hammer curl builder','3 × 8–12 controlled reps','Lighter neutral-grip curls','Alternate hammer and reverse curls','Brachioradialis'],
+      ['Wrist roller','2 up-and-down rounds each direction','One shorter round','Slow-rewind roller','Light wrist extension'],
+      ['Forearm size circuit','2 rounds: wrist curl 15 + reverse curl 15 + hammer curl 10','One round and easier weight','Alternate the order each workout','2 recovery days between hard grip sessions']
+    ]}
+  ];
+  const laneFun={
+    foundation:['Controlled bear crawl on a mat','Slow-motion squat-to-reach','Hollow-to-tuck position switches'],
+    handstand:['Wall toe-tap ladder','Supported handstand shape changes','Wall-clock shoulder shifts'],
+    planche:['Frog-stand balance switches','Short lean and freeze','Controlled scapula press pulses'],
+    compression:['Seated toe-tap challenge','L-sit tuck switch','Straddle compression pulses'],
+    human_flag:['Foot-supported side-body holds','Low-bar tuck flag changes','Slow side-plank reach'],
+    pull_up:['Tempo ladder on pull-up bar','Mixed comfortable grips (one per set)','Paused top-position holds'],
+    muscle_up:['Low-bar false-grip transitions','Feet-assisted transition practice','Pause at the transition point'],
+    front_lever:['Tuck-to-open micro-holds','Slow hollow-body pulls','Band-assisted lever pulses'],
+    back_lever:['Controlled support-to-tuck changes','Short skin-the-cat range','Easy ring-support shifts'],
+    legs_single_leg:['Assisted pistol target taps','Box-height squat ladder','Counterbalance slow descents'],
+    legs_quad:['Slow wall-sit pulses','Controlled quad lean steps','Reverse Nordic partial-range pauses'],
+    legs_hinge:['Assisted Nordic brake control','Single-leg hinge reach','Heel slide countdown'],
+    legs_mobility:['90/90 seated switches','Pancake reach game','Ankle-rock balance shifts'],
+    legs_power:['Controlled step-up rhythm','Soft-landing practice','Jump-and-stick on low height']
+  };
+  for(const path of paths){
+    if(!D.lanes.some(l=>l.id===path.id))D.lanes.push({id:path.id,name:path.name});
+    path.stages.forEach((a,i)=>{
+      const id=path.prefix+(i+1);if(T[id])return;
+      const n={id,name:a[0],skill:path.id,tier:i+1,unlock_standard:a[1],prerequisites:i?[path.prefix+i]:[],if_you_cant_yet:[a[2]],next_after:i<path.stages.length-1?[path.prefix+(i+2)]:[],best_accessories:[a[4]],fun_variations:[a[3]]};
+      D.tree.push(n);T[id]=n;
+    });
+  }
+  function nameSafe(t){return esc(t||'');}
+  function variationHTML(n){
+    const easy=(n.if_you_cant_yet||[])[Math.max(0,((n.tier||1)-1))%(n.if_you_cant_yet?.length||1)]||'Use a supported, shorter-range version';
+    const build=(n.best_accessories||[])[Math.max(0,((n.tier||1)-1))%(n.best_accessories?.length||1)]||n.name;
+    const pool=n.fun_variations||laneFun[n.skill]||['Slow 3-second lowering','Short controlled pause','Alternate sides without rushing'];
+    const fun=pool[Math.max(0,(n.tier||1)-1)%pool.length];
+    return `<details class="variety-lab"><summary><span>TRY IT THREE WAYS</span><small>Easy · Build · Fun <b>＋</b></small></summary><div class="variety-choices"><div class="variety-choice"><span class="variety-label easy">EASIER</span><strong>${nameSafe(easy)}</strong><small>Use this until the standard version feels controlled</small></div><div class="variety-choice"><span class="variety-label build">BUILD</span><strong>${nameSafe(build)}</strong><small>Practice the movement with good form</small></div><div class="variety-choice"><span class="variety-label fun">MIX IT UP</span><strong>${nameSafe(fun)}</strong><small>A different way to train, not an automatic level unlock</small></div></div><p class="variety-safety">Advance only after passing the mastery test. If fingers, wrists or elbows hurt, stop and choose a gentler option.</p></details>`;
+  }
+  const _openNode=openNode;
+  openNode=function(id,keep){
+    _openNode(id,keep);
+    const n=T[id],sheet=document.getElementById('sheet');if(!n||!sheet)return;
+    const sec=[...sheet.querySelectorAll('.sec')].find(el=>el.textContent?.includes('Scouter reading'));
+    if(sec)sec.insertAdjacentHTML('beforebegin',variationHTML(n));else sheet.insertAdjacentHTML('beforeend',variationHTML(n));
+  };
+  function finisherMarkup(day){
+    const strength=day==='D',name=strength?'SUPER GRIP · STRENGTH':'SUPER GRIP · FOREARM SIZE';
+    const list=strength?[
+      ['Ape Hang (one arm)','2 × 5–15 sec/arm','GS5','Begin feet-assisted until fully controlled'],
+      ['Fingertip push-ups','2 × 3–8 reps','GC5','Start on wall or incline; progress gradually'],
+      ['Hand gripper closes','2 × 5–8 reps','GC6','No painful squeezing'],
+      ['Plate pinch holds','2 × 20 sec/hand','GN2','Moderate load, build slowly'],
+      ['Band finger extensions','2 × 20–30 reps','GO2','Controlled opening']
+    ]:[
+      ['Finger-to-palm wrist curls','3 × 12–20','GW1','Full comfortable range'],
+      ['Reverse wrist curls','3 × 12–20','GW2','Slow 3-second lowering'],
+      ['Hammer curls','3 × 8–12','GW3','Keep elbow steady'],
+      ['Towel hang','2 × 15–30 sec','GS3','Feet-assist if needed'],
+      ['Band finger extensions','2 × 20–30 reps','GO2','Balance the flexors']
+    ];
+    return `<details class="grip-finisher" id="grip-finisher-${day}"><summary><span class="grip-finisher-icon">✊</span><span class="grip-finisher-text"><b>${name}</b><small>Optional 15–20 min finisher · tap to explore</small></span><span class="grip-finisher-chevron">⌄</span></summary><div class="grip-finisher-body"><p>${strength?'Pick 2–3 of these after pulling.':'Pick 2–3 of these after pressing.'} Build up gradually; do not exhaust your fingers before planche or handstands.</p>${list.map(([label,dose,id,tip])=>`<div class="grip-f-row"><div><b>${nameSafe(label)}</b><small>${nameSafe(dose)} · ${nameSafe(tip)}</small></div><button class="grip-f-link" onclick="openNode('${id}')">LEVELS ↗</button></div>`).join('')}<p class="grip-foot">No Farmer Carries. Rest at least 48 hours between hard grip sessions. Pain means reduce the load or stop.</p></div></details>`;
+  }
+  const _vTrain=vTrain;
+  vTrain=function(){
+    _vTrain();
+    if(S.day!=='D'&&S.day!=='B')return;
+    const progress=document.querySelector('#main .progwrap');
+    if(progress&& !document.getElementById('grip-finisher-'+S.day))progress.insertAdjacentHTML('afterend',finisherMarkup(S.day));
+  };
+  // Existing default training plans, set counts, video references and saved workout positions remain untouched.
+  if(typeof render==='function')render(true);
+})();
 </script>
 </body></html>
