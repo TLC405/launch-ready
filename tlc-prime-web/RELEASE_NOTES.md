@@ -1,3 +1,17 @@
+## v51 — Grip Forge and fun progression variety (November 17, 2026)
+
+**Live:** https://tlc-hyperbolic-chamber.vercel.app/
+
+- Added **five new grip skill paths with 27 stages**, covering Ape Hang (assisted to one-arm), fingertip push-ups (wall through floor), pinch strength, opening muscles, and wrist/forearm size. **No Farmer Carries.** Existing 70 stages remain, for 97 total.
+- Added expandable **optional grip finishers** at the top of Training Day D (strength) and Day B (size). These are suggestions, not extra required exercise sets, so existing workout completion totals and saved progress indexes are unchanged.
+- Added **“Try It Three Ways”** on every existing and new skill-level sheet: an easier alternative, a build drill, and a playful variation. Alternatives do **not** automatically unlock mastery.
+- Safety guidance emphasizes gradual fingertip loading, assisted Ape Hangs before one-arm work, and avoiding painful finger/wrist/elbow loading. Do grip work at the end of a workout.
+- All original `window.DATA` content and the **142 exercises in seven programs, 14 previous lanes and 70 previous skill stages remain unchanged**; the new lanes and stages are added in client code and save mastery under existing storage keys. Browser-local progress histories remain on their original domain.
+- Verified with Chromium/Playwright at 360px and 768px across all six main views: no JS errors or horizontal overflow; both grip finishers, Ape Hang modal, fingertip progressions, variations for legacy skill H2, saved workout set. Five embedded script blocks plus extension script syntax-checked.
+- Production deployment `dpl_9dEhvshEqQf6DLfqpibRsHjD9FWn` READY, with live HTTP 200 for app on both domains, new Grip Forge data, and service-worker version 51.
+- Real Samsung Galaxy Fold 5 hardware and original Android APK not changed or tested.
+
+---
 ## Version 50 — Compact weather HUD, TLC TV and varied anime SFX (November 17, 2026)
 
 **Verified production:** https://tlc-hyperbolic-chamber.vercel.app/ and https://tlc-house-of-pain.vercel.app/
